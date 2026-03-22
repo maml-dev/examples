@@ -5,6 +5,7 @@ const __dirname = new URL('.', import.meta.url).pathname
 const mamlLang = JSON.parse(fs.readFileSync(__dirname + '/maml.json', 'utf8'))
 
 export default defineConfig({
+  base: '/examples/',
   cleanUrls: true,
   ignoreDeadLinks: true,
   title: 'MAML Examples',
