@@ -17,36 +17,25 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
-  generate:
+  build:
     runs-on: ubuntu-latest
-    if: github.event_name == 'schedule' || github.event_name == 'workflow_dispatch'
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
         with:
           node-version: 22
       - run: npm ci
-      - run: node generate.js
+      - name: Generate new examples
+        if: github.event_name == 'schedule' || github.event_name == 'workflow_dispatch'
+        run: node generate.js
       - name: Commit new examples
+        if: github.event_name == 'schedule' || github.event_name == 'workflow_dispatch'
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add examples/ index.md metadata.maml
-          git commit -m "Add 100 MAML examples $(date -u +%Y-%m-%d)" || exit 0
+          git commit -m "Add 100 MAML examples $(date -u +%Y-%m-%d)" || true
           git push
-
-  build:
-    needs: generate
-    if: always() && !failure() && !cancelled()
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-        with:
-          ref: main
-      - uses: actions/setup-node@v4
-        with:
-          node-version: 22
-      - run: npm ci
       - run: npx vitepress build
       - uses: actions/upload-pages-artifact@v3
         with:
