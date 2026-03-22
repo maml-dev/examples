@@ -1847,7 +1847,7 @@ function generateShowcase() {
 
 const COUNT = 100
 const ROOT = new URL('.', import.meta.url).pathname
-const EXAMPLES_DIR = path.join(ROOT, 'examples')
+const EXAMPLES_DIR = path.join(ROOT, 'doc')
 const METADATA_PATH = path.join(ROOT, 'metadata.maml')
 const SHAPES = [generateFlatConfig, generateNestedObject, generateTableArray, generateMixed, generateShowcase]
 
@@ -1938,7 +1938,7 @@ Example documents for the [MAML](https://maml.dev) data format.
 `
 
 for (const ex of sortedLatest) {
-  indexMd += `- [${ex.title}](./examples/${ex.num})\n`
+  indexMd += `- [${ex.title}](./doc/${ex.num})\n`
 }
 indexMd += '\n'
 
