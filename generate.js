@@ -1599,7 +1599,7 @@ function generateShowcase() {
           prop('custom header', str(faker.lorem.word())),
           prop('another one', str(faker.lorem.word())),
         ]), { emptyLineBefore: true, leadingComments: [comment('Keys with spaces get quoted')] }),
-      ]), [comment('HTTP Headers - keys need quoting')]),
+      ]), [comment('HTTP Headers')]),
     }),
     () => ({
       title: 'Changelog',
