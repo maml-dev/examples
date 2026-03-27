@@ -1,5 +1,5 @@
 import { parse, print } from 'maml-ast'
-import { parse as parseValue, stringify } from 'maml.js'
+import { parse as parseValue, stringify } from 'maml'
 import { faker } from '@faker-js/faker'
 import fs from 'node:fs'
 import path from 'node:path'
