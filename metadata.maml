@@ -104299,4 +104299,704 @@
     shapeIndex: 4
     mamlText: "# Automation scripts\n{\n  name: \"deploy\"\n  shell: \"/usr/bin/env bash\"\n  # Initial setup script\n  setup: \"\"\"\n#!/bin/bash\nset -euo pipefail\n\necho \"Setting up environment...\"\nnpm install\nnpm run build\necho \"Done!\"\n\"\"\"\n\n  # Deployment script\n  deploy: \"\"\"\n#!/bin/bash\nset -euo pipefail\n\nVERSION=$(git describe --tags)\necho \"Deploying $VERSION\"\n\ndocker build -t app:$VERSION .\ndocker push app:$VERSION\nkubectl set image deployment/app app=app:$VERSION\n\necho \"Deployed $VERSION successfully\"\n\"\"\"\n\n  timeout: 246 # seconds\n  retry: 4\n}"
   }
+  {
+    num: "14901"
+    title: "Build Config"
+    description: "Build tool configuration."
+    shapeIndex: 0
+    mamlText: "{\n  entry: \"src/main.js\"\n  outdir: \"dist\"\n  format: \"cjs\"\n  target: \"es2022\"\n\n  minify: false\n  sourcemap: true\n  bundle: true\n  splitting: false\n}"
+  }
+  {
+    num: "14902"
+    title: "Redis Config"
+    description: "Redis cache configuration."
+    shapeIndex: 0
+    mamlText: "{\n  host: \"redis.internal\"\n  port: 6379\n  db: 10\n  password: null\n\n  prefix: \"markup:\"\n  ttl: 24806 # seconds\n  max_retries: 3\n}"
+  }
+  {
+    num: "14903"
+    title: "Linter Config"
+    description: "Code linter rule configuration."
+    shapeIndex: 0
+    mamlText: "{\n  parser: \"typescript\"\n  env: \"browser\"\n  indent: 2\n  semicolons: true\n  quotes: \"single\"\n\n  # Formatting\n  max_line_length: 120\n  trailing_comma: \"all\"\n  no_unused_vars: true # error\n  no_console: true # warn\n}"
+  }
+  {
+    num: "14904"
+    title: "DNS Config"
+    description: "DNS zone configuration."
+    shapeIndex: 0
+    mamlText: "{\n  zone: \"whirlwind-crest.net\"\n  ttl: 300 # seconds\n  nameservers: [\n    \"ns1.dutiful-cardboard.name\"\n    \"ns2.bulky-exploration.com\"\n  ]\n\n  soa_email: \"admin@dearest-switch.info\"\n  refresh: 14400\n  retry: 600\n  expire: 1209600\n}"
+  }
+  {
+    num: "14905"
+    title: "Proxy Config"
+    description: "Reverse proxy settings."
+    shapeIndex: 0
+    mamlText: "{\n  listen: 8080\n  server_name: \"hopeful-legend.biz\"\n  upstream: \"http://127.0.0.1:6408\"\n\n  # TLS settings\n  ssl: true\n  http2: true\n\n  gzip: true\n  gzip_min_length: 1024\n  client_max_body: \"30mb\"\n}"
+  }
+  {
+    num: "14906"
+    title: "Build Config"
+    description: "Build tool configuration."
+    shapeIndex: 0
+    mamlText: "{\n  entry: \"lib/index.mjs\"\n  outdir: \"build\"\n  format: \"cjs\"\n  target: \"es2022\"\n\n  minify: true\n  sourcemap: true\n  bundle: true\n  splitting: false\n}"
+  }
+  {
+    num: "14907"
+    title: "Build Config"
+    description: "Build tool configuration."
+    shapeIndex: 0
+    mamlText: "{\n  entry: \"lib/index.mjs\"\n  outdir: \"build\"\n  format: \"cjs\"\n  target: \"es2022\"\n\n  minify: true\n  sourcemap: true\n  bundle: true\n  splitting: true\n}"
+  }
+  {
+    num: "14908"
+    title: "Email Config"
+    description: "SMTP email service settings."
+    shapeIndex: 0
+    mamlText: "{\n  smtp_host: \"smtp.uneven-runway.info\"\n  smtp_port: 25\n  use_tls: true\n  from_name: \"Sporer - Leannon\"\n  from_email: \"noreply@uneven-runway.info\"\n\n  # Rate limiting\n  max_batch_size: 391\n  retry_interval: 189\n}"
+  }
+  {
+    num: "14909"
+    title: "Email Config"
+    description: "SMTP email service settings."
+    shapeIndex: 0
+    mamlText: "{\n  smtp_host: \"smtp.teeming-sundae.biz\"\n  smtp_port: 465\n  use_tls: true\n  from_name: \"Parisian and Sons\"\n  from_email: \"noreply@teeming-sundae.biz\"\n\n  # Rate limiting\n  max_batch_size: 308\n  retry_interval: 177\n}"
+  }
+  {
+    num: "14910"
+    title: "DNS Config"
+    description: "DNS zone configuration."
+    shapeIndex: 0
+    mamlText: "{\n  zone: \"prime-viability.name\"\n  ttl: 3600 # seconds\n  nameservers: [\n    \"ns1.menacing-release.info\"\n    \"ns2.infinite-bowler.com\"\n  ]\n\n  soa_email: \"admin@wonderful-tributary.org\"\n  refresh: 3600\n  retry: 600\n  expire: 604800\n}"
+  }
+  {
+    num: "14911"
+    title: "Email Config"
+    description: "SMTP email service settings."
+    shapeIndex: 0
+    mamlText: "{\n  smtp_host: \"smtp.nutritious-newsprint.com\"\n  smtp_port: 465\n  use_tls: true\n  from_name: \"Bednar, Steuber and Nicolas\"\n  from_email: \"noreply@nutritious-newsprint.com\"\n\n  # Rate limiting\n  max_batch_size: 446\n  retry_interval: 55\n}"
+  }
+  {
+    num: "14912"
+    title: "Cron Schedule"
+    description: "Task scheduler timing configuration."
+    shapeIndex: 0
+    mamlText: "{\n  timezone: \"UTC\"\n  backup: \"0 2 * * *\" # daily at 2am\n  cleanup: \"0 */6 * * *\" # every 6 hours\n  report: \"0 9 * * 1\" # Monday 9am\n  healthcheck: \"*/5 * * * *\" # every 5 min\n\n  rotate_logs: \"0 0 1 * *\" # first of month\n  sync: \"30 * * * *\" # every hour at :30\n}"
+  }
+  {
+    num: "14913"
+    title: "Cron Schedule"
+    description: "Task scheduler timing configuration."
+    shapeIndex: 0
+    mamlText: "{\n  timezone: \"America/New_York\"\n  backup: \"0 2 * * *\" # daily at 2am\n  cleanup: \"0 */6 * * *\" # every 6 hours\n  report: \"0 9 * * 1\" # Monday 9am\n  healthcheck: \"*/5 * * * *\" # every 5 min\n\n  rotate_logs: \"0 0 1 * *\" # first of month\n  sync: \"30 * * * *\" # every hour at :30\n}"
+  }
+  {
+    num: "14914"
+    title: "Build Config"
+    description: "Build tool configuration."
+    shapeIndex: 0
+    mamlText: "{\n  entry: \"lib/index.mjs\"\n  outdir: \"dist\"\n  format: \"iife\"\n  target: \"es2022\"\n\n  minify: false\n  sourcemap: true\n  bundle: true\n  splitting: true\n}"
+  }
+  {
+    num: "14915"
+    title: "Package Config"
+    description: "A package manager configuration file."
+    shapeIndex: 0
+    mamlText: "{\n  name: \"ocelot-busy\"\n  version: \"2.1.0\"\n  description: \"Corpus crinis ambulo.\"\n  license: \"ISC\"\n\n  author: \"Chester Zieme V\"\n  homepage: \"https://sticky-folklore.name\"\n  repository: \"https://github.com/Randal21/ocelot-busy\"\n\n  private: true\n  type: \"module\"\n}"
+  }
+  {
+    num: "14916"
+    title: "Locale Config"
+    description: "Regional and locale settings."
+    shapeIndex: 0
+    mamlText: "{\n  language: \"pt\"\n  country: \"DM\"\n  timezone: \"America/Denver\"\n  currency: \"CUP\"\n\n  date_format: \"YYYY-MM-DD\"\n  time_format: \"24h\"\n  first_day_of_week: \"sunday\"\n  decimal_separator: \",\"\n}"
+  }
+  {
+    num: "14917"
+    title: "Proxy Config"
+    description: "Reverse proxy settings."
+    shapeIndex: 0
+    mamlText: "{\n  listen: 80\n  server_name: \"rapid-fencing.org\"\n  upstream: \"http://localhost:3564\"\n\n  # TLS settings\n  ssl: true\n  http2: true\n\n  gzip: true\n  gzip_min_length: 1024\n  client_max_body: \"20mb\"\n}"
+  }
+  {
+    num: "14918"
+    title: "Database Config"
+    description: "Database connection settings."
+    shapeIndex: 0
+    mamlText: "{\n  host: \"frilly-thread.com\" # database server\n  port: 6379\n  database: \"chapel_prod\"\n  username: \"angelo82\"\n  password: \"iEh0JE2r8_rNRgW\"\n\n  # Security settings\n  ssl: true\n  pool_size: 10\n  timeout: 25825 # milliseconds\n}"
+  }
+  {
+    num: "14919"
+    title: "Logger Config"
+    description: "Structured logging configuration."
+    shapeIndex: 0
+    mamlText: "{\n  level: \"warn\"\n  format: \"json\"\n  timestamp: true\n  caller: false # include file:line\n\n  output: \"/var/log/app.log\"\n  rotation: false\n  max_size_mb: 203\n  max_age_days: 15\n  compress: true\n}"
+  }
+  {
+    num: "14920"
+    title: "Cron Schedule"
+    description: "Task scheduler timing configuration."
+    shapeIndex: 0
+    mamlText: "{\n  timezone: \"America/New_York\"\n  backup: \"0 2 * * *\" # daily at 2am\n  cleanup: \"0 */6 * * *\" # every 6 hours\n  report: \"0 9 * * 1\" # Monday 9am\n  healthcheck: \"*/5 * * * *\" # every 5 min\n\n  rotate_logs: \"0 0 1 * *\" # first of month\n  sync: \"30 * * * *\" # every hour at :30\n}"
+  }
+  {
+    num: "14921"
+    title: "API Gateway"
+    description: "API gateway routing and middleware configuration."
+    shapeIndex: 1
+    mamlText: "{\n  gateway: {\n    host: \"api.foolish-cheese.org\"\n    port: 8443\n    protocol: \"https\"\n  }\n\n  # Rate limiting\n  rate_limit: {\n    enabled: true\n    window: \"1m\"\n    max_requests: 4575\n    by: \"api_key\"\n  }\n\n  # CORS policy\n  cors: {\n    enabled: true\n    origins: [\n      \"https://trusting-sailor.name\"\n      \"https://app.impure-abacus.name\"\n    ]\n    methods: [\n      \"GET\"\n      \"POST\"\n      \"PUT\"\n      \"DELETE\"\n    ]\n    max_age: 3600\n  }\n\n  cache: {\n    enabled: false\n    ttl: 3452\n    store: \"redis\"\n  }\n}"
+  }
+  {
+    num: "14922"
+    title: "GraphQL Schema"
+    description: "GraphQL type and resolver configuration."
+    shapeIndex: 1
+    mamlText: "{\n  schema: {\n    query: \"Query\"\n    mutation: \"Mutation\"\n  }\n\n  types: {\n    # User type\n    User: {\n      fields: {\n        id: \"ID!\"\n        name: \"String!\"\n        email: \"String!\"\n        avatar: \"String\"\n        posts: \"[Post!]!\"\n        role: \"Role!\"\n      }\n    }\n\n    # Post type\n    Post: {\n      fields: {\n        id: \"ID!\"\n        title: \"String!\"\n        body: \"String!\"\n        author: \"User!\"\n        published: \"Boolean!\"\n        created_at: \"DateTime!\"\n      }\n    }\n  }\n\n  resolvers: {\n    cache: true\n    max_depth: 5\n    max_complexity: 305\n  }\n}"
+  }
+  {
+    num: "14923"
+    title: "Email Routing"
+    description: "Email routing and filtering rules."
+    shapeIndex: 1
+    mamlText: "{\n  domain: \"smooth-hope.net\"\n  inbound: {\n    mx_records: [\n      \"mx1.smooth-hope.net\"\n      \"mx2.smooth-hope.net\"\n    ]\n    spam_filter: {\n      enabled: true\n      threshold: 8.5\n      action: \"tag\"\n    }\n\n    dkim: {\n      enabled: true\n      selector: \"default\"\n      key_size: 2048\n    }\n  }\n\n  outbound: {\n    relay: \"smtp.smooth-hope.net\"\n    port: 587\n    tls: true\n    rate_limit: {\n      per_minute: 478\n      per_hour: 6691\n    }\n  }\n}"
+  }
+  {
+    num: "14924"
+    title: "Terraform Resource"
+    description: "Infrastructure as code resource definition."
+    shapeIndex: 1
+    mamlText: "{\n  provider: \"digitalocean\"\n  region: \"asia-southeast1\"\n  resources: {\n    # Network\n    vpc: {\n      cidr_block: \"10.115.0.0/16\"\n      enable_dns: true\n      tags: {\n        Name: \"mentor-vpc\"\n        Environment: \"staging\"\n      }\n    }\n\n    # Compute\n    instance: {\n      ami: \"ami-3277b21d\"\n      type: \"t3.small\"\n      key_name: \"hunger-key\"\n      monitoring: true\n      root_volume: {\n        size: 20\n        type: \"gp2\"\n        encrypted: true\n      }\n    }\n\n    # Security\n    security_group: {\n      name: \"allow-all\"\n      ingress_port: 80\n      ingress_cidr: \"0.0.0.0/0\"\n    }\n  }\n}"
+  }
+  {
+    num: "14925"
+    title: "Queue Config"
+    description: "Message queue and worker configuration."
+    shapeIndex: 1
+    mamlText: "{\n  broker: \"redis\"\n  connection: {\n    host: \"localhost\"\n    port: 5672\n    vhost: \"/production\"\n  }\n\n  # Queue definitions\n  queues: {\n    default: {\n      concurrency: 10\n      retry: 4\n      timeout: 57431 # ms\n    }\n\n    priority: {\n      concurrency: 8\n      retry: 5\n      timeout: 8442 # ms\n    }\n  }\n\n  dead_letter: {\n    enabled: true\n    max_retries: 7\n    queue: \"dead-letter\"\n  }\n}"
+  }
+  {
+    num: "14926"
+    title: "Email Routing"
+    description: "Email routing and filtering rules."
+    shapeIndex: 1
+    mamlText: "{\n  domain: \"pointed-beret.org\"\n  inbound: {\n    mx_records: [\n      \"mx1.pointed-beret.org\"\n      \"mx2.pointed-beret.org\"\n    ]\n    spam_filter: {\n      enabled: true\n      threshold: 5\n      action: \"quarantine\"\n    }\n\n    dkim: {\n      enabled: true\n      selector: \"default\"\n      key_size: 1024\n    }\n  }\n\n  outbound: {\n    relay: \"smtp.pointed-beret.org\"\n    port: 587\n    tls: true\n    rate_limit: {\n      per_minute: 324\n      per_hour: 4927\n    }\n  }\n}"
+  }
+  {
+    num: "14927"
+    title: "API Gateway"
+    description: "API gateway routing and middleware configuration."
+    shapeIndex: 1
+    mamlText: "{\n  gateway: {\n    host: \"api.tender-nerve.biz\"\n    port: 443\n    protocol: \"https\"\n  }\n\n  # Rate limiting\n  rate_limit: {\n    enabled: true\n    window: \"1m\"\n    max_requests: 8806\n    by: \"ip\"\n  }\n\n  # CORS policy\n  cors: {\n    enabled: true\n    origins: [\n      \"https://short-term-wafer.net\"\n      \"https://app.gentle-assist.org\"\n    ]\n    methods: [\n      \"GET\"\n      \"POST\"\n      \"PUT\"\n      \"DELETE\"\n    ]\n    max_age: 86400\n  }\n\n  cache: {\n    enabled: true\n    ttl: 1706\n    store: \"memory\"\n  }\n}"
+  }
+  {
+    num: "14928"
+    title: "Search Config"
+    description: "Search engine index configuration."
+    shapeIndex: 1
+    mamlText: "{\n  engine: \"elasticsearch\"\n  connection: {\n    host: \"search.internal:9200\"\n    api_key: \"U9z0j5gMqWnAB4JQyOJzurhrOVXFJ9JQ\"\n    timeout: 4843\n  }\n\n  # Index settings\n  index: {\n    name: \"jungle\"\n    primary_key: \"id\"\n    searchable: [\n      \"title\"\n      \"description\"\n      \"content\"\n    ]\n    filterable: [\n      \"category\"\n      \"status\"\n      \"date\"\n    ]\n    sortable: [\n      \"date\"\n      \"relevance\"\n    ]\n  }\n\n  synonyms: {\n    js: [\n      \"javascript\"\n      \"ecmascript\"\n    ]\n    ts: [\n      \"typescript\"\n    ]\n  }\n}"
+  }
+  {
+    num: "14929"
+    title: "Theme Config"
+    description: "Design system theme configuration."
+    shapeIndex: 1
+    mamlText: "{\n  name: \"trained Theme\"\n  # Color palette\n  colors: {\n    primary: \"#0acaf9\"\n    secondary: \"#3ef2ad\"\n    accent: \"#debc30\"\n    background: \"#f8f9fa\"\n    text: \"#1a1a1a\"\n\n    error: \"#dc3545\"\n    warning: \"#ffc107\"\n    success: \"#28a745\"\n  }\n\n  # Typography\n  typography: {\n    font_family: \"system-ui, sans-serif\"\n    base_size: 14\n    line_height: 1.6\n    headings: {\n      font_family: \"\\\"Space Grotesk\\\", sans-serif\"\n      weight: 600\n    }\n  }\n\n  spacing: {\n    unit: 4\n    scale: [\n      0\n      4\n      8\n      16\n      24\n      32\n      48\n    ]\n  }\n  border_radius: 12\n}"
+  }
+  {
+    num: "14930"
+    title: "Backup Strategy"
+    description: "Backup schedule and retention policy."
+    shapeIndex: 1
+    mamlText: "{\n  source: {\n    type: \"postgresql\"\n    host: \"db.internal\"\n    databases: [\n      \"hierarchy\"\n      \"cook\"\n    ]\n  }\n\n  # Backup schedule\n  schedule: {\n    full: \"0 2 * * 0\" # weekly Sunday 2am\n    incremental: \"0 2 * * 1-6\" # daily except Sunday\n    snapshot: \"0 */4 * * *\" # every 4 hours\n  }\n\n  retention: {\n    daily: 12\n    weekly: 5\n    monthly: 8\n  }\n\n  destination: {\n    type: \"sftp\"\n    path: \"s3://backups-hygienic\"\n    encryption: true\n    compression: \"lz4\"\n  }\n}"
+  }
+  {
+    num: "14931"
+    title: "GraphQL Schema"
+    description: "GraphQL type and resolver configuration."
+    shapeIndex: 1
+    mamlText: "{\n  schema: {\n    query: \"Query\"\n    mutation: \"Mutation\"\n  }\n\n  types: {\n    # User type\n    User: {\n      fields: {\n        id: \"ID!\"\n        name: \"String!\"\n        email: \"String!\"\n        avatar: \"String\"\n        posts: \"[Post!]!\"\n        role: \"Role!\"\n      }\n    }\n\n    # Post type\n    Post: {\n      fields: {\n        id: \"ID!\"\n        title: \"String!\"\n        body: \"String!\"\n        author: \"User!\"\n        published: \"Boolean!\"\n        created_at: \"DateTime!\"\n      }\n    }\n  }\n\n  resolvers: {\n    cache: true\n    max_depth: 7\n    max_complexity: 699\n  }\n}"
+  }
+  {
+    num: "14932"
+    title: "Cloud Deploy Config"
+    description: "Cloud deployment infrastructure configuration."
+    shapeIndex: 1
+    mamlText: "{\n  provider: \"gcp\"\n  region: \"us-west-2\"\n\n  # Compute resources\n  compute: {\n    instance_type: \"t3.medium\"\n    count: 10\n    auto_scaling: {\n      enabled: true\n      min: 1\n      max: 5\n      target_cpu: 67\n    }\n  }\n\n  storage: {\n    type: \"nvme\"\n    size_gb: 78\n    encrypted: true\n  }\n\n  networking: {\n    vpc: \"vpc-8199691d\"\n    subnet: \"10.166.0.0/16\"\n    public_ip: true\n  }\n}"
+  }
+  {
+    num: "14933"
+    title: "Cloud Deploy Config"
+    description: "Cloud deployment infrastructure configuration."
+    shapeIndex: 1
+    mamlText: "{\n  provider: \"aws\"\n  region: \"us-west-2\"\n\n  # Compute resources\n  compute: {\n    instance_type: \"Standard_B2s\"\n    count: 7\n    auto_scaling: {\n      enabled: true\n      min: 2\n      max: 15\n      target_cpu: 68\n    }\n  }\n\n  storage: {\n    type: \"ssd\"\n    size_gb: 122\n    encrypted: true\n  }\n\n  networking: {\n    vpc: \"vpc-5df281cd\"\n    subnet: \"10.43.0.0/16\"\n    public_ip: false\n  }\n}"
+  }
+  {
+    num: "14934"
+    title: "Backup Strategy"
+    description: "Backup schedule and retention policy."
+    shapeIndex: 1
+    mamlText: "{\n  source: {\n    type: \"mysql\"\n    host: \"primary.db.internal\"\n    databases: [\n      \"tabletop\"\n      \"veto\"\n    ]\n  }\n\n  # Backup schedule\n  schedule: {\n    full: \"0 2 * * 0\" # weekly Sunday 2am\n    incremental: \"0 2 * * 1-6\" # daily except Sunday\n    snapshot: \"0 */4 * * *\" # every 4 hours\n  }\n\n  retention: {\n    daily: 12\n    weekly: 8\n    monthly: 9\n  }\n\n  destination: {\n    type: \"local\"\n    path: \"s3://backups-fundraising\"\n    encryption: true\n    compression: \"lz4\"\n  }\n}"
+  }
+  {
+    num: "14935"
+    title: "Cloud Deploy Config"
+    description: "Cloud deployment infrastructure configuration."
+    shapeIndex: 1
+    mamlText: "{\n  provider: \"gcp\"\n  region: \"ap-southeast-1\"\n\n  # Compute resources\n  compute: {\n    instance_type: \"e2-standard-4\"\n    count: 3\n    auto_scaling: {\n      enabled: true\n      min: 2\n      max: 10\n      target_cpu: 62\n    }\n  }\n\n  storage: {\n    type: \"hdd\"\n    size_gb: 134\n    encrypted: true\n  }\n\n  networking: {\n    vpc: \"vpc-aabdcfe5\"\n    subnet: \"10.251.0.0/16\"\n    public_ip: true\n  }\n}"
+  }
+  {
+    num: "14936"
+    title: "Monitoring Config"
+    description: "Application monitoring and alerting setup."
+    shapeIndex: 1
+    mamlText: "{\n  service: \"channels\"\n  # Prometheus metrics\n  metrics: {\n    endpoint: \"/metrics\"\n    interval: 60 # seconds\n    labels: {\n      env: \"prod\"\n      region: \"ap-south\"\n      team: \"tools\"\n    }\n  }\n\n  # Alert thresholds\n  alerts: {\n    cpu_threshold: 93\n    memory_threshold: 78\n    latency_p99_ms: 1253\n    error_rate: 0.02\n    notification: {\n      channel: \"#oncall\"\n      severity: \"info\"\n    }\n  }\n}"
+  }
+  {
+    num: "14937"
+    title: "K8s Deployment"
+    description: "Kubernetes deployment specification."
+    shapeIndex: 1
+    mamlText: "{\n  apiVersion: \"apps/v1\"\n  kind: \"Deployment\"\n  metadata: {\n    name: \"backbone-web\"\n    namespace: \"staging\"\n    labels: {\n      app: \"object\"\n      tier: \"backend\"\n    }\n  }\n\n  # Deployment spec\n  spec: {\n    replicas: 4\n    container: {\n      image: \"pantyhose:7.18.3\"\n      port: 8000\n      resources: {\n        cpu_limit: \"250m\"\n        memory_limit: \"1Gi\"\n      }\n    }\n\n    health_check: {\n      path: \"/healthz\"\n      interval: 15\n      timeout: 5\n    }\n  }\n}"
+  }
+  {
+    num: "14938"
+    title: "Monitoring Config"
+    description: "Application monitoring and alerting setup."
+    shapeIndex: 1
+    mamlText: "{\n  service: \"paradigms\"\n  # Prometheus metrics\n  metrics: {\n    endpoint: \"/metrics\"\n    interval: 30 # seconds\n    labels: {\n      env: \"staging\"\n      region: \"eu-west\"\n      team: \"music\"\n    }\n  }\n\n  # Alert thresholds\n  alerts: {\n    cpu_threshold: 92\n    memory_threshold: 95\n    latency_p99_ms: 832\n    error_rate: 0.01\n    notification: {\n      channel: \"#oncall\"\n      severity: \"critical\"\n    }\n  }\n}"
+  }
+  {
+    num: "14939"
+    title: "API Gateway"
+    description: "API gateway routing and middleware configuration."
+    shapeIndex: 1
+    mamlText: "{\n  gateway: {\n    host: \"api.hoarse-halt.org\"\n    port: 8443\n    protocol: \"https\"\n  }\n\n  # Rate limiting\n  rate_limit: {\n    enabled: true\n    window: \"15m\"\n    max_requests: 1978\n    by: \"ip\"\n  }\n\n  # CORS policy\n  cors: {\n    enabled: true\n    origins: [\n      \"https://impossible-hydrolyze.com\"\n      \"https://app.vivid-harp.org\"\n    ]\n    methods: [\n      \"GET\"\n      \"POST\"\n      \"PUT\"\n      \"DELETE\"\n    ]\n    max_age: 86400\n  }\n\n  cache: {\n    enabled: false\n    ttl: 2805\n    store: \"memory\"\n  }\n}"
+  }
+  {
+    num: "14940"
+    title: "Terraform Resource"
+    description: "Infrastructure as code resource definition."
+    shapeIndex: 1
+    mamlText: "{\n  provider: \"aws\"\n  region: \"eu-west-1\"\n  resources: {\n    # Network\n    vpc: {\n      cidr_block: \"10.91.0.0/16\"\n      enable_dns: true\n      tags: {\n        Name: \"thunderbolt-vpc\"\n        Environment: \"staging\"\n      }\n    }\n\n    # Compute\n    instance: {\n      ami: \"ami-c6bacc4e\"\n      type: \"t3.medium\"\n      key_name: \"step-key\"\n      monitoring: true\n      root_volume: {\n        size: 100\n        type: \"gp2\"\n        encrypted: true\n      }\n    }\n\n    # Security\n    security_group: {\n      name: \"allow-all\"\n      ingress_port: 8080\n      ingress_cidr: \"0.0.0.0/0\"\n    }\n  }\n}"
+  }
+  {
+    num: "14941"
+    title: "Daily Agenda"
+    description: "A day schedule with timed events."
+    shapeIndex: 2
+    mamlText: "{\n  date: \"2026-08-22\"\n  events: [\n    {\n      time: \"09:30\"\n      title: \"Nostrum aggredior ustilo cimentarius.\"\n      duration: \"45m\"\n      location: \"Lobby\"\n    }\n\n    {\n      time: \"14:45\"\n      title: \"Cognatus abstergo sumptus cariosus ter.\"\n      duration: \"1h\"\n      location: \"Renner - Berge HQ\"\n    }\n\n    {\n      time: \"11:15\"\n      title: \"Textus caput spiculum undique.\"\n      duration: \"30m\"\n      location: \"Lobby\"\n    }\n\n    {\n      time: \"11:30\"\n      title: \"Abduco nostrum reiciendis dedecor.\"\n      duration: \"30m\"\n      location: \"Lobby\"\n    }\n\n    {\n      time: \"17:00\"\n      title: \"Depopulo dedico calco.\"\n      duration: \"1h\"\n      location: \"Main Hall\"\n    }\n\n    {\n      time: \"15:15\"\n      title: \"Aeternus iste ventus.\"\n      duration: \"30m\"\n      location: \"Virtual\"\n    }\n  ]\n}"
+  }
+  {
+    num: "14942"
+    title: "Daily Agenda"
+    description: "A day schedule with timed events."
+    shapeIndex: 2
+    mamlText: "{\n  date: \"2026-08-26\"\n  events: [\n    {\n      time: \"08:00\"\n      title: \"Dolore arcesso subiungo vilitas.\"\n      duration: \"30m\"\n      location: \"Lobby\"\n    }\n\n    {\n      time: \"18:15\"\n      title: \"Canto aliquid audio.\"\n      duration: \"2h\"\n      location: \"Virtual\"\n    }\n\n    {\n      time: \"19:00\"\n      title: \"Apto acer caritas vero adaugeo acer.\"\n      duration: \"1h30m\"\n      location: \"Virtual\"\n    }\n\n    {\n      time: \"10:00\"\n      title: \"Explicabo cupiditas absconditus veritas.\"\n      duration: \"30m\"\n      location: \"Room T3\"\n    }\n\n    {\n      time: \"17:45\"\n      title: \"Virgo subito minima vel conturbo.\"\n      duration: \"15m\"\n      location: \"Main Hall\"\n    }\n  ]\n}"
+  }
+  {
+    num: "14943"
+    title: "Roles & Permissions"
+    description: "Role-based access control definitions."
+    shapeIndex: 2
+    mamlText: "{\n  roles: [\n    {\n      name: \"moderator\"\n      permissions: [\n        \"delete\"\n        \"export_data\"\n        \"manage_billing\"\n      ]\n      max_seats: null\n    }\n\n    {\n      name: \"viewer\"\n      permissions: [\n        \"manage_billing\"\n        \"write\"\n        \"read\"\n        \"delete\"\n        \"view_analytics\"\n      ]\n      max_seats: 9\n    }\n\n    {\n      name: \"editor\"\n      permissions: [\n        \"delete\"\n        \"view_analytics\"\n        \"write\"\n      ]\n      max_seats: 26\n    }\n\n    {\n      name: \"viewer\"\n      permissions: [\n        \"read\"\n        \"manage_billing\"\n        \"manage_users\"\n      ]\n      max_seats: 10\n    }\n\n    {\n      name: \"moderator\"\n      permissions: [\n        \"view_analytics\"\n        \"write\"\n        \"export_data\"\n      ]\n      max_seats: 38\n    }\n  ]\n}"
+  }
+  {
+    num: "14944"
+    title: "Cron Jobs"
+    description: "Scheduled task definitions."
+    shapeIndex: 2
+    mamlText: "{\n  timezone: \"Europe/London\"\n  jobs: [\n    {\n      name: \"rotate-logs\"\n      schedule: \"0 2 * * 0\"\n      command: \"pg_dump $DATABASE_URL\"\n      enabled: true\n    }\n\n    {\n      name: \"send-reports\"\n      schedule: \"30 6 * * 1-5\"\n      command: \"./bin/sync --all\"\n      enabled: false\n    }\n\n    {\n      name: \"sync-data\"\n      schedule: \"0 2 * * 0\"\n      command: \"node scripts/cleanup.js\"\n      enabled: true\n    }\n  ]\n}"
+  }
+  {
+    num: "14945"
+    title: "User Directory"
+    description: "A list of user accounts with roles."
+    shapeIndex: 2
+    mamlText: "{\n  users: [\n    {\n      id: 1\n      name: \"Frank Sawayn\"\n      email: \"Casper_Howe58@hotmail.com\"\n      role: \"admin\"\n      active: true\n    }\n\n    {\n      id: 2\n      name: \"Mr. Elliot Bernier\"\n      email: \"Claudia_Stehr44@gmail.com\"\n      role: \"viewer\"\n      active: true\n    }\n\n    {\n      id: 3\n      name: \"Sara Farrell\"\n      email: \"Angelo89@yahoo.com\"\n      role: \"viewer\"\n      active: true\n    }\n  ]\n}"
+  }
+  {
+    num: "14946"
+    title: "API Routes"
+    description: "REST API route definitions."
+    shapeIndex: 2
+    mamlText: "{\n  base_url: \"/api/v2\"\n  routes: [\n    {\n      method: \"DELETE\"\n      path: \"/products\"\n      handler: \"updatePosts\"\n      auth: true\n    }\n\n    {\n      method: \"PUT\"\n      path: \"/users/:id\"\n      handler: \"updateOrders\"\n      auth: true\n    }\n\n    {\n      method: \"PATCH\"\n      path: \"/products/:id\"\n      handler: \"deleteOrders\"\n      auth: true\n    }\n\n    {\n      method: \"PUT\"\n      path: \"/products\"\n      handler: \"getProducts\"\n      auth: false\n    }\n\n    {\n      method: \"POST\"\n      path: \"/products/:id\"\n      handler: \"createPosts\"\n      auth: false\n    }\n\n    {\n      method: \"GET\"\n      path: \"/orders\"\n      handler: \"deleteUsers\"\n      auth: true\n    }\n  ]\n}"
+  }
+  {
+    num: "14947"
+    title: "Bookmarks"
+    description: "A curated list of bookmarked links."
+    shapeIndex: 2
+    mamlText: "{\n  collection: \"reasonable chiffonier\"\n  bookmarks: [\n    {\n      title: \"Teneo solio dolore laboriosam.\"\n      url: \"https://purple-hunt.info\"\n      tags: [\n        \"docs\"\n      ]\n    }\n\n    {\n      title: \"Tero cornu vulariter absque.\"\n      url: \"https://scented-farm.org/\"\n      tags: [\n        \"tool\"\n        \"design\"\n      ]\n    }\n\n    {\n      title: \"Delego aggredior ustulo abeo communis.\"\n      url: \"https://each-massage.com\"\n      tags: [\n        \"tutorial\"\n        \"reference\"\n      ]\n    }\n\n    {\n      title: \"Soluta laudantium textor admitto expedita.\"\n      url: \"https://monumental-sonar.name\"\n      tags: [\n        \"tutorial\"\n        \"tool\"\n        \"docs\"\n      ]\n    }\n\n    {\n      title: \"Capillus sordeo caelestis arto contego.\"\n      url: \"https://complicated-requirement.net/\"\n      tags: [\n        \"reference\"\n        \"design\"\n        \"tutorial\"\n      ]\n    }\n  ]\n}"
+  }
+  {
+    num: "14948"
+    title: "Product Catalog"
+    description: "E-commerce product listings."
+    shapeIndex: 2
+    mamlText: "{\n  products: [\n    {\n      sku: \"L6HX1SMY\"\n      name: \"Recycled Wooden Fish\"\n      price: 508.4\n      category: \"Music\"\n      in_stock: true\n      rating: 1.4\n    }\n\n    {\n      sku: \"8L5O2YEJ\"\n      name: \"Refined Marble Car\"\n      price: 845\n      category: \"Music\"\n      in_stock: false\n      rating: 1.3\n    }\n\n    {\n      sku: \"B9HSFUVQ\"\n      name: \"Modern Silk Hat\"\n      price: 407.45\n      category: \"Beauty\"\n      in_stock: true\n      rating: 1.8\n    }\n  ]\n}"
+  }
+  {
+    num: "14949"
+    title: "Server Inventory"
+    description: "Infrastructure server inventory."
+    shapeIndex: 2
+    mamlText: "{\n  servers: [\n    {\n      hostname: \"web-3\"\n      ip: \"7.16.234.80\"\n      os: \"Amazon Linux 2023\"\n      cpu_cores: 4\n      memory_gb: 32\n      status: \"maintenance\"\n    }\n\n    {\n      hostname: \"web-3\"\n      ip: \"78.160.138.208\"\n      os: \"Alpine 3.19\"\n      cpu_cores: 4\n      memory_gb: 64\n      status: \"stopped\"\n    }\n\n    {\n      hostname: \"queue-4\"\n      ip: \"167.106.125.27\"\n      os: \"Ubuntu 22.04\"\n      cpu_cores: 8\n      memory_gb: 32\n      status: \"maintenance\"\n    }\n\n    {\n      hostname: \"web-6\"\n      ip: \"72.127.113.119\"\n      os: \"Debian 12\"\n      cpu_cores: 8\n      memory_gb: 64\n      status: \"maintenance\"\n    }\n\n    {\n      hostname: \"cache-4\"\n      ip: \"212.36.0.106\"\n      os: \"Amazon Linux 2023\"\n      cpu_cores: 16\n      memory_gb: 8\n      status: \"running\"\n    }\n\n    {\n      hostname: \"cache-3\"\n      ip: \"141.118.218.195\"\n      os: \"Debian 12\"\n      cpu_cores: 8\n      memory_gb: 64\n      status: \"maintenance\"\n    }\n  ]\n}"
+  }
+  {
+    num: "14950"
+    title: "Dependencies"
+    description: "Project dependency manifest."
+    shapeIndex: 2
+    mamlText: "{\n  project: \"stay\"\n  dependencies: [\n    {\n      name: \"vue\"\n      version: \"8.3.0\"\n      dev: false\n    }\n\n    {\n      name: \"axios\"\n      version: \"9.20.6\"\n      dev: true\n    }\n\n    {\n      name: \"lodash\"\n      version: \"9.12.0\"\n      dev: false\n    }\n\n    {\n      name: \"dayjs\"\n      version: \"3.7.4\"\n      dev: true\n    }\n\n    {\n      name: \"zod\"\n      version: \"7.10.3\"\n      dev: false\n    }\n  ]\n}"
+  }
+  {
+    num: "14951"
+    title: "Environment Vars"
+    description: "Environment variable definitions."
+    shapeIndex: 2
+    mamlText: "{\n  app: \"minor\"\n  variables: [\n    {\n      name: \"SMTP_PASSWORD\"\n      required: true\n      secret: true\n      default: \"alioqui\"\n    }\n\n    {\n      name: \"SMTP_PASSWORD\"\n      required: false\n      secret: false\n      default: \"attollo\"\n    }\n\n    {\n      name: \"SMTP_PASSWORD\"\n      required: true\n      secret: true\n      default: null\n    }\n\n    {\n      name: \"JWT_SECRET\"\n      required: false\n      secret: true\n      default: \"corroboro\"\n    }\n  ]\n}"
+  }
+  {
+    num: "14952"
+    title: "Server Inventory"
+    description: "Infrastructure server inventory."
+    shapeIndex: 2
+    mamlText: "{\n  servers: [\n    {\n      hostname: \"web-6\"\n      ip: \"236.52.214.10\"\n      os: \"Alpine 3.19\"\n      cpu_cores: 8\n      memory_gb: 4\n      status: \"maintenance\"\n    }\n\n    {\n      hostname: \"db-4\"\n      ip: \"68.83.234.195\"\n      os: \"Amazon Linux 2023\"\n      cpu_cores: 2\n      memory_gb: 8\n      status: \"running\"\n    }\n\n    {\n      hostname: \"worker-1\"\n      ip: \"225.178.102.224\"\n      os: \"Amazon Linux 2023\"\n      cpu_cores: 4\n      memory_gb: 8\n      status: \"maintenance\"\n    }\n  ]\n}"
+  }
+  {
+    num: "14953"
+    title: "Font Stack"
+    description: "Typography font family definitions."
+    shapeIndex: 2
+    mamlText: "{\n  fonts: [\n    {\n      family: \"Fira Code\"\n      category: \"sans-serif\"\n      weights: [\n        300\n        500\n        800\n        900\n      ]\n      variable: false\n    }\n\n    {\n      family: \"Noto Sans\"\n      category: \"monospace\"\n      weights: [\n        500\n        600\n      ]\n      variable: false\n    }\n\n    {\n      family: \"Geist\"\n      category: \"sans-serif\"\n      weights: [\n        400\n        600\n        700\n        900\n      ]\n      variable: false\n    }\n\n    {\n      family: \"Inter\"\n      category: \"monospace\"\n      weights: [\n        200\n        800\n      ]\n      variable: true\n    }\n\n    {\n      family: \"Fira Code\"\n      category: \"serif\"\n      weights: [\n        100\n        200\n        300\n        700\n        900\n      ]\n      variable: true\n    }\n  ]\n}"
+  }
+  {
+    num: "14954"
+    title: "Keyboard Shortcuts"
+    description: "Editor keyboard shortcut bindings."
+    shapeIndex: 2
+    mamlText: "{\n  editor: \"sublime\"\n  shortcuts: [\n    {\n      key: \"Ctrl+Shift+F\"\n      action: \"format\"\n      when: \"editor\"\n    }\n\n    {\n      key: \"Ctrl+Shift+P\"\n      action: \"debug_run\"\n      when: \"terminal\"\n    }\n\n    {\n      key: \"Ctrl+S\"\n      action: \"command_palette\"\n      when: \"editor\"\n    }\n\n    {\n      key: \"Ctrl+Shift+P\"\n      action: \"search_project\"\n      when: \"global\"\n    }\n  ]\n}"
+  }
+  {
+    num: "14955"
+    title: "Server Inventory"
+    description: "Infrastructure server inventory."
+    shapeIndex: 2
+    mamlText: "{\n  servers: [\n    {\n      hostname: \"worker-8\"\n      ip: \"167.108.3.47\"\n      os: \"Ubuntu 22.04\"\n      cpu_cores: 4\n      memory_gb: 4\n      status: \"stopped\"\n    }\n\n    {\n      hostname: \"web-8\"\n      ip: \"198.126.193.16\"\n      os: \"Ubuntu 22.04\"\n      cpu_cores: 4\n      memory_gb: 64\n      status: \"stopped\"\n    }\n\n    {\n      hostname: \"web-4\"\n      ip: \"82.17.142.98\"\n      os: \"Amazon Linux 2023\"\n      cpu_cores: 16\n      memory_gb: 4\n      status: \"maintenance\"\n    }\n\n    {\n      hostname: \"api-1\"\n      ip: \"4.217.93.88\"\n      os: \"Alpine 3.19\"\n      cpu_cores: 4\n      memory_gb: 64\n      status: \"maintenance\"\n    }\n  ]\n}"
+  }
+  {
+    num: "14956"
+    title: "Sprint Board"
+    description: "Agile sprint task board."
+    shapeIndex: 2
+    mamlText: "{\n  sprint: \"Sprint 4\"\n  tasks: [\n    {\n      id: \"ZKTECC\"\n      title: \"We need to back up the redundant PCI interface!\"\n      assignee: \"Molly Bartell\"\n      priority: \"medium\"\n      status: \"done\"\n      points: 8\n    }\n\n    {\n      id: \"FAYKIA\"\n      title: \"You can't input the application without compressing the 1080p SAS array!\"\n      assignee: \"Milton Fisher\"\n      priority: \"low\"\n      status: \"done\"\n      points: 5\n    }\n\n    {\n      id: \"HBNI81\"\n      title: \"overriding the capacitor won't do anything, we need to navigate the auxiliary SSL transmitter!\"\n      assignee: \"Darrel Abbott\"\n      priority: \"low\"\n      status: \"todo\"\n      points: 5\n    }\n  ]\n}"
+  }
+  {
+    num: "14957"
+    title: "Server Inventory"
+    description: "Infrastructure server inventory."
+    shapeIndex: 2
+    mamlText: "{\n  servers: [\n    {\n      hostname: \"web-5\"\n      ip: \"220.99.14.108\"\n      os: \"Debian 12\"\n      cpu_cores: 16\n      memory_gb: 32\n      status: \"maintenance\"\n    }\n\n    {\n      hostname: \"cache-5\"\n      ip: \"34.149.130.239\"\n      os: \"Debian 12\"\n      cpu_cores: 8\n      memory_gb: 32\n      status: \"maintenance\"\n    }\n\n    {\n      hostname: \"queue-5\"\n      ip: \"102.69.224.191\"\n      os: \"Ubuntu 22.04\"\n      cpu_cores: 4\n      memory_gb: 8\n      status: \"running\"\n    }\n\n    {\n      hostname: \"cache-7\"\n      ip: \"172.46.95.107\"\n      os: \"Ubuntu 22.04\"\n      cpu_cores: 2\n      memory_gb: 8\n      status: \"stopped\"\n    }\n  ]\n}"
+  }
+  {
+    num: "14958"
+    title: "Daily Agenda"
+    description: "A day schedule with timed events."
+    shapeIndex: 2
+    mamlText: "{\n  date: \"2026-08-28\"\n  events: [\n    {\n      time: \"15:00\"\n      title: \"Corroboro ab infit valeo somnus abundans.\"\n      duration: \"30m\"\n      location: \"Lobby\"\n    }\n\n    {\n      time: \"15:30\"\n      title: \"Possimus sequi decor defetiscor somniculosus.\"\n      duration: \"2h\"\n      location: \"Main Hall\"\n    }\n\n    {\n      time: \"15:15\"\n      title: \"Colo curso ventito.\"\n      duration: \"15m\"\n      location: \"Room N9\"\n    }\n\n    {\n      time: \"16:15\"\n      title: \"Universe utroque barba.\"\n      duration: \"30m\"\n      location: \"Room S8\"\n    }\n\n    {\n      time: \"17:30\"\n      title: \"Avarus architecto desidero teres abscido.\"\n      duration: \"1h30m\"\n      location: \"Lobby\"\n    }\n\n    {\n      time: \"09:30\"\n      title: \"Deorsum derideo curriculum vitiosus a tactus.\"\n      duration: \"2h\"\n      location: \"Lobby\"\n    }\n\n    {\n      time: \"20:00\"\n      title: \"Congregatio fuga contabesco calculus.\"\n      duration: \"15m\"\n      location: \"Room M4\"\n    }\n  ]\n}"
+  }
+  {
+    num: "14959"
+    title: "Dependencies"
+    description: "Project dependency manifest."
+    shapeIndex: 2
+    mamlText: "{\n  project: \"moment\"\n  dependencies: [\n    {\n      name: \"vue\"\n      version: \"8.5.18\"\n      dev: true\n    }\n\n    {\n      name: \"vue\"\n      version: \"2.12.20\"\n      dev: true\n    }\n\n    {\n      name: \"zod\"\n      version: \"1.15.3\"\n      dev: false\n    }\n  ]\n}"
+  }
+  {
+    num: "14960"
+    title: "Bookmarks"
+    description: "A curated list of bookmarked links."
+    shapeIndex: 2
+    mamlText: "{\n  collection: \"official lender\"\n  bookmarks: [\n    {\n      title: \"Aduro ustilo tergum.\"\n      url: \"https://primary-digestive.name\"\n      tags: [\n        \"tutorial\"\n        \"design\"\n        \"reference\"\n      ]\n    }\n\n    {\n      title: \"Nobis testimonium comminor adulescens acer cohibeo.\"\n      url: \"https://avaricious-iridescence.org\"\n      tags: [\n        \"blog\"\n      ]\n    }\n\n    {\n      title: \"Vergo socius autus pel degusto.\"\n      url: \"https://unhappy-pliers.com/\"\n      tags: [\n        \"docs\"\n      ]\n    }\n  ]\n}"
+  }
+  {
+    num: "14961"
+    title: "Docker Compose"
+    description: "Multi-container application definition."
+    shapeIndex: 3
+    mamlText: "{\n  version: \"3.8\"\n  services: {\n    app: {\n      image: \"node:22\"\n      ports: [\n        \"3314:3429\"\n      ]\n      environment: {\n        NODE_ENV: \"production\"\n        DATABASE_URL: \"postgres://db:5432/sanity\"\n      }\n      depends_on: [\n        \"db\"\n        \"redis\"\n      ]\n    }\n\n    db: {\n      image: \"postgres:16\"\n      volumes: [\n        \"db_data:/var/lib/postgresql/data\"\n      ]\n      environment: {\n        POSTGRES_DB: \"cycle\"\n        POSTGRES_PASSWORD: \"Eb4rqayvr5T_LOr\"\n      }\n    }\n\n    redis: {\n      image: \"redis:7-alpine\"\n      ports: [\n        \"6379:6379\"\n      ]\n    }\n  }\n\n  volumes: {\n    db_data: {}\n  }\n}"
+  }
+  {
+    num: "14962"
+    title: "Notification Config"
+    description: "Multi-channel notification routing rules."
+    shapeIndex: 3
+    mamlText: "{\n  channels: {\n    email: {\n      enabled: true\n      provider: \"ses\"\n      from: \"notifications@direct-instructor.info\"\n    }\n\n    slack: {\n      enabled: true\n      webhook_url: \"https://hooks.slack.com/services/j8XqNRnUpuaSupEOjQtZ\"\n      default_channel: \"#alerts\"\n    }\n\n    sms: {\n      enabled: false\n      provider: \"sns\"\n    }\n  }\n\n  # Routing rules\n  rules: [\n    {\n      event: \"deploy_success\"\n      channels: [\n        \"slack\"\n        \"email\"\n      ]\n      priority: \"low\"\n    }\n\n    {\n      event: \"deploy_failure\"\n      channels: [\n        \"slack\"\n        \"email\"\n        \"sms\"\n      ]\n      priority: \"critical\"\n    }\n\n    {\n      event: \"error_spike\"\n      channels: [\n        \"slack\"\n      ]\n      priority: \"high\"\n    }\n  ]\n}"
+  }
+  {
+    num: "14963"
+    title: "Recipe"
+    description: "A cooking recipe with ingredients and steps."
+    shapeIndex: 3
+    mamlText: "{\n  title: \"Buddha Bowl\"\n  servings: 4\n  prep_time: \"16 minutes\"\n  cook_time: \"45 minutes\"\n\n  # Ingredients\n  ingredients: [\n    \"2 cups artichoke\"\n    \"4 cups brown mushrooms\"\n    \"4 tsp guava\"\n    \"3 pieces honeydew melon\"\n    \"2 cups grapes\"\n    \"2 lbs sugar\"\n  ]\n\n  # Instructions\n  steps: [\n    \"A fluffy hijiki creation, seasoned with asafoetida and peppercorns, showcasing the best of plant-based cuisine.\"\n    \"A simple plum pie. No fancy stuff. Just pie.\"\n    \"An exquisite brussels sprouts dish, paired with oatmeal and a hint of korma.\"\n    \"A heartwarming Odia soup, featuring fresh blood oranges and an aromatic blend of traditional spices.\"\n  ]\n\n  nutrition: {\n    calories: 261\n    protein: \"29g\"\n    carbs: \"48g\"\n    fat: \"15g\"\n  }\n}"
+  }
+  {
+    num: "14964"
+    title: "Webhook Config"
+    description: "Outgoing webhook endpoint configuration."
+    shapeIndex: 3
+    mamlText: "{\n  name: \"earth-hooks\"\n  secret: \"7O2frZrv5OwgM4taxRpUY9Q9Lpsnsxa1\"\n  endpoints: [\n    {\n      url: \"https://scornful-comparison.name/webhook\"\n      events: [\n        \"create\"\n        \"update\"\n        \"delete\"\n      ]\n      active: true\n    }\n\n    {\n      url: \"https://flowery-injunction.info//callback\"\n      events: [\n        \"payment.success\"\n        \"payment.failed\"\n      ]\n      active: true\n    }\n  ]\n\n  retry: {\n    max_attempts: 4\n    backoff: \"exponential\"\n    interval: 11 # seconds\n  }\n  timeout: 9 # seconds\n}"
+  }
+  {
+    num: "14965"
+    title: "Game Config"
+    description: "Video game settings and preferences."
+    shapeIndex: 3
+    mamlText: "{\n  display: {\n    resolution: \"1920x1080\"\n    fullscreen: false\n    vsync: true\n    fps_limit: 144\n  }\n\n  graphics: {\n    quality: \"medium\"\n    shadows: \"medium\"\n    anti_aliasing: \"TAA\"\n    render_distance: 13\n    ray_tracing: true\n  }\n\n  audio: {\n    master: 82\n    music: 84\n    sfx: 78\n    voice: 73\n  }\n\n  controls: {\n    sensitivity: 5\n    invert_y: false\n    vibration: false\n  }\n}"
+  }
+  {
+    num: "14966"
+    title: "Dashboard Layout"
+    description: "Dashboard widget layout configuration."
+    shapeIndex: 3
+    mamlText: "{\n  title: \"Abshire - Hickle Dashboard\"\n  refresh_interval: 300 # seconds\n  widgets: [\n    {\n      type: \"chart\"\n      title: \"Signups\"\n      source: \"/api/metrics/traffic\"\n      chart_type: \"area\"\n      period: \"30d\"\n    }\n\n    {\n      type: \"stat\"\n      title: \"Total Users\"\n      source: \"/api/stats/users\"\n      format: \"currency\"\n    }\n\n    {\n      type: \"table\"\n      title: \"Top Pages\"\n      source: \"/api/recent/orders\"\n      limit: 7\n    }\n  ]\n\n  theme: \"dark\"\n}"
+  }
+  {
+    num: "14967"
+    title: "Resume"
+    description: "A personal resume with experience and skills."
+    shapeIndex: 3
+    mamlText: "{\n  name: \"Mabel Schneider\"\n  title: \"Direct Division Officer\"\n  email: \"Lori.Dickens58@hotmail.com\"\n  location: \"Nicoleville, French Polynesia\"\n  summary: \"peninsula supporter\"\n\n  skills: [\n    \"Linux\"\n    \"Python\"\n    \"Node.js\"\n    \"Docker\"\n    \"GraphQL\"\n    \"Kubernetes\"\n    \"Redis\"\n    \"React\"\n  ]\n\n  experience: [\n    {\n      company: \"Blick Group\"\n      role: \"Internal Usability Producer\"\n      period: \"2022 - Present\"\n      highlights: [\n        \"Crudelis usus absens acsi tristis eos.\"\n        \"Denego corona sordeo suffragium venia consequuntur.\"\n      ]\n    }\n\n    {\n      company: \"Weissnat, Trantow and West\"\n      role: \"Chief Brand Administrator\"\n      period: \"2025 - 2024\"\n      highlights: [\n        \"Ad umbra bellicus aspicio tergeo vox solum demoror arbitro ambulo.\"\n        \"Benigne cervus aperiam vado benevolentia sonitus natus vir minima thorax.\"\n      ]\n    }\n  ]\n\n  education: {\n    degree: \"BA Mathematics\"\n    university: \"Carroll Inc University\"\n    year: 2019\n  }\n}"
+  }
+  {
+    num: "14968"
+    title: "Docker Compose"
+    description: "Multi-container application definition."
+    shapeIndex: 3
+    mamlText: "{\n  version: \"3.8\"\n  services: {\n    app: {\n      image: \"node:22\"\n      ports: [\n        \"3419:3318\"\n      ]\n      environment: {\n        NODE_ENV: \"production\"\n        DATABASE_URL: \"postgres://db:5432/chasuble\"\n      }\n      depends_on: [\n        \"db\"\n        \"redis\"\n      ]\n    }\n\n    db: {\n      image: \"postgres:16\"\n      volumes: [\n        \"db_data:/var/lib/postgresql/data\"\n      ]\n      environment: {\n        POSTGRES_DB: \"jacket\"\n        POSTGRES_PASSWORD: \"ehOMIJloQj7TDcI\"\n      }\n    }\n\n    redis: {\n      image: \"redis:7-alpine\"\n      ports: [\n        \"6379:6379\"\n      ]\n    }\n  }\n\n  volumes: {\n    db_data: {}\n  }\n}"
+  }
+  {
+    num: "14969"
+    title: "Migration Plan"
+    description: "Database migration plan across environments."
+    shapeIndex: 3
+    mamlText: "{\n  schema_version: \"9.7.11\"\n  database: \"postgresql\"\n\n  migrations: [\n    {\n      id: \"1786667984\"\n      name: \"add_title_column\"\n      applied: true\n    }\n\n    {\n      id: \"1786754384\"\n      name: \"alter_category_table\"\n      applied: true\n    }\n\n    {\n      id: \"1786840784\"\n      name: \"drop_avatar_index\"\n      applied: true\n    }\n\n    {\n      id: \"1786927184\"\n      name: \"add_token_table\"\n      applied: false\n    }\n\n    {\n      id: \"1787013584\"\n      name: \"alter_email_column\"\n      applied: false\n    }\n\n    {\n      id: \"1787099984\"\n      name: \"alter_id_index\"\n      applied: false\n    }\n  ]\n\n  environments: {\n    dev: {\n      host: \"dev-db.measly-eggplant.name\"\n      port: 5432\n      ssl: false\n    }\n\n    staging: {\n      host: \"staging-db.wasteful-jury.com\"\n      port: 5432\n      ssl: true\n    }\n\n    prod: {\n      host: \"prod-db.first-cannon.name\"\n      port: 5432\n      ssl: true\n    }\n  }\n}"
+  }
+  {
+    num: "14970"
+    title: "i18n Config"
+    description: "Internationalization and locale settings."
+    shapeIndex: 3
+    mamlText: "{\n  default_locale: \"en\"\n  fallback: \"en\"\n  locales: [\n    {\n      code: \"en\"\n      name: \"English\"\n      dir: \"ltr\"\n    }\n\n    {\n      code: \"fr\"\n      name: \"Français\"\n      dir: \"ltr\"\n    }\n\n    {\n      code: \"ar\"\n      name: \"العربية\"\n      dir: \"rtl\"\n    }\n\n    {\n      code: \"ja\"\n      name: \"日本語\"\n      dir: \"ltr\"\n    }\n  ]\n\n  detection: {\n    order: [\n      \"cookie\"\n      \"header\"\n      \"query\"\n    ]\n    cookie_name: \"lang\"\n  }\n}"
+  }
+  {
+    num: "14971"
+    title: "Docker Compose"
+    description: "Multi-container application definition."
+    shapeIndex: 3
+    mamlText: "{\n  version: \"3.8\"\n  services: {\n    app: {\n      image: \"node:22\"\n      ports: [\n        \"3104:3495\"\n      ]\n      environment: {\n        NODE_ENV: \"production\"\n        DATABASE_URL: \"postgres://db:5432/sonata\"\n      }\n      depends_on: [\n        \"db\"\n        \"redis\"\n      ]\n    }\n\n    db: {\n      image: \"mariadb:11\"\n      volumes: [\n        \"db_data:/var/lib/postgresql/data\"\n      ]\n      environment: {\n        POSTGRES_DB: \"widow\"\n        POSTGRES_PASSWORD: \"Ui4k0YoP7r1pTdb\"\n      }\n    }\n\n    redis: {\n      image: \"redis:7-alpine\"\n      ports: [\n        \"6379:6379\"\n      ]\n    }\n  }\n\n  volumes: {\n    db_data: {}\n  }\n}"
+  }
+  {
+    num: "14972"
+    title: "Notification Config"
+    description: "Multi-channel notification routing rules."
+    shapeIndex: 3
+    mamlText: "{\n  channels: {\n    email: {\n      enabled: true\n      provider: \"mailgun\"\n      from: \"notifications@aware-cinema.info\"\n    }\n\n    slack: {\n      enabled: true\n      webhook_url: \"https://hooks.slack.com/services/Sz4dAXb5dJPPSqzjcJgj\"\n      default_channel: \"#general\"\n    }\n\n    sms: {\n      enabled: false\n      provider: \"sns\"\n    }\n  }\n\n  # Routing rules\n  rules: [\n    {\n      event: \"deploy_success\"\n      channels: [\n        \"slack\"\n        \"email\"\n      ]\n      priority: \"low\"\n    }\n\n    {\n      event: \"deploy_failure\"\n      channels: [\n        \"slack\"\n        \"email\"\n        \"sms\"\n      ]\n      priority: \"critical\"\n    }\n\n    {\n      event: \"error_spike\"\n      channels: [\n        \"slack\"\n      ]\n      priority: \"high\"\n    }\n  ]\n}"
+  }
+  {
+    num: "14973"
+    title: "Blog Post"
+    description: "A blog post with metadata and content sections."
+    shapeIndex: 3
+    mamlText: "{\n  title: \"Aranea pecco tamen deduco tantum incidunt.\"\n  slug: \"despecto-accendo-totus\"\n  author: {\n    name: \"Eduardo Spinka\"\n    avatar: \"https://avatars.githubusercontent.com/u/89793021\"\n    bio: \"creator, inventor, nerd\"\n  }\n  date: \"2026-06-23\"\n  tags: [\n    \"handful\"\n    \"safe\"\n    \"discourse\"\n  ]\n\n  published: true\n  reading_time: \"13 min\"\n  summary: \"Turpis vallum thymum deprimo voluptatibus utrum taceo quos currus. Triduana peccatus calcar carbo laudantium contigo sophismata stultus. Defluo comprehendo solutio.\"\n}"
+  }
+  {
+    num: "14974"
+    title: "i18n Config"
+    description: "Internationalization and locale settings."
+    shapeIndex: 3
+    mamlText: "{\n  default_locale: \"en\"\n  fallback: \"en\"\n  locales: [\n    {\n      code: \"en\"\n      name: \"English\"\n      dir: \"ltr\"\n    }\n\n    {\n      code: \"fr\"\n      name: \"Français\"\n      dir: \"ltr\"\n    }\n\n    {\n      code: \"ar\"\n      name: \"العربية\"\n      dir: \"rtl\"\n    }\n\n    {\n      code: \"ja\"\n      name: \"日本語\"\n      dir: \"ltr\"\n    }\n  ]\n\n  detection: {\n    order: [\n      \"cookie\"\n      \"header\"\n      \"query\"\n    ]\n    cookie_name: \"lang\"\n  }\n}"
+  }
+  {
+    num: "14975"
+    title: "Docker Compose"
+    description: "Multi-container application definition."
+    shapeIndex: 3
+    mamlText: "{\n  version: \"3.8\"\n  services: {\n    app: {\n      image: \"node:20-slim\"\n      ports: [\n        \"3057:3621\"\n      ]\n      environment: {\n        NODE_ENV: \"production\"\n        DATABASE_URL: \"postgres://db:5432/fund\"\n      }\n      depends_on: [\n        \"db\"\n        \"redis\"\n      ]\n    }\n\n    db: {\n      image: \"postgres:16\"\n      volumes: [\n        \"db_data:/var/lib/postgresql/data\"\n      ]\n      environment: {\n        POSTGRES_DB: \"tail\"\n        POSTGRES_PASSWORD: \"1NDkSrPTbaQs47q\"\n      }\n    }\n\n    redis: {\n      image: \"redis:7-alpine\"\n      ports: [\n        \"6379:6379\"\n      ]\n    }\n  }\n\n  volumes: {\n    db_data: {}\n  }\n}"
+  }
+  {
+    num: "14976"
+    title: "Blog Post"
+    description: "A blog post with metadata and content sections."
+    shapeIndex: 3
+    mamlText: "{\n  title: \"Attero recusandae auditor curo beatus ullus damno celo.\"\n  slug: \"quo-dignissimos-xiphias\"\n  author: {\n    name: \"Mrs. Sarah Leffler MD\"\n    avatar: \"https://cdn.jsdelivr.net/gh/faker-js/assets-person-portrait/female/512/43.jpg\"\n    bio: \"igloo enthusiast\"\n  }\n  date: \"2026-06-15\"\n  tags: [\n    \"slide\"\n    \"march\"\n    \"mythology\"\n  ]\n\n  published: false\n  reading_time: \"19 min\"\n  summary: \"Culpo deleo vae tamdiu attero tot comburo. Defessus ver tempora thermae conforto correptius. Triumphus ante textus.\"\n}"
+  }
+  {
+    num: "14977"
+    title: "Webhook Config"
+    description: "Outgoing webhook endpoint configuration."
+    shapeIndex: 3
+    mamlText: "{\n  name: \"necklace-hooks\"\n  secret: \"FNvGADQmFUMINtDdDV3DuMjX1wwMHh5z\"\n  endpoints: [\n    {\n      url: \"https://muddy-charm.net//webhook\"\n      events: [\n        \"create\"\n        \"update\"\n        \"delete\"\n      ]\n      active: true\n    }\n\n    {\n      url: \"https://only-humidity.net//callback\"\n      events: [\n        \"payment.success\"\n        \"payment.failed\"\n      ]\n      active: false\n    }\n  ]\n\n  retry: {\n    max_attempts: 9\n    backoff: \"exponential\"\n    interval: 30 # seconds\n  }\n  timeout: 9 # seconds\n}"
+  }
+  {
+    num: "14978"
+    title: "Playlist"
+    description: "A music playlist with tracks and metadata."
+    shapeIndex: 3
+    mamlText: "{\n  name: \"J-Rock Vibes\"\n  curator: \"Arely Funk\"\n  public: true\n  tracks: [\n    {\n      title: \"Behind Closed Doors\"\n      artist: \"Deborah Nader\"\n      album: \"vulticulus adeptio error\"\n      duration: \"3:54\"\n    }\n\n    {\n      title: \"One Bad Apple\"\n      artist: \"Isidro Lesch\"\n      album: \"carbo adsuesco\"\n      duration: \"3:19\"\n    }\n\n    {\n      title: \"Hey Baby\"\n      artist: \"Mrs. Jessica Gerhold\"\n      album: \"officiis\"\n      duration: \"5:35\"\n    }\n\n    {\n      title: \"Runaround Sue\"\n      artist: \"Salvatore Kulas\"\n      album: \"cribro\"\n      duration: \"4:30\"\n    }\n\n    {\n      title: \"Love Shack\"\n      artist: \"Christophe Hand\"\n      album: \"vulgivagus quis degenero\"\n      duration: \"2:46\"\n    }\n\n    {\n      title: \"My Love\"\n      artist: \"Kole Upton\"\n      album: \"contabesco temporibus\"\n      duration: \"2:54\"\n    }\n\n    {\n      title: \"He'll Have to Go\"\n      artist: \"Laurie McGlynn Sr.\"\n      album: \"sumptus tamdiu accusator\"\n      duration: \"4:31\"\n    }\n  ]\n\n  total_duration: \"22min\"\n}"
+  }
+  {
+    num: "14979"
+    title: "Test Suite"
+    description: "Test runner configuration with coverage settings."
+    shapeIndex: 3
+    mamlText: "{\n  runner: \"jest\"\n  root: \"./tests\"\n  include: [\n    \"**/*.test.ts\"\n    \"**/*.spec.ts\"\n  ]\n  exclude: [\n    \"node_modules\"\n    \"dist\"\n    \"**/*.e2e.ts\"\n  ]\n\n  # Coverage\n  coverage: {\n    enabled: true\n    provider: \"istanbul\"\n    thresholds: {\n      lines: 72\n      branches: 65\n      functions: 95\n    }\n    reporter: [\n      \"text\"\n      \"lcov\"\n      \"html\"\n    ]\n  }\n  globals: false\n  timeout: 20936 # ms\n}"
+  }
+  {
+    num: "14980"
+    title: "Playlist"
+    description: "A music playlist with tracks and metadata."
+    shapeIndex: 3
+    mamlText: "{\n  name: \"Eclectic Favorites\"\n  curator: \"Israel Tromp\"\n  public: true\n  tracks: [\n    {\n      title: \"The Joker\"\n      artist: \"Billie Dooley\"\n      album: \"maiores in sum\"\n      duration: \"3:13\"\n    }\n\n    {\n      title: \"I Can't Get Next to You\"\n      artist: \"Ms. Patsy Metz\"\n      album: \"virga abbas comparo\"\n      duration: \"2:51\"\n    }\n\n    {\n      title: \"Love is a Many Splendoured Thing\"\n      artist: \"Darin Hessel\"\n      album: \"natus\"\n      duration: \"5:33\"\n    }\n\n    {\n      title: \"Smoke On the Water\"\n      artist: \"Stanley Gusikowski\"\n      album: \"confido ultra\"\n      duration: \"5:40\"\n    }\n  ]\n\n  total_duration: \"85min\"\n}"
+  }
+  {
+    num: "14981"
+    title: "Crontab"
+    description: "System crontab with commented schedule explanations."
+    shapeIndex: 4
+    mamlText: "# System crontab\n{\n  SHELL: \"/bin/bash\"\n  PATH: \"/usr/local/bin:/usr/bin:/bin\"\n\n  MAILTO: \"Naomi.West7@hotmail.com\"\n\n  jobs: {\n    # Full database backup at 2:00 AM daily\n    backup: {\n      schedule: \"0 2 * * *\"\n      command: \"\"\"\n/usr/local/bin/backup.sh --target /mnt/backup\n  --compress gzip\n  --notify Elbert_McLaughlin9@gmail.com\n\"\"\"\n    }\n\n    # Renew SSL certificates on the 1st of each month\n    certbot: {\n      schedule: \"0 0 1 * *\"\n      command: \"certbot renew --quiet\"\n    }\n\n    # Weekly log rotation and cleanup\n    logrotate: {\n      schedule: \"0 0 * * 0\"\n      command: \"\"\"\n/usr/sbin/logrotate /etc/logrotate.conf\nfind /var/log -name \"*.gz\" -mtime +30 -delete\n\"\"\"\n    }\n  }\n}"
+  }
+  {
+    num: "14982"
+    title: "SQL Queries"
+    description: "Database queries stored as raw strings."
+    shapeIndex: 4
+    mamlText: "# Database query definitions\n{\n  name: \"user-reports\"\n  version: 6\n\n  queries: {\n    # Find all active users\n    find_active: \"\"\"\nSELECT u.id, u.name, u.email\nFROM users u\nWHERE u.active = true\n  AND u.created_at > '2024-01-01'\nORDER BY u.name\n\"\"\"\n\n    # Monthly aggregation\n    monthly_stats: \"\"\"\nSELECT\n  DATE_TRUNC('month', created_at) AS month,\n  COUNT(*) AS total,\n  SUM(amount) AS revenue\nFROM orders\nGROUP BY month\nORDER BY month DESC\n\"\"\"\n  }\n}"
+  }
+  {
+    num: "14983"
+    title: "SQL Queries"
+    description: "Database queries stored as raw strings."
+    shapeIndex: 4
+    mamlText: "# Database query definitions\n{\n  name: \"user-reports\"\n  version: 6\n\n  queries: {\n    # Find all active users\n    find_active: \"\"\"\nSELECT u.id, u.name, u.email\nFROM users u\nWHERE u.active = true\n  AND u.created_at > '2024-01-01'\nORDER BY u.name\n\"\"\"\n\n    # Monthly aggregation\n    monthly_stats: \"\"\"\nSELECT\n  DATE_TRUNC('month', created_at) AS month,\n  COUNT(*) AS total,\n  SUM(amount) AS revenue\nFROM orders\nGROUP BY month\nORDER BY month DESC\n\"\"\"\n  }\n}"
+  }
+  {
+    num: "14984"
+    title: "Crontab"
+    description: "System crontab with commented schedule explanations."
+    shapeIndex: 4
+    mamlText: "# System crontab\n{\n  SHELL: \"/bin/bash\"\n  PATH: \"/usr/local/bin:/usr/bin:/bin\"\n\n  MAILTO: \"Clinton59@yahoo.com\"\n\n  jobs: {\n    # Full database backup at 2:00 AM daily\n    backup: {\n      schedule: \"0 2 * * *\"\n      command: \"\"\"\n/usr/local/bin/backup.sh --target /mnt/backup\n  --compress gzip\n  --notify Fidel.Stracke@yahoo.com\n\"\"\"\n    }\n\n    # Renew SSL certificates on the 1st of each month\n    certbot: {\n      schedule: \"0 0 1 * *\"\n      command: \"certbot renew --quiet\"\n    }\n\n    # Weekly log rotation and cleanup\n    logrotate: {\n      schedule: \"0 0 * * 0\"\n      command: \"\"\"\n/usr/sbin/logrotate /etc/logrotate.conf\nfind /var/log -name \"*.gz\" -mtime +30 -delete\n\"\"\"\n    }\n  }\n}"
+  }
+  {
+    num: "14985"
+    title: "Config with Comments"
+    description: "Heavily documented configuration file."
+    shapeIndex: 4
+    mamlText: "# Application Configuration File\n# Generated by MAML examples\n{\n  # Application metadata\n  # These values are shown in the UI\n  app: {\n    # The display name shown in the UI\n    name: \"Lockman, Cremin and Blanda\"\n    version: \"3.16.11\" # semver\n    # Brief description for the about page\n    description: \"Integrated leading edge concept\"\n  }\n\n  # Server configuration\n  server: {\n    host: \"0.0.0.0\" # bind to all interfaces\n    port: 4359 # default: 8080\n    # Number of worker processes\n    workers: 2 # set to 0 for auto\n  }\n\n  # Logging settings\n  logging: {\n    # Valid levels: debug, info, warn, error\n    level: \"warn\"\n    format: \"text\" # json recommended for production\n    output: \"/var/log/app.log\" # file path or stdout\n  }\n}"
+  }
+  {
+    num: "14986"
+    title: "Crontab"
+    description: "System crontab with commented schedule explanations."
+    shapeIndex: 4
+    mamlText: "# System crontab\n{\n  SHELL: \"/bin/bash\"\n  PATH: \"/usr/local/bin:/usr/bin:/bin\"\n\n  MAILTO: \"Essie_Abernathy76@yahoo.com\"\n\n  jobs: {\n    # Full database backup at 2:00 AM daily\n    backup: {\n      schedule: \"0 2 * * *\"\n      command: \"\"\"\n/usr/local/bin/backup.sh --target /mnt/backup\n  --compress gzip\n  --notify Brandon9@hotmail.com\n\"\"\"\n    }\n\n    # Renew SSL certificates on the 1st of each month\n    certbot: {\n      schedule: \"0 0 1 * *\"\n      command: \"certbot renew --quiet\"\n    }\n\n    # Weekly log rotation and cleanup\n    logrotate: {\n      schedule: \"0 0 * * 0\"\n      command: \"\"\"\n/usr/sbin/logrotate /etc/logrotate.conf\nfind /var/log -name \"*.gz\" -mtime +30 -delete\n\"\"\"\n    }\n  }\n}"
+  }
+  {
+    num: "14987"
+    title: "Log Entries"
+    description: "Application log samples with raw multiline content."
+    shapeIndex: 4
+    mamlText: "{\n  application: \"mindshare\"\n  log_format: \"structured\"\n  # Example stack trace\n  sample_error: \"\"\"\nError: I'll calculate the primary FTP card, that should panel the HEX application!\n    at /opt/sbin/whose.iso:170\n    at /home/user/dir/beside.csh:329\n    at process.main (node:internal/main:1:1)\n\"\"\"\n\n  # Sample HTTP request\n  sample_request: \"\"\"\nPOST /api/armchair HTTP/1.1\nHost: sparse-pantyhose.info\nUser-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:89.0) Gecko/20100101 Firefox/111.0\nAccept: application/json\n\"\"\"\n  retention_days: 61\n}"
+  }
+  {
+    num: "14988"
+    title: "Crontab"
+    description: "System crontab with commented schedule explanations."
+    shapeIndex: 4
+    mamlText: "# System crontab\n{\n  SHELL: \"/bin/bash\"\n  PATH: \"/usr/local/bin:/usr/bin:/bin\"\n\n  MAILTO: \"Brock69@hotmail.com\"\n\n  jobs: {\n    # Full database backup at 2:00 AM daily\n    backup: {\n      schedule: \"0 2 * * *\"\n      command: \"\"\"\n/usr/local/bin/backup.sh --target /mnt/backup\n  --compress gzip\n  --notify Raymond.Sauer43@gmail.com\n\"\"\"\n    }\n\n    # Renew SSL certificates on the 1st of each month\n    certbot: {\n      schedule: \"0 0 1 * *\"\n      command: \"certbot renew --quiet\"\n    }\n\n    # Weekly log rotation and cleanup\n    logrotate: {\n      schedule: \"0 0 * * 0\"\n      command: \"\"\"\n/usr/sbin/logrotate /etc/logrotate.conf\nfind /var/log -name \"*.gz\" -mtime +30 -delete\n\"\"\"\n    }\n  }\n}"
+  }
+  {
+    num: "14989"
+    title: "Config with Comments"
+    description: "Heavily documented configuration file."
+    shapeIndex: 4
+    mamlText: "# Application Configuration File\n# Generated by MAML examples\n{\n  # Application metadata\n  # These values are shown in the UI\n  app: {\n    # The display name shown in the UI\n    name: \"Hyatt - Cummings\"\n    version: \"2.7.7\" # semver\n    # Brief description for the about page\n    description: \"Focused well-modulated instruction set\"\n  }\n\n  # Server configuration\n  server: {\n    host: \"0.0.0.0\" # bind to all interfaces\n    port: 8781 # default: 8080\n    # Number of worker processes\n    workers: 4 # set to 0 for auto\n  }\n\n  # Logging settings\n  logging: {\n    # Valid levels: debug, info, warn, error\n    level: \"info\"\n    format: \"json\" # json recommended for production\n    output: \"stdout\" # file path or stdout\n  }\n}"
+  }
+  {
+    num: "14990"
+    title: "HTML Templates"
+    description: "Email HTML templates with raw string content."
+    shapeIndex: 4
+    mamlText: "# Email template configuration\n{\n  from: \"noreply@selfish-simple.info\"\n  subject: \"Deripio dolores turba pecus amitto convoco.\"\n  # HTML email body\n  template: \"\"\"\n<!DOCTYPE html>\n<html>\n<head>\n  <meta charset=\"utf-8\">\n  <title>Welcome</title>\n</head>\n<body>\n  <h1>Hello, {{name}}!</h1>\n  <p>Comedo audax congregatio. Cupressus tamquam amicitia angulus vivo non varietas. Volup acervus usitas.</p>\n  <a href=\"{{url}}\">Get Started</a>\n</body>\n</html>\n\"\"\"\n\n  # Plain text fallback\n  plain_text: \"\"\"\nHello, {{name}}!\n\nAmitto adinventitias subseco ambitus commemoro timor repudiandae. Totam tantillus tam cibus repudiandae carpo. Sumo celebrer curtus impedit cogo dolorum tristis alienus cupio laudantium.\n\nVisit: {{url}}\n\"\"\"\n}"
+  }
+  {
+    num: "14991"
+    title: "Quoted Keys"
+    description: "Configuration using special characters in keys."
+    shapeIndex: 4
+    mamlText: "# HTTP Headers\n{\n  Content-Type: \"text/html\"\n  X-Request-ID: \"42dec4bb-ec85-436d-ac67-93acf9356d81\"\n  Accept-Language: \"de-DE\"\n  Cache-Control: \"no-cache\"\n  X-Powered-By: \"Fastify\"\n\n  # Keys with spaces get quoted\n  \"headers with spaces\": {\n    \"custom header\": \"suffragium\"\n    \"another one\": \"tutamen\"\n  }\n}"
+  }
+  {
+    num: "14992"
+    title: "Config with Comments"
+    description: "Heavily documented configuration file."
+    shapeIndex: 4
+    mamlText: "# Application Configuration File\n# Generated by MAML examples\n{\n  # Application metadata\n  # These values are shown in the UI\n  app: {\n    # The display name shown in the UI\n    name: \"Kovacek Inc\"\n    version: \"2.0.12\" # semver\n    # Brief description for the about page\n    description: \"Polarised demand-driven help-desk\"\n  }\n\n  # Server configuration\n  server: {\n    host: \"0.0.0.0\" # bind to all interfaces\n    port: 6293 # default: 8080\n    # Number of worker processes\n    workers: 1 # set to 0 for auto\n  }\n\n  # Logging settings\n  logging: {\n    # Valid levels: debug, info, warn, error\n    level: \"info\"\n    format: \"json\" # json recommended for production\n    output: \"stdout\" # file path or stdout\n  }\n}"
+  }
+  {
+    num: "14993"
+    title: "Crontab"
+    description: "System crontab with commented schedule explanations."
+    shapeIndex: 4
+    mamlText: "# System crontab\n{\n  SHELL: \"/bin/bash\"\n  PATH: \"/usr/local/bin:/usr/bin:/bin\"\n\n  MAILTO: \"Edgar_Kirlin11@hotmail.com\"\n\n  jobs: {\n    # Full database backup at 2:00 AM daily\n    backup: {\n      schedule: \"0 2 * * *\"\n      command: \"\"\"\n/usr/local/bin/backup.sh --target /mnt/backup\n  --compress gzip\n  --notify Lucia.Metz71@yahoo.com\n\"\"\"\n    }\n\n    # Renew SSL certificates on the 1st of each month\n    certbot: {\n      schedule: \"0 0 1 * *\"\n      command: \"certbot renew --quiet\"\n    }\n\n    # Weekly log rotation and cleanup\n    logrotate: {\n      schedule: \"0 0 * * 0\"\n      command: \"\"\"\n/usr/sbin/logrotate /etc/logrotate.conf\nfind /var/log -name \"*.gz\" -mtime +30 -delete\n\"\"\"\n    }\n  }\n}"
+  }
+  {
+    num: "14994"
+    title: "Config with Comments"
+    description: "Heavily documented configuration file."
+    shapeIndex: 4
+    mamlText: "# Application Configuration File\n# Generated by MAML examples\n{\n  # Application metadata\n  # These values are shown in the UI\n  app: {\n    # The display name shown in the UI\n    name: \"Ankunding-Thiel, Treutel and Dicki\"\n    version: \"6.16.14\" # semver\n    # Brief description for the about page\n    description: \"Virtual modular moderator\"\n  }\n\n  # Server configuration\n  server: {\n    host: \"0.0.0.0\" # bind to all interfaces\n    port: 3113 # default: 8080\n    # Number of worker processes\n    workers: 15 # set to 0 for auto\n  }\n\n  # Logging settings\n  logging: {\n    # Valid levels: debug, info, warn, error\n    level: \"error\"\n    format: \"json\" # json recommended for production\n    output: \"stdout\" # file path or stdout\n  }\n}"
+  }
+  {
+    num: "14995"
+    title: "Error Messages"
+    description: "Application error messages with codes and descriptions."
+    shapeIndex: 4
+    mamlText: "# Error message catalog\n{\n  locale: \"en\"\n  errors: {\n    # Authentication errors\n    AUTH_FAILED: {\n      code: 401\n      message: \"Authentication failed\"\n      detail: \"\"\"\nYour credentials are invalid or expired.\nPlease sign in again or reset your password.\n\"\"\"\n    }\n\n    FORBIDDEN: {\n      code: 403\n      message: \"Access denied\"\n      detail: \"\"\"\nYou do not have permission to access this resource.\nContact your administrator if you believe this is an error.\n\"\"\"\n    }\n\n    NOT_FOUND: {\n      code: 404\n      message: \"Resource not found\"\n      detail: \"\"\"\nThe requested resource does not exist or has been removed.\nCheck the URL and try again.\n\"\"\"\n    }\n\n    # Rate limiting\n    RATE_LIMITED: {\n      code: 429\n      message: \"Too many requests\"\n      detail: \"\"\"\nYou have exceeded the rate limit.\nPlease wait before making another request.\n\"\"\"\n    }\n\n    INTERNAL: {\n      code: 500\n      message: \"Internal server error\"\n      detail: \"\"\"\nAn unexpected error occurred.\nOur team has been notified and is investigating.\n\"\"\"\n    }\n  }\n}"
+  }
+  {
+    num: "14996"
+    title: "Regex Patterns"
+    description: "Named regex patterns for validation."
+    shapeIndex: 4
+    mamlText: "# Validation regex patterns\n{\n  email: \"\"\"\n^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$\n\"\"\" # RFC 5322 simplified\n  phone: \"\"\"\n^\\+?[1-9]\\d{1,14}$\n\"\"\" # E.164 format\n  uuid: \"\"\"\n^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$\n\"\"\"\n  slug: \"\"\"\n^[a-z0-9]+(?:-[a-z0-9]+)*$\n\"\"\"\n\n  # Semantic versioning\n  semver: \"\"\"\n^(0|[1-9]\\d*)\\.(0|[1-9]\\d*)\\.(0|[1-9]\\d*)(?:-((?:0|[1-9]\\d*|\\d*[a-zA-Z-][0-9a-zA-Z-]*)(?:\\.(?:0|[1-9]\\d*|\\d*[a-zA-Z-][0-9a-zA-Z-]*))*))?$\n\"\"\"\n  ipv4: \"\"\"\n^((25[0-5]|(2[0-4]|1\\d|[1-9]|)\\d)\\.?\\b){4}$\n\"\"\"\n  hex_color: \"\"\"\n^#([0-9a-fA-F]{3}|[0-9a-fA-F]{6})$\n\"\"\"\n\n  # URL patterns\n  url: \"\"\"\n^https?://[^\\s/$.?#].[^\\s]*$\n\"\"\"\n}"
+  }
+  {
+    num: "14997"
+    title: "License Header"
+    description: "Source file license headers as raw strings."
+    shapeIndex: 4
+    mamlText: "# License templates\n{\n  # MIT License\n  mit: \"\"\"\nMIT License\n\nCopyright (c) 2026 Joann Schulist\n\nPermission is hereby granted, free of charge, to any person obtaining a copy\nof this software and associated documentation files (the \"Software\"), to deal\nin the Software without restriction, including without limitation the rights\nto use, copy, modify, merge, publish, distribute, sublicense, and/or sell\ncopies of the Software.\n\"\"\"\n\n  # Apache 2.0\n  apache: \"\"\"\nCopyright 2026 Abernathy LLC\n\nLicensed under the Apache License, Version 2.0 (the \"License\");\nyou may not use this file except in compliance with the License.\nYou may obtain a copy of the License at\n\n    http://www.apache.org/licenses/LICENSE-2.0\n\"\"\"\n\n  header_style: \"line\"\n  auto_insert: true\n}"
+  }
+  {
+    num: "14998"
+    title: "Changelog"
+    description: "Project changelog with raw string release notes."
+    shapeIndex: 4
+    mamlText: "# Kope Changelog\n{\n  project: \"tinderbox\"\n  releases: [\n    {\n      version: \"7.3.9\"\n      date: \"2026-08-12\"\n      notes: \"\"\"\nAdded:\n- back up virtual array\n- parse haptic transmitter\n\nFixed:\n- parse digital system\n\"\"\"\n    }\n\n    {\n      version: \"0.8.7\"\n      date: \"2026-06-29\"\n      notes: \"\"\"\nChanged:\n- input primary port\n\nRemoved:\n- generate primary array\n\"\"\"\n    }\n\n    {\n      version: \"3.12.13\"\n      date: \"2026-07-05\"\n      notes: \"\"\"\nInitial release:\n- input online microchip\n- connect neural sensor\n- override online port\n\"\"\"\n    }\n  ]\n}"
+  }
+  {
+    num: "14999"
+    title: "Nginx Snippet"
+    description: "Nginx server block as raw string configuration."
+    shapeIndex: 4
+    mamlText: "# Nginx configuration\n{\n  name: \"grimy-archaeology.name\"\n  # Server block\n  config: \"\"\"\nserver {\n    listen 443 ssl http2;\n    server_name lined-cassava.name;\n\n    ssl_certificate /etc/ssl/certs/cert.pem;\n    ssl_certificate_key /etc/ssl/private/key.pem;\n\n    location / {\n        proxy_pass http://localhost:5403;\n        proxy_set_header Host $host;\n        proxy_set_header X-Real-IP $remote_addr;\n    }\n\n    location /static/ {\n        root /var/www/html;\n        expires 30d;\n    }\n}\n\"\"\"\n\n  enabled: true\n  reload_command: \"nginx -t && systemctl reload nginx\"\n}"
+  }
+  {
+    num: "15000"
+    title: "Log Entries"
+    description: "Application log samples with raw multiline content."
+    shapeIndex: 4
+    mamlText: "{\n  application: \"experiences\"\n  log_format: \"structured\"\n  # Example stack trace\n  sample_error: \"\"\"\nError: If we generate the firewall, we can get to the PNG driver through the mobile SMTP capacitor!\n    at /etc/ppp/energetically.docx:257\n    at /lost+found/thoughtfully_sew.svg:116\n    at process.main (node:internal/main:1:1)\n\"\"\"\n\n  # Sample HTTP request\n  sample_request: \"\"\"\nGET /api/legging HTTP/1.1\nHost: lustrous-synergy.info\nUser-Agent: Mozilla/5.0 (Macintosh; U; Intel Mac OS X 10_15_7) AppleWebKit/550.97.34 (KHTML, like Gecko) Chrome/79.7.19.0 Safari/561.72.92\nAccept: application/json\n\"\"\"\n  retention_days: 83\n}"
+  }
 ]
