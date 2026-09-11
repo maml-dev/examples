@@ -10,9 +10,10 @@
 import crypto from 'node:crypto'
 import fs from 'node:fs'
 import path from 'node:path'
+import { fileURLToPath } from 'node:url'
 import { createHighlighter } from 'shiki'
 
-const ROOT = new URL('.', import.meta.url).pathname
+const ROOT = fileURLToPath(new URL('.', import.meta.url))
 const GRAMMAR = JSON.parse(fs.readFileSync(path.join(ROOT, 'grammar/maml.json'), 'utf8'))
 const STYLESHEET = path.join(ROOT, 'assets/style.css')
 const REGISTRY_PATH = path.join(ROOT, 'data/token-styles.json')
@@ -20,11 +21,11 @@ const THEMES = { light: 'catppuccin-latte', dark: 'plastic' }
 
 // Where the site is published. Used for absolute URLs, which the sitemap
 // requires and the 404 page needs because it is served at unknown paths.
-const BASE = '/examples/'
 const SITE_URL = 'https://maml-dev.github.io/examples/'
+const BASE = new URL(SITE_URL).pathname
 const SITEMAP_SHARD = 10000
 
-export const SHAPE_NAMES = [
+const SHAPE_NAMES = [
   'Flat Configs',
   'Nested Objects',
   'Table Arrays',
@@ -34,7 +35,7 @@ export const SHAPE_NAMES = [
 
 const ESCAPES = { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }
 
-export function escapeHtml(value) {
+function escapeHtml(value) {
   return String(value).replace(/[&<>"']/g, c => ESCAPES[c])
 }
 
@@ -271,9 +272,6 @@ export async function createRenderer() {
 
       return examplePage(example, others, `<pre class="shiki"><code>${tokens}</code></pre>`)
     },
-    renderIndex,
-    render404,
-    renderSitemaps,
     // Writes the stylesheet with the token rules appended, and persists any
     // classes added during this run.
     finish(assetsDir) {

@@ -4,8 +4,9 @@
 import fs from 'node:fs'
 import http from 'node:http'
 import path from 'node:path'
+import { fileURLToPath } from 'node:url'
 
-const ROOT = path.join(new URL('.', import.meta.url).pathname, 'site')
+const ROOT = path.join(fileURLToPath(new URL('.', import.meta.url)), 'site')
 const PORT = Number(process.env.PORT ?? 5173)
 
 // The site is published under a path prefix, and 404.html links are absolute,
@@ -17,10 +18,19 @@ const TYPES = {
   '.css': 'text/css; charset=utf-8',
   '.js': 'text/javascript; charset=utf-8',
   '.json': 'application/json; charset=utf-8',
+  '.xml': 'application/xml; charset=utf-8',
+  '.txt': 'text/plain; charset=utf-8',
 }
 
 function resolve(urlPath) {
-  const target = path.join(ROOT, decodeURIComponent(urlPath))
+  let decoded
+  try {
+    decoded = decodeURIComponent(urlPath)
+  } catch {
+    return null // malformed percent-encoding
+  }
+
+  const target = path.join(ROOT, decoded)
   if (!target.startsWith(ROOT)) return null
 
   for (const candidate of [target, target + '.html', path.join(target, 'index.html')]) {
@@ -31,7 +41,7 @@ function resolve(urlPath) {
 
 http.createServer((req, res) => {
   const url = new URL(req.url, 'http://localhost')
-  if (!url.pathname.startsWith(BASE)) {
+  if (url.pathname !== BASE && !url.pathname.startsWith(BASE + '/')) {
     res.writeHead(302, { location: BASE + '/' }).end()
     return
   }

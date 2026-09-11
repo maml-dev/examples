@@ -3,7 +3,8 @@ import { parse as parseValue, stringify } from 'maml'
 import { faker } from '@faker-js/faker'
 import fs from 'node:fs'
 import path from 'node:path'
-import { createRenderer } from './site.js'
+import { fileURLToPath } from 'node:url'
+import { createRenderer, render404, renderIndex, renderSitemaps } from './site.js'
 
 // ---------------------------------------------------------------------------
 // AST Builder Helpers
@@ -1850,7 +1851,7 @@ const COUNT = 100
 const CHUNK_SIZE = 1000
 const SEE_ALSO = 3
 
-const ROOT = new URL('.', import.meta.url).pathname
+const ROOT = fileURLToPath(new URL('.', import.meta.url))
 const DATA_DIR = path.join(ROOT, 'data')
 const SITE_DIR = path.join(ROOT, 'site')
 const DOC_DIR = path.join(SITE_DIR, 'doc')
@@ -1921,9 +1922,9 @@ function pickOthers(examples, example) {
 
 const existing = loadExamples()
 
-const startNum = existing.length > 0
-  ? Math.max(...existing.map(e => Number(e.num))) + 1
-  : 1
+// Reduced rather than spread: Math.max(...) overflows the stack once there
+// are enough examples to matter.
+const startNum = existing.reduce((max, example) => Math.max(max, Number(example.num)), 0) + 1
 
 // Generate new examples
 const newExamples = []
@@ -1954,6 +1955,8 @@ const targets = renderAll ? allExamples : newExamples
 // Render pages
 const siteAssets = path.join(SITE_DIR, 'assets')
 fs.mkdirSync(DOC_DIR, { recursive: true })
+// Replaced rather than merged, so a deleted asset does not linger in site/
+fs.rmSync(siteAssets, { recursive: true, force: true })
 fs.cpSync(ASSETS_DIR, siteAssets, { recursive: true })
 
 const renderer = await createRenderer()
@@ -1975,11 +1978,11 @@ const sortedLatest = [...latestByTitle.values()].sort((a, b) => {
   return a.title.localeCompare(b.title)
 })
 
-fs.writeFileSync(path.join(SITE_DIR, 'index.html'), renderer.renderIndex(sortedLatest, allExamples.length))
-fs.writeFileSync(path.join(SITE_DIR, '404.html'), renderer.render404())
+fs.writeFileSync(path.join(SITE_DIR, 'index.html'), renderIndex(sortedLatest, allExamples.length))
+fs.writeFileSync(path.join(SITE_DIR, '404.html'), render404())
 
 // Sitemap shards and robots.txt, so crawlers can reach every example
-for (const [name, contents] of Object.entries(renderer.renderSitemaps(allExamples))) {
+for (const [name, contents] of Object.entries(renderSitemaps(allExamples))) {
   fs.writeFileSync(path.join(SITE_DIR, name), contents)
 }
 
