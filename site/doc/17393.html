@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>17393 — Regex Patterns · MAML Examples</title>
+<meta name="description" content="Named regex patterns for validation.">
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+<header class="site-header">
+<a class="brand" href="../">MAML Examples</a>
+<nav><a href="https://maml.dev">maml.dev</a> <a href="https://github.com/maml-dev/examples">GitHub</a></nav>
+</header>
+<main>
+<article class="example">
+<p class="eyebrow">Example 17393</p>
+<h1>Regex Patterns</h1>
+<p class="lead">Named regex patterns for validation.</p>
+<pre class="shiki"><code><span class="s5dd799dd"># Validation regex patterns</span><br><span class="scacc819b">{</span><br><span class="s252224fb">  email</span><span class="scacc819b">:</span><span class="scde63d9e"> """</span><br><span class="s7911c4c2">^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$</span><br><span class="scde63d9e">"""</span><span class="s5dd799dd"> # RFC 5322 simplified</span><br><span class="s252224fb">  phone</span><span class="scacc819b">:</span><span class="scde63d9e"> """</span><br><span class="s7911c4c2">^\+?[1-9]\d{1,14}$</span><br><span class="scde63d9e">"""</span><span class="s5dd799dd"> # E.164 format</span><br><span class="s252224fb">  uuid</span><span class="scacc819b">:</span><span class="scde63d9e"> """</span><br><span class="s7911c4c2">^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$</span><br><span class="scde63d9e">"""</span><br><span class="s252224fb">  slug</span><span class="scacc819b">:</span><span class="scde63d9e"> """</span><br><span class="s7911c4c2">^[a-z0-9]+(?:-[a-z0-9]+)*$</span><br><span class="scde63d9e">"""</span><br><br><span class="s5dd799dd">  # Semantic versioning</span><br><span class="s252224fb">  semver</span><span class="scacc819b">:</span><span class="scde63d9e"> """</span><br><span class="s7911c4c2">^(0|[1-9]\d*)\.(0|[1-9]\d*)\.(0|[1-9]\d*)(?:-((?:0|[1-9]\d*|\d*[a-zA-Z-][0-9a-zA-Z-]*)(?:\.(?:0|[1-9]\d*|\d*[a-zA-Z-][0-9a-zA-Z-]*))*))?$</span><br><span class="scde63d9e">"""</span><br><span class="s252224fb">  ipv4</span><span class="scacc819b">:</span><span class="scde63d9e"> """</span><br><span class="s7911c4c2">^((25[0-5]|(2[0-4]|1\d|[1-9]|)\d)\.?\b){4}$</span><br><span class="scde63d9e">"""</span><br><span class="s252224fb">  hex_color</span><span class="scacc819b">:</span><span class="scde63d9e"> """</span><br><span class="s7911c4c2">^#([0-9a-fA-F]{3}|[0-9a-fA-F]{6})$</span><br><span class="scde63d9e">"""</span><br><br><span class="s5dd799dd">  # URL patterns</span><br><span class="s252224fb">  url</span><span class="scacc819b">:</span><span class="scde63d9e"> """</span><br><span class="s7911c4c2">^https?://[^\s/$.?#].[^\s]*$</span><br><span class="scde63d9e">"""</span><br><span class="scacc819b">}</span></code></pre>
+<h2>See also</h2>
+<ul class="card-list">
+<li><a href="./12979"><span class="card-num">12979</span><span class="card-title">Playlist</span></a></li>
+<li><a href="./11827"><span class="card-num">11827</span><span class="card-title">GraphQL Schema</span></a></li>
+<li><a href="./14014"><span class="card-num">14014</span><span class="card-title">S3 Config</span></a></li>
+</ul>
+</article>
+</main>
+<footer class="site-footer">Generated examples for the <a href="https://maml.dev">MAML</a> data format.</footer>
+</body>
+</html>

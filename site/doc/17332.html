@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>17332 — Auth Config · MAML Examples</title>
+<meta name="description" content="Authentication and authorization settings.">
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+<header class="site-header">
+<a class="brand" href="../">MAML Examples</a>
+<nav><a href="https://maml.dev">maml.dev</a> <a href="https://github.com/maml-dev/examples">GitHub</a></nav>
+</header>
+<main>
+<article class="example">
+<p class="eyebrow">Example 17332</p>
+<h1>Auth Config</h1>
+<p class="lead">Authentication and authorization settings.</p>
+<pre class="shiki"><code><span class="scacc819b">{</span><br><span class="s252224fb">  provider</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">oidc</span><span class="scde63d9e">"</span><br><span class="s5dd799dd">  # Token settings</span><br><span class="s252224fb">  jwt</span><span class="scacc819b">:</span><span class="scacc819b"> {</span><br><span class="s252224fb">    secret_key</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">QLxesppFqRdbsgF1p8y88w9hxHvbjPh2</span><span class="scde63d9e">"</span><br><span class="s252224fb">    algorithm</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">HS256</span><span class="scde63d9e">"</span><br><span class="s252224fb">    expiry</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">15m</span><span class="scde63d9e">"</span><br><span class="s252224fb">    refresh_expiry</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">7d</span><span class="scde63d9e">"</span><br><span class="scacc819b">  }</span><br><br><span class="s5dd799dd">  # OAuth provider</span><br><span class="s252224fb">  oauth</span><span class="scacc819b">:</span><span class="scacc819b"> {</span><br><span class="s252224fb">    client_id</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">XbfN3hwp6Qqvb9k0t8XqTDe9</span><span class="scde63d9e">"</span><br><span class="s252224fb">    authorize_url</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">https://auth.slight-hello.name/authorize</span><span class="scde63d9e">"</span><br><span class="s252224fb">    token_url</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">https://auth.productive-dish.name/token</span><span class="scde63d9e">"</span><br><span class="s252224fb">    scopes</span><span class="scacc819b">:</span><span class="scacc819b"> [</span><br><span class="scde63d9e">      "</span><span class="s7911c4c2">openid</span><span class="scde63d9e">"</span><br><span class="scde63d9e">      "</span><span class="s7911c4c2">profile</span><span class="scde63d9e">"</span><br><span class="scde63d9e">      "</span><span class="s7911c4c2">email</span><span class="scde63d9e">"</span><br><span class="scacc819b">    ]</span><br><span class="scacc819b">  }</span><br><br><span class="s252224fb">  session</span><span class="scacc819b">:</span><span class="scacc819b"> {</span><br><span class="s252224fb">    store</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">redis</span><span class="scde63d9e">"</span><br><span class="s252224fb">    cookie_name</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">sid</span><span class="scde63d9e">"</span><br><span class="s252224fb">    secure</span><span class="scacc819b">:</span><span class="sfc8ef81c"> true</span><br><span class="s252224fb">    http_only</span><span class="scacc819b">:</span><span class="sfc8ef81c"> true</span><br><span class="scacc819b">  }</span><br><span class="scacc819b">}</span></code></pre>
+<h2>See also</h2>
+<ul class="card-list">
+<li><a href="./8423"><span class="card-num">8423</span><span class="card-title">CI Pipeline</span></a></li>
+<li><a href="./4537"><span class="card-num">4537</span><span class="card-title">GraphQL Schema</span></a></li>
+<li><a href="./10036"><span class="card-num">10036</span><span class="card-title">Email Routing</span></a></li>
+</ul>
+</article>
+</main>
+<footer class="site-footer">Generated examples for the <a href="https://maml.dev">MAML</a> data format.</footer>
+</body>
+</html>

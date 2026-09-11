@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>17324 — Monitoring Config · MAML Examples</title>
+<meta name="description" content="Application monitoring and alerting setup.">
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+<header class="site-header">
+<a class="brand" href="../">MAML Examples</a>
+<nav><a href="https://maml.dev">maml.dev</a> <a href="https://github.com/maml-dev/examples">GitHub</a></nav>
+</header>
+<main>
+<article class="example">
+<p class="eyebrow">Example 17324</p>
+<h1>Monitoring Config</h1>
+<p class="lead">Application monitoring and alerting setup.</p>
+<pre class="shiki"><code><span class="scacc819b">{</span><br><span class="s252224fb">  service</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">e-commerce</span><span class="scde63d9e">"</span><br><span class="s5dd799dd">  # Prometheus metrics</span><br><span class="s252224fb">  metrics</span><span class="scacc819b">:</span><span class="scacc819b"> {</span><br><span class="s252224fb">    endpoint</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">/metrics</span><span class="scde63d9e">"</span><br><span class="s252224fb">    interval</span><span class="scacc819b">:</span><span class="s56b09ea4"> 30</span><span class="s5dd799dd"> # seconds</span><br><span class="s252224fb">    labels</span><span class="scacc819b">:</span><span class="scacc819b"> {</span><br><span class="s252224fb">      env</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">prod</span><span class="scde63d9e">"</span><br><span class="s252224fb">      region</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">eu-west</span><span class="scde63d9e">"</span><br><span class="s252224fb">      team</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">grocery</span><span class="scde63d9e">"</span><br><span class="scacc819b">    }</span><br><span class="scacc819b">  }</span><br><br><span class="s5dd799dd">  # Alert thresholds</span><br><span class="s252224fb">  alerts</span><span class="scacc819b">:</span><span class="scacc819b"> {</span><br><span class="s252224fb">    cpu_threshold</span><span class="scacc819b">:</span><span class="s56b09ea4"> 78</span><br><span class="s252224fb">    memory_threshold</span><span class="scacc819b">:</span><span class="s56b09ea4"> 78</span><br><span class="s252224fb">    latency_p99_ms</span><span class="scacc819b">:</span><span class="s56b09ea4"> 130</span><br><span class="s252224fb">    error_rate</span><span class="scacc819b">:</span><span class="s56b09ea4"> 0.01</span><br><span class="s252224fb">    notification</span><span class="scacc819b">:</span><span class="scacc819b"> {</span><br><span class="s252224fb">      channel</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">#ops-alerts</span><span class="scde63d9e">"</span><br><span class="s252224fb">      severity</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">critical</span><span class="scde63d9e">"</span><br><span class="scacc819b">    }</span><br><span class="scacc819b">  }</span><br><span class="scacc819b">}</span></code></pre>
+<h2>See also</h2>
+<ul class="card-list">
+<li><a href="./10034"><span class="card-num">10034</span><span class="card-title">Search Config</span></a></li>
+<li><a href="./8458"><span class="card-num">8458</span><span class="card-title">Bookmarks</span></a></li>
+<li><a href="./15704"><span class="card-num">15704</span><span class="card-title">Locale Config</span></a></li>
+</ul>
+</article>
+</main>
+<footer class="site-footer">Generated examples for the <a href="https://maml.dev">MAML</a> data format.</footer>
+</body>
+</html>
