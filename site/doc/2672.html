@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>2672 — i18n Config · MAML Examples</title>
+<meta name="description" content="Internationalization and locale settings.">
+<link rel="stylesheet" href="../assets/style.css">
+<link rel="stylesheet" href="../assets/tokens.css">
+</head>
+<body>
+<header class="site-header">
+  <a class="brand" href="../">MAML Examples</a>
+  <nav>
+    <a href="https://maml.dev">maml.dev</a>
+    <a href="https://github.com/maml-dev/examples">GitHub</a>
+  </nav>
+</header>
+<main>
+<article class="example">
+  <p class="eyebrow">Example 2672</p>
+  <h1>i18n Config</h1>
+  <p class="lead">Internationalization and locale settings.</p>
+  <pre class="shiki shiki-themes catppuccin-latte plastic" style="--shiki-light:#4c4f69;--shiki-dark:#A9B2C3;--shiki-light-bg:#eff1f5;--shiki-dark-bg:#21252B" tabindex="0"><code><span class="line"><span class="scacc819b">{</span></span>
+<span class="line"><span class="s252224fb">  default_locale</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">en-US</span><span class="scde63d9e">"</span></span>
+<span class="line"><span class="s252224fb">  fallback</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">en</span><span class="scde63d9e">"</span></span>
+<span class="line"><span class="s252224fb">  locales</span><span class="scacc819b">:</span><span class="scacc819b"> [</span></span>
+<span class="line"><span class="scacc819b">    {</span></span>
+<span class="line"><span class="s252224fb">      code</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">en</span><span class="scde63d9e">"</span></span>
+<span class="line"><span class="s252224fb">      name</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">English</span><span class="scde63d9e">"</span></span>
+<span class="line"><span class="s252224fb">      dir</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">ltr</span><span class="scde63d9e">"</span></span>
+<span class="line"><span class="scacc819b">    }</span></span>
+<span class="line"></span>
+<span class="line"><span class="scacc819b">    {</span></span>
+<span class="line"><span class="s252224fb">      code</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">fr</span><span class="scde63d9e">"</span></span>
+<span class="line"><span class="s252224fb">      name</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">Français</span><span class="scde63d9e">"</span></span>
+<span class="line"><span class="s252224fb">      dir</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">ltr</span><span class="scde63d9e">"</span></span>
+<span class="line"><span class="scacc819b">    }</span></span>
+<span class="line"></span>
+<span class="line"><span class="scacc819b">    {</span></span>
+<span class="line"><span class="s252224fb">      code</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">ar</span><span class="scde63d9e">"</span></span>
+<span class="line"><span class="s252224fb">      name</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">العربية</span><span class="scde63d9e">"</span></span>
+<span class="line"><span class="s252224fb">      dir</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">rtl</span><span class="scde63d9e">"</span></span>
+<span class="line"><span class="scacc819b">    }</span></span>
+<span class="line"></span>
+<span class="line"><span class="scacc819b">    {</span></span>
+<span class="line"><span class="s252224fb">      code</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">ja</span><span class="scde63d9e">"</span></span>
+<span class="line"><span class="s252224fb">      name</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">日本語</span><span class="scde63d9e">"</span></span>
+<span class="line"><span class="s252224fb">      dir</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">ltr</span><span class="scde63d9e">"</span></span>
+<span class="line"><span class="scacc819b">    }</span></span>
+<span class="line"><span class="scacc819b">  ]</span></span>
+<span class="line"></span>
+<span class="line"><span class="s252224fb">  detection</span><span class="scacc819b">:</span><span class="scacc819b"> {</span></span>
+<span class="line"><span class="s252224fb">    order</span><span class="scacc819b">:</span><span class="scacc819b"> [</span></span>
+<span class="line"><span class="scde63d9e">      "</span><span class="s7911c4c2">cookie</span><span class="scde63d9e">"</span></span>
+<span class="line"><span class="scde63d9e">      "</span><span class="s7911c4c2">header</span><span class="scde63d9e">"</span></span>
+<span class="line"><span class="scde63d9e">      "</span><span class="s7911c4c2">query</span><span class="scde63d9e">"</span></span>
+<span class="line"><span class="scacc819b">    ]</span></span>
+<span class="line"><span class="s252224fb">    cookie_name</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">lang</span><span class="scde63d9e">"</span></span>
+<span class="line"><span class="scacc819b">  }</span></span>
+<span class="line"><span class="scacc819b">}</span></span></code></pre>
+  <h2>See also</h2>
+  <ul class="card-list">
+    <li><a href="./16452"><span class="card-num">16452</span><span class="card-title">Font Stack</span></a></li>
+    <li><a href="./145"><span class="card-num">145</span><span class="card-title">Keyboard Shortcuts</span></a></li>
+    <li><a href="./17198"><span class="card-num">17198</span><span class="card-title">Config with Comments</span></a></li>
+  </ul>
+</article>
+</main>
+<footer class="site-footer">
+  Generated examples for the <a href="https://maml.dev">MAML</a> data format.
+</footer>
+</body>
+</html>

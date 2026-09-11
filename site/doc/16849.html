@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>16849 — Daily Agenda · MAML Examples</title>
+<meta name="description" content="A day schedule with timed events.">
+<link rel="stylesheet" href="../assets/style.css">
+<link rel="stylesheet" href="../assets/tokens.css">
+</head>
+<body>
+<header class="site-header">
+  <a class="brand" href="../">MAML Examples</a>
+  <nav>
+    <a href="https://maml.dev">maml.dev</a>
+    <a href="https://github.com/maml-dev/examples">GitHub</a>
+  </nav>
+</header>
+<main>
+<article class="example">
+  <p class="eyebrow">Example 16849</p>
+  <h1>Daily Agenda</h1>
+  <p class="lead">A day schedule with timed events.</p>
+  <pre class="shiki shiki-themes catppuccin-latte plastic" style="--shiki-light:#4c4f69;--shiki-dark:#A9B2C3;--shiki-light-bg:#eff1f5;--shiki-dark-bg:#21252B" tabindex="0"><code><span class="line"><span class="scacc819b">{</span></span>
+<span class="line"><span class="s252224fb">  date</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">2026-09-10</span><span class="scde63d9e">"</span></span>
+<span class="line"><span class="s252224fb">  events</span><span class="scacc819b">:</span><span class="scacc819b"> [</span></span>
+<span class="line"><span class="scacc819b">    {</span></span>
+<span class="line"><span class="s252224fb">      time</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">09:30</span><span class="scde63d9e">"</span></span>
+<span class="line"><span class="s252224fb">      title</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">Nihil alius cupiditate.</span><span class="scde63d9e">"</span></span>
+<span class="line"><span class="s252224fb">      duration</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">2h</span><span class="scde63d9e">"</span></span>
+<span class="line"><span class="s252224fb">      location</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">Feil, Wunsch and Oberbrunner HQ</span><span class="scde63d9e">"</span></span>
+<span class="line"><span class="scacc819b">    }</span></span>
+<span class="line"></span>
+<span class="line"><span class="scacc819b">    {</span></span>
+<span class="line"><span class="s252224fb">      time</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">17:15</span><span class="scde63d9e">"</span></span>
+<span class="line"><span class="s252224fb">      title</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">Comis ipsa demoror ducimus comitatus terga.</span><span class="scde63d9e">"</span></span>
+<span class="line"><span class="s252224fb">      duration</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">1h</span><span class="scde63d9e">"</span></span>
+<span class="line"><span class="s252224fb">      location</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">Room D6</span><span class="scde63d9e">"</span></span>
+<span class="line"><span class="scacc819b">    }</span></span>
+<span class="line"></span>
+<span class="line"><span class="scacc819b">    {</span></span>
+<span class="line"><span class="s252224fb">      time</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">16:00</span><span class="scde63d9e">"</span></span>
+<span class="line"><span class="s252224fb">      title</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">Thema sperno crinis.</span><span class="scde63d9e">"</span></span>
+<span class="line"><span class="s252224fb">      duration</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">1h30m</span><span class="scde63d9e">"</span></span>
+<span class="line"><span class="s252224fb">      location</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">Room M6</span><span class="scde63d9e">"</span></span>
+<span class="line"><span class="scacc819b">    }</span></span>
+<span class="line"></span>
+<span class="line"><span class="scacc819b">    {</span></span>
+<span class="line"><span class="s252224fb">      time</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">16:15</span><span class="scde63d9e">"</span></span>
+<span class="line"><span class="s252224fb">      title</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">Sordeo considero corporis cinis curvo odit.</span><span class="scde63d9e">"</span></span>
+<span class="line"><span class="s252224fb">      duration</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">1h30m</span><span class="scde63d9e">"</span></span>
+<span class="line"><span class="s252224fb">      location</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">Lobby</span><span class="scde63d9e">"</span></span>
+<span class="line"><span class="scacc819b">    }</span></span>
+<span class="line"></span>
+<span class="line"><span class="scacc819b">    {</span></span>
+<span class="line"><span class="s252224fb">      time</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">20:45</span><span class="scde63d9e">"</span></span>
+<span class="line"><span class="s252224fb">      title</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">Delectus tenuis vaco.</span><span class="scde63d9e">"</span></span>
+<span class="line"><span class="s252224fb">      duration</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">1h</span><span class="scde63d9e">"</span></span>
+<span class="line"><span class="s252224fb">      location</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">Room P6</span><span class="scde63d9e">"</span></span>
+<span class="line"><span class="scacc819b">    }</span></span>
+<span class="line"></span>
+<span class="line"><span class="scacc819b">    {</span></span>
+<span class="line"><span class="s252224fb">      time</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">17:45</span><span class="scde63d9e">"</span></span>
+<span class="line"><span class="s252224fb">      title</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">Aggredior claustrum est amet stillicidium.</span><span class="scde63d9e">"</span></span>
+<span class="line"><span class="s252224fb">      duration</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">1h</span><span class="scde63d9e">"</span></span>
+<span class="line"><span class="s252224fb">      location</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">Gorczany-Gibson - Reichel HQ</span><span class="scde63d9e">"</span></span>
+<span class="line"><span class="scacc819b">    }</span></span>
+<span class="line"></span>
+<span class="line"><span class="scacc819b">    {</span></span>
+<span class="line"><span class="s252224fb">      time</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">17:00</span><span class="scde63d9e">"</span></span>
+<span class="line"><span class="s252224fb">      title</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">Maiores chirographum stultus benevolentia rem.</span><span class="scde63d9e">"</span></span>
+<span class="line"><span class="s252224fb">      duration</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">15m</span><span class="scde63d9e">"</span></span>
+<span class="line"><span class="s252224fb">      location</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">Virtual</span><span class="scde63d9e">"</span></span>
+<span class="line"><span class="scacc819b">    }</span></span>
+<span class="line"></span>
+<span class="line"><span class="scacc819b">    {</span></span>
+<span class="line"><span class="s252224fb">      time</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">19:00</span><span class="scde63d9e">"</span></span>
+<span class="line"><span class="s252224fb">      title</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">Capitulus reiciendis valeo comedo ciminatio.</span><span class="scde63d9e">"</span></span>
+<span class="line"><span class="s252224fb">      duration</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">15m</span><span class="scde63d9e">"</span></span>
+<span class="line"><span class="s252224fb">      location</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">Virtual</span><span class="scde63d9e">"</span></span>
+<span class="line"><span class="scacc819b">    }</span></span>
+<span class="line"><span class="scacc819b">  ]</span></span>
+<span class="line"><span class="scacc819b">}</span></span></code></pre>
+  <h2>See also</h2>
+  <ul class="card-list">
+    <li><a href="./9134"><span class="card-num">9134</span><span class="card-title">API Gateway</span></a></li>
+    <li><a href="./13667"><span class="card-num">13667</span><span class="card-title">Playlist</span></a></li>
+    <li><a href="./9323"><span class="card-num">9323</span><span class="card-title">Auth Config</span></a></li>
+  </ul>
+</article>
+</main>
+<footer class="site-footer">
+  Generated examples for the <a href="https://maml.dev">MAML</a> data format.
+</footer>
+</body>
+</html>

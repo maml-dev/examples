@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>15935 — API Gateway · MAML Examples</title>
+<meta name="description" content="API gateway routing and middleware configuration.">
+<link rel="stylesheet" href="../assets/style.css">
+<link rel="stylesheet" href="../assets/tokens.css">
+</head>
+<body>
+<header class="site-header">
+  <a class="brand" href="../">MAML Examples</a>
+  <nav>
+    <a href="https://maml.dev">maml.dev</a>
+    <a href="https://github.com/maml-dev/examples">GitHub</a>
+  </nav>
+</header>
+<main>
+<article class="example">
+  <p class="eyebrow">Example 15935</p>
+  <h1>API Gateway</h1>
+  <p class="lead">API gateway routing and middleware configuration.</p>
+  <pre class="shiki shiki-themes catppuccin-latte plastic" style="--shiki-light:#4c4f69;--shiki-dark:#A9B2C3;--shiki-light-bg:#eff1f5;--shiki-dark-bg:#21252B" tabindex="0"><code><span class="line"><span class="scacc819b">{</span></span>
+<span class="line"><span class="s252224fb">  gateway</span><span class="scacc819b">:</span><span class="scacc819b"> {</span></span>
+<span class="line"><span class="s252224fb">    host</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">api.robust-vista.biz</span><span class="scde63d9e">"</span></span>
+<span class="line"><span class="s252224fb">    port</span><span class="scacc819b">:</span><span class="s56b09ea4"> 8443</span></span>
+<span class="line"><span class="s252224fb">    protocol</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">https</span><span class="scde63d9e">"</span></span>
+<span class="line"><span class="scacc819b">  }</span></span>
+<span class="line"></span>
+<span class="line"><span class="s5dd799dd">  # Rate limiting</span></span>
+<span class="line"><span class="s252224fb">  rate_limit</span><span class="scacc819b">:</span><span class="scacc819b"> {</span></span>
+<span class="line"><span class="s252224fb">    enabled</span><span class="scacc819b">:</span><span class="sfc8ef81c"> true</span></span>
+<span class="line"><span class="s252224fb">    window</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">5m</span><span class="scde63d9e">"</span></span>
+<span class="line"><span class="s252224fb">    max_requests</span><span class="scacc819b">:</span><span class="s56b09ea4"> 3709</span></span>
+<span class="line"><span class="s252224fb">    by</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">api_key</span><span class="scde63d9e">"</span></span>
+<span class="line"><span class="scacc819b">  }</span></span>
+<span class="line"></span>
+<span class="line"><span class="s5dd799dd">  # CORS policy</span></span>
+<span class="line"><span class="s252224fb">  cors</span><span class="scacc819b">:</span><span class="scacc819b"> {</span></span>
+<span class="line"><span class="s252224fb">    enabled</span><span class="scacc819b">:</span><span class="sfc8ef81c"> true</span></span>
+<span class="line"><span class="s252224fb">    origins</span><span class="scacc819b">:</span><span class="scacc819b"> [</span></span>
+<span class="line"><span class="scde63d9e">      "</span><span class="s7911c4c2">https://finished-reservation.org</span><span class="scde63d9e">"</span></span>
+<span class="line"><span class="scde63d9e">      "</span><span class="s7911c4c2">https://app.striking-thyme.com</span><span class="scde63d9e">"</span></span>
+<span class="line"><span class="scacc819b">    ]</span></span>
+<span class="line"><span class="s252224fb">    methods</span><span class="scacc819b">:</span><span class="scacc819b"> [</span></span>
+<span class="line"><span class="scde63d9e">      "</span><span class="s7911c4c2">GET</span><span class="scde63d9e">"</span></span>
+<span class="line"><span class="scde63d9e">      "</span><span class="s7911c4c2">POST</span><span class="scde63d9e">"</span></span>
+<span class="line"><span class="scde63d9e">      "</span><span class="s7911c4c2">PUT</span><span class="scde63d9e">"</span></span>
+<span class="line"><span class="scde63d9e">      "</span><span class="s7911c4c2">DELETE</span><span class="scde63d9e">"</span></span>
+<span class="line"><span class="scacc819b">    ]</span></span>
+<span class="line"><span class="s252224fb">    max_age</span><span class="scacc819b">:</span><span class="s56b09ea4"> 3600</span></span>
+<span class="line"><span class="scacc819b">  }</span></span>
+<span class="line"></span>
+<span class="line"><span class="s252224fb">  cache</span><span class="scacc819b">:</span><span class="scacc819b"> {</span></span>
+<span class="line"><span class="s252224fb">    enabled</span><span class="scacc819b">:</span><span class="sfc8ef81c"> false</span></span>
+<span class="line"><span class="s252224fb">    ttl</span><span class="scacc819b">:</span><span class="s56b09ea4"> 2711</span></span>
+<span class="line"><span class="s252224fb">    store</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">redis</span><span class="scde63d9e">"</span></span>
+<span class="line"><span class="scacc819b">  }</span></span>
+<span class="line"><span class="scacc819b">}</span></span></code></pre>
+  <h2>See also</h2>
+  <ul class="card-list">
+    <li><a href="./13116"><span class="card-num">13116</span><span class="card-title">Locale Config</span></a></li>
+    <li><a href="./5809"><span class="card-num">5809</span><span class="card-title">DNS Config</span></a></li>
+    <li><a href="./1910"><span class="card-num">1910</span><span class="card-title">Database Config</span></a></li>
+  </ul>
+</article>
+</main>
+<footer class="site-footer">
+  Generated examples for the <a href="https://maml.dev">MAML</a> data format.
+</footer>
+</body>
+</html>

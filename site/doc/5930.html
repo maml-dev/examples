@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>5930 — Terraform Resource · MAML Examples</title>
+<meta name="description" content="Infrastructure as code resource definition.">
+<link rel="stylesheet" href="../assets/style.css">
+<link rel="stylesheet" href="../assets/tokens.css">
+</head>
+<body>
+<header class="site-header">
+  <a class="brand" href="../">MAML Examples</a>
+  <nav>
+    <a href="https://maml.dev">maml.dev</a>
+    <a href="https://github.com/maml-dev/examples">GitHub</a>
+  </nav>
+</header>
+<main>
+<article class="example">
+  <p class="eyebrow">Example 5930</p>
+  <h1>Terraform Resource</h1>
+  <p class="lead">Infrastructure as code resource definition.</p>
+  <pre class="shiki shiki-themes catppuccin-latte plastic" style="--shiki-light:#4c4f69;--shiki-dark:#A9B2C3;--shiki-light-bg:#eff1f5;--shiki-dark-bg:#21252B" tabindex="0"><code><span class="line"><span class="scacc819b">{</span></span>
+<span class="line"><span class="s252224fb">  provider</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">aws</span><span class="scde63d9e">"</span></span>
+<span class="line"><span class="s252224fb">  region</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">asia-southeast1</span><span class="scde63d9e">"</span></span>
+<span class="line"><span class="s252224fb">  resources</span><span class="scacc819b">:</span><span class="scacc819b"> {</span></span>
+<span class="line"><span class="s5dd799dd">    # Network</span></span>
+<span class="line"><span class="s252224fb">    vpc</span><span class="scacc819b">:</span><span class="scacc819b"> {</span></span>
+<span class="line"><span class="s252224fb">      cidr_block</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">10.65.0.0/16</span><span class="scde63d9e">"</span></span>
+<span class="line"><span class="s252224fb">      enable_dns</span><span class="scacc819b">:</span><span class="sfc8ef81c"> true</span></span>
+<span class="line"><span class="s252224fb">      tags</span><span class="scacc819b">:</span><span class="scacc819b"> {</span></span>
+<span class="line"><span class="s252224fb">        Name</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">warming-vpc</span><span class="scde63d9e">"</span></span>
+<span class="line"><span class="s252224fb">        Environment</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">staging</span><span class="scde63d9e">"</span></span>
+<span class="line"><span class="scacc819b">      }</span></span>
+<span class="line"><span class="scacc819b">    }</span></span>
+<span class="line"></span>
+<span class="line"><span class="s5dd799dd">    # Compute</span></span>
+<span class="line"><span class="s252224fb">    instance</span><span class="scacc819b">:</span><span class="scacc819b"> {</span></span>
+<span class="line"><span class="s252224fb">      ami</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">ami-3cc5ab20</span><span class="scde63d9e">"</span></span>
+<span class="line"><span class="s252224fb">      type</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">t3.small</span><span class="scde63d9e">"</span></span>
+<span class="line"><span class="s252224fb">      key_name</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">punctuation-key</span><span class="scde63d9e">"</span></span>
+<span class="line"><span class="s252224fb">      monitoring</span><span class="scacc819b">:</span><span class="sfc8ef81c"> true</span></span>
+<span class="line"><span class="s252224fb">      root_volume</span><span class="scacc819b">:</span><span class="scacc819b"> {</span></span>
+<span class="line"><span class="s252224fb">        size</span><span class="scacc819b">:</span><span class="s56b09ea4"> 50</span></span>
+<span class="line"><span class="s252224fb">        type</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">gp3</span><span class="scde63d9e">"</span></span>
+<span class="line"><span class="s252224fb">        encrypted</span><span class="scacc819b">:</span><span class="sfc8ef81c"> true</span></span>
+<span class="line"><span class="scacc819b">      }</span></span>
+<span class="line"><span class="scacc819b">    }</span></span>
+<span class="line"></span>
+<span class="line"><span class="s5dd799dd">    # Security</span></span>
+<span class="line"><span class="s252224fb">    security_group</span><span class="scacc819b">:</span><span class="scacc819b"> {</span></span>
+<span class="line"><span class="s252224fb">      name</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">allow-ssh</span><span class="scde63d9e">"</span></span>
+<span class="line"><span class="s252224fb">      ingress_port</span><span class="scacc819b">:</span><span class="s56b09ea4"> 8080</span></span>
+<span class="line"><span class="s252224fb">      ingress_cidr</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">0.0.0.0/0</span><span class="scde63d9e">"</span></span>
+<span class="line"><span class="scacc819b">    }</span></span>
+<span class="line"><span class="scacc819b">  }</span></span>
+<span class="line"><span class="scacc819b">}</span></span></code></pre>
+  <h2>See also</h2>
+  <ul class="card-list">
+    <li><a href="./5546"><span class="card-num">5546</span><span class="card-title">Server Inventory</span></a></li>
+    <li><a href="./9164"><span class="card-num">9164</span><span class="card-title">Migration Plan</span></a></li>
+    <li><a href="./2311"><span class="card-num">2311</span><span class="card-title">Locale Config</span></a></li>
+  </ul>
+</article>
+</main>
+<footer class="site-footer">
+  Generated examples for the <a href="https://maml.dev">MAML</a> data format.
+</footer>
+</body>
+</html>

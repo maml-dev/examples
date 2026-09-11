@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>13323 — Cloud Deploy Config · MAML Examples</title>
+<meta name="description" content="Cloud deployment infrastructure configuration.">
+<link rel="stylesheet" href="../assets/style.css">
+<link rel="stylesheet" href="../assets/tokens.css">
+</head>
+<body>
+<header class="site-header">
+  <a class="brand" href="../">MAML Examples</a>
+  <nav>
+    <a href="https://maml.dev">maml.dev</a>
+    <a href="https://github.com/maml-dev/examples">GitHub</a>
+  </nav>
+</header>
+<main>
+<article class="example">
+  <p class="eyebrow">Example 13323</p>
+  <h1>Cloud Deploy Config</h1>
+  <p class="lead">Cloud deployment infrastructure configuration.</p>
+  <pre class="shiki shiki-themes catppuccin-latte plastic" style="--shiki-light:#4c4f69;--shiki-dark:#A9B2C3;--shiki-light-bg:#eff1f5;--shiki-dark-bg:#21252B" tabindex="0"><code><span class="line"><span class="scacc819b">{</span></span>
+<span class="line"><span class="s252224fb">  provider</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">aws</span><span class="scde63d9e">"</span></span>
+<span class="line"><span class="s252224fb">  region</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">ap-southeast-1</span><span class="scde63d9e">"</span></span>
+<span class="line"></span>
+<span class="line"><span class="s5dd799dd">  # Compute resources</span></span>
+<span class="line"><span class="s252224fb">  compute</span><span class="scacc819b">:</span><span class="scacc819b"> {</span></span>
+<span class="line"><span class="s252224fb">    instance_type</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">e2-standard-4</span><span class="scde63d9e">"</span></span>
+<span class="line"><span class="s252224fb">    count</span><span class="scacc819b">:</span><span class="s56b09ea4"> 2</span></span>
+<span class="line"><span class="s252224fb">    auto_scaling</span><span class="scacc819b">:</span><span class="scacc819b"> {</span></span>
+<span class="line"><span class="s252224fb">      enabled</span><span class="scacc819b">:</span><span class="sfc8ef81c"> true</span></span>
+<span class="line"><span class="s252224fb">      min</span><span class="scacc819b">:</span><span class="s56b09ea4"> 2</span></span>
+<span class="line"><span class="s252224fb">      max</span><span class="scacc819b">:</span><span class="s56b09ea4"> 17</span></span>
+<span class="line"><span class="s252224fb">      target_cpu</span><span class="scacc819b">:</span><span class="s56b09ea4"> 64</span></span>
+<span class="line"><span class="scacc819b">    }</span></span>
+<span class="line"><span class="scacc819b">  }</span></span>
+<span class="line"></span>
+<span class="line"><span class="s252224fb">  storage</span><span class="scacc819b">:</span><span class="scacc819b"> {</span></span>
+<span class="line"><span class="s252224fb">    type</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">hdd</span><span class="scde63d9e">"</span></span>
+<span class="line"><span class="s252224fb">    size_gb</span><span class="scacc819b">:</span><span class="s56b09ea4"> 434</span></span>
+<span class="line"><span class="s252224fb">    encrypted</span><span class="scacc819b">:</span><span class="sfc8ef81c"> true</span></span>
+<span class="line"><span class="scacc819b">  }</span></span>
+<span class="line"></span>
+<span class="line"><span class="s252224fb">  networking</span><span class="scacc819b">:</span><span class="scacc819b"> {</span></span>
+<span class="line"><span class="s252224fb">    vpc</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">vpc-f0b7afbc</span><span class="scde63d9e">"</span></span>
+<span class="line"><span class="s252224fb">    subnet</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">10.87.0.0/16</span><span class="scde63d9e">"</span></span>
+<span class="line"><span class="s252224fb">    public_ip</span><span class="scacc819b">:</span><span class="sfc8ef81c"> false</span></span>
+<span class="line"><span class="scacc819b">  }</span></span>
+<span class="line"><span class="scacc819b">}</span></span></code></pre>
+  <h2>See also</h2>
+  <ul class="card-list">
+    <li><a href="./8817"><span class="card-num">8817</span><span class="card-title">DNS Config</span></a></li>
+    <li><a href="./4273"><span class="card-num">4273</span><span class="card-title">Webhook Config</span></a></li>
+    <li><a href="./6825"><span class="card-num">6825</span><span class="card-title">Backup Strategy</span></a></li>
+  </ul>
+</article>
+</main>
+<footer class="site-footer">
+  Generated examples for the <a href="https://maml.dev">MAML</a> data format.
+</footer>
+</body>
+</html>

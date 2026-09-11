@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>7982 — Shell Scripts · MAML Examples</title>
+<meta name="description" content="Embedded shell scripts as raw strings.">
+<link rel="stylesheet" href="../assets/style.css">
+<link rel="stylesheet" href="../assets/tokens.css">
+</head>
+<body>
+<header class="site-header">
+  <a class="brand" href="../">MAML Examples</a>
+  <nav>
+    <a href="https://maml.dev">maml.dev</a>
+    <a href="https://github.com/maml-dev/examples">GitHub</a>
+  </nav>
+</header>
+<main>
+<article class="example">
+  <p class="eyebrow">Example 7982</p>
+  <h1>Shell Scripts</h1>
+  <p class="lead">Embedded shell scripts as raw strings.</p>
+  <pre class="shiki shiki-themes catppuccin-latte plastic" style="--shiki-light:#4c4f69;--shiki-dark:#A9B2C3;--shiki-light-bg:#eff1f5;--shiki-dark-bg:#21252B" tabindex="0"><code><span class="line"><span class="s5dd799dd"># Automation scripts</span></span>
+<span class="line"><span class="scacc819b">{</span></span>
+<span class="line"><span class="s252224fb">  name</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">backup</span><span class="scde63d9e">"</span></span>
+<span class="line"><span class="s252224fb">  shell</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">/bin/bash</span><span class="scde63d9e">"</span></span>
+<span class="line"><span class="s5dd799dd">  # Initial setup script</span></span>
+<span class="line"><span class="s252224fb">  setup</span><span class="scacc819b">:</span><span class="scde63d9e"> """</span></span>
+<span class="line"><span class="s7911c4c2">#!/bin/bash</span></span>
+<span class="line"><span class="s7911c4c2">set -euo pipefail</span></span>
+<span class="line"></span>
+<span class="line"><span class="s7911c4c2">echo "Setting up environment..."</span></span>
+<span class="line"><span class="s7911c4c2">npm install</span></span>
+<span class="line"><span class="s7911c4c2">npm run build</span></span>
+<span class="line"><span class="s7911c4c2">echo "Done!"</span></span>
+<span class="line"><span class="scde63d9e">"""</span></span>
+<span class="line"></span>
+<span class="line"><span class="s5dd799dd">  # Deployment script</span></span>
+<span class="line"><span class="s252224fb">  deploy</span><span class="scacc819b">:</span><span class="scde63d9e"> """</span></span>
+<span class="line"><span class="s7911c4c2">#!/bin/bash</span></span>
+<span class="line"><span class="s7911c4c2">set -euo pipefail</span></span>
+<span class="line"></span>
+<span class="line"><span class="s7911c4c2">VERSION=$(git describe --tags)</span></span>
+<span class="line"><span class="s7911c4c2">echo "Deploying $VERSION"</span></span>
+<span class="line"></span>
+<span class="line"><span class="s7911c4c2">docker build -t app:$VERSION .</span></span>
+<span class="line"><span class="s7911c4c2">docker push app:$VERSION</span></span>
+<span class="line"><span class="s7911c4c2">kubectl set image deployment/app app=app:$VERSION</span></span>
+<span class="line"></span>
+<span class="line"><span class="s7911c4c2">echo "Deployed $VERSION successfully"</span></span>
+<span class="line"><span class="scde63d9e">"""</span></span>
+<span class="line"></span>
+<span class="line"><span class="s252224fb">  timeout</span><span class="scacc819b">:</span><span class="s56b09ea4"> 226</span><span class="s5dd799dd"> # seconds</span></span>
+<span class="line"><span class="s252224fb">  retry</span><span class="scacc819b">:</span><span class="s56b09ea4"> 4</span></span>
+<span class="line"><span class="scacc819b">}</span></span></code></pre>
+  <h2>See also</h2>
+  <ul class="card-list">
+    <li><a href="./11447"><span class="card-num">11447</span><span class="card-title">Environment Vars</span></a></li>
+    <li><a href="./4028"><span class="card-num">4028</span><span class="card-title">API Gateway</span></a></li>
+    <li><a href="./3988"><span class="card-num">3988</span><span class="card-title">Crontab</span></a></li>
+  </ul>
+</article>
+</main>
+<footer class="site-footer">
+  Generated examples for the <a href="https://maml.dev">MAML</a> data format.
+</footer>
+</body>
+</html>

@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>13950 — Daily Agenda · MAML Examples</title>
+<meta name="description" content="A day schedule with timed events.">
+<link rel="stylesheet" href="../assets/style.css">
+<link rel="stylesheet" href="../assets/tokens.css">
+</head>
+<body>
+<header class="site-header">
+  <a class="brand" href="../">MAML Examples</a>
+  <nav>
+    <a href="https://maml.dev">maml.dev</a>
+    <a href="https://github.com/maml-dev/examples">GitHub</a>
+  </nav>
+</header>
+<main>
+<article class="example">
+  <p class="eyebrow">Example 13950</p>
+  <h1>Daily Agenda</h1>
+  <p class="lead">A day schedule with timed events.</p>
+  <pre class="shiki shiki-themes catppuccin-latte plastic" style="--shiki-light:#4c4f69;--shiki-dark:#A9B2C3;--shiki-light-bg:#eff1f5;--shiki-dark-bg:#21252B" tabindex="0"><code><span class="line"><span class="scacc819b">{</span></span>
+<span class="line"><span class="s252224fb">  date</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">2026-08-21</span><span class="scde63d9e">"</span></span>
+<span class="line"><span class="s252224fb">  events</span><span class="scacc819b">:</span><span class="scacc819b"> [</span></span>
+<span class="line"><span class="scacc819b">    {</span></span>
+<span class="line"><span class="s252224fb">      time</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">13:15</span><span class="scde63d9e">"</span></span>
+<span class="line"><span class="s252224fb">      title</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">Abscido tyrannus amor.</span><span class="scde63d9e">"</span></span>
+<span class="line"><span class="s252224fb">      duration</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">1h30m</span><span class="scde63d9e">"</span></span>
+<span class="line"><span class="s252224fb">      location</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">Main Hall</span><span class="scde63d9e">"</span></span>
+<span class="line"><span class="scacc819b">    }</span></span>
+<span class="line"></span>
+<span class="line"><span class="scacc819b">    {</span></span>
+<span class="line"><span class="s252224fb">      time</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">16:45</span><span class="scde63d9e">"</span></span>
+<span class="line"><span class="s252224fb">      title</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">Compello vociferor quam cura video defleo.</span><span class="scde63d9e">"</span></span>
+<span class="line"><span class="s252224fb">      duration</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">1h</span><span class="scde63d9e">"</span></span>
+<span class="line"><span class="s252224fb">      location</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">Lobby</span><span class="scde63d9e">"</span></span>
+<span class="line"><span class="scacc819b">    }</span></span>
+<span class="line"></span>
+<span class="line"><span class="scacc819b">    {</span></span>
+<span class="line"><span class="s252224fb">      time</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">11:45</span><span class="scde63d9e">"</span></span>
+<span class="line"><span class="s252224fb">      title</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">Animus corporis vulpes concedo admitto.</span><span class="scde63d9e">"</span></span>
+<span class="line"><span class="s252224fb">      duration</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">1h</span><span class="scde63d9e">"</span></span>
+<span class="line"><span class="s252224fb">      location</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">Lubowitz, Bosco and Blick HQ</span><span class="scde63d9e">"</span></span>
+<span class="line"><span class="scacc819b">    }</span></span>
+<span class="line"></span>
+<span class="line"><span class="scacc819b">    {</span></span>
+<span class="line"><span class="s252224fb">      time</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">12:30</span><span class="scde63d9e">"</span></span>
+<span class="line"><span class="s252224fb">      title</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">Aveho arceo vado excepturi tamdiu.</span><span class="scde63d9e">"</span></span>
+<span class="line"><span class="s252224fb">      duration</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">15m</span><span class="scde63d9e">"</span></span>
+<span class="line"><span class="s252224fb">      location</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">Room U4</span><span class="scde63d9e">"</span></span>
+<span class="line"><span class="scacc819b">    }</span></span>
+<span class="line"></span>
+<span class="line"><span class="scacc819b">    {</span></span>
+<span class="line"><span class="s252224fb">      time</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">20:45</span><span class="scde63d9e">"</span></span>
+<span class="line"><span class="s252224fb">      title</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">Utrum spargo deludo.</span><span class="scde63d9e">"</span></span>
+<span class="line"><span class="s252224fb">      duration</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">45m</span><span class="scde63d9e">"</span></span>
+<span class="line"><span class="s252224fb">      location</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">Lobby</span><span class="scde63d9e">"</span></span>
+<span class="line"><span class="scacc819b">    }</span></span>
+<span class="line"></span>
+<span class="line"><span class="scacc819b">    {</span></span>
+<span class="line"><span class="s252224fb">      time</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">10:45</span><span class="scde63d9e">"</span></span>
+<span class="line"><span class="s252224fb">      title</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">Excepturi veritatis tubineus.</span><span class="scde63d9e">"</span></span>
+<span class="line"><span class="s252224fb">      duration</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">2h</span><span class="scde63d9e">"</span></span>
+<span class="line"><span class="s252224fb">      location</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">Main Hall</span><span class="scde63d9e">"</span></span>
+<span class="line"><span class="scacc819b">    }</span></span>
+<span class="line"><span class="scacc819b">  ]</span></span>
+<span class="line"><span class="scacc819b">}</span></span></code></pre>
+  <h2>See also</h2>
+  <ul class="card-list">
+    <li><a href="./4611"><span class="card-num">4611</span><span class="card-title">DNS Config</span></a></li>
+    <li><a href="./10796"><span class="card-num">10796</span><span class="card-title">Changelog</span></a></li>
+    <li><a href="./12852"><span class="card-num">12852</span><span class="card-title">Server Inventory</span></a></li>
+  </ul>
+</article>
+</main>
+<footer class="site-footer">
+  Generated examples for the <a href="https://maml.dev">MAML</a> data format.
+</footer>
+</body>
+</html>

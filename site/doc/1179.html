@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>1179 — Playlist · MAML Examples</title>
+<meta name="description" content="A music playlist with tracks and metadata.">
+<link rel="stylesheet" href="../assets/style.css">
+<link rel="stylesheet" href="../assets/tokens.css">
+</head>
+<body>
+<header class="site-header">
+  <a class="brand" href="../">MAML Examples</a>
+  <nav>
+    <a href="https://maml.dev">maml.dev</a>
+    <a href="https://github.com/maml-dev/examples">GitHub</a>
+  </nav>
+</header>
+<main>
+<article class="example">
+  <p class="eyebrow">Example 1179</p>
+  <h1>Playlist</h1>
+  <p class="lead">A music playlist with tracks and metadata.</p>
+  <pre class="shiki shiki-themes catppuccin-latte plastic" style="--shiki-light:#4c4f69;--shiki-dark:#A9B2C3;--shiki-light-bg:#eff1f5;--shiki-dark-bg:#21252B" tabindex="0"><code><span class="line"><span class="scacc819b">{</span></span>
+<span class="line"><span class="s252224fb">  name</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">Klezmer Vibes</span><span class="scde63d9e">"</span></span>
+<span class="line"><span class="s252224fb">  curator</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">German Denesik-Prosacco</span><span class="scde63d9e">"</span></span>
+<span class="line"><span class="s252224fb">  public</span><span class="scacc819b">:</span><span class="sfc8ef81c"> true</span></span>
+<span class="line"><span class="s252224fb">  tracks</span><span class="scacc819b">:</span><span class="scacc819b"> [</span></span>
+<span class="line"><span class="scacc819b">    {</span></span>
+<span class="line"><span class="s252224fb">      title</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">One Bad Apple</span><span class="scde63d9e">"</span></span>
+<span class="line"><span class="s252224fb">      artist</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">Candace Lind-Luettgen</span><span class="scde63d9e">"</span></span>
+<span class="line"><span class="s252224fb">      album</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">conservo</span><span class="scde63d9e">"</span></span>
+<span class="line"><span class="s252224fb">      duration</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">3:23</span><span class="scde63d9e">"</span></span>
+<span class="line"><span class="scacc819b">    }</span></span>
+<span class="line"></span>
+<span class="line"><span class="scacc819b">    {</span></span>
+<span class="line"><span class="s252224fb">      title</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">Wayward Wind</span><span class="scde63d9e">"</span></span>
+<span class="line"><span class="s252224fb">      artist</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">Katarina Kihn-Effertz DDS</span><span class="scde63d9e">"</span></span>
+<span class="line"><span class="s252224fb">      album</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">ascit</span><span class="scde63d9e">"</span></span>
+<span class="line"><span class="s252224fb">      duration</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">2:06</span><span class="scde63d9e">"</span></span>
+<span class="line"><span class="scacc819b">    }</span></span>
+<span class="line"></span>
+<span class="line"><span class="scacc819b">    {</span></span>
+<span class="line"><span class="s252224fb">      title</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">Dilemma</span><span class="scde63d9e">"</span></span>
+<span class="line"><span class="s252224fb">      artist</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">Dr. Gwendolyn Koch</span><span class="scde63d9e">"</span></span>
+<span class="line"><span class="s252224fb">      album</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">ambulo vilis</span><span class="scde63d9e">"</span></span>
+<span class="line"><span class="s252224fb">      duration</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">4:13</span><span class="scde63d9e">"</span></span>
+<span class="line"><span class="scacc819b">    }</span></span>
+<span class="line"></span>
+<span class="line"><span class="scacc819b">    {</span></span>
+<span class="line"><span class="s252224fb">      title</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">Moonlight Serenade</span><span class="scde63d9e">"</span></span>
+<span class="line"><span class="s252224fb">      artist</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">Giovani Feeney DVM</span><span class="scde63d9e">"</span></span>
+<span class="line"><span class="s252224fb">      album</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">tener suppono cogo</span><span class="scde63d9e">"</span></span>
+<span class="line"><span class="s252224fb">      duration</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">2:58</span><span class="scde63d9e">"</span></span>
+<span class="line"><span class="scacc819b">    }</span></span>
+<span class="line"></span>
+<span class="line"><span class="scacc819b">    {</span></span>
+<span class="line"><span class="s252224fb">      title</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">Lookin' Out My Back Door</span><span class="scde63d9e">"</span></span>
+<span class="line"><span class="s252224fb">      artist</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">Jamie Schaden</span><span class="scde63d9e">"</span></span>
+<span class="line"><span class="s252224fb">      album</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">ex conturbo iusto</span><span class="scde63d9e">"</span></span>
+<span class="line"><span class="s252224fb">      duration</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">4:34</span><span class="scde63d9e">"</span></span>
+<span class="line"><span class="scacc819b">    }</span></span>
+<span class="line"></span>
+<span class="line"><span class="scacc819b">    {</span></span>
+<span class="line"><span class="s252224fb">      title</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">Ghostbusters</span><span class="scde63d9e">"</span></span>
+<span class="line"><span class="s252224fb">      artist</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">Chelsea Sauer-Maggio</span><span class="scde63d9e">"</span></span>
+<span class="line"><span class="s252224fb">      album</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">arcesso</span><span class="scde63d9e">"</span></span>
+<span class="line"><span class="s252224fb">      duration</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">3:48</span><span class="scde63d9e">"</span></span>
+<span class="line"><span class="scacc819b">    }</span></span>
+<span class="line"></span>
+<span class="line"><span class="scacc819b">    {</span></span>
+<span class="line"><span class="s252224fb">      title</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">My Boyfriend's Back</span><span class="scde63d9e">"</span></span>
+<span class="line"><span class="s252224fb">      artist</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">Alexie Goodwin</span><span class="scde63d9e">"</span></span>
+<span class="line"><span class="s252224fb">      album</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">dens cuius</span><span class="scde63d9e">"</span></span>
+<span class="line"><span class="s252224fb">      duration</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">4:19</span><span class="scde63d9e">"</span></span>
+<span class="line"><span class="scacc819b">    }</span></span>
+<span class="line"><span class="scacc819b">  ]</span></span>
+<span class="line"></span>
+<span class="line"><span class="s252224fb">  total_duration</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">58min</span><span class="scde63d9e">"</span></span>
+<span class="line"><span class="scacc819b">}</span></span></code></pre>
+  <h2>See also</h2>
+  <ul class="card-list">
+    <li><a href="./13894"><span class="card-num">13894</span><span class="card-title">Log Entries</span></a></li>
+    <li><a href="./14783"><span class="card-num">14783</span><span class="card-title">Quoted Keys</span></a></li>
+    <li><a href="./4646"><span class="card-num">4646</span><span class="card-title">Sprint Board</span></a></li>
+  </ul>
+</article>
+</main>
+<footer class="site-footer">
+  Generated examples for the <a href="https://maml.dev">MAML</a> data format.
+</footer>
+</body>
+</html>

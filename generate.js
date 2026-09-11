@@ -3,6 +3,7 @@ import { parse as parseValue, stringify } from 'maml'
 import { faker } from '@faker-js/faker'
 import fs from 'node:fs'
 import path from 'node:path'
+import { createRenderer } from './site.js'
 
 // ---------------------------------------------------------------------------
 // AST Builder Helpers
@@ -1842,22 +1843,83 @@ function generateShowcase() {
 }
 
 // ---------------------------------------------------------------------------
-// Main: Generate examples and VitePress pages
+// Main: generate examples and render static pages
 // ---------------------------------------------------------------------------
 
 const COUNT = 100
+const CHUNK_SIZE = 1000
+const SEE_ALSO = 3
+
 const ROOT = new URL('.', import.meta.url).pathname
-const EXAMPLES_DIR = path.join(ROOT, 'doc')
-const METADATA_PATH = path.join(ROOT, 'metadata.maml')
+const DATA_DIR = path.join(ROOT, 'data')
+const SITE_DIR = path.join(ROOT, 'site')
+const DOC_DIR = path.join(SITE_DIR, 'doc')
+const ASSETS_DIR = path.join(ROOT, 'assets')
 const SHAPES = [generateFlatConfig, generateNestedObject, generateTableArray, generateMixed, generateShowcase]
 
-fs.mkdirSync(EXAMPLES_DIR, { recursive: true })
+// `--all` re-renders every page from stored data instead of generating new
+// examples. Needed only when the page markup in site.js changes.
+const renderAll = process.argv.includes('--all')
 
-// Load existing metadata
-let existing = []
-if (fs.existsSync(METADATA_PATH)) {
-  existing = parseValue(fs.readFileSync(METADATA_PATH, 'utf8'))
+function chunkPath(num) {
+  const index = Math.floor((Number(num) - 1) / CHUNK_SIZE)
+  return path.join(DATA_DIR, String(index).padStart(4, '0') + '.maml')
 }
+
+// Examples are stored in fixed-size chunks so a nightly run rewrites only the
+// last chunk instead of one file that grows without bound.
+function writeChunks(examples, changedNums) {
+  const dirty = new Set(changedNums.map(chunkPath))
+  const byChunk = new Map()
+
+  for (const example of examples) {
+    const file = chunkPath(example.num)
+    if (!dirty.has(file)) continue
+    if (!byChunk.has(file)) byChunk.set(file, [])
+    byChunk.get(file).push(example)
+  }
+
+  for (const [file, chunk] of byChunk) {
+    fs.writeFileSync(file, stringify(chunk) + '\n')
+  }
+}
+
+function loadExamples() {
+  fs.mkdirSync(DATA_DIR, { recursive: true })
+
+  return fs.readdirSync(DATA_DIR)
+    .filter(file => file.endsWith('.maml'))
+    .sort()
+    .flatMap(file => parseValue(fs.readFileSync(path.join(DATA_DIR, file), 'utf8')))
+}
+
+// Seeded per example, so re-rendering an unchanged corpus reproduces the same
+// pages byte for byte and leaves nothing to commit.
+function seededRandom(seed) {
+  let state = (seed + 0x9e3779b9) | 0
+  return () => {
+    state = (state + 0x6d2b79f5) | 0
+    let t = Math.imul(state ^ (state >>> 15), 1 | state)
+    t = (t + Math.imul(t ^ (t >>> 7), 61 | t)) ^ t
+    return ((t ^ (t >>> 14)) >>> 0) / 4294967296
+  }
+}
+
+// Picks by index: filtering the whole list once per page would be quadratic
+// across tens of thousands of examples.
+function pickOthers(examples, example) {
+  const random = seededRandom(Number(example.num))
+  const picks = []
+  while (picks.length < Math.min(SEE_ALSO, examples.length - 1)) {
+    const candidate = examples[Math.floor(random() * examples.length)]
+    if (candidate.num === example.num) continue
+    if (picks.some(pick => pick.num === candidate.num)) continue
+    picks.push(candidate)
+  }
+  return picks
+}
+
+const existing = loadExamples()
 
 const startNum = existing.length > 0
   ? Math.max(...existing.map(e => Number(e.num))) + 1
@@ -1866,59 +1928,45 @@ const startNum = existing.length > 0
 // Generate new examples
 const newExamples = []
 
-for (let i = 0; i < COUNT; i++) {
-  const shapeIndex = Math.floor(i / 20)
-  const generator = SHAPES[shapeIndex]
-  const { document, title, description } = generator()
-  const mamlText = print(document)
+if (!renderAll) {
+  for (let i = 0; i < COUNT; i++) {
+    const shapeIndex = Math.floor(i / 20)
+    const generator = SHAPES[shapeIndex]
+    const { document, title, description } = generator()
+    const mamlText = print(document)
 
-  // Validate: parse the generated MAML to ensure correctness
-  try {
-    parse(mamlText)
-  } catch (err) {
-    console.error(`Parse validation failed for example ${startNum + i}: ${err.message}`)
-    process.exit(1)
+    // Validate: parse the generated MAML to ensure correctness
+    try {
+      parse(mamlText)
+    } catch (err) {
+      console.error(`Parse validation failed for example ${startNum + i}: ${err.message}`)
+      process.exit(1)
+    }
+
+    const num = String(startNum + i).padStart(3, '0')
+    newExamples.push({ num, title, description, shapeIndex, mamlText })
   }
-
-  const num = String(startNum + i).padStart(3, '0')
-  newExamples.push({ num, title, description, shapeIndex, mamlText })
 }
 
 const allExamples = [...existing, ...newExamples]
+const targets = renderAll ? allExamples : newExamples
 
-// Write new example pages
-for (const ex of newExamples) {
-  const others = faker.helpers.arrayElements(
-    allExamples.filter(e => e.num !== ex.num),
-    3,
-  )
+// Render pages
+const siteAssets = path.join(SITE_DIR, 'assets')
+fs.mkdirSync(DOC_DIR, { recursive: true })
+fs.cpSync(ASSETS_DIR, siteAssets, { recursive: true })
 
-  const md = `---
-title: "${ex.num} - ${ex.title}"
----
+const renderer = await createRenderer()
 
-# ${ex.num} - ${ex.title}
-
-${ex.description} This is an example of a [MAML](https://maml.dev) document.
-
-\`\`\`maml
-${ex.mamlText}
-\`\`\`
-
-## See Also
-
-${others.map(o => `- [${o.num} - ${o.title}](./${o.num})`).join('\n')}
-`
-  fs.writeFileSync(path.join(EXAMPLES_DIR, `${ex.num}.md`), md)
+for (const example of targets) {
+  const html = renderer.renderExample(example, pickOthers(allExamples, example))
+  fs.writeFileSync(path.join(DOC_DIR, `${example.num}.html`), html)
 }
-
-// Write metadata
-fs.writeFileSync(METADATA_PATH, stringify(allExamples) + '\n')
 
 // Regenerate index page: latest example per type
 const latestByTitle = new Map()
-for (const ex of allExamples) {
-  latestByTitle.set(ex.title, ex)
+for (const example of allExamples) {
+  latestByTitle.set(example.title, example)
 }
 
 const sortedLatest = [...latestByTitle.values()].sort((a, b) => {
@@ -1927,21 +1975,12 @@ const sortedLatest = [...latestByTitle.values()].sort((a, b) => {
   return a.title.localeCompare(b.title)
 })
 
-let indexMd = `---
-title: MAML Examples
----
+fs.writeFileSync(path.join(SITE_DIR, 'index.html'), renderer.renderIndex(sortedLatest, allExamples.length))
+renderer.finish(siteAssets)
 
-# MAML Examples
-
-Example documents for the [MAML](https://maml.dev) data format.
-
-`
-
-for (const ex of sortedLatest) {
-  indexMd += `- [${ex.title}](./doc/${ex.num})\n`
+// Persist data last, so a render failure leaves nothing half-recorded
+if (newExamples.length > 0) {
+  writeChunks(allExamples, newExamples.map(example => example.num))
 }
-indexMd += '\n'
 
-fs.writeFileSync(path.join(ROOT, 'index.md'), indexMd)
-
-console.log(`Generated ${newExamples.length} new MAML examples (${allExamples.length} total)`)
+console.log(`Rendered ${targets.length} pages (${allExamples.length} examples total)`)

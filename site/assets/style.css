@@ -1,0 +1,169 @@
+/* MAML Examples — single stylesheet for every generated page. */
+
+:root {
+  color-scheme: light dark;
+  --bg: #ffffff;
+  --bg-soft: #f7f7f5;
+  --text: #1f2024;
+  --text-soft: #61646c;
+  --border: #e4e4e1;
+  --accent: #4f46c8;
+  --radius: 10px;
+  --mono: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace;
+  --sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #16181d;
+    --bg-soft: #1c1f26;
+    --text: #c6ccd7;
+    --text-soft: #8b93a1;
+    --border: #2a2e37;
+    --accent: #9aa2f5;
+  }
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font: 16px/1.65 var(--sans);
+  -webkit-font-smoothing: antialiased;
+}
+
+a { color: var(--accent); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+.site-header,
+main,
+.site-footer {
+  max-width: 52rem;
+  margin: 0 auto;
+  padding: 0 1.25rem;
+}
+
+.site-header {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  align-items: baseline;
+  justify-content: space-between;
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
+}
+
+.brand {
+  font-weight: 600;
+  color: var(--text);
+  letter-spacing: -0.01em;
+}
+
+.site-header nav { display: flex; gap: 1.25rem; font-size: 0.9rem; }
+
+h1 {
+  font-size: clamp(1.75rem, 4vw, 2.25rem);
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  margin: 0 0 0.5rem;
+}
+
+h2 {
+  font-size: 1.15rem;
+  letter-spacing: -0.01em;
+  margin: 2.5rem 0 0.75rem;
+}
+
+.eyebrow {
+  font: 0.8rem/1 var(--mono);
+  color: var(--text-soft);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin: 0 0 0.75rem;
+}
+
+.lead { color: var(--text-soft); margin: 0 0 1.75rem; max-width: 42rem; }
+
+#filter {
+  width: 100%;
+  padding: 0.6rem 0.8rem;
+  font: inherit;
+  color: var(--text);
+  background: var(--bg-soft);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+}
+
+#filter:focus { outline: 2px solid var(--accent); outline-offset: -1px; }
+
+.card-list {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr));
+  gap: 0.6rem;
+  margin: 0;
+  padding: 0;
+}
+
+.card-list a {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  height: 100%;
+  padding: 0.8rem 0.9rem;
+  color: var(--text);
+  background: var(--bg-soft);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+}
+
+.card-list a:hover { border-color: var(--accent); text-decoration: none; }
+.card-num { font: 0.75rem/1 var(--mono); color: var(--text-soft); }
+.card-title { font-weight: 550; }
+.card-desc { font-size: 0.875rem; color: var(--text-soft); }
+
+.empty { color: var(--text-soft); }
+
+.site-footer {
+  margin-top: 4rem;
+  padding-top: 1.5rem;
+  padding-bottom: 3rem;
+  border-top: 1px solid var(--border);
+  font-size: 0.875rem;
+  color: var(--text-soft);
+}
+
+/* Shiki emits per-token CSS variables for both themes; pick one here so a
+   theme switch never needs the pages re-rendered. */
+.shiki {
+  margin: 0;
+  padding: 1rem 1.1rem;
+  overflow-x: auto;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  font: 0.875rem/1.6 var(--mono);
+  color: var(--shiki-light);
+  background: var(--shiki-light-bg);
+}
+
+.shiki span {
+  color: var(--shiki-light);
+  font-style: var(--shiki-light-font-style, normal);
+  font-weight: var(--shiki-light-font-weight, inherit);
+  text-decoration: var(--shiki-light-text-decoration, none);
+}
+
+@media (prefers-color-scheme: dark) {
+  .shiki {
+    color: var(--shiki-dark);
+    background: var(--shiki-dark-bg);
+  }
+  .shiki span {
+    color: var(--shiki-dark);
+    font-style: var(--shiki-dark-font-style, normal);
+    font-weight: var(--shiki-dark-font-weight, inherit);
+    text-decoration: var(--shiki-dark-text-decoration, none);
+  }
+}

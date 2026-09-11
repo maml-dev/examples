@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>8559 — DNS Records · MAML Examples</title>
+<meta name="description" content="DNS zone record entries.">
+<link rel="stylesheet" href="../assets/style.css">
+<link rel="stylesheet" href="../assets/tokens.css">
+</head>
+<body>
+<header class="site-header">
+  <a class="brand" href="../">MAML Examples</a>
+  <nav>
+    <a href="https://maml.dev">maml.dev</a>
+    <a href="https://github.com/maml-dev/examples">GitHub</a>
+  </nav>
+</header>
+<main>
+<article class="example">
+  <p class="eyebrow">Example 8559</p>
+  <h1>DNS Records</h1>
+  <p class="lead">DNS zone record entries.</p>
+  <pre class="shiki shiki-themes catppuccin-latte plastic" style="--shiki-light:#4c4f69;--shiki-dark:#A9B2C3;--shiki-light-bg:#eff1f5;--shiki-dark-bg:#21252B" tabindex="0"><code><span class="line"><span class="scacc819b">{</span></span>
+<span class="line"><span class="s252224fb">  zone</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">wicked-leading.info</span><span class="scde63d9e">"</span></span>
+<span class="line"><span class="s252224fb">  records</span><span class="scacc819b">:</span><span class="scacc819b"> [</span></span>
+<span class="line"><span class="scacc819b">    {</span></span>
+<span class="line"><span class="s252224fb">      type</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">A</span><span class="scde63d9e">"</span></span>
+<span class="line"><span class="s252224fb">      name</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">@</span><span class="scde63d9e">"</span></span>
+<span class="line"><span class="s252224fb">      value</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">powerful-hexagon.name</span><span class="scde63d9e">"</span></span>
+<span class="line"><span class="s252224fb">      ttl</span><span class="scacc819b">:</span><span class="s56b09ea4"> 86400</span></span>
+<span class="line"><span class="scacc819b">    }</span></span>
+<span class="line"></span>
+<span class="line"><span class="scacc819b">    {</span></span>
+<span class="line"><span class="s252224fb">      type</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">A</span><span class="scde63d9e">"</span></span>
+<span class="line"><span class="s252224fb">      name</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">api</span><span class="scde63d9e">"</span></span>
+<span class="line"><span class="s252224fb">      value</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">unwieldy-gastropod.org</span><span class="scde63d9e">"</span></span>
+<span class="line"><span class="s252224fb">      ttl</span><span class="scacc819b">:</span><span class="s56b09ea4"> 86400</span></span>
+<span class="line"><span class="scacc819b">    }</span></span>
+<span class="line"></span>
+<span class="line"><span class="scacc819b">    {</span></span>
+<span class="line"><span class="s252224fb">      type</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">CNAME</span><span class="scde63d9e">"</span></span>
+<span class="line"><span class="s252224fb">      name</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">@</span><span class="scde63d9e">"</span></span>
+<span class="line"><span class="s252224fb">      value</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">v=spf1 include:_spf.medium-knickers.name ~all</span><span class="scde63d9e">"</span></span>
+<span class="line"><span class="s252224fb">      ttl</span><span class="scacc819b">:</span><span class="s56b09ea4"> 3600</span></span>
+<span class="line"><span class="scacc819b">    }</span></span>
+<span class="line"></span>
+<span class="line"><span class="scacc819b">    {</span></span>
+<span class="line"><span class="s252224fb">      type</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">NS</span><span class="scde63d9e">"</span></span>
+<span class="line"><span class="s252224fb">      name</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">www</span><span class="scde63d9e">"</span></span>
+<span class="line"><span class="s252224fb">      value</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">unfinished-dulcimer.org</span><span class="scde63d9e">"</span></span>
+<span class="line"><span class="s252224fb">      ttl</span><span class="scacc819b">:</span><span class="s56b09ea4"> 86400</span></span>
+<span class="line"><span class="scacc819b">    }</span></span>
+<span class="line"></span>
+<span class="line"><span class="scacc819b">    {</span></span>
+<span class="line"><span class="s252224fb">      type</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">CNAME</span><span class="scde63d9e">"</span></span>
+<span class="line"><span class="s252224fb">      name</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">staging</span><span class="scde63d9e">"</span></span>
+<span class="line"><span class="s252224fb">      value</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">peppery-hippodrome.info</span><span class="scde63d9e">"</span></span>
+<span class="line"><span class="s252224fb">      ttl</span><span class="scacc819b">:</span><span class="s56b09ea4"> 3600</span></span>
+<span class="line"><span class="scacc819b">    }</span></span>
+<span class="line"></span>
+<span class="line"><span class="scacc819b">    {</span></span>
+<span class="line"><span class="s252224fb">      type</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">AAAA</span><span class="scde63d9e">"</span></span>
+<span class="line"><span class="s252224fb">      name</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">*</span><span class="scde63d9e">"</span></span>
+<span class="line"><span class="s252224fb">      value</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">icy-bin.org</span><span class="scde63d9e">"</span></span>
+<span class="line"><span class="s252224fb">      ttl</span><span class="scacc819b">:</span><span class="s56b09ea4"> 3600</span></span>
+<span class="line"><span class="scacc819b">    }</span></span>
+<span class="line"><span class="scacc819b">  ]</span></span>
+<span class="line"><span class="scacc819b">}</span></span></code></pre>
+  <h2>See also</h2>
+  <ul class="card-list">
+    <li><a href="./16973"><span class="card-num">16973</span><span class="card-title">App Manifest</span></a></li>
+    <li><a href="./8034"><span class="card-num">8034</span><span class="card-title">GraphQL Schema</span></a></li>
+    <li><a href="./9140"><span class="card-num">9140</span><span class="card-title">Cloud Deploy Config</span></a></li>
+  </ul>
+</article>
+</main>
+<footer class="site-footer">
+  Generated examples for the <a href="https://maml.dev">MAML</a> data format.
+</footer>
+</body>
+</html>

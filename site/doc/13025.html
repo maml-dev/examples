@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>13025 — Email Routing · MAML Examples</title>
+<meta name="description" content="Email routing and filtering rules.">
+<link rel="stylesheet" href="../assets/style.css">
+<link rel="stylesheet" href="../assets/tokens.css">
+</head>
+<body>
+<header class="site-header">
+  <a class="brand" href="../">MAML Examples</a>
+  <nav>
+    <a href="https://maml.dev">maml.dev</a>
+    <a href="https://github.com/maml-dev/examples">GitHub</a>
+  </nav>
+</header>
+<main>
+<article class="example">
+  <p class="eyebrow">Example 13025</p>
+  <h1>Email Routing</h1>
+  <p class="lead">Email routing and filtering rules.</p>
+  <pre class="shiki shiki-themes catppuccin-latte plastic" style="--shiki-light:#4c4f69;--shiki-dark:#A9B2C3;--shiki-light-bg:#eff1f5;--shiki-dark-bg:#21252B" tabindex="0"><code><span class="line"><span class="scacc819b">{</span></span>
+<span class="line"><span class="s252224fb">  domain</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">poor-flint.biz</span><span class="scde63d9e">"</span></span>
+<span class="line"><span class="s252224fb">  inbound</span><span class="scacc819b">:</span><span class="scacc819b"> {</span></span>
+<span class="line"><span class="s252224fb">    mx_records</span><span class="scacc819b">:</span><span class="scacc819b"> [</span></span>
+<span class="line"><span class="scde63d9e">      "</span><span class="s7911c4c2">mx1.poor-flint.biz</span><span class="scde63d9e">"</span></span>
+<span class="line"><span class="scde63d9e">      "</span><span class="s7911c4c2">mx2.poor-flint.biz</span><span class="scde63d9e">"</span></span>
+<span class="line"><span class="scacc819b">    ]</span></span>
+<span class="line"><span class="s252224fb">    spam_filter</span><span class="scacc819b">:</span><span class="scacc819b"> {</span></span>
+<span class="line"><span class="s252224fb">      enabled</span><span class="scacc819b">:</span><span class="sfc8ef81c"> true</span></span>
+<span class="line"><span class="s252224fb">      threshold</span><span class="scacc819b">:</span><span class="s56b09ea4"> 8.5</span></span>
+<span class="line"><span class="s252224fb">      action</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">tag</span><span class="scde63d9e">"</span></span>
+<span class="line"><span class="scacc819b">    }</span></span>
+<span class="line"></span>
+<span class="line"><span class="s252224fb">    dkim</span><span class="scacc819b">:</span><span class="scacc819b"> {</span></span>
+<span class="line"><span class="s252224fb">      enabled</span><span class="scacc819b">:</span><span class="sfc8ef81c"> true</span></span>
+<span class="line"><span class="s252224fb">      selector</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">default</span><span class="scde63d9e">"</span></span>
+<span class="line"><span class="s252224fb">      key_size</span><span class="scacc819b">:</span><span class="s56b09ea4"> 1024</span></span>
+<span class="line"><span class="scacc819b">    }</span></span>
+<span class="line"><span class="scacc819b">  }</span></span>
+<span class="line"></span>
+<span class="line"><span class="s252224fb">  outbound</span><span class="scacc819b">:</span><span class="scacc819b"> {</span></span>
+<span class="line"><span class="s252224fb">    relay</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">smtp.poor-flint.biz</span><span class="scde63d9e">"</span></span>
+<span class="line"><span class="s252224fb">    port</span><span class="scacc819b">:</span><span class="s56b09ea4"> 465</span></span>
+<span class="line"><span class="s252224fb">    tls</span><span class="scacc819b">:</span><span class="sfc8ef81c"> true</span></span>
+<span class="line"><span class="s252224fb">    rate_limit</span><span class="scacc819b">:</span><span class="scacc819b"> {</span></span>
+<span class="line"><span class="s252224fb">      per_minute</span><span class="scacc819b">:</span><span class="s56b09ea4"> 223</span></span>
+<span class="line"><span class="s252224fb">      per_hour</span><span class="scacc819b">:</span><span class="s56b09ea4"> 2125</span></span>
+<span class="line"><span class="scacc819b">    }</span></span>
+<span class="line"><span class="scacc819b">  }</span></span>
+<span class="line"><span class="scacc819b">}</span></span></code></pre>
+  <h2>See also</h2>
+  <ul class="card-list">
+    <li><a href="./15480"><span class="card-num">15480</span><span class="card-title">Test Suite</span></a></li>
+    <li><a href="./1378"><span class="card-num">1378</span><span class="card-title">Docker Compose</span></a></li>
+    <li><a href="./2979"><span class="card-num">2979</span><span class="card-title">Blog Post</span></a></li>
+  </ul>
+</article>
+</main>
+<footer class="site-footer">
+  Generated examples for the <a href="https://maml.dev">MAML</a> data format.
+</footer>
+</body>
+</html>

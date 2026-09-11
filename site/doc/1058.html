@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>1058 — Product Catalog · MAML Examples</title>
+<meta name="description" content="E-commerce product listings.">
+<link rel="stylesheet" href="../assets/style.css">
+<link rel="stylesheet" href="../assets/tokens.css">
+</head>
+<body>
+<header class="site-header">
+  <a class="brand" href="../">MAML Examples</a>
+  <nav>
+    <a href="https://maml.dev">maml.dev</a>
+    <a href="https://github.com/maml-dev/examples">GitHub</a>
+  </nav>
+</header>
+<main>
+<article class="example">
+  <p class="eyebrow">Example 1058</p>
+  <h1>Product Catalog</h1>
+  <p class="lead">E-commerce product listings.</p>
+  <pre class="shiki shiki-themes catppuccin-latte plastic" style="--shiki-light:#4c4f69;--shiki-dark:#A9B2C3;--shiki-light-bg:#eff1f5;--shiki-dark-bg:#21252B" tabindex="0"><code><span class="line"><span class="scacc819b">{</span></span>
+<span class="line"><span class="s252224fb">  products</span><span class="scacc819b">:</span><span class="scacc819b"> [</span></span>
+<span class="line"><span class="scacc819b">    {</span></span>
+<span class="line"><span class="s252224fb">      sku</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">TWUBUGI4</span><span class="scde63d9e">"</span></span>
+<span class="line"><span class="s252224fb">      name</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">Ergonomic Plastic Soap</span><span class="scde63d9e">"</span></span>
+<span class="line"><span class="s252224fb">      price</span><span class="scacc819b">:</span><span class="s56b09ea4"> 984.45</span></span>
+<span class="line"><span class="s252224fb">      category</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">Jewelry</span><span class="scde63d9e">"</span></span>
+<span class="line"><span class="s252224fb">      in_stock</span><span class="scacc819b">:</span><span class="sfc8ef81c"> true</span></span>
+<span class="line"><span class="s252224fb">      rating</span><span class="scacc819b">:</span><span class="s56b09ea4"> 2.6</span></span>
+<span class="line"><span class="scacc819b">    }</span></span>
+<span class="line"></span>
+<span class="line"><span class="scacc819b">    {</span></span>
+<span class="line"><span class="s252224fb">      sku</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">YI8MV6QZ</span><span class="scde63d9e">"</span></span>
+<span class="line"><span class="s252224fb">      name</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">Handcrafted Plastic Tuna</span><span class="scde63d9e">"</span></span>
+<span class="line"><span class="s252224fb">      price</span><span class="scacc819b">:</span><span class="s56b09ea4"> 104.05</span></span>
+<span class="line"><span class="s252224fb">      category</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">Beauty</span><span class="scde63d9e">"</span></span>
+<span class="line"><span class="s252224fb">      in_stock</span><span class="scacc819b">:</span><span class="sfc8ef81c"> true</span></span>
+<span class="line"><span class="s252224fb">      rating</span><span class="scacc819b">:</span><span class="s56b09ea4"> 3.9</span></span>
+<span class="line"><span class="scacc819b">    }</span></span>
+<span class="line"></span>
+<span class="line"><span class="scacc819b">    {</span></span>
+<span class="line"><span class="s252224fb">      sku</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">6ESQB6GM</span><span class="scde63d9e">"</span></span>
+<span class="line"><span class="s252224fb">      name</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">Fantastic Marble Pizza</span><span class="scde63d9e">"</span></span>
+<span class="line"><span class="s252224fb">      price</span><span class="scacc819b">:</span><span class="s56b09ea4"> 130.95</span></span>
+<span class="line"><span class="s252224fb">      category</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">Industrial</span><span class="scde63d9e">"</span></span>
+<span class="line"><span class="s252224fb">      in_stock</span><span class="scacc819b">:</span><span class="sfc8ef81c"> true</span></span>
+<span class="line"><span class="s252224fb">      rating</span><span class="scacc819b">:</span><span class="s56b09ea4"> 2.9</span></span>
+<span class="line"><span class="scacc819b">    }</span></span>
+<span class="line"></span>
+<span class="line"><span class="scacc819b">    {</span></span>
+<span class="line"><span class="s252224fb">      sku</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">HZ5GYF0N</span><span class="scde63d9e">"</span></span>
+<span class="line"><span class="s252224fb">      name</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">Practical Plastic Mouse</span><span class="scde63d9e">"</span></span>
+<span class="line"><span class="s252224fb">      price</span><span class="scacc819b">:</span><span class="s56b09ea4"> 176.2</span></span>
+<span class="line"><span class="s252224fb">      category</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">Outdoors</span><span class="scde63d9e">"</span></span>
+<span class="line"><span class="s252224fb">      in_stock</span><span class="scacc819b">:</span><span class="sfc8ef81c"> true</span></span>
+<span class="line"><span class="s252224fb">      rating</span><span class="scacc819b">:</span><span class="s56b09ea4"> 2</span></span>
+<span class="line"><span class="scacc819b">    }</span></span>
+<span class="line"></span>
+<span class="line"><span class="scacc819b">    {</span></span>
+<span class="line"><span class="s252224fb">      sku</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">RCXVYFEH</span><span class="scde63d9e">"</span></span>
+<span class="line"><span class="s252224fb">      name</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">Elegant Gold Chair</span><span class="scde63d9e">"</span></span>
+<span class="line"><span class="s252224fb">      price</span><span class="scacc819b">:</span><span class="s56b09ea4"> 598.6</span></span>
+<span class="line"><span class="s252224fb">      category</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">Jewelry</span><span class="scde63d9e">"</span></span>
+<span class="line"><span class="s252224fb">      in_stock</span><span class="scacc819b">:</span><span class="sfc8ef81c"> true</span></span>
+<span class="line"><span class="s252224fb">      rating</span><span class="scacc819b">:</span><span class="s56b09ea4"> 3.1</span></span>
+<span class="line"><span class="scacc819b">    }</span></span>
+<span class="line"></span>
+<span class="line"><span class="scacc819b">    {</span></span>
+<span class="line"><span class="s252224fb">      sku</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">JCGPLS4V</span><span class="scde63d9e">"</span></span>
+<span class="line"><span class="s252224fb">      name</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">Tasty Granite Shirt</span><span class="scde63d9e">"</span></span>
+<span class="line"><span class="s252224fb">      price</span><span class="scacc819b">:</span><span class="s56b09ea4"> 98.79</span></span>
+<span class="line"><span class="s252224fb">      category</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">Books</span><span class="scde63d9e">"</span></span>
+<span class="line"><span class="s252224fb">      in_stock</span><span class="scacc819b">:</span><span class="sfc8ef81c"> true</span></span>
+<span class="line"><span class="s252224fb">      rating</span><span class="scacc819b">:</span><span class="s56b09ea4"> 4.4</span></span>
+<span class="line"><span class="scacc819b">    }</span></span>
+<span class="line"></span>
+<span class="line"><span class="scacc819b">    {</span></span>
+<span class="line"><span class="s252224fb">      sku</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">D7S88HHQ</span><span class="scde63d9e">"</span></span>
+<span class="line"><span class="s252224fb">      name</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">Rustic Metal Chips</span><span class="scde63d9e">"</span></span>
+<span class="line"><span class="s252224fb">      price</span><span class="scacc819b">:</span><span class="s56b09ea4"> 718.35</span></span>
+<span class="line"><span class="s252224fb">      category</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">Sports</span><span class="scde63d9e">"</span></span>
+<span class="line"><span class="s252224fb">      in_stock</span><span class="scacc819b">:</span><span class="sfc8ef81c"> false</span></span>
+<span class="line"><span class="s252224fb">      rating</span><span class="scacc819b">:</span><span class="s56b09ea4"> 3.5</span></span>
+<span class="line"><span class="scacc819b">    }</span></span>
+<span class="line"><span class="scacc819b">  ]</span></span>
+<span class="line"><span class="scacc819b">}</span></span></code></pre>
+  <h2>See also</h2>
+  <ul class="card-list">
+    <li><a href="./5608"><span class="card-num">5608</span><span class="card-title">Proxy Config</span></a></li>
+    <li><a href="./9441"><span class="card-num">9441</span><span class="card-title">Sprint Board</span></a></li>
+    <li><a href="./8613"><span class="card-num">8613</span><span class="card-title">DNS Config</span></a></li>
+  </ul>
+</article>
+</main>
+<footer class="site-footer">
+  Generated examples for the <a href="https://maml.dev">MAML</a> data format.
+</footer>
+</body>
+</html>

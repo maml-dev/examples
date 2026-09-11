@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>11550 — DNS Records · MAML Examples</title>
+<meta name="description" content="DNS zone record entries.">
+<link rel="stylesheet" href="../assets/style.css">
+<link rel="stylesheet" href="../assets/tokens.css">
+</head>
+<body>
+<header class="site-header">
+  <a class="brand" href="../">MAML Examples</a>
+  <nav>
+    <a href="https://maml.dev">maml.dev</a>
+    <a href="https://github.com/maml-dev/examples">GitHub</a>
+  </nav>
+</header>
+<main>
+<article class="example">
+  <p class="eyebrow">Example 11550</p>
+  <h1>DNS Records</h1>
+  <p class="lead">DNS zone record entries.</p>
+  <pre class="shiki shiki-themes catppuccin-latte plastic" style="--shiki-light:#4c4f69;--shiki-dark:#A9B2C3;--shiki-light-bg:#eff1f5;--shiki-dark-bg:#21252B" tabindex="0"><code><span class="line"><span class="scacc819b">{</span></span>
+<span class="line"><span class="s252224fb">  zone</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">dim-planula.name</span><span class="scde63d9e">"</span></span>
+<span class="line"><span class="s252224fb">  records</span><span class="scacc819b">:</span><span class="scacc819b"> [</span></span>
+<span class="line"><span class="scacc819b">    {</span></span>
+<span class="line"><span class="s252224fb">      type</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">AAAA</span><span class="scde63d9e">"</span></span>
+<span class="line"><span class="s252224fb">      name</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">www</span><span class="scde63d9e">"</span></span>
+<span class="line"><span class="s252224fb">      value</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">129.183.114.203</span><span class="scde63d9e">"</span></span>
+<span class="line"><span class="s252224fb">      ttl</span><span class="scacc819b">:</span><span class="s56b09ea4"> 86400</span></span>
+<span class="line"><span class="scacc819b">    }</span></span>
+<span class="line"></span>
+<span class="line"><span class="scacc819b">    {</span></span>
+<span class="line"><span class="s252224fb">      type</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">MX</span><span class="scde63d9e">"</span></span>
+<span class="line"><span class="s252224fb">      name</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">cdn</span><span class="scde63d9e">"</span></span>
+<span class="line"><span class="s252224fb">      value</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">shiny-apparatus.org</span><span class="scde63d9e">"</span></span>
+<span class="line"><span class="s252224fb">      ttl</span><span class="scacc819b">:</span><span class="s56b09ea4"> 86400</span></span>
+<span class="line"><span class="scacc819b">    }</span></span>
+<span class="line"></span>
+<span class="line"><span class="scacc819b">    {</span></span>
+<span class="line"><span class="s252224fb">      type</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">AAAA</span><span class="scde63d9e">"</span></span>
+<span class="line"><span class="s252224fb">      name</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">@</span><span class="scde63d9e">"</span></span>
+<span class="line"><span class="s252224fb">      value</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">v=spf1 include:_spf.multicolored-lyre.biz ~all</span><span class="scde63d9e">"</span></span>
+<span class="line"><span class="s252224fb">      ttl</span><span class="scacc819b">:</span><span class="s56b09ea4"> 3600</span></span>
+<span class="line"><span class="scacc819b">    }</span></span>
+<span class="line"></span>
+<span class="line"><span class="scacc819b">    {</span></span>
+<span class="line"><span class="s252224fb">      type</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">CNAME</span><span class="scde63d9e">"</span></span>
+<span class="line"><span class="s252224fb">      name</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">staging</span><span class="scde63d9e">"</span></span>
+<span class="line"><span class="s252224fb">      value</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">v=spf1 include:_spf.mad-adaptation.name ~all</span><span class="scde63d9e">"</span></span>
+<span class="line"><span class="s252224fb">      ttl</span><span class="scacc819b">:</span><span class="s56b09ea4"> 3600</span></span>
+<span class="line"><span class="scacc819b">    }</span></span>
+<span class="line"></span>
+<span class="line"><span class="scacc819b">    {</span></span>
+<span class="line"><span class="s252224fb">      type</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">NS</span><span class="scde63d9e">"</span></span>
+<span class="line"><span class="s252224fb">      name</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">www</span><span class="scde63d9e">"</span></span>
+<span class="line"><span class="s252224fb">      value</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">informal-bracelet.info</span><span class="scde63d9e">"</span></span>
+<span class="line"><span class="s252224fb">      ttl</span><span class="scacc819b">:</span><span class="s56b09ea4"> 3600</span></span>
+<span class="line"><span class="scacc819b">    }</span></span>
+<span class="line"></span>
+<span class="line"><span class="scacc819b">    {</span></span>
+<span class="line"><span class="s252224fb">      type</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">MX</span><span class="scde63d9e">"</span></span>
+<span class="line"><span class="s252224fb">      name</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">cdn</span><span class="scde63d9e">"</span></span>
+<span class="line"><span class="s252224fb">      value</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">remorseful-sediment.net</span><span class="scde63d9e">"</span></span>
+<span class="line"><span class="s252224fb">      ttl</span><span class="scacc819b">:</span><span class="s56b09ea4"> 86400</span></span>
+<span class="line"><span class="scacc819b">    }</span></span>
+<span class="line"></span>
+<span class="line"><span class="scacc819b">    {</span></span>
+<span class="line"><span class="s252224fb">      type</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">CNAME</span><span class="scde63d9e">"</span></span>
+<span class="line"><span class="s252224fb">      name</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">www</span><span class="scde63d9e">"</span></span>
+<span class="line"><span class="s252224fb">      value</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">143.166.28.246</span><span class="scde63d9e">"</span></span>
+<span class="line"><span class="s252224fb">      ttl</span><span class="scacc819b">:</span><span class="s56b09ea4"> 300</span></span>
+<span class="line"><span class="scacc819b">    }</span></span>
+<span class="line"><span class="scacc819b">  ]</span></span>
+<span class="line"><span class="scacc819b">}</span></span></code></pre>
+  <h2>See also</h2>
+  <ul class="card-list">
+    <li><a href="./8429"><span class="card-num">8429</span><span class="card-title">Queue Config</span></a></li>
+    <li><a href="./3262"><span class="card-num">3262</span><span class="card-title">Recipe</span></a></li>
+    <li><a href="./8437"><span class="card-num">8437</span><span class="card-title">Email Routing</span></a></li>
+  </ul>
+</article>
+</main>
+<footer class="site-footer">
+  Generated examples for the <a href="https://maml.dev">MAML</a> data format.
+</footer>
+</body>
+</html>

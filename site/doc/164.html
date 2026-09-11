@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>164 — Playlist · MAML Examples</title>
+<meta name="description" content="A music playlist with tracks and metadata.">
+<link rel="stylesheet" href="../assets/style.css">
+<link rel="stylesheet" href="../assets/tokens.css">
+</head>
+<body>
+<header class="site-header">
+  <a class="brand" href="../">MAML Examples</a>
+  <nav>
+    <a href="https://maml.dev">maml.dev</a>
+    <a href="https://github.com/maml-dev/examples">GitHub</a>
+  </nav>
+</header>
+<main>
+<article class="example">
+  <p class="eyebrow">Example 164</p>
+  <h1>Playlist</h1>
+  <p class="lead">A music playlist with tracks and metadata.</p>
+  <pre class="shiki shiki-themes catppuccin-latte plastic" style="--shiki-light:#4c4f69;--shiki-dark:#A9B2C3;--shiki-light-bg:#eff1f5;--shiki-dark-bg:#21252B" tabindex="0"><code><span class="line"><span class="scacc819b">{</span></span>
+<span class="line"><span class="s252224fb">  name</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">Novelty Mix</span><span class="scde63d9e">"</span></span>
+<span class="line"><span class="s252224fb">  curator</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">Al Reichert</span><span class="scde63d9e">"</span></span>
+<span class="line"><span class="s252224fb">  public</span><span class="scacc819b">:</span><span class="sfc8ef81c"> false</span></span>
+<span class="line"><span class="s252224fb">  tracks</span><span class="scacc819b">:</span><span class="scacc819b"> [</span></span>
+<span class="line"><span class="scacc819b">    {</span></span>
+<span class="line"><span class="s252224fb">      title</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">Beat It</span><span class="scde63d9e">"</span></span>
+<span class="line"><span class="s252224fb">      artist</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">Mona Schmitt</span><span class="scde63d9e">"</span></span>
+<span class="line"><span class="s252224fb">      album</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">patrocinor speciosus crapula</span><span class="scde63d9e">"</span></span>
+<span class="line"><span class="s252224fb">      duration</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">2:14</span><span class="scde63d9e">"</span></span>
+<span class="line"><span class="scacc819b">    }</span></span>
+<span class="line"></span>
+<span class="line"><span class="scacc819b">    {</span></span>
+<span class="line"><span class="s252224fb">      title</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">I Want to Hold Your Hand</span><span class="scde63d9e">"</span></span>
+<span class="line"><span class="s252224fb">      artist</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">Mark Langworth</span><span class="scde63d9e">"</span></span>
+<span class="line"><span class="s252224fb">      album</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">ascisco una eos</span><span class="scde63d9e">"</span></span>
+<span class="line"><span class="s252224fb">      duration</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">3:48</span><span class="scde63d9e">"</span></span>
+<span class="line"><span class="scacc819b">    }</span></span>
+<span class="line"></span>
+<span class="line"><span class="scacc819b">    {</span></span>
+<span class="line"><span class="s252224fb">      title</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">Stronger</span><span class="scde63d9e">"</span></span>
+<span class="line"><span class="s252224fb">      artist</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">Bonnie Monahan</span><span class="scde63d9e">"</span></span>
+<span class="line"><span class="s252224fb">      album</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">deputo adsidue</span><span class="scde63d9e">"</span></span>
+<span class="line"><span class="s252224fb">      duration</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">5:09</span><span class="scde63d9e">"</span></span>
+<span class="line"><span class="scacc819b">    }</span></span>
+<span class="line"></span>
+<span class="line"><span class="scacc819b">    {</span></span>
+<span class="line"><span class="s252224fb">      title</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">I Honestly Love You</span><span class="scde63d9e">"</span></span>
+<span class="line"><span class="s252224fb">      artist</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">Alexandra Price</span><span class="scde63d9e">"</span></span>
+<span class="line"><span class="s252224fb">      album</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">accommodo sponte omnis</span><span class="scde63d9e">"</span></span>
+<span class="line"><span class="s252224fb">      duration</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">4:23</span><span class="scde63d9e">"</span></span>
+<span class="line"><span class="scacc819b">    }</span></span>
+<span class="line"></span>
+<span class="line"><span class="scacc819b">    {</span></span>
+<span class="line"><span class="s252224fb">      title</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">Without Me</span><span class="scde63d9e">"</span></span>
+<span class="line"><span class="s252224fb">      artist</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">Ms. Estelle Bayer</span><span class="scde63d9e">"</span></span>
+<span class="line"><span class="s252224fb">      album</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">vere basium ante</span><span class="scde63d9e">"</span></span>
+<span class="line"><span class="s252224fb">      duration</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">4:23</span><span class="scde63d9e">"</span></span>
+<span class="line"><span class="scacc819b">    }</span></span>
+<span class="line"></span>
+<span class="line"><span class="scacc819b">    {</span></span>
+<span class="line"><span class="s252224fb">      title</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">Escape (The Pina Colada Song)</span><span class="scde63d9e">"</span></span>
+<span class="line"><span class="s252224fb">      artist</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">Philip Stokes PhD</span><span class="scde63d9e">"</span></span>
+<span class="line"><span class="s252224fb">      album</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">color</span><span class="scde63d9e">"</span></span>
+<span class="line"><span class="s252224fb">      duration</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">5:23</span><span class="scde63d9e">"</span></span>
+<span class="line"><span class="scacc819b">    }</span></span>
+<span class="line"></span>
+<span class="line"><span class="scacc819b">    {</span></span>
+<span class="line"><span class="s252224fb">      title</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">Le Freak</span><span class="scde63d9e">"</span></span>
+<span class="line"><span class="s252224fb">      artist</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">Verna Runte</span><span class="scde63d9e">"</span></span>
+<span class="line"><span class="s252224fb">      album</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">spectaculum dolore</span><span class="scde63d9e">"</span></span>
+<span class="line"><span class="s252224fb">      duration</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">5:58</span><span class="scde63d9e">"</span></span>
+<span class="line"><span class="scacc819b">    }</span></span>
+<span class="line"></span>
+<span class="line"><span class="scacc819b">    {</span></span>
+<span class="line"><span class="s252224fb">      title</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">You Are the Sunshine of My Life</span><span class="scde63d9e">"</span></span>
+<span class="line"><span class="s252224fb">      artist</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">Mr. Roderick Gulgowski</span><span class="scde63d9e">"</span></span>
+<span class="line"><span class="s252224fb">      album</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">amplexus tres</span><span class="scde63d9e">"</span></span>
+<span class="line"><span class="s252224fb">      duration</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">4:14</span><span class="scde63d9e">"</span></span>
+<span class="line"><span class="scacc819b">    }</span></span>
+<span class="line"><span class="scacc819b">  ]</span></span>
+<span class="line"></span>
+<span class="line"><span class="s252224fb">  total_duration</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">45min</span><span class="scde63d9e">"</span></span>
+<span class="line"><span class="scacc819b">}</span></span></code></pre>
+  <h2>See also</h2>
+  <ul class="card-list">
+    <li><a href="./16722"><span class="card-num">16722</span><span class="card-title">Backup Strategy</span></a></li>
+    <li><a href="./15643"><span class="card-num">15643</span><span class="card-title">API Routes</span></a></li>
+    <li><a href="./15058"><span class="card-num">15058</span><span class="card-title">Sprint Board</span></a></li>
+  </ul>
+</article>
+</main>
+<footer class="site-footer">
+  Generated examples for the <a href="https://maml.dev">MAML</a> data format.
+</footer>
+</body>
+</html>

@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>1700 — Nginx Snippet · MAML Examples</title>
+<meta name="description" content="Nginx server block as raw string configuration.">
+<link rel="stylesheet" href="../assets/style.css">
+<link rel="stylesheet" href="../assets/tokens.css">
+</head>
+<body>
+<header class="site-header">
+  <a class="brand" href="../">MAML Examples</a>
+  <nav>
+    <a href="https://maml.dev">maml.dev</a>
+    <a href="https://github.com/maml-dev/examples">GitHub</a>
+  </nav>
+</header>
+<main>
+<article class="example">
+  <p class="eyebrow">Example 1700</p>
+  <h1>Nginx Snippet</h1>
+  <p class="lead">Nginx server block as raw string configuration.</p>
+  <pre class="shiki shiki-themes catppuccin-latte plastic" style="--shiki-light:#4c4f69;--shiki-dark:#A9B2C3;--shiki-light-bg:#eff1f5;--shiki-dark-bg:#21252B" tabindex="0"><code><span class="line"><span class="s5dd799dd"># Nginx configuration</span></span>
+<span class="line"><span class="scacc819b">{</span></span>
+<span class="line"><span class="s252224fb">  name</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">windy-shipper.info</span><span class="scde63d9e">"</span></span>
+<span class="line"><span class="s5dd799dd">  # Server block</span></span>
+<span class="line"><span class="s252224fb">  config</span><span class="scacc819b">:</span><span class="scde63d9e"> """</span></span>
+<span class="line"><span class="s7911c4c2">server {</span></span>
+<span class="line"><span class="s7911c4c2">    listen 443 ssl http2;</span></span>
+<span class="line"><span class="s7911c4c2">    server_name glossy-vein.org;</span></span>
+<span class="line"></span>
+<span class="line"><span class="s7911c4c2">    ssl_certificate /etc/ssl/certs/cert.pem;</span></span>
+<span class="line"><span class="s7911c4c2">    ssl_certificate_key /etc/ssl/private/key.pem;</span></span>
+<span class="line"></span>
+<span class="line"><span class="s7911c4c2">    location / {</span></span>
+<span class="line"><span class="s7911c4c2">        proxy_pass http://localhost:8952;</span></span>
+<span class="line"><span class="s7911c4c2">        proxy_set_header Host $host;</span></span>
+<span class="line"><span class="s7911c4c2">        proxy_set_header X-Real-IP $remote_addr;</span></span>
+<span class="line"><span class="s7911c4c2">    }</span></span>
+<span class="line"></span>
+<span class="line"><span class="s7911c4c2">    location /static/ {</span></span>
+<span class="line"><span class="s7911c4c2">        root /var/www/html;</span></span>
+<span class="line"><span class="s7911c4c2">        expires 30d;</span></span>
+<span class="line"><span class="s7911c4c2">    }</span></span>
+<span class="line"><span class="s7911c4c2">}</span></span>
+<span class="line"><span class="scde63d9e">"""</span></span>
+<span class="line"></span>
+<span class="line"><span class="s252224fb">  enabled</span><span class="scacc819b">:</span><span class="sfc8ef81c"> true</span></span>
+<span class="line"><span class="s252224fb">  reload_command</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">nginx -t &#x26;&#x26; systemctl reload nginx</span><span class="scde63d9e">"</span></span>
+<span class="line"><span class="scacc819b">}</span></span></code></pre>
+  <h2>See also</h2>
+  <ul class="card-list">
+    <li><a href="./673"><span class="card-num">673</span><span class="card-title">Game Config</span></a></li>
+    <li><a href="./4990"><span class="card-num">4990</span><span class="card-title">Nginx Snippet</span></a></li>
+    <li><a href="./15613"><span class="card-num">15613</span><span class="card-title">App Settings</span></a></li>
+  </ul>
+</article>
+</main>
+<footer class="site-footer">
+  Generated examples for the <a href="https://maml.dev">MAML</a> data format.
+</footer>
+</body>
+</html>

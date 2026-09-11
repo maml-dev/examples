@@ -3,16 +3,13 @@
   "private": true,
   "scripts": {
     "generate": "node generate.js",
-    "dev": "npm run generate && vitepress dev",
-    "build": "npm run generate && vitepress build",
-    "preview": "vitepress preview"
+    "render": "node generate.js --all",
+    "serve": "node serve.js"
   },
   "dependencies": {
     "@faker-js/faker": "^10.4.0",
     "maml": "^1.0.0",
-    "maml-ast": "^1.0.0"
-  },
-  "devDependencies": {
-    "vitepress": "^2.0.0-alpha.12"
+    "maml-ast": "^1.0.0",
+    "shiki": "^3.23.0"
   }
 }

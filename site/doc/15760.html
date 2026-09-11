@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>15760 — Product Catalog · MAML Examples</title>
+<meta name="description" content="E-commerce product listings.">
+<link rel="stylesheet" href="../assets/style.css">
+<link rel="stylesheet" href="../assets/tokens.css">
+</head>
+<body>
+<header class="site-header">
+  <a class="brand" href="../">MAML Examples</a>
+  <nav>
+    <a href="https://maml.dev">maml.dev</a>
+    <a href="https://github.com/maml-dev/examples">GitHub</a>
+  </nav>
+</header>
+<main>
+<article class="example">
+  <p class="eyebrow">Example 15760</p>
+  <h1>Product Catalog</h1>
+  <p class="lead">E-commerce product listings.</p>
+  <pre class="shiki shiki-themes catppuccin-latte plastic" style="--shiki-light:#4c4f69;--shiki-dark:#A9B2C3;--shiki-light-bg:#eff1f5;--shiki-dark-bg:#21252B" tabindex="0"><code><span class="line"><span class="scacc819b">{</span></span>
+<span class="line"><span class="s252224fb">  products</span><span class="scacc819b">:</span><span class="scacc819b"> [</span></span>
+<span class="line"><span class="scacc819b">    {</span></span>
+<span class="line"><span class="s252224fb">      sku</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">ZMDINA1Q</span><span class="scde63d9e">"</span></span>
+<span class="line"><span class="s252224fb">      name</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">Refined Gold Chips</span><span class="scde63d9e">"</span></span>
+<span class="line"><span class="s252224fb">      price</span><span class="scacc819b">:</span><span class="s56b09ea4"> 659.45</span></span>
+<span class="line"><span class="s252224fb">      category</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">Shoes</span><span class="scde63d9e">"</span></span>
+<span class="line"><span class="s252224fb">      in_stock</span><span class="scacc819b">:</span><span class="sfc8ef81c"> false</span></span>
+<span class="line"><span class="s252224fb">      rating</span><span class="scacc819b">:</span><span class="s56b09ea4"> 3.1</span></span>
+<span class="line"><span class="scacc819b">    }</span></span>
+<span class="line"></span>
+<span class="line"><span class="scacc819b">    {</span></span>
+<span class="line"><span class="s252224fb">      sku</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">XE7UUUFK</span><span class="scde63d9e">"</span></span>
+<span class="line"><span class="s252224fb">      name</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">Handcrafted Granite Pants</span><span class="scde63d9e">"</span></span>
+<span class="line"><span class="s252224fb">      price</span><span class="scacc819b">:</span><span class="s56b09ea4"> 282.75</span></span>
+<span class="line"><span class="s252224fb">      category</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">Industrial</span><span class="scde63d9e">"</span></span>
+<span class="line"><span class="s252224fb">      in_stock</span><span class="scacc819b">:</span><span class="sfc8ef81c"> false</span></span>
+<span class="line"><span class="s252224fb">      rating</span><span class="scacc819b">:</span><span class="s56b09ea4"> 2.2</span></span>
+<span class="line"><span class="scacc819b">    }</span></span>
+<span class="line"></span>
+<span class="line"><span class="scacc819b">    {</span></span>
+<span class="line"><span class="s252224fb">      sku</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">OOYF0GNJ</span><span class="scde63d9e">"</span></span>
+<span class="line"><span class="s252224fb">      name</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">Rustic Bronze Towels</span><span class="scde63d9e">"</span></span>
+<span class="line"><span class="s252224fb">      price</span><span class="scacc819b">:</span><span class="s56b09ea4"> 399.19</span></span>
+<span class="line"><span class="s252224fb">      category</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">Garden</span><span class="scde63d9e">"</span></span>
+<span class="line"><span class="s252224fb">      in_stock</span><span class="scacc819b">:</span><span class="sfc8ef81c"> false</span></span>
+<span class="line"><span class="s252224fb">      rating</span><span class="scacc819b">:</span><span class="s56b09ea4"> 1.1</span></span>
+<span class="line"><span class="scacc819b">    }</span></span>
+<span class="line"></span>
+<span class="line"><span class="scacc819b">    {</span></span>
+<span class="line"><span class="s252224fb">      sku</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">GL15TFUQ</span><span class="scde63d9e">"</span></span>
+<span class="line"><span class="s252224fb">      name</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">Fresh Granite Hat</span><span class="scde63d9e">"</span></span>
+<span class="line"><span class="s252224fb">      price</span><span class="scacc819b">:</span><span class="s56b09ea4"> 650.15</span></span>
+<span class="line"><span class="s252224fb">      category</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">Automotive</span><span class="scde63d9e">"</span></span>
+<span class="line"><span class="s252224fb">      in_stock</span><span class="scacc819b">:</span><span class="sfc8ef81c"> true</span></span>
+<span class="line"><span class="s252224fb">      rating</span><span class="scacc819b">:</span><span class="s56b09ea4"> 4.1</span></span>
+<span class="line"><span class="scacc819b">    }</span></span>
+<span class="line"></span>
+<span class="line"><span class="scacc819b">    {</span></span>
+<span class="line"><span class="s252224fb">      sku</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">YDCEA7VU</span><span class="scde63d9e">"</span></span>
+<span class="line"><span class="s252224fb">      name</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">Electronic Rubber Salad</span><span class="scde63d9e">"</span></span>
+<span class="line"><span class="s252224fb">      price</span><span class="scacc819b">:</span><span class="s56b09ea4"> 469.29</span></span>
+<span class="line"><span class="s252224fb">      category</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">Kids</span><span class="scde63d9e">"</span></span>
+<span class="line"><span class="s252224fb">      in_stock</span><span class="scacc819b">:</span><span class="sfc8ef81c"> false</span></span>
+<span class="line"><span class="s252224fb">      rating</span><span class="scacc819b">:</span><span class="s56b09ea4"> 4.9</span></span>
+<span class="line"><span class="scacc819b">    }</span></span>
+<span class="line"></span>
+<span class="line"><span class="scacc819b">    {</span></span>
+<span class="line"><span class="s252224fb">      sku</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">P26ZFJ0W</span><span class="scde63d9e">"</span></span>
+<span class="line"><span class="s252224fb">      name</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">Refined Concrete Shirt</span><span class="scde63d9e">"</span></span>
+<span class="line"><span class="s252224fb">      price</span><span class="scacc819b">:</span><span class="s56b09ea4"> 34.84</span></span>
+<span class="line"><span class="s252224fb">      category</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">Electronics</span><span class="scde63d9e">"</span></span>
+<span class="line"><span class="s252224fb">      in_stock</span><span class="scacc819b">:</span><span class="sfc8ef81c"> true</span></span>
+<span class="line"><span class="s252224fb">      rating</span><span class="scacc819b">:</span><span class="s56b09ea4"> 2.1</span></span>
+<span class="line"><span class="scacc819b">    }</span></span>
+<span class="line"></span>
+<span class="line"><span class="scacc819b">    {</span></span>
+<span class="line"><span class="s252224fb">      sku</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">GWIZRLDN</span><span class="scde63d9e">"</span></span>
+<span class="line"><span class="s252224fb">      name</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">Refined Bronze Sausages</span><span class="scde63d9e">"</span></span>
+<span class="line"><span class="s252224fb">      price</span><span class="scacc819b">:</span><span class="s56b09ea4"> 655.69</span></span>
+<span class="line"><span class="s252224fb">      category</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">Tools</span><span class="scde63d9e">"</span></span>
+<span class="line"><span class="s252224fb">      in_stock</span><span class="scacc819b">:</span><span class="sfc8ef81c"> true</span></span>
+<span class="line"><span class="s252224fb">      rating</span><span class="scacc819b">:</span><span class="s56b09ea4"> 2.6</span></span>
+<span class="line"><span class="scacc819b">    }</span></span>
+<span class="line"><span class="scacc819b">  ]</span></span>
+<span class="line"><span class="scacc819b">}</span></span></code></pre>
+  <h2>See also</h2>
+  <ul class="card-list">
+    <li><a href="./12217"><span class="card-num">12217</span><span class="card-title">Cron Schedule</span></a></li>
+    <li><a href="./7553"><span class="card-num">7553</span><span class="card-title">Cron Jobs</span></a></li>
+    <li><a href="./13016"><span class="card-num">13016</span><span class="card-title">S3 Config</span></a></li>
+  </ul>
+</article>
+</main>
+<footer class="site-footer">
+  Generated examples for the <a href="https://maml.dev">MAML</a> data format.
+</footer>
+</body>
+</html>

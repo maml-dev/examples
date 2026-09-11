@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>12164 — Webhook Config · MAML Examples</title>
+<meta name="description" content="Outgoing webhook endpoint configuration.">
+<link rel="stylesheet" href="../assets/style.css">
+<link rel="stylesheet" href="../assets/tokens.css">
+</head>
+<body>
+<header class="site-header">
+  <a class="brand" href="../">MAML Examples</a>
+  <nav>
+    <a href="https://maml.dev">maml.dev</a>
+    <a href="https://github.com/maml-dev/examples">GitHub</a>
+  </nav>
+</header>
+<main>
+<article class="example">
+  <p class="eyebrow">Example 12164</p>
+  <h1>Webhook Config</h1>
+  <p class="lead">Outgoing webhook endpoint configuration.</p>
+  <pre class="shiki shiki-themes catppuccin-latte plastic" style="--shiki-light:#4c4f69;--shiki-dark:#A9B2C3;--shiki-light-bg:#eff1f5;--shiki-dark-bg:#21252B" tabindex="0"><code><span class="line"><span class="scacc819b">{</span></span>
+<span class="line"><span class="s252224fb">  name</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">surface-hooks</span><span class="scde63d9e">"</span></span>
+<span class="line"><span class="s252224fb">  secret</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">I6l4B4PbcR1A1Z610GLHExWengKMLiu3</span><span class="scde63d9e">"</span></span>
+<span class="line"><span class="s252224fb">  endpoints</span><span class="scacc819b">:</span><span class="scacc819b"> [</span></span>
+<span class="line"><span class="scacc819b">    {</span></span>
+<span class="line"><span class="s252224fb">      url</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">https://cool-finer.org//webhook</span><span class="scde63d9e">"</span></span>
+<span class="line"><span class="s252224fb">      events</span><span class="scacc819b">:</span><span class="scacc819b"> [</span></span>
+<span class="line"><span class="scde63d9e">        "</span><span class="s7911c4c2">create</span><span class="scde63d9e">"</span></span>
+<span class="line"><span class="scde63d9e">        "</span><span class="s7911c4c2">update</span><span class="scde63d9e">"</span></span>
+<span class="line"><span class="scde63d9e">        "</span><span class="s7911c4c2">delete</span><span class="scde63d9e">"</span></span>
+<span class="line"><span class="scacc819b">      ]</span></span>
+<span class="line"><span class="s252224fb">      active</span><span class="scacc819b">:</span><span class="sfc8ef81c"> true</span></span>
+<span class="line"><span class="scacc819b">    }</span></span>
+<span class="line"></span>
+<span class="line"><span class="scacc819b">    {</span></span>
+<span class="line"><span class="s252224fb">      url</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">https://stark-heartbeat.net//callback</span><span class="scde63d9e">"</span></span>
+<span class="line"><span class="s252224fb">      events</span><span class="scacc819b">:</span><span class="scacc819b"> [</span></span>
+<span class="line"><span class="scde63d9e">        "</span><span class="s7911c4c2">payment.success</span><span class="scde63d9e">"</span></span>
+<span class="line"><span class="scde63d9e">        "</span><span class="s7911c4c2">payment.failed</span><span class="scde63d9e">"</span></span>
+<span class="line"><span class="scacc819b">      ]</span></span>
+<span class="line"><span class="s252224fb">      active</span><span class="scacc819b">:</span><span class="sfc8ef81c"> true</span></span>
+<span class="line"><span class="scacc819b">    }</span></span>
+<span class="line"><span class="scacc819b">  ]</span></span>
+<span class="line"></span>
+<span class="line"><span class="s252224fb">  retry</span><span class="scacc819b">:</span><span class="scacc819b"> {</span></span>
+<span class="line"><span class="s252224fb">    max_attempts</span><span class="scacc819b">:</span><span class="s56b09ea4"> 4</span></span>
+<span class="line"><span class="s252224fb">    backoff</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">linear</span><span class="scde63d9e">"</span></span>
+<span class="line"><span class="s252224fb">    interval</span><span class="scacc819b">:</span><span class="s56b09ea4"> 55</span><span class="s5dd799dd"> # seconds</span></span>
+<span class="line"><span class="scacc819b">  }</span></span>
+<span class="line"><span class="s252224fb">  timeout</span><span class="scacc819b">:</span><span class="s56b09ea4"> 28</span><span class="s5dd799dd"> # seconds</span></span>
+<span class="line"><span class="scacc819b">}</span></span></code></pre>
+  <h2>See also</h2>
+  <ul class="card-list">
+    <li><a href="./9169"><span class="card-num">9169</span><span class="card-title">i18n Config</span></a></li>
+    <li><a href="./2434"><span class="card-num">2434</span><span class="card-title">CI Pipeline</span></a></li>
+    <li><a href="./8196"><span class="card-num">8196</span><span class="card-title">Shell Scripts</span></a></li>
+  </ul>
+</article>
+</main>
+<footer class="site-footer">
+  Generated examples for the <a href="https://maml.dev">MAML</a> data format.
+</footer>
+</body>
+</html>

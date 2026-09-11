@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>12931 — Backup Strategy · MAML Examples</title>
+<meta name="description" content="Backup schedule and retention policy.">
+<link rel="stylesheet" href="../assets/style.css">
+<link rel="stylesheet" href="../assets/tokens.css">
+</head>
+<body>
+<header class="site-header">
+  <a class="brand" href="../">MAML Examples</a>
+  <nav>
+    <a href="https://maml.dev">maml.dev</a>
+    <a href="https://github.com/maml-dev/examples">GitHub</a>
+  </nav>
+</header>
+<main>
+<article class="example">
+  <p class="eyebrow">Example 12931</p>
+  <h1>Backup Strategy</h1>
+  <p class="lead">Backup schedule and retention policy.</p>
+  <pre class="shiki shiki-themes catppuccin-latte plastic" style="--shiki-light:#4c4f69;--shiki-dark:#A9B2C3;--shiki-light-bg:#eff1f5;--shiki-dark-bg:#21252B" tabindex="0"><code><span class="line"><span class="scacc819b">{</span></span>
+<span class="line"><span class="s252224fb">  source</span><span class="scacc819b">:</span><span class="scacc819b"> {</span></span>
+<span class="line"><span class="s252224fb">    type</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">postgresql</span><span class="scde63d9e">"</span></span>
+<span class="line"><span class="s252224fb">    host</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">primary.db.internal</span><span class="scde63d9e">"</span></span>
+<span class="line"><span class="s252224fb">    databases</span><span class="scacc819b">:</span><span class="scacc819b"> [</span></span>
+<span class="line"><span class="scde63d9e">      "</span><span class="s7911c4c2">tuxedo</span><span class="scde63d9e">"</span></span>
+<span class="line"><span class="scde63d9e">      "</span><span class="s7911c4c2">goat</span><span class="scde63d9e">"</span></span>
+<span class="line"><span class="scacc819b">    ]</span></span>
+<span class="line"><span class="scacc819b">  }</span></span>
+<span class="line"></span>
+<span class="line"><span class="s5dd799dd">  # Backup schedule</span></span>
+<span class="line"><span class="s252224fb">  schedule</span><span class="scacc819b">:</span><span class="scacc819b"> {</span></span>
+<span class="line"><span class="s252224fb">    full</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">0 2 * * 0</span><span class="scde63d9e">"</span><span class="s5dd799dd"> # weekly Sunday 2am</span></span>
+<span class="line"><span class="s252224fb">    incremental</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">0 2 * * 1-6</span><span class="scde63d9e">"</span><span class="s5dd799dd"> # daily except Sunday</span></span>
+<span class="line"><span class="s252224fb">    snapshot</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">0 */4 * * *</span><span class="scde63d9e">"</span><span class="s5dd799dd"> # every 4 hours</span></span>
+<span class="line"><span class="scacc819b">  }</span></span>
+<span class="line"></span>
+<span class="line"><span class="s252224fb">  retention</span><span class="scacc819b">:</span><span class="scacc819b"> {</span></span>
+<span class="line"><span class="s252224fb">    daily</span><span class="scacc819b">:</span><span class="s56b09ea4"> 9</span></span>
+<span class="line"><span class="s252224fb">    weekly</span><span class="scacc819b">:</span><span class="s56b09ea4"> 10</span></span>
+<span class="line"><span class="s252224fb">    monthly</span><span class="scacc819b">:</span><span class="s56b09ea4"> 23</span></span>
+<span class="line"><span class="scacc819b">  }</span></span>
+<span class="line"></span>
+<span class="line"><span class="s252224fb">  destination</span><span class="scacc819b">:</span><span class="scacc819b"> {</span></span>
+<span class="line"><span class="s252224fb">    type</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">local</span><span class="scde63d9e">"</span></span>
+<span class="line"><span class="s252224fb">    path</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">s3://backups-obedience</span><span class="scde63d9e">"</span></span>
+<span class="line"><span class="s252224fb">    encryption</span><span class="scacc819b">:</span><span class="sfc8ef81c"> true</span></span>
+<span class="line"><span class="s252224fb">    compression</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">zstd</span><span class="scde63d9e">"</span></span>
+<span class="line"><span class="scacc819b">  }</span></span>
+<span class="line"><span class="scacc819b">}</span></span></code></pre>
+  <h2>See also</h2>
+  <ul class="card-list">
+    <li><a href="./8520"><span class="card-num">8520</span><span class="card-title">Logger Config</span></a></li>
+    <li><a href="./3772"><span class="card-num">3772</span><span class="card-title">Playlist</span></a></li>
+    <li><a href="./10967"><span class="card-num">10967</span><span class="card-title">Migration Plan</span></a></li>
+  </ul>
+</article>
+</main>
+<footer class="site-footer">
+  Generated examples for the <a href="https://maml.dev">MAML</a> data format.
+</footer>
+</body>
+</html>

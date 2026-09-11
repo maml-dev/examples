@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>13045 — Roles &amp; Permissions · MAML Examples</title>
+<meta name="description" content="Role-based access control definitions.">
+<link rel="stylesheet" href="../assets/style.css">
+<link rel="stylesheet" href="../assets/tokens.css">
+</head>
+<body>
+<header class="site-header">
+  <a class="brand" href="../">MAML Examples</a>
+  <nav>
+    <a href="https://maml.dev">maml.dev</a>
+    <a href="https://github.com/maml-dev/examples">GitHub</a>
+  </nav>
+</header>
+<main>
+<article class="example">
+  <p class="eyebrow">Example 13045</p>
+  <h1>Roles &amp; Permissions</h1>
+  <p class="lead">Role-based access control definitions.</p>
+  <pre class="shiki shiki-themes catppuccin-latte plastic" style="--shiki-light:#4c4f69;--shiki-dark:#A9B2C3;--shiki-light-bg:#eff1f5;--shiki-dark-bg:#21252B" tabindex="0"><code><span class="line"><span class="scacc819b">{</span></span>
+<span class="line"><span class="s252224fb">  roles</span><span class="scacc819b">:</span><span class="scacc819b"> [</span></span>
+<span class="line"><span class="scacc819b">    {</span></span>
+<span class="line"><span class="s252224fb">      name</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">viewer</span><span class="scde63d9e">"</span></span>
+<span class="line"><span class="s252224fb">      permissions</span><span class="scacc819b">:</span><span class="scacc819b"> [</span></span>
+<span class="line"><span class="scde63d9e">        "</span><span class="s7911c4c2">delete</span><span class="scde63d9e">"</span></span>
+<span class="line"><span class="scde63d9e">        "</span><span class="s7911c4c2">read</span><span class="scde63d9e">"</span></span>
+<span class="line"><span class="scacc819b">      ]</span></span>
+<span class="line"><span class="s252224fb">      max_seats</span><span class="scacc819b">:</span><span class="sfc8ef81c"> null</span></span>
+<span class="line"><span class="scacc819b">    }</span></span>
+<span class="line"></span>
+<span class="line"><span class="scacc819b">    {</span></span>
+<span class="line"><span class="s252224fb">      name</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">moderator</span><span class="scde63d9e">"</span></span>
+<span class="line"><span class="s252224fb">      permissions</span><span class="scacc819b">:</span><span class="scacc819b"> [</span></span>
+<span class="line"><span class="scde63d9e">        "</span><span class="s7911c4c2">manage_users</span><span class="scde63d9e">"</span></span>
+<span class="line"><span class="scde63d9e">        "</span><span class="s7911c4c2">view_analytics</span><span class="scde63d9e">"</span></span>
+<span class="line"><span class="scde63d9e">        "</span><span class="s7911c4c2">write</span><span class="scde63d9e">"</span></span>
+<span class="line"><span class="scde63d9e">        "</span><span class="s7911c4c2">manage_billing</span><span class="scde63d9e">"</span></span>
+<span class="line"><span class="scde63d9e">        "</span><span class="s7911c4c2">export_data</span><span class="scde63d9e">"</span></span>
+<span class="line"><span class="scacc819b">      ]</span></span>
+<span class="line"><span class="s252224fb">      max_seats</span><span class="scacc819b">:</span><span class="s56b09ea4"> 26</span></span>
+<span class="line"><span class="scacc819b">    }</span></span>
+<span class="line"></span>
+<span class="line"><span class="scacc819b">    {</span></span>
+<span class="line"><span class="s252224fb">      name</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">viewer</span><span class="scde63d9e">"</span></span>
+<span class="line"><span class="s252224fb">      permissions</span><span class="scacc819b">:</span><span class="scacc819b"> [</span></span>
+<span class="line"><span class="scde63d9e">        "</span><span class="s7911c4c2">delete</span><span class="scde63d9e">"</span></span>
+<span class="line"><span class="scde63d9e">        "</span><span class="s7911c4c2">write</span><span class="scde63d9e">"</span></span>
+<span class="line"><span class="scde63d9e">        "</span><span class="s7911c4c2">export_data</span><span class="scde63d9e">"</span></span>
+<span class="line"><span class="scacc819b">      ]</span></span>
+<span class="line"><span class="s252224fb">      max_seats</span><span class="scacc819b">:</span><span class="s56b09ea4"> 43</span></span>
+<span class="line"><span class="scacc819b">    }</span></span>
+<span class="line"></span>
+<span class="line"><span class="scacc819b">    {</span></span>
+<span class="line"><span class="s252224fb">      name</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">admin</span><span class="scde63d9e">"</span></span>
+<span class="line"><span class="s252224fb">      permissions</span><span class="scacc819b">:</span><span class="scacc819b"> [</span></span>
+<span class="line"><span class="scde63d9e">        "</span><span class="s7911c4c2">export_data</span><span class="scde63d9e">"</span></span>
+<span class="line"><span class="scde63d9e">        "</span><span class="s7911c4c2">write</span><span class="scde63d9e">"</span></span>
+<span class="line"><span class="scde63d9e">        "</span><span class="s7911c4c2">view_analytics</span><span class="scde63d9e">"</span></span>
+<span class="line"><span class="scde63d9e">        "</span><span class="s7911c4c2">manage_users</span><span class="scde63d9e">"</span></span>
+<span class="line"><span class="scacc819b">      ]</span></span>
+<span class="line"><span class="s252224fb">      max_seats</span><span class="scacc819b">:</span><span class="sfc8ef81c"> null</span></span>
+<span class="line"><span class="scacc819b">    }</span></span>
+<span class="line"></span>
+<span class="line"><span class="scacc819b">    {</span></span>
+<span class="line"><span class="s252224fb">      name</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">editor</span><span class="scde63d9e">"</span></span>
+<span class="line"><span class="s252224fb">      permissions</span><span class="scacc819b">:</span><span class="scacc819b"> [</span></span>
+<span class="line"><span class="scde63d9e">        "</span><span class="s7911c4c2">manage_billing</span><span class="scde63d9e">"</span></span>
+<span class="line"><span class="scde63d9e">        "</span><span class="s7911c4c2">view_analytics</span><span class="scde63d9e">"</span></span>
+<span class="line"><span class="scde63d9e">        "</span><span class="s7911c4c2">manage_users</span><span class="scde63d9e">"</span></span>
+<span class="line"><span class="scde63d9e">        "</span><span class="s7911c4c2">delete</span><span class="scde63d9e">"</span></span>
+<span class="line"><span class="scacc819b">      ]</span></span>
+<span class="line"><span class="s252224fb">      max_seats</span><span class="scacc819b">:</span><span class="sfc8ef81c"> null</span></span>
+<span class="line"><span class="scacc819b">    }</span></span>
+<span class="line"></span>
+<span class="line"><span class="scacc819b">    {</span></span>
+<span class="line"><span class="s252224fb">      name</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">billing</span><span class="scde63d9e">"</span></span>
+<span class="line"><span class="s252224fb">      permissions</span><span class="scacc819b">:</span><span class="scacc819b"> [</span></span>
+<span class="line"><span class="scde63d9e">        "</span><span class="s7911c4c2">export_data</span><span class="scde63d9e">"</span></span>
+<span class="line"><span class="scde63d9e">        "</span><span class="s7911c4c2">manage_users</span><span class="scde63d9e">"</span></span>
+<span class="line"><span class="scde63d9e">        "</span><span class="s7911c4c2">write</span><span class="scde63d9e">"</span></span>
+<span class="line"><span class="scacc819b">      ]</span></span>
+<span class="line"><span class="s252224fb">      max_seats</span><span class="scacc819b">:</span><span class="s56b09ea4"> 44</span></span>
+<span class="line"><span class="scacc819b">    }</span></span>
+<span class="line"><span class="scacc819b">  ]</span></span>
+<span class="line"><span class="scacc819b">}</span></span></code></pre>
+  <h2>See also</h2>
+  <ul class="card-list">
+    <li><a href="./15276"><span class="card-num">15276</span><span class="card-title">Travel Itinerary</span></a></li>
+    <li><a href="./1292"><span class="card-num">1292</span><span class="card-title">Config with Comments</span></a></li>
+    <li><a href="./12672"><span class="card-num">12672</span><span class="card-title">Playlist</span></a></li>
+  </ul>
+</article>
+</main>
+<footer class="site-footer">
+  Generated examples for the <a href="https://maml.dev">MAML</a> data format.
+</footer>
+</body>
+</html>

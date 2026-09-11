@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>058 — Product Catalog · MAML Examples</title>
+<meta name="description" content="E-commerce product listings.">
+<link rel="stylesheet" href="../assets/style.css">
+<link rel="stylesheet" href="../assets/tokens.css">
+</head>
+<body>
+<header class="site-header">
+  <a class="brand" href="../">MAML Examples</a>
+  <nav>
+    <a href="https://maml.dev">maml.dev</a>
+    <a href="https://github.com/maml-dev/examples">GitHub</a>
+  </nav>
+</header>
+<main>
+<article class="example">
+  <p class="eyebrow">Example 058</p>
+  <h1>Product Catalog</h1>
+  <p class="lead">E-commerce product listings.</p>
+  <pre class="shiki shiki-themes catppuccin-latte plastic" style="--shiki-light:#4c4f69;--shiki-dark:#A9B2C3;--shiki-light-bg:#eff1f5;--shiki-dark-bg:#21252B" tabindex="0"><code><span class="line"><span class="scacc819b">{</span></span>
+<span class="line"><span class="s252224fb">  products</span><span class="scacc819b">:</span><span class="scacc819b"> [</span></span>
+<span class="line"><span class="scacc819b">    {</span></span>
+<span class="line"><span class="s252224fb">      sku</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">XLZ0I8FN</span><span class="scde63d9e">"</span></span>
+<span class="line"><span class="s252224fb">      name</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">Fresh Metal Table</span><span class="scde63d9e">"</span></span>
+<span class="line"><span class="s252224fb">      price</span><span class="scacc819b">:</span><span class="s56b09ea4"> 606.45</span></span>
+<span class="line"><span class="s252224fb">      category</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">Games</span><span class="scde63d9e">"</span></span>
+<span class="line"><span class="s252224fb">      in_stock</span><span class="scacc819b">:</span><span class="sfc8ef81c"> true</span></span>
+<span class="line"><span class="s252224fb">      rating</span><span class="scacc819b">:</span><span class="s56b09ea4"> 2.9</span></span>
+<span class="line"><span class="scacc819b">    }</span></span>
+<span class="line"></span>
+<span class="line"><span class="scacc819b">    {</span></span>
+<span class="line"><span class="s252224fb">      sku</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">PQO8FW6V</span><span class="scde63d9e">"</span></span>
+<span class="line"><span class="s252224fb">      name</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">Soft Silk Cheese</span><span class="scde63d9e">"</span></span>
+<span class="line"><span class="s252224fb">      price</span><span class="scacc819b">:</span><span class="s56b09ea4"> 625.89</span></span>
+<span class="line"><span class="s252224fb">      category</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">Health</span><span class="scde63d9e">"</span></span>
+<span class="line"><span class="s252224fb">      in_stock</span><span class="scacc819b">:</span><span class="sfc8ef81c"> true</span></span>
+<span class="line"><span class="s252224fb">      rating</span><span class="scacc819b">:</span><span class="s56b09ea4"> 3.4</span></span>
+<span class="line"><span class="scacc819b">    }</span></span>
+<span class="line"></span>
+<span class="line"><span class="scacc819b">    {</span></span>
+<span class="line"><span class="s252224fb">      sku</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">QEYTUXWP</span><span class="scde63d9e">"</span></span>
+<span class="line"><span class="s252224fb">      name</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">Electronic Rubber Hat</span><span class="scde63d9e">"</span></span>
+<span class="line"><span class="s252224fb">      price</span><span class="scacc819b">:</span><span class="s56b09ea4"> 716.55</span></span>
+<span class="line"><span class="s252224fb">      category</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">Industrial</span><span class="scde63d9e">"</span></span>
+<span class="line"><span class="s252224fb">      in_stock</span><span class="scacc819b">:</span><span class="sfc8ef81c"> false</span></span>
+<span class="line"><span class="s252224fb">      rating</span><span class="scacc819b">:</span><span class="s56b09ea4"> 1.5</span></span>
+<span class="line"><span class="scacc819b">    }</span></span>
+<span class="line"></span>
+<span class="line"><span class="scacc819b">    {</span></span>
+<span class="line"><span class="s252224fb">      sku</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">HWCUEKUM</span><span class="scde63d9e">"</span></span>
+<span class="line"><span class="s252224fb">      name</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">Incredible Silk Towels</span><span class="scde63d9e">"</span></span>
+<span class="line"><span class="s252224fb">      price</span><span class="scacc819b">:</span><span class="s56b09ea4"> 215.09</span></span>
+<span class="line"><span class="s252224fb">      category</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">Computers</span><span class="scde63d9e">"</span></span>
+<span class="line"><span class="s252224fb">      in_stock</span><span class="scacc819b">:</span><span class="sfc8ef81c"> true</span></span>
+<span class="line"><span class="s252224fb">      rating</span><span class="scacc819b">:</span><span class="s56b09ea4"> 4.5</span></span>
+<span class="line"><span class="scacc819b">    }</span></span>
+<span class="line"></span>
+<span class="line"><span class="scacc819b">    {</span></span>
+<span class="line"><span class="s252224fb">      sku</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">FNFQD2MY</span><span class="scde63d9e">"</span></span>
+<span class="line"><span class="s252224fb">      name</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">Elegant Steel Hat</span><span class="scde63d9e">"</span></span>
+<span class="line"><span class="s252224fb">      price</span><span class="scacc819b">:</span><span class="s56b09ea4"> 262.15</span></span>
+<span class="line"><span class="s252224fb">      category</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">Baby</span><span class="scde63d9e">"</span></span>
+<span class="line"><span class="s252224fb">      in_stock</span><span class="scacc819b">:</span><span class="sfc8ef81c"> true</span></span>
+<span class="line"><span class="s252224fb">      rating</span><span class="scacc819b">:</span><span class="s56b09ea4"> 3.2</span></span>
+<span class="line"><span class="scacc819b">    }</span></span>
+<span class="line"></span>
+<span class="line"><span class="scacc819b">    {</span></span>
+<span class="line"><span class="s252224fb">      sku</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">CYJKEA7S</span><span class="scde63d9e">"</span></span>
+<span class="line"><span class="s252224fb">      name</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">Luxurious Granite Towels</span><span class="scde63d9e">"</span></span>
+<span class="line"><span class="s252224fb">      price</span><span class="scacc819b">:</span><span class="s56b09ea4"> 821.69</span></span>
+<span class="line"><span class="s252224fb">      category</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">Kids</span><span class="scde63d9e">"</span></span>
+<span class="line"><span class="s252224fb">      in_stock</span><span class="scacc819b">:</span><span class="sfc8ef81c"> true</span></span>
+<span class="line"><span class="s252224fb">      rating</span><span class="scacc819b">:</span><span class="s56b09ea4"> 3.9</span></span>
+<span class="line"><span class="scacc819b">    }</span></span>
+<span class="line"><span class="scacc819b">  ]</span></span>
+<span class="line"><span class="scacc819b">}</span></span></code></pre>
+  <h2>See also</h2>
+  <ul class="card-list">
+    <li><a href="./7623"><span class="card-num">7623</span><span class="card-title">Backup Strategy</span></a></li>
+    <li><a href="./16623"><span class="card-num">16623</span><span class="card-title">CI Pipeline</span></a></li>
+    <li><a href="./378"><span class="card-num">378</span><span class="card-title">Resume</span></a></li>
+  </ul>
+</article>
+</main>
+<footer class="site-footer">
+  Generated examples for the <a href="https://maml.dev">MAML</a> data format.
+</footer>
+</body>
+</html>

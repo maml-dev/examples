@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>8089 — Error Messages · MAML Examples</title>
+<meta name="description" content="Application error messages with codes and descriptions.">
+<link rel="stylesheet" href="../assets/style.css">
+<link rel="stylesheet" href="../assets/tokens.css">
+</head>
+<body>
+<header class="site-header">
+  <a class="brand" href="../">MAML Examples</a>
+  <nav>
+    <a href="https://maml.dev">maml.dev</a>
+    <a href="https://github.com/maml-dev/examples">GitHub</a>
+  </nav>
+</header>
+<main>
+<article class="example">
+  <p class="eyebrow">Example 8089</p>
+  <h1>Error Messages</h1>
+  <p class="lead">Application error messages with codes and descriptions.</p>
+  <pre class="shiki shiki-themes catppuccin-latte plastic" style="--shiki-light:#4c4f69;--shiki-dark:#A9B2C3;--shiki-light-bg:#eff1f5;--shiki-dark-bg:#21252B" tabindex="0"><code><span class="line"><span class="s5dd799dd"># Error message catalog</span></span>
+<span class="line"><span class="scacc819b">{</span></span>
+<span class="line"><span class="s252224fb">  locale</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">en</span><span class="scde63d9e">"</span></span>
+<span class="line"><span class="s252224fb">  errors</span><span class="scacc819b">:</span><span class="scacc819b"> {</span></span>
+<span class="line"><span class="s5dd799dd">    # Authentication errors</span></span>
+<span class="line"><span class="s252224fb">    AUTH_FAILED</span><span class="scacc819b">:</span><span class="scacc819b"> {</span></span>
+<span class="line"><span class="s252224fb">      code</span><span class="scacc819b">:</span><span class="s56b09ea4"> 401</span></span>
+<span class="line"><span class="s252224fb">      message</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">Authentication failed</span><span class="scde63d9e">"</span></span>
+<span class="line"><span class="s252224fb">      detail</span><span class="scacc819b">:</span><span class="scde63d9e"> """</span></span>
+<span class="line"><span class="s7911c4c2">Your credentials are invalid or expired.</span></span>
+<span class="line"><span class="s7911c4c2">Please sign in again or reset your password.</span></span>
+<span class="line"><span class="scde63d9e">"""</span></span>
+<span class="line"><span class="scacc819b">    }</span></span>
+<span class="line"></span>
+<span class="line"><span class="s252224fb">    FORBIDDEN</span><span class="scacc819b">:</span><span class="scacc819b"> {</span></span>
+<span class="line"><span class="s252224fb">      code</span><span class="scacc819b">:</span><span class="s56b09ea4"> 403</span></span>
+<span class="line"><span class="s252224fb">      message</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">Access denied</span><span class="scde63d9e">"</span></span>
+<span class="line"><span class="s252224fb">      detail</span><span class="scacc819b">:</span><span class="scde63d9e"> """</span></span>
+<span class="line"><span class="s7911c4c2">You do not have permission to access this resource.</span></span>
+<span class="line"><span class="s7911c4c2">Contact your administrator if you believe this is an error.</span></span>
+<span class="line"><span class="scde63d9e">"""</span></span>
+<span class="line"><span class="scacc819b">    }</span></span>
+<span class="line"></span>
+<span class="line"><span class="s252224fb">    NOT_FOUND</span><span class="scacc819b">:</span><span class="scacc819b"> {</span></span>
+<span class="line"><span class="s252224fb">      code</span><span class="scacc819b">:</span><span class="s56b09ea4"> 404</span></span>
+<span class="line"><span class="s252224fb">      message</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">Resource not found</span><span class="scde63d9e">"</span></span>
+<span class="line"><span class="s252224fb">      detail</span><span class="scacc819b">:</span><span class="scde63d9e"> """</span></span>
+<span class="line"><span class="s7911c4c2">The requested resource does not exist or has been removed.</span></span>
+<span class="line"><span class="s7911c4c2">Check the URL and try again.</span></span>
+<span class="line"><span class="scde63d9e">"""</span></span>
+<span class="line"><span class="scacc819b">    }</span></span>
+<span class="line"></span>
+<span class="line"><span class="s5dd799dd">    # Rate limiting</span></span>
+<span class="line"><span class="s252224fb">    RATE_LIMITED</span><span class="scacc819b">:</span><span class="scacc819b"> {</span></span>
+<span class="line"><span class="s252224fb">      code</span><span class="scacc819b">:</span><span class="s56b09ea4"> 429</span></span>
+<span class="line"><span class="s252224fb">      message</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">Too many requests</span><span class="scde63d9e">"</span></span>
+<span class="line"><span class="s252224fb">      detail</span><span class="scacc819b">:</span><span class="scde63d9e"> """</span></span>
+<span class="line"><span class="s7911c4c2">You have exceeded the rate limit.</span></span>
+<span class="line"><span class="s7911c4c2">Please wait before making another request.</span></span>
+<span class="line"><span class="scde63d9e">"""</span></span>
+<span class="line"><span class="scacc819b">    }</span></span>
+<span class="line"></span>
+<span class="line"><span class="s252224fb">    INTERNAL</span><span class="scacc819b">:</span><span class="scacc819b"> {</span></span>
+<span class="line"><span class="s252224fb">      code</span><span class="scacc819b">:</span><span class="s56b09ea4"> 500</span></span>
+<span class="line"><span class="s252224fb">      message</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">Internal server error</span><span class="scde63d9e">"</span></span>
+<span class="line"><span class="s252224fb">      detail</span><span class="scacc819b">:</span><span class="scde63d9e"> """</span></span>
+<span class="line"><span class="s7911c4c2">An unexpected error occurred.</span></span>
+<span class="line"><span class="s7911c4c2">Our team has been notified and is investigating.</span></span>
+<span class="line"><span class="scde63d9e">"""</span></span>
+<span class="line"><span class="scacc819b">    }</span></span>
+<span class="line"><span class="scacc819b">  }</span></span>
+<span class="line"><span class="scacc819b">}</span></span></code></pre>
+  <h2>See also</h2>
+  <ul class="card-list">
+    <li><a href="./1950"><span class="card-num">1950</span><span class="card-title">User Directory</span></a></li>
+    <li><a href="./140"><span class="card-num">140</span><span class="card-title">Backup Strategy</span></a></li>
+    <li><a href="./7980"><span class="card-num">7980</span><span class="card-title">Recipe</span></a></li>
+  </ul>
+</article>
+</main>
+<footer class="site-footer">
+  Generated examples for the <a href="https://maml.dev">MAML</a> data format.
+</footer>
+</body>
+</html>

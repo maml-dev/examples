@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>10934 — Email Routing · MAML Examples</title>
+<meta name="description" content="Email routing and filtering rules.">
+<link rel="stylesheet" href="../assets/style.css">
+<link rel="stylesheet" href="../assets/tokens.css">
+</head>
+<body>
+<header class="site-header">
+  <a class="brand" href="../">MAML Examples</a>
+  <nav>
+    <a href="https://maml.dev">maml.dev</a>
+    <a href="https://github.com/maml-dev/examples">GitHub</a>
+  </nav>
+</header>
+<main>
+<article class="example">
+  <p class="eyebrow">Example 10934</p>
+  <h1>Email Routing</h1>
+  <p class="lead">Email routing and filtering rules.</p>
+  <pre class="shiki shiki-themes catppuccin-latte plastic" style="--shiki-light:#4c4f69;--shiki-dark:#A9B2C3;--shiki-light-bg:#eff1f5;--shiki-dark-bg:#21252B" tabindex="0"><code><span class="line"><span class="scacc819b">{</span></span>
+<span class="line"><span class="s252224fb">  domain</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">excitable-longboat.org</span><span class="scde63d9e">"</span></span>
+<span class="line"><span class="s252224fb">  inbound</span><span class="scacc819b">:</span><span class="scacc819b"> {</span></span>
+<span class="line"><span class="s252224fb">    mx_records</span><span class="scacc819b">:</span><span class="scacc819b"> [</span></span>
+<span class="line"><span class="scde63d9e">      "</span><span class="s7911c4c2">mx1.excitable-longboat.org</span><span class="scde63d9e">"</span></span>
+<span class="line"><span class="scde63d9e">      "</span><span class="s7911c4c2">mx2.excitable-longboat.org</span><span class="scde63d9e">"</span></span>
+<span class="line"><span class="scacc819b">    ]</span></span>
+<span class="line"><span class="s252224fb">    spam_filter</span><span class="scacc819b">:</span><span class="scacc819b"> {</span></span>
+<span class="line"><span class="s252224fb">      enabled</span><span class="scacc819b">:</span><span class="sfc8ef81c"> true</span></span>
+<span class="line"><span class="s252224fb">      threshold</span><span class="scacc819b">:</span><span class="s56b09ea4"> 7</span></span>
+<span class="line"><span class="s252224fb">      action</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">tag</span><span class="scde63d9e">"</span></span>
+<span class="line"><span class="scacc819b">    }</span></span>
+<span class="line"></span>
+<span class="line"><span class="s252224fb">    dkim</span><span class="scacc819b">:</span><span class="scacc819b"> {</span></span>
+<span class="line"><span class="s252224fb">      enabled</span><span class="scacc819b">:</span><span class="sfc8ef81c"> true</span></span>
+<span class="line"><span class="s252224fb">      selector</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">default</span><span class="scde63d9e">"</span></span>
+<span class="line"><span class="s252224fb">      key_size</span><span class="scacc819b">:</span><span class="s56b09ea4"> 2048</span></span>
+<span class="line"><span class="scacc819b">    }</span></span>
+<span class="line"><span class="scacc819b">  }</span></span>
+<span class="line"></span>
+<span class="line"><span class="s252224fb">  outbound</span><span class="scacc819b">:</span><span class="scacc819b"> {</span></span>
+<span class="line"><span class="s252224fb">    relay</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">smtp.excitable-longboat.org</span><span class="scde63d9e">"</span></span>
+<span class="line"><span class="s252224fb">    port</span><span class="scacc819b">:</span><span class="s56b09ea4"> 587</span></span>
+<span class="line"><span class="s252224fb">    tls</span><span class="scacc819b">:</span><span class="sfc8ef81c"> true</span></span>
+<span class="line"><span class="s252224fb">    rate_limit</span><span class="scacc819b">:</span><span class="scacc819b"> {</span></span>
+<span class="line"><span class="s252224fb">      per_minute</span><span class="scacc819b">:</span><span class="s56b09ea4"> 363</span></span>
+<span class="line"><span class="s252224fb">      per_hour</span><span class="scacc819b">:</span><span class="s56b09ea4"> 4387</span></span>
+<span class="line"><span class="scacc819b">    }</span></span>
+<span class="line"><span class="scacc819b">  }</span></span>
+<span class="line"><span class="scacc819b">}</span></span></code></pre>
+  <h2>See also</h2>
+  <ul class="card-list">
+    <li><a href="./6815"><span class="card-num">6815</span><span class="card-title">Linter Config</span></a></li>
+    <li><a href="./3688"><span class="card-num">3688</span><span class="card-title">Error Messages</span></a></li>
+    <li><a href="./10200"><span class="card-num">10200</span><span class="card-title">Changelog</span></a></li>
+  </ul>
+</article>
+</main>
+<footer class="site-footer">
+  Generated examples for the <a href="https://maml.dev">MAML</a> data format.
+</footer>
+</body>
+</html>

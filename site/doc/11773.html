@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>11773 — Migration Plan · MAML Examples</title>
+<meta name="description" content="Database migration plan across environments.">
+<link rel="stylesheet" href="../assets/style.css">
+<link rel="stylesheet" href="../assets/tokens.css">
+</head>
+<body>
+<header class="site-header">
+  <a class="brand" href="../">MAML Examples</a>
+  <nav>
+    <a href="https://maml.dev">maml.dev</a>
+    <a href="https://github.com/maml-dev/examples">GitHub</a>
+  </nav>
+</header>
+<main>
+<article class="example">
+  <p class="eyebrow">Example 11773</p>
+  <h1>Migration Plan</h1>
+  <p class="lead">Database migration plan across environments.</p>
+  <pre class="shiki shiki-themes catppuccin-latte plastic" style="--shiki-light:#4c4f69;--shiki-dark:#A9B2C3;--shiki-light-bg:#eff1f5;--shiki-dark-bg:#21252B" tabindex="0"><code><span class="line"><span class="scacc819b">{</span></span>
+<span class="line"><span class="s252224fb">  schema_version</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">0.4.8</span><span class="scde63d9e">"</span></span>
+<span class="line"><span class="s252224fb">  database</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">sqlite</span><span class="scde63d9e">"</span></span>
+<span class="line"></span>
+<span class="line"><span class="s252224fb">  migrations</span><span class="scacc819b">:</span><span class="scacc819b"> [</span></span>
+<span class="line"><span class="scacc819b">    {</span></span>
+<span class="line"><span class="s252224fb">      id</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">1783906136</span><span class="scde63d9e">"</span></span>
+<span class="line"><span class="s252224fb">      name</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">drop_name_column</span><span class="scde63d9e">"</span></span>
+<span class="line"><span class="s252224fb">      applied</span><span class="scacc819b">:</span><span class="sfc8ef81c"> true</span></span>
+<span class="line"><span class="scacc819b">    }</span></span>
+<span class="line"></span>
+<span class="line"><span class="scacc819b">    {</span></span>
+<span class="line"><span class="s252224fb">      id</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">1783992536</span><span class="scde63d9e">"</span></span>
+<span class="line"><span class="s252224fb">      name</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">create_group_column</span><span class="scde63d9e">"</span></span>
+<span class="line"><span class="s252224fb">      applied</span><span class="scacc819b">:</span><span class="sfc8ef81c"> true</span></span>
+<span class="line"><span class="scacc819b">    }</span></span>
+<span class="line"></span>
+<span class="line"><span class="scacc819b">    {</span></span>
+<span class="line"><span class="s252224fb">      id</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">1784078936</span><span class="scde63d9e">"</span></span>
+<span class="line"><span class="s252224fb">      name</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">alter_avatar_column</span><span class="scde63d9e">"</span></span>
+<span class="line"><span class="s252224fb">      applied</span><span class="scacc819b">:</span><span class="sfc8ef81c"> true</span></span>
+<span class="line"><span class="scacc819b">    }</span></span>
+<span class="line"></span>
+<span class="line"><span class="scacc819b">    {</span></span>
+<span class="line"><span class="s252224fb">      id</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">1784165336</span><span class="scde63d9e">"</span></span>
+<span class="line"><span class="s252224fb">      name</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">alter_createdAt_column</span><span class="scde63d9e">"</span></span>
+<span class="line"><span class="s252224fb">      applied</span><span class="scacc819b">:</span><span class="sfc8ef81c"> false</span></span>
+<span class="line"><span class="scacc819b">    }</span></span>
+<span class="line"></span>
+<span class="line"><span class="scacc819b">    {</span></span>
+<span class="line"><span class="s252224fb">      id</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">1784251736</span><span class="scde63d9e">"</span></span>
+<span class="line"><span class="s252224fb">      name</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">drop_comment_index</span><span class="scde63d9e">"</span></span>
+<span class="line"><span class="s252224fb">      applied</span><span class="scacc819b">:</span><span class="sfc8ef81c"> false</span></span>
+<span class="line"><span class="scacc819b">    }</span></span>
+<span class="line"></span>
+<span class="line"><span class="scacc819b">    {</span></span>
+<span class="line"><span class="s252224fb">      id</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">1784338136</span><span class="scde63d9e">"</span></span>
+<span class="line"><span class="s252224fb">      name</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">drop_phone_index</span><span class="scde63d9e">"</span></span>
+<span class="line"><span class="s252224fb">      applied</span><span class="scacc819b">:</span><span class="sfc8ef81c"> false</span></span>
+<span class="line"><span class="scacc819b">    }</span></span>
+<span class="line"><span class="scacc819b">  ]</span></span>
+<span class="line"></span>
+<span class="line"><span class="s252224fb">  environments</span><span class="scacc819b">:</span><span class="scacc819b"> {</span></span>
+<span class="line"><span class="s252224fb">    dev</span><span class="scacc819b">:</span><span class="scacc819b"> {</span></span>
+<span class="line"><span class="s252224fb">      host</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">dev-db.rotten-precedent.biz</span><span class="scde63d9e">"</span></span>
+<span class="line"><span class="s252224fb">      port</span><span class="scacc819b">:</span><span class="s56b09ea4"> 5432</span></span>
+<span class="line"><span class="s252224fb">      ssl</span><span class="scacc819b">:</span><span class="sfc8ef81c"> false</span></span>
+<span class="line"><span class="scacc819b">    }</span></span>
+<span class="line"></span>
+<span class="line"><span class="s252224fb">    staging</span><span class="scacc819b">:</span><span class="scacc819b"> {</span></span>
+<span class="line"><span class="s252224fb">      host</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">staging-db.impossible-flint.info</span><span class="scde63d9e">"</span></span>
+<span class="line"><span class="s252224fb">      port</span><span class="scacc819b">:</span><span class="s56b09ea4"> 5432</span></span>
+<span class="line"><span class="s252224fb">      ssl</span><span class="scacc819b">:</span><span class="sfc8ef81c"> true</span></span>
+<span class="line"><span class="scacc819b">    }</span></span>
+<span class="line"></span>
+<span class="line"><span class="s252224fb">    prod</span><span class="scacc819b">:</span><span class="scacc819b"> {</span></span>
+<span class="line"><span class="s252224fb">      host</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">prod-db.exhausted-futon.net</span><span class="scde63d9e">"</span></span>
+<span class="line"><span class="s252224fb">      port</span><span class="scacc819b">:</span><span class="s56b09ea4"> 5432</span></span>
+<span class="line"><span class="s252224fb">      ssl</span><span class="scacc819b">:</span><span class="sfc8ef81c"> true</span></span>
+<span class="line"><span class="scacc819b">    }</span></span>
+<span class="line"><span class="scacc819b">  }</span></span>
+<span class="line"><span class="scacc819b">}</span></span></code></pre>
+  <h2>See also</h2>
+  <ul class="card-list">
+    <li><a href="./10818"><span class="card-num">10818</span><span class="card-title">Cron Schedule</span></a></li>
+    <li><a href="./9168"><span class="card-num">9168</span><span class="card-title">Dashboard Layout</span></a></li>
+    <li><a href="./14888"><span class="card-num">14888</span><span class="card-title">License Header</span></a></li>
+  </ul>
+</article>
+</main>
+<footer class="site-footer">
+  Generated examples for the <a href="https://maml.dev">MAML</a> data format.
+</footer>
+</body>
+</html>

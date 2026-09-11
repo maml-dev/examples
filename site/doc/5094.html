@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>5094 — HTML Templates · MAML Examples</title>
+<meta name="description" content="Email HTML templates with raw string content.">
+<link rel="stylesheet" href="../assets/style.css">
+<link rel="stylesheet" href="../assets/tokens.css">
+</head>
+<body>
+<header class="site-header">
+  <a class="brand" href="../">MAML Examples</a>
+  <nav>
+    <a href="https://maml.dev">maml.dev</a>
+    <a href="https://github.com/maml-dev/examples">GitHub</a>
+  </nav>
+</header>
+<main>
+<article class="example">
+  <p class="eyebrow">Example 5094</p>
+  <h1>HTML Templates</h1>
+  <p class="lead">Email HTML templates with raw string content.</p>
+  <pre class="shiki shiki-themes catppuccin-latte plastic" style="--shiki-light:#4c4f69;--shiki-dark:#A9B2C3;--shiki-light-bg:#eff1f5;--shiki-dark-bg:#21252B" tabindex="0"><code><span class="line"><span class="s5dd799dd"># Email template configuration</span></span>
+<span class="line"><span class="scacc819b">{</span></span>
+<span class="line"><span class="s252224fb">  from</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">noreply@crooked-conservation.name</span><span class="scde63d9e">"</span></span>
+<span class="line"><span class="s252224fb">  subject</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">Temptatio cattus nisi clam.</span><span class="scde63d9e">"</span></span>
+<span class="line"><span class="s5dd799dd">  # HTML email body</span></span>
+<span class="line"><span class="s252224fb">  template</span><span class="scacc819b">:</span><span class="scde63d9e"> """</span></span>
+<span class="line"><span class="s7911c4c2">&#x3C;!DOCTYPE html></span></span>
+<span class="line"><span class="s7911c4c2">&#x3C;html></span></span>
+<span class="line"><span class="s7911c4c2">&#x3C;head></span></span>
+<span class="line"><span class="s7911c4c2">  &#x3C;meta charset="utf-8"></span></span>
+<span class="line"><span class="s7911c4c2">  &#x3C;title>Welcome&#x3C;/title></span></span>
+<span class="line"><span class="s7911c4c2">&#x3C;/head></span></span>
+<span class="line"><span class="s7911c4c2">&#x3C;body></span></span>
+<span class="line"><span class="s7911c4c2">  &#x3C;h1>Hello, {{name}}!&#x3C;/h1></span></span>
+<span class="line"><span class="s7911c4c2">  &#x3C;p>Ambitus abduco aranea cursim campana atqui. Acer circumvenio vomica vulgus solio triumphus. Curto brevis deinde.&#x3C;/p></span></span>
+<span class="line"><span class="s7911c4c2">  &#x3C;a href="{{url}}">Get Started&#x3C;/a></span></span>
+<span class="line"><span class="s7911c4c2">&#x3C;/body></span></span>
+<span class="line"><span class="s7911c4c2">&#x3C;/html></span></span>
+<span class="line"><span class="scde63d9e">"""</span></span>
+<span class="line"></span>
+<span class="line"><span class="s5dd799dd">  # Plain text fallback</span></span>
+<span class="line"><span class="s252224fb">  plain_text</span><span class="scacc819b">:</span><span class="scde63d9e"> """</span></span>
+<span class="line"><span class="s7911c4c2">Hello, {{name}}!</span></span>
+<span class="line"></span>
+<span class="line"><span class="s7911c4c2">Depraedor coaegresco carpo subiungo delibero ab credo. Tergeo averto spiritus supellex cimentarius acerbitas. Aegrotatio aduro abundans vilitas sollicito crebro.</span></span>
+<span class="line"></span>
+<span class="line"><span class="s7911c4c2">Visit: {{url}}</span></span>
+<span class="line"><span class="scde63d9e">"""</span></span>
+<span class="line"><span class="scacc819b">}</span></span></code></pre>
+  <h2>See also</h2>
+  <ul class="card-list">
+    <li><a href="./12759"><span class="card-num">12759</span><span class="card-title">Daily Agenda</span></a></li>
+    <li><a href="./6075"><span class="card-num">6075</span><span class="card-title">Recipe</span></a></li>
+    <li><a href="./11065"><span class="card-num">11065</span><span class="card-title">Docker Compose</span></a></li>
+  </ul>
+</article>
+</main>
+<footer class="site-footer">
+  Generated examples for the <a href="https://maml.dev">MAML</a> data format.
+</footer>
+</body>
+</html>

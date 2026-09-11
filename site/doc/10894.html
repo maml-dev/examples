@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>10894 — Regex Patterns · MAML Examples</title>
+<meta name="description" content="Named regex patterns for validation.">
+<link rel="stylesheet" href="../assets/style.css">
+<link rel="stylesheet" href="../assets/tokens.css">
+</head>
+<body>
+<header class="site-header">
+  <a class="brand" href="../">MAML Examples</a>
+  <nav>
+    <a href="https://maml.dev">maml.dev</a>
+    <a href="https://github.com/maml-dev/examples">GitHub</a>
+  </nav>
+</header>
+<main>
+<article class="example">
+  <p class="eyebrow">Example 10894</p>
+  <h1>Regex Patterns</h1>
+  <p class="lead">Named regex patterns for validation.</p>
+  <pre class="shiki shiki-themes catppuccin-latte plastic" style="--shiki-light:#4c4f69;--shiki-dark:#A9B2C3;--shiki-light-bg:#eff1f5;--shiki-dark-bg:#21252B" tabindex="0"><code><span class="line"><span class="s5dd799dd"># Validation regex patterns</span></span>
+<span class="line"><span class="scacc819b">{</span></span>
+<span class="line"><span class="s252224fb">  email</span><span class="scacc819b">:</span><span class="scde63d9e"> """</span></span>
+<span class="line"><span class="s7911c4c2">^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$</span></span>
+<span class="line"><span class="scde63d9e">"""</span><span class="s5dd799dd"> # RFC 5322 simplified</span></span>
+<span class="line"><span class="s252224fb">  phone</span><span class="scacc819b">:</span><span class="scde63d9e"> """</span></span>
+<span class="line"><span class="s7911c4c2">^\+?[1-9]\d{1,14}$</span></span>
+<span class="line"><span class="scde63d9e">"""</span><span class="s5dd799dd"> # E.164 format</span></span>
+<span class="line"><span class="s252224fb">  uuid</span><span class="scacc819b">:</span><span class="scde63d9e"> """</span></span>
+<span class="line"><span class="s7911c4c2">^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$</span></span>
+<span class="line"><span class="scde63d9e">"""</span></span>
+<span class="line"><span class="s252224fb">  slug</span><span class="scacc819b">:</span><span class="scde63d9e"> """</span></span>
+<span class="line"><span class="s7911c4c2">^[a-z0-9]+(?:-[a-z0-9]+)*$</span></span>
+<span class="line"><span class="scde63d9e">"""</span></span>
+<span class="line"></span>
+<span class="line"><span class="s5dd799dd">  # Semantic versioning</span></span>
+<span class="line"><span class="s252224fb">  semver</span><span class="scacc819b">:</span><span class="scde63d9e"> """</span></span>
+<span class="line"><span class="s7911c4c2">^(0|[1-9]\d*)\.(0|[1-9]\d*)\.(0|[1-9]\d*)(?:-((?:0|[1-9]\d*|\d*[a-zA-Z-][0-9a-zA-Z-]*)(?:\.(?:0|[1-9]\d*|\d*[a-zA-Z-][0-9a-zA-Z-]*))*))?$</span></span>
+<span class="line"><span class="scde63d9e">"""</span></span>
+<span class="line"><span class="s252224fb">  ipv4</span><span class="scacc819b">:</span><span class="scde63d9e"> """</span></span>
+<span class="line"><span class="s7911c4c2">^((25[0-5]|(2[0-4]|1\d|[1-9]|)\d)\.?\b){4}$</span></span>
+<span class="line"><span class="scde63d9e">"""</span></span>
+<span class="line"><span class="s252224fb">  hex_color</span><span class="scacc819b">:</span><span class="scde63d9e"> """</span></span>
+<span class="line"><span class="s7911c4c2">^#([0-9a-fA-F]{3}|[0-9a-fA-F]{6})$</span></span>
+<span class="line"><span class="scde63d9e">"""</span></span>
+<span class="line"></span>
+<span class="line"><span class="s5dd799dd">  # URL patterns</span></span>
+<span class="line"><span class="s252224fb">  url</span><span class="scacc819b">:</span><span class="scde63d9e"> """</span></span>
+<span class="line"><span class="s7911c4c2">^https?://[^\s/$.?#].[^\s]*$</span></span>
+<span class="line"><span class="scde63d9e">"""</span></span>
+<span class="line"><span class="scacc819b">}</span></span></code></pre>
+  <h2>See also</h2>
+  <ul class="card-list">
+    <li><a href="./10409"><span class="card-num">10409</span><span class="card-title">DNS Config</span></a></li>
+    <li><a href="./13773"><span class="card-num">13773</span><span class="card-title">Test Suite</span></a></li>
+    <li><a href="./9817"><span class="card-num">9817</span><span class="card-title">DNS Config</span></a></li>
+  </ul>
+</article>
+</main>
+<footer class="site-footer">
+  Generated examples for the <a href="https://maml.dev">MAML</a> data format.
+</footer>
+</body>
+</html>

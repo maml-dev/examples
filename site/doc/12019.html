@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>12019 — Cron Schedule · MAML Examples</title>
+<meta name="description" content="Task scheduler timing configuration.">
+<link rel="stylesheet" href="../assets/style.css">
+<link rel="stylesheet" href="../assets/tokens.css">
+</head>
+<body>
+<header class="site-header">
+  <a class="brand" href="../">MAML Examples</a>
+  <nav>
+    <a href="https://maml.dev">maml.dev</a>
+    <a href="https://github.com/maml-dev/examples">GitHub</a>
+  </nav>
+</header>
+<main>
+<article class="example">
+  <p class="eyebrow">Example 12019</p>
+  <h1>Cron Schedule</h1>
+  <p class="lead">Task scheduler timing configuration.</p>
+  <pre class="shiki shiki-themes catppuccin-latte plastic" style="--shiki-light:#4c4f69;--shiki-dark:#A9B2C3;--shiki-light-bg:#eff1f5;--shiki-dark-bg:#21252B" tabindex="0"><code><span class="line"><span class="scacc819b">{</span></span>
+<span class="line"><span class="s252224fb">  timezone</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">Europe/Berlin</span><span class="scde63d9e">"</span></span>
+<span class="line"><span class="s252224fb">  backup</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">0 2 * * *</span><span class="scde63d9e">"</span><span class="s5dd799dd"> # daily at 2am</span></span>
+<span class="line"><span class="s252224fb">  cleanup</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">0 */6 * * *</span><span class="scde63d9e">"</span><span class="s5dd799dd"> # every 6 hours</span></span>
+<span class="line"><span class="s252224fb">  report</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">0 9 * * 1</span><span class="scde63d9e">"</span><span class="s5dd799dd"> # Monday 9am</span></span>
+<span class="line"><span class="s252224fb">  healthcheck</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">*/5 * * * *</span><span class="scde63d9e">"</span><span class="s5dd799dd"> # every 5 min</span></span>
+<span class="line"></span>
+<span class="line"><span class="s252224fb">  rotate_logs</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">0 0 1 * *</span><span class="scde63d9e">"</span><span class="s5dd799dd"> # first of month</span></span>
+<span class="line"><span class="s252224fb">  sync</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">30 * * * *</span><span class="scde63d9e">"</span><span class="s5dd799dd"> # every hour at :30</span></span>
+<span class="line"><span class="scacc819b">}</span></span></code></pre>
+  <h2>See also</h2>
+  <ul class="card-list">
+    <li><a href="./8462"><span class="card-num">8462</span><span class="card-title">Recipe</span></a></li>
+    <li><a href="./2446"><span class="card-num">2446</span><span class="card-title">Dependencies</span></a></li>
+    <li><a href="./12470"><span class="card-num">12470</span><span class="card-title">Test Suite</span></a></li>
+  </ul>
+</article>
+</main>
+<footer class="site-footer">
+  Generated examples for the <a href="https://maml.dev">MAML</a> data format.
+</footer>
+</body>
+</html>

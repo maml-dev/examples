@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>4253 — Server Inventory · MAML Examples</title>
+<meta name="description" content="Infrastructure server inventory.">
+<link rel="stylesheet" href="../assets/style.css">
+<link rel="stylesheet" href="../assets/tokens.css">
+</head>
+<body>
+<header class="site-header">
+  <a class="brand" href="../">MAML Examples</a>
+  <nav>
+    <a href="https://maml.dev">maml.dev</a>
+    <a href="https://github.com/maml-dev/examples">GitHub</a>
+  </nav>
+</header>
+<main>
+<article class="example">
+  <p class="eyebrow">Example 4253</p>
+  <h1>Server Inventory</h1>
+  <p class="lead">Infrastructure server inventory.</p>
+  <pre class="shiki shiki-themes catppuccin-latte plastic" style="--shiki-light:#4c4f69;--shiki-dark:#A9B2C3;--shiki-light-bg:#eff1f5;--shiki-dark-bg:#21252B" tabindex="0"><code><span class="line"><span class="scacc819b">{</span></span>
+<span class="line"><span class="s252224fb">  servers</span><span class="scacc819b">:</span><span class="scacc819b"> [</span></span>
+<span class="line"><span class="scacc819b">    {</span></span>
+<span class="line"><span class="s252224fb">      hostname</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">cache-6</span><span class="scde63d9e">"</span></span>
+<span class="line"><span class="s252224fb">      ip</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">201.165.220.202</span><span class="scde63d9e">"</span></span>
+<span class="line"><span class="s252224fb">      os</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">Ubuntu 22.04</span><span class="scde63d9e">"</span></span>
+<span class="line"><span class="s252224fb">      cpu_cores</span><span class="scacc819b">:</span><span class="s56b09ea4"> 2</span></span>
+<span class="line"><span class="s252224fb">      memory_gb</span><span class="scacc819b">:</span><span class="s56b09ea4"> 32</span></span>
+<span class="line"><span class="s252224fb">      status</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">stopped</span><span class="scde63d9e">"</span></span>
+<span class="line"><span class="scacc819b">    }</span></span>
+<span class="line"></span>
+<span class="line"><span class="scacc819b">    {</span></span>
+<span class="line"><span class="s252224fb">      hostname</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">web-9</span><span class="scde63d9e">"</span></span>
+<span class="line"><span class="s252224fb">      ip</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">24.245.87.83</span><span class="scde63d9e">"</span></span>
+<span class="line"><span class="s252224fb">      os</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">Amazon Linux 2023</span><span class="scde63d9e">"</span></span>
+<span class="line"><span class="s252224fb">      cpu_cores</span><span class="scacc819b">:</span><span class="s56b09ea4"> 2</span></span>
+<span class="line"><span class="s252224fb">      memory_gb</span><span class="scacc819b">:</span><span class="s56b09ea4"> 8</span></span>
+<span class="line"><span class="s252224fb">      status</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">running</span><span class="scde63d9e">"</span></span>
+<span class="line"><span class="scacc819b">    }</span></span>
+<span class="line"></span>
+<span class="line"><span class="scacc819b">    {</span></span>
+<span class="line"><span class="s252224fb">      hostname</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">web-1</span><span class="scde63d9e">"</span></span>
+<span class="line"><span class="s252224fb">      ip</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">227.252.241.85</span><span class="scde63d9e">"</span></span>
+<span class="line"><span class="s252224fb">      os</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">Debian 12</span><span class="scde63d9e">"</span></span>
+<span class="line"><span class="s252224fb">      cpu_cores</span><span class="scacc819b">:</span><span class="s56b09ea4"> 8</span></span>
+<span class="line"><span class="s252224fb">      memory_gb</span><span class="scacc819b">:</span><span class="s56b09ea4"> 8</span></span>
+<span class="line"><span class="s252224fb">      status</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">running</span><span class="scde63d9e">"</span></span>
+<span class="line"><span class="scacc819b">    }</span></span>
+<span class="line"></span>
+<span class="line"><span class="scacc819b">    {</span></span>
+<span class="line"><span class="s252224fb">      hostname</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">db-3</span><span class="scde63d9e">"</span></span>
+<span class="line"><span class="s252224fb">      ip</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">8.16.81.59</span><span class="scde63d9e">"</span></span>
+<span class="line"><span class="s252224fb">      os</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">Alpine 3.19</span><span class="scde63d9e">"</span></span>
+<span class="line"><span class="s252224fb">      cpu_cores</span><span class="scacc819b">:</span><span class="s56b09ea4"> 2</span></span>
+<span class="line"><span class="s252224fb">      memory_gb</span><span class="scacc819b">:</span><span class="s56b09ea4"> 8</span></span>
+<span class="line"><span class="s252224fb">      status</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">stopped</span><span class="scde63d9e">"</span></span>
+<span class="line"><span class="scacc819b">    }</span></span>
+<span class="line"></span>
+<span class="line"><span class="scacc819b">    {</span></span>
+<span class="line"><span class="s252224fb">      hostname</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">queue-8</span><span class="scde63d9e">"</span></span>
+<span class="line"><span class="s252224fb">      ip</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">217.156.221.128</span><span class="scde63d9e">"</span></span>
+<span class="line"><span class="s252224fb">      os</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">Amazon Linux 2023</span><span class="scde63d9e">"</span></span>
+<span class="line"><span class="s252224fb">      cpu_cores</span><span class="scacc819b">:</span><span class="s56b09ea4"> 4</span></span>
+<span class="line"><span class="s252224fb">      memory_gb</span><span class="scacc819b">:</span><span class="s56b09ea4"> 8</span></span>
+<span class="line"><span class="s252224fb">      status</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">stopped</span><span class="scde63d9e">"</span></span>
+<span class="line"><span class="scacc819b">    }</span></span>
+<span class="line"></span>
+<span class="line"><span class="scacc819b">    {</span></span>
+<span class="line"><span class="s252224fb">      hostname</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">queue-2</span><span class="scde63d9e">"</span></span>
+<span class="line"><span class="s252224fb">      ip</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">5.245.122.93</span><span class="scde63d9e">"</span></span>
+<span class="line"><span class="s252224fb">      os</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">Alpine 3.19</span><span class="scde63d9e">"</span></span>
+<span class="line"><span class="s252224fb">      cpu_cores</span><span class="scacc819b">:</span><span class="s56b09ea4"> 4</span></span>
+<span class="line"><span class="s252224fb">      memory_gb</span><span class="scacc819b">:</span><span class="s56b09ea4"> 64</span></span>
+<span class="line"><span class="s252224fb">      status</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">running</span><span class="scde63d9e">"</span></span>
+<span class="line"><span class="scacc819b">    }</span></span>
+<span class="line"><span class="scacc819b">  ]</span></span>
+<span class="line"><span class="scacc819b">}</span></span></code></pre>
+  <h2>See also</h2>
+  <ul class="card-list">
+    <li><a href="./8649"><span class="card-num">8649</span><span class="card-title">DNS Records</span></a></li>
+    <li><a href="./4852"><span class="card-num">4852</span><span class="card-title">Font Stack</span></a></li>
+    <li><a href="./16791"><span class="card-num">16791</span><span class="card-title">Git Hooks</span></a></li>
+  </ul>
+</article>
+</main>
+<footer class="site-footer">
+  Generated examples for the <a href="https://maml.dev">MAML</a> data format.
+</footer>
+</body>
+</html>

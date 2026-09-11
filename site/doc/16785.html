@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>16785 — API Mock · MAML Examples</title>
+<meta name="description" content="Mock API response payloads for testing.">
+<link rel="stylesheet" href="../assets/style.css">
+<link rel="stylesheet" href="../assets/tokens.css">
+</head>
+<body>
+<header class="site-header">
+  <a class="brand" href="../">MAML Examples</a>
+  <nav>
+    <a href="https://maml.dev">maml.dev</a>
+    <a href="https://github.com/maml-dev/examples">GitHub</a>
+  </nav>
+</header>
+<main>
+<article class="example">
+  <p class="eyebrow">Example 16785</p>
+  <h1>API Mock</h1>
+  <p class="lead">Mock API response payloads for testing.</p>
+  <pre class="shiki shiki-themes catppuccin-latte plastic" style="--shiki-light:#4c4f69;--shiki-dark:#A9B2C3;--shiki-light-bg:#eff1f5;--shiki-dark-bg:#21252B" tabindex="0"><code><span class="line"><span class="s5dd799dd"># Mock API definition</span></span>
+<span class="line"><span class="scacc819b">{</span></span>
+<span class="line"><span class="s252224fb">  endpoint</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">/api/v1/users</span><span class="scde63d9e">"</span></span>
+<span class="line"><span class="s252224fb">  method</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">GET</span><span class="scde63d9e">"</span></span>
+<span class="line"><span class="s252224fb">  status</span><span class="scacc819b">:</span><span class="s56b09ea4"> 200</span></span>
+<span class="line"><span class="s5dd799dd">  # JSON response body</span></span>
+<span class="line"><span class="s252224fb">  response</span><span class="scacc819b">:</span><span class="scde63d9e"> """</span></span>
+<span class="line"><span class="s7911c4c2">[</span></span>
+<span class="line"><span class="s7911c4c2">  {</span></span>
+<span class="line"><span class="s7911c4c2">    "id": 1,</span></span>
+<span class="line"><span class="s7911c4c2">    "name": "Warren Ondricka",</span></span>
+<span class="line"><span class="s7911c4c2">    "email": "Hubert_Wunsch16@yahoo.com",</span></span>
+<span class="line"><span class="s7911c4c2">    "role": "admin"</span></span>
+<span class="line"><span class="s7911c4c2">  },</span></span>
+<span class="line"><span class="s7911c4c2">  {</span></span>
+<span class="line"><span class="s7911c4c2">    "id": 2,</span></span>
+<span class="line"><span class="s7911c4c2">    "name": "Marc Dietrich",</span></span>
+<span class="line"><span class="s7911c4c2">    "email": "Amber_Johnson@yahoo.com",</span></span>
+<span class="line"><span class="s7911c4c2">    "role": "user"</span></span>
+<span class="line"><span class="s7911c4c2">  }</span></span>
+<span class="line"><span class="s7911c4c2">]</span></span>
+<span class="line"><span class="scde63d9e">"""</span></span>
+<span class="line"></span>
+<span class="line"><span class="s5dd799dd">  # Response headers</span></span>
+<span class="line"><span class="s252224fb">  headers</span><span class="scacc819b">:</span><span class="scacc819b"> {</span></span>
+<span class="line"><span class="s252224fb">    Content-Type</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">application/json</span><span class="scde63d9e">"</span></span>
+<span class="line"><span class="s252224fb">    X-Total-Count</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">2</span><span class="scde63d9e">"</span></span>
+<span class="line"><span class="s252224fb">    X-Request-Id</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">c7ab97d5-6518-4cc0-8878-1c6a962103e5</span><span class="scde63d9e">"</span></span>
+<span class="line"><span class="scacc819b">  }</span></span>
+<span class="line"><span class="s252224fb">  delay_ms</span><span class="scacc819b">:</span><span class="s56b09ea4"> 349</span><span class="s5dd799dd"> # simulated latency</span></span>
+<span class="line"><span class="scacc819b">}</span></span></code></pre>
+  <h2>See also</h2>
+  <ul class="card-list">
+    <li><a href="./10275"><span class="card-num">10275</span><span class="card-title">Docker Compose</span></a></li>
+    <li><a href="./9303"><span class="card-num">9303</span><span class="card-title">Proxy Config</span></a></li>
+    <li><a href="./1300"><span class="card-num">1300</span><span class="card-title">Config with Comments</span></a></li>
+  </ul>
+</article>
+</main>
+<footer class="site-footer">
+  Generated examples for the <a href="https://maml.dev">MAML</a> data format.
+</footer>
+</body>
+</html>

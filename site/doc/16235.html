@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>16235 — Terraform Resource · MAML Examples</title>
+<meta name="description" content="Infrastructure as code resource definition.">
+<link rel="stylesheet" href="../assets/style.css">
+<link rel="stylesheet" href="../assets/tokens.css">
+</head>
+<body>
+<header class="site-header">
+  <a class="brand" href="../">MAML Examples</a>
+  <nav>
+    <a href="https://maml.dev">maml.dev</a>
+    <a href="https://github.com/maml-dev/examples">GitHub</a>
+  </nav>
+</header>
+<main>
+<article class="example">
+  <p class="eyebrow">Example 16235</p>
+  <h1>Terraform Resource</h1>
+  <p class="lead">Infrastructure as code resource definition.</p>
+  <pre class="shiki shiki-themes catppuccin-latte plastic" style="--shiki-light:#4c4f69;--shiki-dark:#A9B2C3;--shiki-light-bg:#eff1f5;--shiki-dark-bg:#21252B" tabindex="0"><code><span class="line"><span class="scacc819b">{</span></span>
+<span class="line"><span class="s252224fb">  provider</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">aws</span><span class="scde63d9e">"</span></span>
+<span class="line"><span class="s252224fb">  region</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">us-east-1</span><span class="scde63d9e">"</span></span>
+<span class="line"><span class="s252224fb">  resources</span><span class="scacc819b">:</span><span class="scacc819b"> {</span></span>
+<span class="line"><span class="s5dd799dd">    # Network</span></span>
+<span class="line"><span class="s252224fb">    vpc</span><span class="scacc819b">:</span><span class="scacc819b"> {</span></span>
+<span class="line"><span class="s252224fb">      cidr_block</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">10.6.0.0/16</span><span class="scde63d9e">"</span></span>
+<span class="line"><span class="s252224fb">      enable_dns</span><span class="scacc819b">:</span><span class="sfc8ef81c"> true</span></span>
+<span class="line"><span class="s252224fb">      tags</span><span class="scacc819b">:</span><span class="scacc819b"> {</span></span>
+<span class="line"><span class="s252224fb">        Name</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">pacemaker-vpc</span><span class="scde63d9e">"</span></span>
+<span class="line"><span class="s252224fb">        Environment</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">production</span><span class="scde63d9e">"</span></span>
+<span class="line"><span class="scacc819b">      }</span></span>
+<span class="line"><span class="scacc819b">    }</span></span>
+<span class="line"></span>
+<span class="line"><span class="s5dd799dd">    # Compute</span></span>
+<span class="line"><span class="s252224fb">    instance</span><span class="scacc819b">:</span><span class="scacc819b"> {</span></span>
+<span class="line"><span class="s252224fb">      ami</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">ami-ca30ffe2</span><span class="scde63d9e">"</span></span>
+<span class="line"><span class="s252224fb">      type</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">m5.large</span><span class="scde63d9e">"</span></span>
+<span class="line"><span class="s252224fb">      key_name</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">cake-key</span><span class="scde63d9e">"</span></span>
+<span class="line"><span class="s252224fb">      monitoring</span><span class="scacc819b">:</span><span class="sfc8ef81c"> true</span></span>
+<span class="line"><span class="s252224fb">      root_volume</span><span class="scacc819b">:</span><span class="scacc819b"> {</span></span>
+<span class="line"><span class="s252224fb">        size</span><span class="scacc819b">:</span><span class="s56b09ea4"> 50</span></span>
+<span class="line"><span class="s252224fb">        type</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">gp2</span><span class="scde63d9e">"</span></span>
+<span class="line"><span class="s252224fb">        encrypted</span><span class="scacc819b">:</span><span class="sfc8ef81c"> true</span></span>
+<span class="line"><span class="scacc819b">      }</span></span>
+<span class="line"><span class="scacc819b">    }</span></span>
+<span class="line"></span>
+<span class="line"><span class="s5dd799dd">    # Security</span></span>
+<span class="line"><span class="s252224fb">    security_group</span><span class="scacc819b">:</span><span class="scacc819b"> {</span></span>
+<span class="line"><span class="s252224fb">      name</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">allow-all</span><span class="scde63d9e">"</span></span>
+<span class="line"><span class="s252224fb">      ingress_port</span><span class="scacc819b">:</span><span class="s56b09ea4"> 22</span></span>
+<span class="line"><span class="s252224fb">      ingress_cidr</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">0.0.0.0/0</span><span class="scde63d9e">"</span></span>
+<span class="line"><span class="scacc819b">    }</span></span>
+<span class="line"><span class="scacc819b">  }</span></span>
+<span class="line"><span class="scacc819b">}</span></span></code></pre>
+  <h2>See also</h2>
+  <ul class="card-list">
+    <li><a href="./1611"><span class="card-num">1611</span><span class="card-title">Build Config</span></a></li>
+    <li><a href="./12853"><span class="card-num">12853</span><span class="card-title">Keyboard Shortcuts</span></a></li>
+    <li><a href="./8611"><span class="card-num">8611</span><span class="card-title">DNS Config</span></a></li>
+  </ul>
+</article>
+</main>
+<footer class="site-footer">
+  Generated examples for the <a href="https://maml.dev">MAML</a> data format.
+</footer>
+</body>
+</html>
