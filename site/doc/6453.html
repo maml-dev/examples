@@ -6,97 +6,26 @@
 <title>6453 — Product Catalog · MAML Examples</title>
 <meta name="description" content="E-commerce product listings.">
 <link rel="stylesheet" href="../assets/style.css">
-<link rel="stylesheet" href="../assets/tokens.css">
 </head>
 <body>
 <header class="site-header">
-  <a class="brand" href="../">MAML Examples</a>
-  <nav>
-    <a href="https://maml.dev">maml.dev</a>
-    <a href="https://github.com/maml-dev/examples">GitHub</a>
-  </nav>
+<a class="brand" href="../">MAML Examples</a>
+<nav><a href="https://maml.dev">maml.dev</a> <a href="https://github.com/maml-dev/examples">GitHub</a></nav>
 </header>
 <main>
 <article class="example">
-  <p class="eyebrow">Example 6453</p>
-  <h1>Product Catalog</h1>
-  <p class="lead">E-commerce product listings.</p>
-  <pre class="shiki shiki-themes catppuccin-latte plastic" style="--shiki-light:#4c4f69;--shiki-dark:#A9B2C3;--shiki-light-bg:#eff1f5;--shiki-dark-bg:#21252B" tabindex="0"><code><span class="line"><span class="scacc819b">{</span></span>
-<span class="line"><span class="s252224fb">  products</span><span class="scacc819b">:</span><span class="scacc819b"> [</span></span>
-<span class="line"><span class="scacc819b">    {</span></span>
-<span class="line"><span class="s252224fb">      sku</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">FIG6TCPN</span><span class="scde63d9e">"</span></span>
-<span class="line"><span class="s252224fb">      name</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">Small Marble Sausages</span><span class="scde63d9e">"</span></span>
-<span class="line"><span class="s252224fb">      price</span><span class="scacc819b">:</span><span class="s56b09ea4"> 384.85</span></span>
-<span class="line"><span class="s252224fb">      category</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">Industrial</span><span class="scde63d9e">"</span></span>
-<span class="line"><span class="s252224fb">      in_stock</span><span class="scacc819b">:</span><span class="sfc8ef81c"> false</span></span>
-<span class="line"><span class="s252224fb">      rating</span><span class="scacc819b">:</span><span class="s56b09ea4"> 3.2</span></span>
-<span class="line"><span class="scacc819b">    }</span></span>
-<span class="line"></span>
-<span class="line"><span class="scacc819b">    {</span></span>
-<span class="line"><span class="s252224fb">      sku</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">WMWIZNXP</span><span class="scde63d9e">"</span></span>
-<span class="line"><span class="s252224fb">      name</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">Elegant Granite Table</span><span class="scde63d9e">"</span></span>
-<span class="line"><span class="s252224fb">      price</span><span class="scacc819b">:</span><span class="s56b09ea4"> 763.45</span></span>
-<span class="line"><span class="s252224fb">      category</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">Automotive</span><span class="scde63d9e">"</span></span>
-<span class="line"><span class="s252224fb">      in_stock</span><span class="scacc819b">:</span><span class="sfc8ef81c"> true</span></span>
-<span class="line"><span class="s252224fb">      rating</span><span class="scacc819b">:</span><span class="s56b09ea4"> 3.3</span></span>
-<span class="line"><span class="scacc819b">    }</span></span>
-<span class="line"></span>
-<span class="line"><span class="scacc819b">    {</span></span>
-<span class="line"><span class="s252224fb">      sku</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">DNSYRZEF</span><span class="scde63d9e">"</span></span>
-<span class="line"><span class="s252224fb">      name</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">Handcrafted Bronze Hat</span><span class="scde63d9e">"</span></span>
-<span class="line"><span class="s252224fb">      price</span><span class="scacc819b">:</span><span class="s56b09ea4"> 795.21</span></span>
-<span class="line"><span class="s252224fb">      category</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">Home</span><span class="scde63d9e">"</span></span>
-<span class="line"><span class="s252224fb">      in_stock</span><span class="scacc819b">:</span><span class="sfc8ef81c"> true</span></span>
-<span class="line"><span class="s252224fb">      rating</span><span class="scacc819b">:</span><span class="s56b09ea4"> 3.1</span></span>
-<span class="line"><span class="scacc819b">    }</span></span>
-<span class="line"></span>
-<span class="line"><span class="scacc819b">    {</span></span>
-<span class="line"><span class="s252224fb">      sku</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">XBYFGICL</span><span class="scde63d9e">"</span></span>
-<span class="line"><span class="s252224fb">      name</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">Modern Granite Hat</span><span class="scde63d9e">"</span></span>
-<span class="line"><span class="s252224fb">      price</span><span class="scacc819b">:</span><span class="s56b09ea4"> 449.55</span></span>
-<span class="line"><span class="s252224fb">      category</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">Music</span><span class="scde63d9e">"</span></span>
-<span class="line"><span class="s252224fb">      in_stock</span><span class="scacc819b">:</span><span class="sfc8ef81c"> true</span></span>
-<span class="line"><span class="s252224fb">      rating</span><span class="scacc819b">:</span><span class="s56b09ea4"> 1</span></span>
-<span class="line"><span class="scacc819b">    }</span></span>
-<span class="line"></span>
-<span class="line"><span class="scacc819b">    {</span></span>
-<span class="line"><span class="s252224fb">      sku</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">MOHJ5OSR</span><span class="scde63d9e">"</span></span>
-<span class="line"><span class="s252224fb">      name</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">Handmade Rubber Cheese</span><span class="scde63d9e">"</span></span>
-<span class="line"><span class="s252224fb">      price</span><span class="scacc819b">:</span><span class="s56b09ea4"> 431.15</span></span>
-<span class="line"><span class="s252224fb">      category</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">Baby</span><span class="scde63d9e">"</span></span>
-<span class="line"><span class="s252224fb">      in_stock</span><span class="scacc819b">:</span><span class="sfc8ef81c"> true</span></span>
-<span class="line"><span class="s252224fb">      rating</span><span class="scacc819b">:</span><span class="s56b09ea4"> 2.7</span></span>
-<span class="line"><span class="scacc819b">    }</span></span>
-<span class="line"></span>
-<span class="line"><span class="scacc819b">    {</span></span>
-<span class="line"><span class="s252224fb">      sku</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">A5BD7ZYX</span><span class="scde63d9e">"</span></span>
-<span class="line"><span class="s252224fb">      name</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">Generic Bronze Hat</span><span class="scde63d9e">"</span></span>
-<span class="line"><span class="s252224fb">      price</span><span class="scacc819b">:</span><span class="s56b09ea4"> 558.69</span></span>
-<span class="line"><span class="s252224fb">      category</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">Health</span><span class="scde63d9e">"</span></span>
-<span class="line"><span class="s252224fb">      in_stock</span><span class="scacc819b">:</span><span class="sfc8ef81c"> false</span></span>
-<span class="line"><span class="s252224fb">      rating</span><span class="scacc819b">:</span><span class="s56b09ea4"> 4.3</span></span>
-<span class="line"><span class="scacc819b">    }</span></span>
-<span class="line"></span>
-<span class="line"><span class="scacc819b">    {</span></span>
-<span class="line"><span class="s252224fb">      sku</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">50OA5B44</span><span class="scde63d9e">"</span></span>
-<span class="line"><span class="s252224fb">      name</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">Intelligent Cotton Towels</span><span class="scde63d9e">"</span></span>
-<span class="line"><span class="s252224fb">      price</span><span class="scacc819b">:</span><span class="s56b09ea4"> 449.55</span></span>
-<span class="line"><span class="s252224fb">      category</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">Home</span><span class="scde63d9e">"</span></span>
-<span class="line"><span class="s252224fb">      in_stock</span><span class="scacc819b">:</span><span class="sfc8ef81c"> false</span></span>
-<span class="line"><span class="s252224fb">      rating</span><span class="scacc819b">:</span><span class="s56b09ea4"> 2.3</span></span>
-<span class="line"><span class="scacc819b">    }</span></span>
-<span class="line"><span class="scacc819b">  ]</span></span>
-<span class="line"><span class="scacc819b">}</span></span></code></pre>
-  <h2>See also</h2>
-  <ul class="card-list">
-    <li><a href="./1202"><span class="card-num">1202</span><span class="card-title">Email Config</span></a></li>
-    <li><a href="./6413"><span class="card-num">6413</span><span class="card-title">Feature Flags</span></a></li>
-    <li><a href="./3500"><span class="card-num">3500</span><span class="card-title">HTML Templates</span></a></li>
-  </ul>
+<p class="eyebrow">Example 6453</p>
+<h1>Product Catalog</h1>
+<p class="lead">E-commerce product listings.</p>
+<pre class="shiki"><code><span class="scacc819b">{</span><br><span class="s252224fb">  products</span><span class="scacc819b">:</span><span class="scacc819b"> [</span><br><span class="scacc819b">    {</span><br><span class="s252224fb">      sku</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">FIG6TCPN</span><span class="scde63d9e">"</span><br><span class="s252224fb">      name</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">Small Marble Sausages</span><span class="scde63d9e">"</span><br><span class="s252224fb">      price</span><span class="scacc819b">:</span><span class="s56b09ea4"> 384.85</span><br><span class="s252224fb">      category</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">Industrial</span><span class="scde63d9e">"</span><br><span class="s252224fb">      in_stock</span><span class="scacc819b">:</span><span class="sfc8ef81c"> false</span><br><span class="s252224fb">      rating</span><span class="scacc819b">:</span><span class="s56b09ea4"> 3.2</span><br><span class="scacc819b">    }</span><br><br><span class="scacc819b">    {</span><br><span class="s252224fb">      sku</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">WMWIZNXP</span><span class="scde63d9e">"</span><br><span class="s252224fb">      name</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">Elegant Granite Table</span><span class="scde63d9e">"</span><br><span class="s252224fb">      price</span><span class="scacc819b">:</span><span class="s56b09ea4"> 763.45</span><br><span class="s252224fb">      category</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">Automotive</span><span class="scde63d9e">"</span><br><span class="s252224fb">      in_stock</span><span class="scacc819b">:</span><span class="sfc8ef81c"> true</span><br><span class="s252224fb">      rating</span><span class="scacc819b">:</span><span class="s56b09ea4"> 3.3</span><br><span class="scacc819b">    }</span><br><br><span class="scacc819b">    {</span><br><span class="s252224fb">      sku</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">DNSYRZEF</span><span class="scde63d9e">"</span><br><span class="s252224fb">      name</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">Handcrafted Bronze Hat</span><span class="scde63d9e">"</span><br><span class="s252224fb">      price</span><span class="scacc819b">:</span><span class="s56b09ea4"> 795.21</span><br><span class="s252224fb">      category</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">Home</span><span class="scde63d9e">"</span><br><span class="s252224fb">      in_stock</span><span class="scacc819b">:</span><span class="sfc8ef81c"> true</span><br><span class="s252224fb">      rating</span><span class="scacc819b">:</span><span class="s56b09ea4"> 3.1</span><br><span class="scacc819b">    }</span><br><br><span class="scacc819b">    {</span><br><span class="s252224fb">      sku</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">XBYFGICL</span><span class="scde63d9e">"</span><br><span class="s252224fb">      name</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">Modern Granite Hat</span><span class="scde63d9e">"</span><br><span class="s252224fb">      price</span><span class="scacc819b">:</span><span class="s56b09ea4"> 449.55</span><br><span class="s252224fb">      category</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">Music</span><span class="scde63d9e">"</span><br><span class="s252224fb">      in_stock</span><span class="scacc819b">:</span><span class="sfc8ef81c"> true</span><br><span class="s252224fb">      rating</span><span class="scacc819b">:</span><span class="s56b09ea4"> 1</span><br><span class="scacc819b">    }</span><br><br><span class="scacc819b">    {</span><br><span class="s252224fb">      sku</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">MOHJ5OSR</span><span class="scde63d9e">"</span><br><span class="s252224fb">      name</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">Handmade Rubber Cheese</span><span class="scde63d9e">"</span><br><span class="s252224fb">      price</span><span class="scacc819b">:</span><span class="s56b09ea4"> 431.15</span><br><span class="s252224fb">      category</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">Baby</span><span class="scde63d9e">"</span><br><span class="s252224fb">      in_stock</span><span class="scacc819b">:</span><span class="sfc8ef81c"> true</span><br><span class="s252224fb">      rating</span><span class="scacc819b">:</span><span class="s56b09ea4"> 2.7</span><br><span class="scacc819b">    }</span><br><br><span class="scacc819b">    {</span><br><span class="s252224fb">      sku</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">A5BD7ZYX</span><span class="scde63d9e">"</span><br><span class="s252224fb">      name</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">Generic Bronze Hat</span><span class="scde63d9e">"</span><br><span class="s252224fb">      price</span><span class="scacc819b">:</span><span class="s56b09ea4"> 558.69</span><br><span class="s252224fb">      category</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">Health</span><span class="scde63d9e">"</span><br><span class="s252224fb">      in_stock</span><span class="scacc819b">:</span><span class="sfc8ef81c"> false</span><br><span class="s252224fb">      rating</span><span class="scacc819b">:</span><span class="s56b09ea4"> 4.3</span><br><span class="scacc819b">    }</span><br><br><span class="scacc819b">    {</span><br><span class="s252224fb">      sku</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">50OA5B44</span><span class="scde63d9e">"</span><br><span class="s252224fb">      name</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">Intelligent Cotton Towels</span><span class="scde63d9e">"</span><br><span class="s252224fb">      price</span><span class="scacc819b">:</span><span class="s56b09ea4"> 449.55</span><br><span class="s252224fb">      category</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">Home</span><span class="scde63d9e">"</span><br><span class="s252224fb">      in_stock</span><span class="scacc819b">:</span><span class="sfc8ef81c"> false</span><br><span class="s252224fb">      rating</span><span class="scacc819b">:</span><span class="s56b09ea4"> 2.3</span><br><span class="scacc819b">    }</span><br><span class="scacc819b">  ]</span><br><span class="scacc819b">}</span></code></pre>
+<h2>See also</h2>
+<ul class="card-list">
+<li><a href="./1202"><span class="card-num">1202</span><span class="card-title">Email Config</span></a></li>
+<li><a href="./6413"><span class="card-num">6413</span><span class="card-title">Feature Flags</span></a></li>
+<li><a href="./3500"><span class="card-num">3500</span><span class="card-title">HTML Templates</span></a></li>
+</ul>
 </article>
 </main>
-<footer class="site-footer">
-  Generated examples for the <a href="https://maml.dev">MAML</a> data format.
-</footer>
+<footer class="site-footer">Generated examples for the <a href="https://maml.dev">MAML</a> data format.</footer>
 </body>
 </html>

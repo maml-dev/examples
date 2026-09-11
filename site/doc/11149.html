@@ -6,88 +6,26 @@
 <title>11149 — Product Catalog · MAML Examples</title>
 <meta name="description" content="E-commerce product listings.">
 <link rel="stylesheet" href="../assets/style.css">
-<link rel="stylesheet" href="../assets/tokens.css">
 </head>
 <body>
 <header class="site-header">
-  <a class="brand" href="../">MAML Examples</a>
-  <nav>
-    <a href="https://maml.dev">maml.dev</a>
-    <a href="https://github.com/maml-dev/examples">GitHub</a>
-  </nav>
+<a class="brand" href="../">MAML Examples</a>
+<nav><a href="https://maml.dev">maml.dev</a> <a href="https://github.com/maml-dev/examples">GitHub</a></nav>
 </header>
 <main>
 <article class="example">
-  <p class="eyebrow">Example 11149</p>
-  <h1>Product Catalog</h1>
-  <p class="lead">E-commerce product listings.</p>
-  <pre class="shiki shiki-themes catppuccin-latte plastic" style="--shiki-light:#4c4f69;--shiki-dark:#A9B2C3;--shiki-light-bg:#eff1f5;--shiki-dark-bg:#21252B" tabindex="0"><code><span class="line"><span class="scacc819b">{</span></span>
-<span class="line"><span class="s252224fb">  products</span><span class="scacc819b">:</span><span class="scacc819b"> [</span></span>
-<span class="line"><span class="scacc819b">    {</span></span>
-<span class="line"><span class="s252224fb">      sku</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">AGSYGAN3</span><span class="scde63d9e">"</span></span>
-<span class="line"><span class="s252224fb">      name</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">Small Concrete Keyboard</span><span class="scde63d9e">"</span></span>
-<span class="line"><span class="s252224fb">      price</span><span class="scacc819b">:</span><span class="s56b09ea4"> 909.69</span></span>
-<span class="line"><span class="s252224fb">      category</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">Toys</span><span class="scde63d9e">"</span></span>
-<span class="line"><span class="s252224fb">      in_stock</span><span class="scacc819b">:</span><span class="sfc8ef81c"> true</span></span>
-<span class="line"><span class="s252224fb">      rating</span><span class="scacc819b">:</span><span class="s56b09ea4"> 3.9</span></span>
-<span class="line"><span class="scacc819b">    }</span></span>
-<span class="line"></span>
-<span class="line"><span class="scacc819b">    {</span></span>
-<span class="line"><span class="s252224fb">      sku</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">YLPH6UDM</span><span class="scde63d9e">"</span></span>
-<span class="line"><span class="s252224fb">      name</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">Refined Steel Chicken</span><span class="scde63d9e">"</span></span>
-<span class="line"><span class="s252224fb">      price</span><span class="scacc819b">:</span><span class="s56b09ea4"> 983.75</span></span>
-<span class="line"><span class="s252224fb">      category</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">Books</span><span class="scde63d9e">"</span></span>
-<span class="line"><span class="s252224fb">      in_stock</span><span class="scacc819b">:</span><span class="sfc8ef81c"> true</span></span>
-<span class="line"><span class="s252224fb">      rating</span><span class="scacc819b">:</span><span class="s56b09ea4"> 2.2</span></span>
-<span class="line"><span class="scacc819b">    }</span></span>
-<span class="line"></span>
-<span class="line"><span class="scacc819b">    {</span></span>
-<span class="line"><span class="s252224fb">      sku</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">SFUK7MDO</span><span class="scde63d9e">"</span></span>
-<span class="line"><span class="s252224fb">      name</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">Fantastic Plastic Bike</span><span class="scde63d9e">"</span></span>
-<span class="line"><span class="s252224fb">      price</span><span class="scacc819b">:</span><span class="s56b09ea4"> 819.19</span></span>
-<span class="line"><span class="s252224fb">      category</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">Shoes</span><span class="scde63d9e">"</span></span>
-<span class="line"><span class="s252224fb">      in_stock</span><span class="scacc819b">:</span><span class="sfc8ef81c"> true</span></span>
-<span class="line"><span class="s252224fb">      rating</span><span class="scacc819b">:</span><span class="s56b09ea4"> 4.1</span></span>
-<span class="line"><span class="scacc819b">    }</span></span>
-<span class="line"></span>
-<span class="line"><span class="scacc819b">    {</span></span>
-<span class="line"><span class="s252224fb">      sku</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">IP3QMKCU</span><span class="scde63d9e">"</span></span>
-<span class="line"><span class="s252224fb">      name</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">Practical Wooden Salad</span><span class="scde63d9e">"</span></span>
-<span class="line"><span class="s252224fb">      price</span><span class="scacc819b">:</span><span class="s56b09ea4"> 435.9</span></span>
-<span class="line"><span class="s252224fb">      category</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">Jewelry</span><span class="scde63d9e">"</span></span>
-<span class="line"><span class="s252224fb">      in_stock</span><span class="scacc819b">:</span><span class="sfc8ef81c"> false</span></span>
-<span class="line"><span class="s252224fb">      rating</span><span class="scacc819b">:</span><span class="s56b09ea4"> 3.9</span></span>
-<span class="line"><span class="scacc819b">    }</span></span>
-<span class="line"></span>
-<span class="line"><span class="scacc819b">    {</span></span>
-<span class="line"><span class="s252224fb">      sku</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">REWX5OV8</span><span class="scde63d9e">"</span></span>
-<span class="line"><span class="s252224fb">      name</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">Practical Steel Gloves</span><span class="scde63d9e">"</span></span>
-<span class="line"><span class="s252224fb">      price</span><span class="scacc819b">:</span><span class="s56b09ea4"> 714.49</span></span>
-<span class="line"><span class="s252224fb">      category</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">Music</span><span class="scde63d9e">"</span></span>
-<span class="line"><span class="s252224fb">      in_stock</span><span class="scacc819b">:</span><span class="sfc8ef81c"> true</span></span>
-<span class="line"><span class="s252224fb">      rating</span><span class="scacc819b">:</span><span class="s56b09ea4"> 2.7</span></span>
-<span class="line"><span class="scacc819b">    }</span></span>
-<span class="line"></span>
-<span class="line"><span class="scacc819b">    {</span></span>
-<span class="line"><span class="s252224fb">      sku</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">KKFJWGWM</span><span class="scde63d9e">"</span></span>
-<span class="line"><span class="s252224fb">      name</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">Gorgeous Wooden Salad</span><span class="scde63d9e">"</span></span>
-<span class="line"><span class="s252224fb">      price</span><span class="scacc819b">:</span><span class="s56b09ea4"> 272.79</span></span>
-<span class="line"><span class="s252224fb">      category</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">Beauty</span><span class="scde63d9e">"</span></span>
-<span class="line"><span class="s252224fb">      in_stock</span><span class="scacc819b">:</span><span class="sfc8ef81c"> false</span></span>
-<span class="line"><span class="s252224fb">      rating</span><span class="scacc819b">:</span><span class="s56b09ea4"> 2.7</span></span>
-<span class="line"><span class="scacc819b">    }</span></span>
-<span class="line"><span class="scacc819b">  ]</span></span>
-<span class="line"><span class="scacc819b">}</span></span></code></pre>
-  <h2>See also</h2>
-  <ul class="card-list">
-    <li><a href="./14605"><span class="card-num">14605</span><span class="card-title">DNS Config</span></a></li>
-    <li><a href="./13648"><span class="card-num">13648</span><span class="card-title">Dependencies</span></a></li>
-    <li><a href="./14567"><span class="card-num">14567</span><span class="card-title">Docker Compose</span></a></li>
-  </ul>
+<p class="eyebrow">Example 11149</p>
+<h1>Product Catalog</h1>
+<p class="lead">E-commerce product listings.</p>
+<pre class="shiki"><code><span class="scacc819b">{</span><br><span class="s252224fb">  products</span><span class="scacc819b">:</span><span class="scacc819b"> [</span><br><span class="scacc819b">    {</span><br><span class="s252224fb">      sku</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">AGSYGAN3</span><span class="scde63d9e">"</span><br><span class="s252224fb">      name</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">Small Concrete Keyboard</span><span class="scde63d9e">"</span><br><span class="s252224fb">      price</span><span class="scacc819b">:</span><span class="s56b09ea4"> 909.69</span><br><span class="s252224fb">      category</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">Toys</span><span class="scde63d9e">"</span><br><span class="s252224fb">      in_stock</span><span class="scacc819b">:</span><span class="sfc8ef81c"> true</span><br><span class="s252224fb">      rating</span><span class="scacc819b">:</span><span class="s56b09ea4"> 3.9</span><br><span class="scacc819b">    }</span><br><br><span class="scacc819b">    {</span><br><span class="s252224fb">      sku</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">YLPH6UDM</span><span class="scde63d9e">"</span><br><span class="s252224fb">      name</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">Refined Steel Chicken</span><span class="scde63d9e">"</span><br><span class="s252224fb">      price</span><span class="scacc819b">:</span><span class="s56b09ea4"> 983.75</span><br><span class="s252224fb">      category</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">Books</span><span class="scde63d9e">"</span><br><span class="s252224fb">      in_stock</span><span class="scacc819b">:</span><span class="sfc8ef81c"> true</span><br><span class="s252224fb">      rating</span><span class="scacc819b">:</span><span class="s56b09ea4"> 2.2</span><br><span class="scacc819b">    }</span><br><br><span class="scacc819b">    {</span><br><span class="s252224fb">      sku</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">SFUK7MDO</span><span class="scde63d9e">"</span><br><span class="s252224fb">      name</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">Fantastic Plastic Bike</span><span class="scde63d9e">"</span><br><span class="s252224fb">      price</span><span class="scacc819b">:</span><span class="s56b09ea4"> 819.19</span><br><span class="s252224fb">      category</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">Shoes</span><span class="scde63d9e">"</span><br><span class="s252224fb">      in_stock</span><span class="scacc819b">:</span><span class="sfc8ef81c"> true</span><br><span class="s252224fb">      rating</span><span class="scacc819b">:</span><span class="s56b09ea4"> 4.1</span><br><span class="scacc819b">    }</span><br><br><span class="scacc819b">    {</span><br><span class="s252224fb">      sku</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">IP3QMKCU</span><span class="scde63d9e">"</span><br><span class="s252224fb">      name</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">Practical Wooden Salad</span><span class="scde63d9e">"</span><br><span class="s252224fb">      price</span><span class="scacc819b">:</span><span class="s56b09ea4"> 435.9</span><br><span class="s252224fb">      category</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">Jewelry</span><span class="scde63d9e">"</span><br><span class="s252224fb">      in_stock</span><span class="scacc819b">:</span><span class="sfc8ef81c"> false</span><br><span class="s252224fb">      rating</span><span class="scacc819b">:</span><span class="s56b09ea4"> 3.9</span><br><span class="scacc819b">    }</span><br><br><span class="scacc819b">    {</span><br><span class="s252224fb">      sku</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">REWX5OV8</span><span class="scde63d9e">"</span><br><span class="s252224fb">      name</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">Practical Steel Gloves</span><span class="scde63d9e">"</span><br><span class="s252224fb">      price</span><span class="scacc819b">:</span><span class="s56b09ea4"> 714.49</span><br><span class="s252224fb">      category</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">Music</span><span class="scde63d9e">"</span><br><span class="s252224fb">      in_stock</span><span class="scacc819b">:</span><span class="sfc8ef81c"> true</span><br><span class="s252224fb">      rating</span><span class="scacc819b">:</span><span class="s56b09ea4"> 2.7</span><br><span class="scacc819b">    }</span><br><br><span class="scacc819b">    {</span><br><span class="s252224fb">      sku</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">KKFJWGWM</span><span class="scde63d9e">"</span><br><span class="s252224fb">      name</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">Gorgeous Wooden Salad</span><span class="scde63d9e">"</span><br><span class="s252224fb">      price</span><span class="scacc819b">:</span><span class="s56b09ea4"> 272.79</span><br><span class="s252224fb">      category</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">Beauty</span><span class="scde63d9e">"</span><br><span class="s252224fb">      in_stock</span><span class="scacc819b">:</span><span class="sfc8ef81c"> false</span><br><span class="s252224fb">      rating</span><span class="scacc819b">:</span><span class="s56b09ea4"> 2.7</span><br><span class="scacc819b">    }</span><br><span class="scacc819b">  ]</span><br><span class="scacc819b">}</span></code></pre>
+<h2>See also</h2>
+<ul class="card-list">
+<li><a href="./14605"><span class="card-num">14605</span><span class="card-title">DNS Config</span></a></li>
+<li><a href="./13648"><span class="card-num">13648</span><span class="card-title">Dependencies</span></a></li>
+<li><a href="./14567"><span class="card-num">14567</span><span class="card-title">Docker Compose</span></a></li>
+</ul>
 </article>
 </main>
-<footer class="site-footer">
-  Generated examples for the <a href="https://maml.dev">MAML</a> data format.
-</footer>
+<footer class="site-footer">Generated examples for the <a href="https://maml.dev">MAML</a> data format.</footer>
 </body>
 </html>

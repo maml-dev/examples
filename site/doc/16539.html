@@ -6,69 +6,26 @@
 <title>16539 — Search Config · MAML Examples</title>
 <meta name="description" content="Search engine index configuration.">
 <link rel="stylesheet" href="../assets/style.css">
-<link rel="stylesheet" href="../assets/tokens.css">
 </head>
 <body>
 <header class="site-header">
-  <a class="brand" href="../">MAML Examples</a>
-  <nav>
-    <a href="https://maml.dev">maml.dev</a>
-    <a href="https://github.com/maml-dev/examples">GitHub</a>
-  </nav>
+<a class="brand" href="../">MAML Examples</a>
+<nav><a href="https://maml.dev">maml.dev</a> <a href="https://github.com/maml-dev/examples">GitHub</a></nav>
 </header>
 <main>
 <article class="example">
-  <p class="eyebrow">Example 16539</p>
-  <h1>Search Config</h1>
-  <p class="lead">Search engine index configuration.</p>
-  <pre class="shiki shiki-themes catppuccin-latte plastic" style="--shiki-light:#4c4f69;--shiki-dark:#A9B2C3;--shiki-light-bg:#eff1f5;--shiki-dark-bg:#21252B" tabindex="0"><code><span class="line"><span class="scacc819b">{</span></span>
-<span class="line"><span class="s252224fb">  engine</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">algolia</span><span class="scde63d9e">"</span></span>
-<span class="line"><span class="s252224fb">  connection</span><span class="scacc819b">:</span><span class="scacc819b"> {</span></span>
-<span class="line"><span class="s252224fb">    host</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">localhost:7700</span><span class="scde63d9e">"</span></span>
-<span class="line"><span class="s252224fb">    api_key</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">O9FEypUGRQjhK35VurEHbAtYE1mOQWhp</span><span class="scde63d9e">"</span></span>
-<span class="line"><span class="s252224fb">    timeout</span><span class="scacc819b">:</span><span class="s56b09ea4"> 9564</span></span>
-<span class="line"><span class="scacc819b">  }</span></span>
-<span class="line"></span>
-<span class="line"><span class="s5dd799dd">  # Index settings</span></span>
-<span class="line"><span class="s252224fb">  index</span><span class="scacc819b">:</span><span class="scacc819b"> {</span></span>
-<span class="line"><span class="s252224fb">    name</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">stay</span><span class="scde63d9e">"</span></span>
-<span class="line"><span class="s252224fb">    primary_key</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">id</span><span class="scde63d9e">"</span></span>
-<span class="line"><span class="s252224fb">    searchable</span><span class="scacc819b">:</span><span class="scacc819b"> [</span></span>
-<span class="line"><span class="scde63d9e">      "</span><span class="s7911c4c2">title</span><span class="scde63d9e">"</span></span>
-<span class="line"><span class="scde63d9e">      "</span><span class="s7911c4c2">description</span><span class="scde63d9e">"</span></span>
-<span class="line"><span class="scde63d9e">      "</span><span class="s7911c4c2">content</span><span class="scde63d9e">"</span></span>
-<span class="line"><span class="scacc819b">    ]</span></span>
-<span class="line"><span class="s252224fb">    filterable</span><span class="scacc819b">:</span><span class="scacc819b"> [</span></span>
-<span class="line"><span class="scde63d9e">      "</span><span class="s7911c4c2">category</span><span class="scde63d9e">"</span></span>
-<span class="line"><span class="scde63d9e">      "</span><span class="s7911c4c2">status</span><span class="scde63d9e">"</span></span>
-<span class="line"><span class="scde63d9e">      "</span><span class="s7911c4c2">date</span><span class="scde63d9e">"</span></span>
-<span class="line"><span class="scacc819b">    ]</span></span>
-<span class="line"><span class="s252224fb">    sortable</span><span class="scacc819b">:</span><span class="scacc819b"> [</span></span>
-<span class="line"><span class="scde63d9e">      "</span><span class="s7911c4c2">date</span><span class="scde63d9e">"</span></span>
-<span class="line"><span class="scde63d9e">      "</span><span class="s7911c4c2">relevance</span><span class="scde63d9e">"</span></span>
-<span class="line"><span class="scacc819b">    ]</span></span>
-<span class="line"><span class="scacc819b">  }</span></span>
-<span class="line"></span>
-<span class="line"><span class="s252224fb">  synonyms</span><span class="scacc819b">:</span><span class="scacc819b"> {</span></span>
-<span class="line"><span class="s252224fb">    js</span><span class="scacc819b">:</span><span class="scacc819b"> [</span></span>
-<span class="line"><span class="scde63d9e">      "</span><span class="s7911c4c2">javascript</span><span class="scde63d9e">"</span></span>
-<span class="line"><span class="scde63d9e">      "</span><span class="s7911c4c2">ecmascript</span><span class="scde63d9e">"</span></span>
-<span class="line"><span class="scacc819b">    ]</span></span>
-<span class="line"><span class="s252224fb">    ts</span><span class="scacc819b">:</span><span class="scacc819b"> [</span></span>
-<span class="line"><span class="scde63d9e">      "</span><span class="s7911c4c2">typescript</span><span class="scde63d9e">"</span></span>
-<span class="line"><span class="scacc819b">    ]</span></span>
-<span class="line"><span class="scacc819b">  }</span></span>
-<span class="line"><span class="scacc819b">}</span></span></code></pre>
-  <h2>See also</h2>
-  <ul class="card-list">
-    <li><a href="./11615"><span class="card-num">11615</span><span class="card-title">App Settings</span></a></li>
-    <li><a href="./12782"><span class="card-num">12782</span><span class="card-title">Error Messages</span></a></li>
-    <li><a href="./8207"><span class="card-num">8207</span><span class="card-title">Locale Config</span></a></li>
-  </ul>
+<p class="eyebrow">Example 16539</p>
+<h1>Search Config</h1>
+<p class="lead">Search engine index configuration.</p>
+<pre class="shiki"><code><span class="scacc819b">{</span><br><span class="s252224fb">  engine</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">algolia</span><span class="scde63d9e">"</span><br><span class="s252224fb">  connection</span><span class="scacc819b">:</span><span class="scacc819b"> {</span><br><span class="s252224fb">    host</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">localhost:7700</span><span class="scde63d9e">"</span><br><span class="s252224fb">    api_key</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">O9FEypUGRQjhK35VurEHbAtYE1mOQWhp</span><span class="scde63d9e">"</span><br><span class="s252224fb">    timeout</span><span class="scacc819b">:</span><span class="s56b09ea4"> 9564</span><br><span class="scacc819b">  }</span><br><br><span class="s5dd799dd">  # Index settings</span><br><span class="s252224fb">  index</span><span class="scacc819b">:</span><span class="scacc819b"> {</span><br><span class="s252224fb">    name</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">stay</span><span class="scde63d9e">"</span><br><span class="s252224fb">    primary_key</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">id</span><span class="scde63d9e">"</span><br><span class="s252224fb">    searchable</span><span class="scacc819b">:</span><span class="scacc819b"> [</span><br><span class="scde63d9e">      "</span><span class="s7911c4c2">title</span><span class="scde63d9e">"</span><br><span class="scde63d9e">      "</span><span class="s7911c4c2">description</span><span class="scde63d9e">"</span><br><span class="scde63d9e">      "</span><span class="s7911c4c2">content</span><span class="scde63d9e">"</span><br><span class="scacc819b">    ]</span><br><span class="s252224fb">    filterable</span><span class="scacc819b">:</span><span class="scacc819b"> [</span><br><span class="scde63d9e">      "</span><span class="s7911c4c2">category</span><span class="scde63d9e">"</span><br><span class="scde63d9e">      "</span><span class="s7911c4c2">status</span><span class="scde63d9e">"</span><br><span class="scde63d9e">      "</span><span class="s7911c4c2">date</span><span class="scde63d9e">"</span><br><span class="scacc819b">    ]</span><br><span class="s252224fb">    sortable</span><span class="scacc819b">:</span><span class="scacc819b"> [</span><br><span class="scde63d9e">      "</span><span class="s7911c4c2">date</span><span class="scde63d9e">"</span><br><span class="scde63d9e">      "</span><span class="s7911c4c2">relevance</span><span class="scde63d9e">"</span><br><span class="scacc819b">    ]</span><br><span class="scacc819b">  }</span><br><br><span class="s252224fb">  synonyms</span><span class="scacc819b">:</span><span class="scacc819b"> {</span><br><span class="s252224fb">    js</span><span class="scacc819b">:</span><span class="scacc819b"> [</span><br><span class="scde63d9e">      "</span><span class="s7911c4c2">javascript</span><span class="scde63d9e">"</span><br><span class="scde63d9e">      "</span><span class="s7911c4c2">ecmascript</span><span class="scde63d9e">"</span><br><span class="scacc819b">    ]</span><br><span class="s252224fb">    ts</span><span class="scacc819b">:</span><span class="scacc819b"> [</span><br><span class="scde63d9e">      "</span><span class="s7911c4c2">typescript</span><span class="scde63d9e">"</span><br><span class="scacc819b">    ]</span><br><span class="scacc819b">  }</span><br><span class="scacc819b">}</span></code></pre>
+<h2>See also</h2>
+<ul class="card-list">
+<li><a href="./11615"><span class="card-num">11615</span><span class="card-title">App Settings</span></a></li>
+<li><a href="./12782"><span class="card-num">12782</span><span class="card-title">Error Messages</span></a></li>
+<li><a href="./8207"><span class="card-num">8207</span><span class="card-title">Locale Config</span></a></li>
+</ul>
 </article>
 </main>
-<footer class="site-footer">
-  Generated examples for the <a href="https://maml.dev">MAML</a> data format.
-</footer>
+<footer class="site-footer">Generated examples for the <a href="https://maml.dev">MAML</a> data format.</footer>
 </body>
 </html>

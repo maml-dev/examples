@@ -6,70 +6,26 @@
 <title>6549 — Daily Agenda · MAML Examples</title>
 <meta name="description" content="A day schedule with timed events.">
 <link rel="stylesheet" href="../assets/style.css">
-<link rel="stylesheet" href="../assets/tokens.css">
 </head>
 <body>
 <header class="site-header">
-  <a class="brand" href="../">MAML Examples</a>
-  <nav>
-    <a href="https://maml.dev">maml.dev</a>
-    <a href="https://github.com/maml-dev/examples">GitHub</a>
-  </nav>
+<a class="brand" href="../">MAML Examples</a>
+<nav><a href="https://maml.dev">maml.dev</a> <a href="https://github.com/maml-dev/examples">GitHub</a></nav>
 </header>
 <main>
 <article class="example">
-  <p class="eyebrow">Example 6549</p>
-  <h1>Daily Agenda</h1>
-  <p class="lead">A day schedule with timed events.</p>
-  <pre class="shiki shiki-themes catppuccin-latte plastic" style="--shiki-light:#4c4f69;--shiki-dark:#A9B2C3;--shiki-light-bg:#eff1f5;--shiki-dark-bg:#21252B" tabindex="0"><code><span class="line"><span class="scacc819b">{</span></span>
-<span class="line"><span class="s252224fb">  date</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">2026-06-05</span><span class="scde63d9e">"</span></span>
-<span class="line"><span class="s252224fb">  events</span><span class="scacc819b">:</span><span class="scacc819b"> [</span></span>
-<span class="line"><span class="scacc819b">    {</span></span>
-<span class="line"><span class="s252224fb">      time</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">15:15</span><span class="scde63d9e">"</span></span>
-<span class="line"><span class="s252224fb">      title</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">Vero demens acidus cedo suus.</span><span class="scde63d9e">"</span></span>
-<span class="line"><span class="s252224fb">      duration</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">30m</span><span class="scde63d9e">"</span></span>
-<span class="line"><span class="s252224fb">      location</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">Virtual</span><span class="scde63d9e">"</span></span>
-<span class="line"><span class="scacc819b">    }</span></span>
-<span class="line"></span>
-<span class="line"><span class="scacc819b">    {</span></span>
-<span class="line"><span class="s252224fb">      time</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">19:30</span><span class="scde63d9e">"</span></span>
-<span class="line"><span class="s252224fb">      title</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">Tempora cinis vindico vitium.</span><span class="scde63d9e">"</span></span>
-<span class="line"><span class="s252224fb">      duration</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">15m</span><span class="scde63d9e">"</span></span>
-<span class="line"><span class="s252224fb">      location</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">Lobby</span><span class="scde63d9e">"</span></span>
-<span class="line"><span class="scacc819b">    }</span></span>
-<span class="line"></span>
-<span class="line"><span class="scacc819b">    {</span></span>
-<span class="line"><span class="s252224fb">      time</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">16:45</span><span class="scde63d9e">"</span></span>
-<span class="line"><span class="s252224fb">      title</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">Beatae bibo nesciunt damnatio at taceo.</span><span class="scde63d9e">"</span></span>
-<span class="line"><span class="s252224fb">      duration</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">45m</span><span class="scde63d9e">"</span></span>
-<span class="line"><span class="s252224fb">      location</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">Lobby</span><span class="scde63d9e">"</span></span>
-<span class="line"><span class="scacc819b">    }</span></span>
-<span class="line"></span>
-<span class="line"><span class="scacc819b">    {</span></span>
-<span class="line"><span class="s252224fb">      time</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">13:30</span><span class="scde63d9e">"</span></span>
-<span class="line"><span class="s252224fb">      title</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">Vinitor adimpleo utilis viriliter inflammatio aufero.</span><span class="scde63d9e">"</span></span>
-<span class="line"><span class="s252224fb">      duration</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">1h</span><span class="scde63d9e">"</span></span>
-<span class="line"><span class="s252224fb">      location</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">Virtual</span><span class="scde63d9e">"</span></span>
-<span class="line"><span class="scacc819b">    }</span></span>
-<span class="line"></span>
-<span class="line"><span class="scacc819b">    {</span></span>
-<span class="line"><span class="s252224fb">      time</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">17:00</span><span class="scde63d9e">"</span></span>
-<span class="line"><span class="s252224fb">      title</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">Pecus calamitas consequuntur.</span><span class="scde63d9e">"</span></span>
-<span class="line"><span class="s252224fb">      duration</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">2h</span><span class="scde63d9e">"</span></span>
-<span class="line"><span class="s252224fb">      location</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">Lobby</span><span class="scde63d9e">"</span></span>
-<span class="line"><span class="scacc819b">    }</span></span>
-<span class="line"><span class="scacc819b">  ]</span></span>
-<span class="line"><span class="scacc819b">}</span></span></code></pre>
-  <h2>See also</h2>
-  <ul class="card-list">
-    <li><a href="./5740"><span class="card-num">5740</span><span class="card-title">GraphQL Schema</span></a></li>
-    <li><a href="./4360"><span class="card-num">4360</span><span class="card-title">Environment Vars</span></a></li>
-    <li><a href="./15182"><span class="card-num">15182</span><span class="card-title">Regex Patterns</span></a></li>
-  </ul>
+<p class="eyebrow">Example 6549</p>
+<h1>Daily Agenda</h1>
+<p class="lead">A day schedule with timed events.</p>
+<pre class="shiki"><code><span class="scacc819b">{</span><br><span class="s252224fb">  date</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">2026-06-05</span><span class="scde63d9e">"</span><br><span class="s252224fb">  events</span><span class="scacc819b">:</span><span class="scacc819b"> [</span><br><span class="scacc819b">    {</span><br><span class="s252224fb">      time</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">15:15</span><span class="scde63d9e">"</span><br><span class="s252224fb">      title</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">Vero demens acidus cedo suus.</span><span class="scde63d9e">"</span><br><span class="s252224fb">      duration</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">30m</span><span class="scde63d9e">"</span><br><span class="s252224fb">      location</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">Virtual</span><span class="scde63d9e">"</span><br><span class="scacc819b">    }</span><br><br><span class="scacc819b">    {</span><br><span class="s252224fb">      time</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">19:30</span><span class="scde63d9e">"</span><br><span class="s252224fb">      title</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">Tempora cinis vindico vitium.</span><span class="scde63d9e">"</span><br><span class="s252224fb">      duration</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">15m</span><span class="scde63d9e">"</span><br><span class="s252224fb">      location</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">Lobby</span><span class="scde63d9e">"</span><br><span class="scacc819b">    }</span><br><br><span class="scacc819b">    {</span><br><span class="s252224fb">      time</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">16:45</span><span class="scde63d9e">"</span><br><span class="s252224fb">      title</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">Beatae bibo nesciunt damnatio at taceo.</span><span class="scde63d9e">"</span><br><span class="s252224fb">      duration</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">45m</span><span class="scde63d9e">"</span><br><span class="s252224fb">      location</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">Lobby</span><span class="scde63d9e">"</span><br><span class="scacc819b">    }</span><br><br><span class="scacc819b">    {</span><br><span class="s252224fb">      time</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">13:30</span><span class="scde63d9e">"</span><br><span class="s252224fb">      title</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">Vinitor adimpleo utilis viriliter inflammatio aufero.</span><span class="scde63d9e">"</span><br><span class="s252224fb">      duration</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">1h</span><span class="scde63d9e">"</span><br><span class="s252224fb">      location</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">Virtual</span><span class="scde63d9e">"</span><br><span class="scacc819b">    }</span><br><br><span class="scacc819b">    {</span><br><span class="s252224fb">      time</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">17:00</span><span class="scde63d9e">"</span><br><span class="s252224fb">      title</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">Pecus calamitas consequuntur.</span><span class="scde63d9e">"</span><br><span class="s252224fb">      duration</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">2h</span><span class="scde63d9e">"</span><br><span class="s252224fb">      location</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">Lobby</span><span class="scde63d9e">"</span><br><span class="scacc819b">    }</span><br><span class="scacc819b">  ]</span><br><span class="scacc819b">}</span></code></pre>
+<h2>See also</h2>
+<ul class="card-list">
+<li><a href="./5740"><span class="card-num">5740</span><span class="card-title">GraphQL Schema</span></a></li>
+<li><a href="./4360"><span class="card-num">4360</span><span class="card-title">Environment Vars</span></a></li>
+<li><a href="./15182"><span class="card-num">15182</span><span class="card-title">Regex Patterns</span></a></li>
+</ul>
 </article>
 </main>
-<footer class="site-footer">
-  Generated examples for the <a href="https://maml.dev">MAML</a> data format.
-</footer>
+<footer class="site-footer">Generated examples for the <a href="https://maml.dev">MAML</a> data format.</footer>
 </body>
 </html>

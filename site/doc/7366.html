@@ -6,81 +6,26 @@
 <title>7366 — Notification Config · MAML Examples</title>
 <meta name="description" content="Multi-channel notification routing rules.">
 <link rel="stylesheet" href="../assets/style.css">
-<link rel="stylesheet" href="../assets/tokens.css">
 </head>
 <body>
 <header class="site-header">
-  <a class="brand" href="../">MAML Examples</a>
-  <nav>
-    <a href="https://maml.dev">maml.dev</a>
-    <a href="https://github.com/maml-dev/examples">GitHub</a>
-  </nav>
+<a class="brand" href="../">MAML Examples</a>
+<nav><a href="https://maml.dev">maml.dev</a> <a href="https://github.com/maml-dev/examples">GitHub</a></nav>
 </header>
 <main>
 <article class="example">
-  <p class="eyebrow">Example 7366</p>
-  <h1>Notification Config</h1>
-  <p class="lead">Multi-channel notification routing rules.</p>
-  <pre class="shiki shiki-themes catppuccin-latte plastic" style="--shiki-light:#4c4f69;--shiki-dark:#A9B2C3;--shiki-light-bg:#eff1f5;--shiki-dark-bg:#21252B" tabindex="0"><code><span class="line"><span class="scacc819b">{</span></span>
-<span class="line"><span class="s252224fb">  channels</span><span class="scacc819b">:</span><span class="scacc819b"> {</span></span>
-<span class="line"><span class="s252224fb">    email</span><span class="scacc819b">:</span><span class="scacc819b"> {</span></span>
-<span class="line"><span class="s252224fb">      enabled</span><span class="scacc819b">:</span><span class="sfc8ef81c"> true</span></span>
-<span class="line"><span class="s252224fb">      provider</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">postmark</span><span class="scde63d9e">"</span></span>
-<span class="line"><span class="s252224fb">      from</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">notifications@definite-finger.com</span><span class="scde63d9e">"</span></span>
-<span class="line"><span class="scacc819b">    }</span></span>
-<span class="line"></span>
-<span class="line"><span class="s252224fb">    slack</span><span class="scacc819b">:</span><span class="scacc819b"> {</span></span>
-<span class="line"><span class="s252224fb">      enabled</span><span class="scacc819b">:</span><span class="sfc8ef81c"> true</span></span>
-<span class="line"><span class="s252224fb">      webhook_url</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">https://hooks.slack.com/services/mSz6KFCMwJWjyUNlR3Qp</span><span class="scde63d9e">"</span></span>
-<span class="line"><span class="s252224fb">      default_channel</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">#deployments</span><span class="scde63d9e">"</span></span>
-<span class="line"><span class="scacc819b">    }</span></span>
-<span class="line"></span>
-<span class="line"><span class="s252224fb">    sms</span><span class="scacc819b">:</span><span class="scacc819b"> {</span></span>
-<span class="line"><span class="s252224fb">      enabled</span><span class="scacc819b">:</span><span class="sfc8ef81c"> false</span></span>
-<span class="line"><span class="s252224fb">      provider</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">sns</span><span class="scde63d9e">"</span></span>
-<span class="line"><span class="scacc819b">    }</span></span>
-<span class="line"><span class="scacc819b">  }</span></span>
-<span class="line"></span>
-<span class="line"><span class="s5dd799dd">  # Routing rules</span></span>
-<span class="line"><span class="s252224fb">  rules</span><span class="scacc819b">:</span><span class="scacc819b"> [</span></span>
-<span class="line"><span class="scacc819b">    {</span></span>
-<span class="line"><span class="s252224fb">      event</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">deploy_success</span><span class="scde63d9e">"</span></span>
-<span class="line"><span class="s252224fb">      channels</span><span class="scacc819b">:</span><span class="scacc819b"> [</span></span>
-<span class="line"><span class="scde63d9e">        "</span><span class="s7911c4c2">slack</span><span class="scde63d9e">"</span></span>
-<span class="line"><span class="scde63d9e">        "</span><span class="s7911c4c2">email</span><span class="scde63d9e">"</span></span>
-<span class="line"><span class="scacc819b">      ]</span></span>
-<span class="line"><span class="s252224fb">      priority</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">low</span><span class="scde63d9e">"</span></span>
-<span class="line"><span class="scacc819b">    }</span></span>
-<span class="line"></span>
-<span class="line"><span class="scacc819b">    {</span></span>
-<span class="line"><span class="s252224fb">      event</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">deploy_failure</span><span class="scde63d9e">"</span></span>
-<span class="line"><span class="s252224fb">      channels</span><span class="scacc819b">:</span><span class="scacc819b"> [</span></span>
-<span class="line"><span class="scde63d9e">        "</span><span class="s7911c4c2">slack</span><span class="scde63d9e">"</span></span>
-<span class="line"><span class="scde63d9e">        "</span><span class="s7911c4c2">email</span><span class="scde63d9e">"</span></span>
-<span class="line"><span class="scde63d9e">        "</span><span class="s7911c4c2">sms</span><span class="scde63d9e">"</span></span>
-<span class="line"><span class="scacc819b">      ]</span></span>
-<span class="line"><span class="s252224fb">      priority</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">critical</span><span class="scde63d9e">"</span></span>
-<span class="line"><span class="scacc819b">    }</span></span>
-<span class="line"></span>
-<span class="line"><span class="scacc819b">    {</span></span>
-<span class="line"><span class="s252224fb">      event</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">error_spike</span><span class="scde63d9e">"</span></span>
-<span class="line"><span class="s252224fb">      channels</span><span class="scacc819b">:</span><span class="scacc819b"> [</span></span>
-<span class="line"><span class="scde63d9e">        "</span><span class="s7911c4c2">slack</span><span class="scde63d9e">"</span></span>
-<span class="line"><span class="scacc819b">      ]</span></span>
-<span class="line"><span class="s252224fb">      priority</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">high</span><span class="scde63d9e">"</span></span>
-<span class="line"><span class="scacc819b">    }</span></span>
-<span class="line"><span class="scacc819b">  ]</span></span>
-<span class="line"><span class="scacc819b">}</span></span></code></pre>
-  <h2>See also</h2>
-  <ul class="card-list">
-    <li><a href="./9253"><span class="card-num">9253</span><span class="card-title">Product Catalog</span></a></li>
-    <li><a href="./14777"><span class="card-num">14777</span><span class="card-title">Blog Post</span></a></li>
-    <li><a href="./6412"><span class="card-num">6412</span><span class="card-title">Feature Flags</span></a></li>
-  </ul>
+<p class="eyebrow">Example 7366</p>
+<h1>Notification Config</h1>
+<p class="lead">Multi-channel notification routing rules.</p>
+<pre class="shiki"><code><span class="scacc819b">{</span><br><span class="s252224fb">  channels</span><span class="scacc819b">:</span><span class="scacc819b"> {</span><br><span class="s252224fb">    email</span><span class="scacc819b">:</span><span class="scacc819b"> {</span><br><span class="s252224fb">      enabled</span><span class="scacc819b">:</span><span class="sfc8ef81c"> true</span><br><span class="s252224fb">      provider</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">postmark</span><span class="scde63d9e">"</span><br><span class="s252224fb">      from</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">notifications@definite-finger.com</span><span class="scde63d9e">"</span><br><span class="scacc819b">    }</span><br><br><span class="s252224fb">    slack</span><span class="scacc819b">:</span><span class="scacc819b"> {</span><br><span class="s252224fb">      enabled</span><span class="scacc819b">:</span><span class="sfc8ef81c"> true</span><br><span class="s252224fb">      webhook_url</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">https://hooks.slack.com/services/mSz6KFCMwJWjyUNlR3Qp</span><span class="scde63d9e">"</span><br><span class="s252224fb">      default_channel</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">#deployments</span><span class="scde63d9e">"</span><br><span class="scacc819b">    }</span><br><br><span class="s252224fb">    sms</span><span class="scacc819b">:</span><span class="scacc819b"> {</span><br><span class="s252224fb">      enabled</span><span class="scacc819b">:</span><span class="sfc8ef81c"> false</span><br><span class="s252224fb">      provider</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">sns</span><span class="scde63d9e">"</span><br><span class="scacc819b">    }</span><br><span class="scacc819b">  }</span><br><br><span class="s5dd799dd">  # Routing rules</span><br><span class="s252224fb">  rules</span><span class="scacc819b">:</span><span class="scacc819b"> [</span><br><span class="scacc819b">    {</span><br><span class="s252224fb">      event</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">deploy_success</span><span class="scde63d9e">"</span><br><span class="s252224fb">      channels</span><span class="scacc819b">:</span><span class="scacc819b"> [</span><br><span class="scde63d9e">        "</span><span class="s7911c4c2">slack</span><span class="scde63d9e">"</span><br><span class="scde63d9e">        "</span><span class="s7911c4c2">email</span><span class="scde63d9e">"</span><br><span class="scacc819b">      ]</span><br><span class="s252224fb">      priority</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">low</span><span class="scde63d9e">"</span><br><span class="scacc819b">    }</span><br><br><span class="scacc819b">    {</span><br><span class="s252224fb">      event</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">deploy_failure</span><span class="scde63d9e">"</span><br><span class="s252224fb">      channels</span><span class="scacc819b">:</span><span class="scacc819b"> [</span><br><span class="scde63d9e">        "</span><span class="s7911c4c2">slack</span><span class="scde63d9e">"</span><br><span class="scde63d9e">        "</span><span class="s7911c4c2">email</span><span class="scde63d9e">"</span><br><span class="scde63d9e">        "</span><span class="s7911c4c2">sms</span><span class="scde63d9e">"</span><br><span class="scacc819b">      ]</span><br><span class="s252224fb">      priority</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">critical</span><span class="scde63d9e">"</span><br><span class="scacc819b">    }</span><br><br><span class="scacc819b">    {</span><br><span class="s252224fb">      event</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">error_spike</span><span class="scde63d9e">"</span><br><span class="s252224fb">      channels</span><span class="scacc819b">:</span><span class="scacc819b"> [</span><br><span class="scde63d9e">        "</span><span class="s7911c4c2">slack</span><span class="scde63d9e">"</span><br><span class="scacc819b">      ]</span><br><span class="s252224fb">      priority</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">high</span><span class="scde63d9e">"</span><br><span class="scacc819b">    }</span><br><span class="scacc819b">  ]</span><br><span class="scacc819b">}</span></code></pre>
+<h2>See also</h2>
+<ul class="card-list">
+<li><a href="./9253"><span class="card-num">9253</span><span class="card-title">Product Catalog</span></a></li>
+<li><a href="./14777"><span class="card-num">14777</span><span class="card-title">Blog Post</span></a></li>
+<li><a href="./6412"><span class="card-num">6412</span><span class="card-title">Feature Flags</span></a></li>
+</ul>
 </article>
 </main>
-<footer class="site-footer">
-  Generated examples for the <a href="https://maml.dev">MAML</a> data format.
-</footer>
+<footer class="site-footer">Generated examples for the <a href="https://maml.dev">MAML</a> data format.</footer>
 </body>
 </html>

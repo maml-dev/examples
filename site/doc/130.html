@@ -6,62 +6,26 @@
 <title>130 — K8s Deployment · MAML Examples</title>
 <meta name="description" content="Kubernetes deployment specification.">
 <link rel="stylesheet" href="../assets/style.css">
-<link rel="stylesheet" href="../assets/tokens.css">
 </head>
 <body>
 <header class="site-header">
-  <a class="brand" href="../">MAML Examples</a>
-  <nav>
-    <a href="https://maml.dev">maml.dev</a>
-    <a href="https://github.com/maml-dev/examples">GitHub</a>
-  </nav>
+<a class="brand" href="../">MAML Examples</a>
+<nav><a href="https://maml.dev">maml.dev</a> <a href="https://github.com/maml-dev/examples">GitHub</a></nav>
 </header>
 <main>
 <article class="example">
-  <p class="eyebrow">Example 130</p>
-  <h1>K8s Deployment</h1>
-  <p class="lead">Kubernetes deployment specification.</p>
-  <pre class="shiki shiki-themes catppuccin-latte plastic" style="--shiki-light:#4c4f69;--shiki-dark:#A9B2C3;--shiki-light-bg:#eff1f5;--shiki-dark-bg:#21252B" tabindex="0"><code><span class="line"><span class="scacc819b">{</span></span>
-<span class="line"><span class="s252224fb">  apiVersion</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">apps/v1</span><span class="scde63d9e">"</span></span>
-<span class="line"><span class="s252224fb">  kind</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">Deployment</span><span class="scde63d9e">"</span></span>
-<span class="line"><span class="s252224fb">  metadata</span><span class="scacc819b">:</span><span class="scacc819b"> {</span></span>
-<span class="line"><span class="s252224fb">    name</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">bend-api</span><span class="scde63d9e">"</span></span>
-<span class="line"><span class="s252224fb">    namespace</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">staging</span><span class="scde63d9e">"</span></span>
-<span class="line"><span class="s252224fb">    labels</span><span class="scacc819b">:</span><span class="scacc819b"> {</span></span>
-<span class="line"><span class="s252224fb">      app</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">gloom</span><span class="scde63d9e">"</span></span>
-<span class="line"><span class="s252224fb">      tier</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">backend</span><span class="scde63d9e">"</span></span>
-<span class="line"><span class="scacc819b">    }</span></span>
-<span class="line"><span class="scacc819b">  }</span></span>
-<span class="line"></span>
-<span class="line"><span class="s5dd799dd">  # Deployment spec</span></span>
-<span class="line"><span class="s252224fb">  spec</span><span class="scacc819b">:</span><span class="scacc819b"> {</span></span>
-<span class="line"><span class="s252224fb">    replicas</span><span class="scacc819b">:</span><span class="s56b09ea4"> 3</span></span>
-<span class="line"><span class="s252224fb">    container</span><span class="scacc819b">:</span><span class="scacc819b"> {</span></span>
-<span class="line"><span class="s252224fb">      image</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">pigsty:6.20.4</span><span class="scde63d9e">"</span></span>
-<span class="line"><span class="s252224fb">      port</span><span class="scacc819b">:</span><span class="s56b09ea4"> 8080</span></span>
-<span class="line"><span class="s252224fb">      resources</span><span class="scacc819b">:</span><span class="scacc819b"> {</span></span>
-<span class="line"><span class="s252224fb">        cpu_limit</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">250m</span><span class="scde63d9e">"</span></span>
-<span class="line"><span class="s252224fb">        memory_limit</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">512Mi</span><span class="scde63d9e">"</span></span>
-<span class="line"><span class="scacc819b">      }</span></span>
-<span class="line"><span class="scacc819b">    }</span></span>
-<span class="line"></span>
-<span class="line"><span class="s252224fb">    health_check</span><span class="scacc819b">:</span><span class="scacc819b"> {</span></span>
-<span class="line"><span class="s252224fb">      path</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">/health</span><span class="scde63d9e">"</span></span>
-<span class="line"><span class="s252224fb">      interval</span><span class="scacc819b">:</span><span class="s56b09ea4"> 30</span></span>
-<span class="line"><span class="s252224fb">      timeout</span><span class="scacc819b">:</span><span class="s56b09ea4"> 3</span></span>
-<span class="line"><span class="scacc819b">    }</span></span>
-<span class="line"><span class="scacc819b">  }</span></span>
-<span class="line"><span class="scacc819b">}</span></span></code></pre>
-  <h2>See also</h2>
-  <ul class="card-list">
-    <li><a href="./10788"><span class="card-num">10788</span><span class="card-title">License Header</span></a></li>
-    <li><a href="./7668"><span class="card-num">7668</span><span class="card-title">Blog Post</span></a></li>
-    <li><a href="./275"><span class="card-num">275</span><span class="card-title">Game Config</span></a></li>
-  </ul>
+<p class="eyebrow">Example 130</p>
+<h1>K8s Deployment</h1>
+<p class="lead">Kubernetes deployment specification.</p>
+<pre class="shiki"><code><span class="scacc819b">{</span><br><span class="s252224fb">  apiVersion</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">apps/v1</span><span class="scde63d9e">"</span><br><span class="s252224fb">  kind</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">Deployment</span><span class="scde63d9e">"</span><br><span class="s252224fb">  metadata</span><span class="scacc819b">:</span><span class="scacc819b"> {</span><br><span class="s252224fb">    name</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">bend-api</span><span class="scde63d9e">"</span><br><span class="s252224fb">    namespace</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">staging</span><span class="scde63d9e">"</span><br><span class="s252224fb">    labels</span><span class="scacc819b">:</span><span class="scacc819b"> {</span><br><span class="s252224fb">      app</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">gloom</span><span class="scde63d9e">"</span><br><span class="s252224fb">      tier</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">backend</span><span class="scde63d9e">"</span><br><span class="scacc819b">    }</span><br><span class="scacc819b">  }</span><br><br><span class="s5dd799dd">  # Deployment spec</span><br><span class="s252224fb">  spec</span><span class="scacc819b">:</span><span class="scacc819b"> {</span><br><span class="s252224fb">    replicas</span><span class="scacc819b">:</span><span class="s56b09ea4"> 3</span><br><span class="s252224fb">    container</span><span class="scacc819b">:</span><span class="scacc819b"> {</span><br><span class="s252224fb">      image</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">pigsty:6.20.4</span><span class="scde63d9e">"</span><br><span class="s252224fb">      port</span><span class="scacc819b">:</span><span class="s56b09ea4"> 8080</span><br><span class="s252224fb">      resources</span><span class="scacc819b">:</span><span class="scacc819b"> {</span><br><span class="s252224fb">        cpu_limit</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">250m</span><span class="scde63d9e">"</span><br><span class="s252224fb">        memory_limit</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">512Mi</span><span class="scde63d9e">"</span><br><span class="scacc819b">      }</span><br><span class="scacc819b">    }</span><br><br><span class="s252224fb">    health_check</span><span class="scacc819b">:</span><span class="scacc819b"> {</span><br><span class="s252224fb">      path</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">/health</span><span class="scde63d9e">"</span><br><span class="s252224fb">      interval</span><span class="scacc819b">:</span><span class="s56b09ea4"> 30</span><br><span class="s252224fb">      timeout</span><span class="scacc819b">:</span><span class="s56b09ea4"> 3</span><br><span class="scacc819b">    }</span><br><span class="scacc819b">  }</span><br><span class="scacc819b">}</span></code></pre>
+<h2>See also</h2>
+<ul class="card-list">
+<li><a href="./10788"><span class="card-num">10788</span><span class="card-title">License Header</span></a></li>
+<li><a href="./7668"><span class="card-num">7668</span><span class="card-title">Blog Post</span></a></li>
+<li><a href="./275"><span class="card-num">275</span><span class="card-title">Game Config</span></a></li>
+</ul>
 </article>
 </main>
-<footer class="site-footer">
-  Generated examples for the <a href="https://maml.dev">MAML</a> data format.
-</footer>
+<footer class="site-footer">Generated examples for the <a href="https://maml.dev">MAML</a> data format.</footer>
 </body>
 </html>

@@ -6,65 +6,26 @@
 <title>7871 — Travel Itinerary · MAML Examples</title>
 <meta name="description" content="A multi-day travel plan.">
 <link rel="stylesheet" href="../assets/style.css">
-<link rel="stylesheet" href="../assets/tokens.css">
 </head>
 <body>
 <header class="site-header">
-  <a class="brand" href="../">MAML Examples</a>
-  <nav>
-    <a href="https://maml.dev">maml.dev</a>
-    <a href="https://github.com/maml-dev/examples">GitHub</a>
-  </nav>
+<a class="brand" href="../">MAML Examples</a>
+<nav><a href="https://maml.dev">maml.dev</a> <a href="https://github.com/maml-dev/examples">GitHub</a></nav>
 </header>
 <main>
 <article class="example">
-  <p class="eyebrow">Example 7871</p>
-  <h1>Travel Itinerary</h1>
-  <p class="lead">A multi-day travel plan.</p>
-  <pre class="shiki shiki-themes catppuccin-latte plastic" style="--shiki-light:#4c4f69;--shiki-dark:#A9B2C3;--shiki-light-bg:#eff1f5;--shiki-dark-bg:#21252B" tabindex="0"><code><span class="line"><span class="scacc819b">{</span></span>
-<span class="line"><span class="s252224fb">  trip</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">East Reginald to Mindyburgh</span><span class="scde63d9e">"</span></span>
-<span class="line"><span class="s252224fb">  traveler</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">Norman Turcotte-Skiles</span><span class="scde63d9e">"</span></span>
-<span class="line"><span class="s252224fb">  dates</span><span class="scacc819b">:</span><span class="scacc819b"> {</span></span>
-<span class="line"><span class="s252224fb">    departure</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">2026-07-24</span><span class="scde63d9e">"</span></span>
-<span class="line"><span class="s252224fb">    return</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">2026-07-29</span><span class="scde63d9e">"</span></span>
-<span class="line"><span class="scacc819b">  }</span></span>
-<span class="line"></span>
-<span class="line"><span class="s252224fb">  flights</span><span class="scacc819b">:</span><span class="scacc819b"> [</span></span>
-<span class="line"><span class="scacc819b">    {</span></span>
-<span class="line"><span class="s252224fb">      flight</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">0995</span><span class="scde63d9e">"</span></span>
-<span class="line"><span class="s252224fb">      from</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">PPT</span><span class="scde63d9e">"</span></span>
-<span class="line"><span class="s252224fb">      to</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">AEP</span><span class="scde63d9e">"</span></span>
-<span class="line"><span class="s252224fb">      departure</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">18:45</span><span class="scde63d9e">"</span></span>
-<span class="line"><span class="s252224fb">      seat</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">5E</span><span class="scde63d9e">"</span></span>
-<span class="line"><span class="scacc819b">    }</span></span>
-<span class="line"></span>
-<span class="line"><span class="scacc819b">    {</span></span>
-<span class="line"><span class="s252224fb">      flight</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">0001</span><span class="scde63d9e">"</span></span>
-<span class="line"><span class="s252224fb">      from</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">VCP</span><span class="scde63d9e">"</span></span>
-<span class="line"><span class="s252224fb">      to</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">JED</span><span class="scde63d9e">"</span></span>
-<span class="line"><span class="s252224fb">      departure</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">20:00</span><span class="scde63d9e">"</span></span>
-<span class="line"><span class="s252224fb">      seat</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">33E</span><span class="scde63d9e">"</span></span>
-<span class="line"><span class="scacc819b">    }</span></span>
-<span class="line"><span class="scacc819b">  ]</span></span>
-<span class="line"></span>
-<span class="line"><span class="s252224fb">  hotel</span><span class="scacc819b">:</span><span class="scacc819b"> {</span></span>
-<span class="line"><span class="s252224fb">    name</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">Langosh, Wintheiser and O'Kon Hotel</span><span class="scde63d9e">"</span></span>
-<span class="line"><span class="s252224fb">    address</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">9297 Mill Street</span><span class="scde63d9e">"</span></span>
-<span class="line"><span class="s252224fb">    check_in</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">16:00</span><span class="scde63d9e">"</span></span>
-<span class="line"><span class="s252224fb">    check_out</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">11:00</span><span class="scde63d9e">"</span></span>
-<span class="line"><span class="s252224fb">    confirmation</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">TM4GN7VI</span><span class="scde63d9e">"</span></span>
-<span class="line"><span class="scacc819b">  }</span></span>
-<span class="line"><span class="scacc819b">}</span></span></code></pre>
-  <h2>See also</h2>
-  <ul class="card-list">
-    <li><a href="./13182"><span class="card-num">13182</span><span class="card-title">Error Messages</span></a></li>
-    <li><a href="./15415"><span class="card-num">15415</span><span class="card-title">Package Config</span></a></li>
-    <li><a href="./3158"><span class="card-num">3158</span><span class="card-title">Environment Vars</span></a></li>
-  </ul>
+<p class="eyebrow">Example 7871</p>
+<h1>Travel Itinerary</h1>
+<p class="lead">A multi-day travel plan.</p>
+<pre class="shiki"><code><span class="scacc819b">{</span><br><span class="s252224fb">  trip</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">East Reginald to Mindyburgh</span><span class="scde63d9e">"</span><br><span class="s252224fb">  traveler</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">Norman Turcotte-Skiles</span><span class="scde63d9e">"</span><br><span class="s252224fb">  dates</span><span class="scacc819b">:</span><span class="scacc819b"> {</span><br><span class="s252224fb">    departure</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">2026-07-24</span><span class="scde63d9e">"</span><br><span class="s252224fb">    return</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">2026-07-29</span><span class="scde63d9e">"</span><br><span class="scacc819b">  }</span><br><br><span class="s252224fb">  flights</span><span class="scacc819b">:</span><span class="scacc819b"> [</span><br><span class="scacc819b">    {</span><br><span class="s252224fb">      flight</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">0995</span><span class="scde63d9e">"</span><br><span class="s252224fb">      from</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">PPT</span><span class="scde63d9e">"</span><br><span class="s252224fb">      to</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">AEP</span><span class="scde63d9e">"</span><br><span class="s252224fb">      departure</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">18:45</span><span class="scde63d9e">"</span><br><span class="s252224fb">      seat</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">5E</span><span class="scde63d9e">"</span><br><span class="scacc819b">    }</span><br><br><span class="scacc819b">    {</span><br><span class="s252224fb">      flight</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">0001</span><span class="scde63d9e">"</span><br><span class="s252224fb">      from</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">VCP</span><span class="scde63d9e">"</span><br><span class="s252224fb">      to</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">JED</span><span class="scde63d9e">"</span><br><span class="s252224fb">      departure</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">20:00</span><span class="scde63d9e">"</span><br><span class="s252224fb">      seat</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">33E</span><span class="scde63d9e">"</span><br><span class="scacc819b">    }</span><br><span class="scacc819b">  ]</span><br><br><span class="s252224fb">  hotel</span><span class="scacc819b">:</span><span class="scacc819b"> {</span><br><span class="s252224fb">    name</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">Langosh, Wintheiser and O'Kon Hotel</span><span class="scde63d9e">"</span><br><span class="s252224fb">    address</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">9297 Mill Street</span><span class="scde63d9e">"</span><br><span class="s252224fb">    check_in</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">16:00</span><span class="scde63d9e">"</span><br><span class="s252224fb">    check_out</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">11:00</span><span class="scde63d9e">"</span><br><span class="s252224fb">    confirmation</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">TM4GN7VI</span><span class="scde63d9e">"</span><br><span class="scacc819b">  }</span><br><span class="scacc819b">}</span></code></pre>
+<h2>See also</h2>
+<ul class="card-list">
+<li><a href="./13182"><span class="card-num">13182</span><span class="card-title">Error Messages</span></a></li>
+<li><a href="./15415"><span class="card-num">15415</span><span class="card-title">Package Config</span></a></li>
+<li><a href="./3158"><span class="card-num">3158</span><span class="card-title">Environment Vars</span></a></li>
+</ul>
 </article>
 </main>
-<footer class="site-footer">
-  Generated examples for the <a href="https://maml.dev">MAML</a> data format.
-</footer>
+<footer class="site-footer">Generated examples for the <a href="https://maml.dev">MAML</a> data format.</footer>
 </body>
 </html>

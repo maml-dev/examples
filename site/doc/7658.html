@@ -6,70 +6,26 @@
 <title>7658 — Product Catalog · MAML Examples</title>
 <meta name="description" content="E-commerce product listings.">
 <link rel="stylesheet" href="../assets/style.css">
-<link rel="stylesheet" href="../assets/tokens.css">
 </head>
 <body>
 <header class="site-header">
-  <a class="brand" href="../">MAML Examples</a>
-  <nav>
-    <a href="https://maml.dev">maml.dev</a>
-    <a href="https://github.com/maml-dev/examples">GitHub</a>
-  </nav>
+<a class="brand" href="../">MAML Examples</a>
+<nav><a href="https://maml.dev">maml.dev</a> <a href="https://github.com/maml-dev/examples">GitHub</a></nav>
 </header>
 <main>
 <article class="example">
-  <p class="eyebrow">Example 7658</p>
-  <h1>Product Catalog</h1>
-  <p class="lead">E-commerce product listings.</p>
-  <pre class="shiki shiki-themes catppuccin-latte plastic" style="--shiki-light:#4c4f69;--shiki-dark:#A9B2C3;--shiki-light-bg:#eff1f5;--shiki-dark-bg:#21252B" tabindex="0"><code><span class="line"><span class="scacc819b">{</span></span>
-<span class="line"><span class="s252224fb">  products</span><span class="scacc819b">:</span><span class="scacc819b"> [</span></span>
-<span class="line"><span class="scacc819b">    {</span></span>
-<span class="line"><span class="s252224fb">      sku</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">L6NSCYHB</span><span class="scde63d9e">"</span></span>
-<span class="line"><span class="s252224fb">      name</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">Bespoke Aluminum Cheese</span><span class="scde63d9e">"</span></span>
-<span class="line"><span class="s252224fb">      price</span><span class="scacc819b">:</span><span class="s56b09ea4"> 130</span></span>
-<span class="line"><span class="s252224fb">      category</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">Clothing</span><span class="scde63d9e">"</span></span>
-<span class="line"><span class="s252224fb">      in_stock</span><span class="scacc819b">:</span><span class="sfc8ef81c"> true</span></span>
-<span class="line"><span class="s252224fb">      rating</span><span class="scacc819b">:</span><span class="s56b09ea4"> 5</span></span>
-<span class="line"><span class="scacc819b">    }</span></span>
-<span class="line"></span>
-<span class="line"><span class="scacc819b">    {</span></span>
-<span class="line"><span class="s252224fb">      sku</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">8OZVAAZ5</span><span class="scde63d9e">"</span></span>
-<span class="line"><span class="s252224fb">      name</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">Handcrafted Bronze Pants</span><span class="scde63d9e">"</span></span>
-<span class="line"><span class="s252224fb">      price</span><span class="scacc819b">:</span><span class="s56b09ea4"> 73.45</span></span>
-<span class="line"><span class="s252224fb">      category</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">Home</span><span class="scde63d9e">"</span></span>
-<span class="line"><span class="s252224fb">      in_stock</span><span class="scacc819b">:</span><span class="sfc8ef81c"> true</span></span>
-<span class="line"><span class="s252224fb">      rating</span><span class="scacc819b">:</span><span class="s56b09ea4"> 1.6</span></span>
-<span class="line"><span class="scacc819b">    }</span></span>
-<span class="line"></span>
-<span class="line"><span class="scacc819b">    {</span></span>
-<span class="line"><span class="s252224fb">      sku</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">KPGI39UN</span><span class="scde63d9e">"</span></span>
-<span class="line"><span class="s252224fb">      name</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">Gorgeous Bamboo Car</span><span class="scde63d9e">"</span></span>
-<span class="line"><span class="s252224fb">      price</span><span class="scacc819b">:</span><span class="s56b09ea4"> 336.05</span></span>
-<span class="line"><span class="s252224fb">      category</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">Sports</span><span class="scde63d9e">"</span></span>
-<span class="line"><span class="s252224fb">      in_stock</span><span class="scacc819b">:</span><span class="sfc8ef81c"> true</span></span>
-<span class="line"><span class="s252224fb">      rating</span><span class="scacc819b">:</span><span class="s56b09ea4"> 3.3</span></span>
-<span class="line"><span class="scacc819b">    }</span></span>
-<span class="line"></span>
-<span class="line"><span class="scacc819b">    {</span></span>
-<span class="line"><span class="s252224fb">      sku</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">VSVEVK1D</span><span class="scde63d9e">"</span></span>
-<span class="line"><span class="s252224fb">      name</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">Electronic Bronze Chicken</span><span class="scde63d9e">"</span></span>
-<span class="line"><span class="s252224fb">      price</span><span class="scacc819b">:</span><span class="s56b09ea4"> 723.89</span></span>
-<span class="line"><span class="s252224fb">      category</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">Games</span><span class="scde63d9e">"</span></span>
-<span class="line"><span class="s252224fb">      in_stock</span><span class="scacc819b">:</span><span class="sfc8ef81c"> false</span></span>
-<span class="line"><span class="s252224fb">      rating</span><span class="scacc819b">:</span><span class="s56b09ea4"> 4.2</span></span>
-<span class="line"><span class="scacc819b">    }</span></span>
-<span class="line"><span class="scacc819b">  ]</span></span>
-<span class="line"><span class="scacc819b">}</span></span></code></pre>
-  <h2>See also</h2>
-  <ul class="card-list">
-    <li><a href="./12199"><span class="card-num">12199</span><span class="card-title">HTML Templates</span></a></li>
-    <li><a href="./10300"><span class="card-num">10300</span><span class="card-title">Crontab</span></a></li>
-    <li><a href="./3853"><span class="card-num">3853</span><span class="card-title">Server Inventory</span></a></li>
-  </ul>
+<p class="eyebrow">Example 7658</p>
+<h1>Product Catalog</h1>
+<p class="lead">E-commerce product listings.</p>
+<pre class="shiki"><code><span class="scacc819b">{</span><br><span class="s252224fb">  products</span><span class="scacc819b">:</span><span class="scacc819b"> [</span><br><span class="scacc819b">    {</span><br><span class="s252224fb">      sku</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">L6NSCYHB</span><span class="scde63d9e">"</span><br><span class="s252224fb">      name</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">Bespoke Aluminum Cheese</span><span class="scde63d9e">"</span><br><span class="s252224fb">      price</span><span class="scacc819b">:</span><span class="s56b09ea4"> 130</span><br><span class="s252224fb">      category</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">Clothing</span><span class="scde63d9e">"</span><br><span class="s252224fb">      in_stock</span><span class="scacc819b">:</span><span class="sfc8ef81c"> true</span><br><span class="s252224fb">      rating</span><span class="scacc819b">:</span><span class="s56b09ea4"> 5</span><br><span class="scacc819b">    }</span><br><br><span class="scacc819b">    {</span><br><span class="s252224fb">      sku</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">8OZVAAZ5</span><span class="scde63d9e">"</span><br><span class="s252224fb">      name</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">Handcrafted Bronze Pants</span><span class="scde63d9e">"</span><br><span class="s252224fb">      price</span><span class="scacc819b">:</span><span class="s56b09ea4"> 73.45</span><br><span class="s252224fb">      category</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">Home</span><span class="scde63d9e">"</span><br><span class="s252224fb">      in_stock</span><span class="scacc819b">:</span><span class="sfc8ef81c"> true</span><br><span class="s252224fb">      rating</span><span class="scacc819b">:</span><span class="s56b09ea4"> 1.6</span><br><span class="scacc819b">    }</span><br><br><span class="scacc819b">    {</span><br><span class="s252224fb">      sku</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">KPGI39UN</span><span class="scde63d9e">"</span><br><span class="s252224fb">      name</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">Gorgeous Bamboo Car</span><span class="scde63d9e">"</span><br><span class="s252224fb">      price</span><span class="scacc819b">:</span><span class="s56b09ea4"> 336.05</span><br><span class="s252224fb">      category</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">Sports</span><span class="scde63d9e">"</span><br><span class="s252224fb">      in_stock</span><span class="scacc819b">:</span><span class="sfc8ef81c"> true</span><br><span class="s252224fb">      rating</span><span class="scacc819b">:</span><span class="s56b09ea4"> 3.3</span><br><span class="scacc819b">    }</span><br><br><span class="scacc819b">    {</span><br><span class="s252224fb">      sku</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">VSVEVK1D</span><span class="scde63d9e">"</span><br><span class="s252224fb">      name</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">Electronic Bronze Chicken</span><span class="scde63d9e">"</span><br><span class="s252224fb">      price</span><span class="scacc819b">:</span><span class="s56b09ea4"> 723.89</span><br><span class="s252224fb">      category</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">Games</span><span class="scde63d9e">"</span><br><span class="s252224fb">      in_stock</span><span class="scacc819b">:</span><span class="sfc8ef81c"> false</span><br><span class="s252224fb">      rating</span><span class="scacc819b">:</span><span class="s56b09ea4"> 4.2</span><br><span class="scacc819b">    }</span><br><span class="scacc819b">  ]</span><br><span class="scacc819b">}</span></code></pre>
+<h2>See also</h2>
+<ul class="card-list">
+<li><a href="./12199"><span class="card-num">12199</span><span class="card-title">HTML Templates</span></a></li>
+<li><a href="./10300"><span class="card-num">10300</span><span class="card-title">Crontab</span></a></li>
+<li><a href="./3853"><span class="card-num">3853</span><span class="card-title">Server Inventory</span></a></li>
+</ul>
 </article>
 </main>
-<footer class="site-footer">
-  Generated examples for the <a href="https://maml.dev">MAML</a> data format.
-</footer>
+<footer class="site-footer">Generated examples for the <a href="https://maml.dev">MAML</a> data format.</footer>
 </body>
 </html>

@@ -6,67 +6,26 @@
 <title>170 — Playlist · MAML Examples</title>
 <meta name="description" content="A music playlist with tracks and metadata.">
 <link rel="stylesheet" href="../assets/style.css">
-<link rel="stylesheet" href="../assets/tokens.css">
 </head>
 <body>
 <header class="site-header">
-  <a class="brand" href="../">MAML Examples</a>
-  <nav>
-    <a href="https://maml.dev">maml.dev</a>
-    <a href="https://github.com/maml-dev/examples">GitHub</a>
-  </nav>
+<a class="brand" href="../">MAML Examples</a>
+<nav><a href="https://maml.dev">maml.dev</a> <a href="https://github.com/maml-dev/examples">GitHub</a></nav>
 </header>
 <main>
 <article class="example">
-  <p class="eyebrow">Example 170</p>
-  <h1>Playlist</h1>
-  <p class="lead">A music playlist with tracks and metadata.</p>
-  <pre class="shiki shiki-themes catppuccin-latte plastic" style="--shiki-light:#4c4f69;--shiki-dark:#A9B2C3;--shiki-light-bg:#eff1f5;--shiki-dark-bg:#21252B" tabindex="0"><code><span class="line"><span class="scacc819b">{</span></span>
-<span class="line"><span class="s252224fb">  name</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">Tejano Vibes</span><span class="scde63d9e">"</span></span>
-<span class="line"><span class="s252224fb">  curator</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">David Klocko</span><span class="scde63d9e">"</span></span>
-<span class="line"><span class="s252224fb">  public</span><span class="scacc819b">:</span><span class="sfc8ef81c"> true</span></span>
-<span class="line"><span class="s252224fb">  tracks</span><span class="scacc819b">:</span><span class="scacc819b"> [</span></span>
-<span class="line"><span class="scacc819b">    {</span></span>
-<span class="line"><span class="s252224fb">      title</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">Arthur's Theme (Best That You Can Do)</span><span class="scde63d9e">"</span></span>
-<span class="line"><span class="s252224fb">      artist</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">Shannon Rempel</span><span class="scde63d9e">"</span></span>
-<span class="line"><span class="s252224fb">      album</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">sum quibusdam</span><span class="scde63d9e">"</span></span>
-<span class="line"><span class="s252224fb">      duration</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">4:55</span><span class="scde63d9e">"</span></span>
-<span class="line"><span class="scacc819b">    }</span></span>
-<span class="line"></span>
-<span class="line"><span class="scacc819b">    {</span></span>
-<span class="line"><span class="s252224fb">      title</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">Physical</span><span class="scde63d9e">"</span></span>
-<span class="line"><span class="s252224fb">      artist</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">Casey Ankunding</span><span class="scde63d9e">"</span></span>
-<span class="line"><span class="s252224fb">      album</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">aestivus censura decens</span><span class="scde63d9e">"</span></span>
-<span class="line"><span class="s252224fb">      duration</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">5:26</span><span class="scde63d9e">"</span></span>
-<span class="line"><span class="scacc819b">    }</span></span>
-<span class="line"></span>
-<span class="line"><span class="scacc819b">    {</span></span>
-<span class="line"><span class="s252224fb">      title</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">Strawberry Fields Forever</span><span class="scde63d9e">"</span></span>
-<span class="line"><span class="s252224fb">      artist</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">Adrian Spencer</span><span class="scde63d9e">"</span></span>
-<span class="line"><span class="s252224fb">      album</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">adversus</span><span class="scde63d9e">"</span></span>
-<span class="line"><span class="s252224fb">      duration</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">3:41</span><span class="scde63d9e">"</span></span>
-<span class="line"><span class="scacc819b">    }</span></span>
-<span class="line"></span>
-<span class="line"><span class="scacc819b">    {</span></span>
-<span class="line"><span class="s252224fb">      title</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">Glory of Love</span><span class="scde63d9e">"</span></span>
-<span class="line"><span class="s252224fb">      artist</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">Kristine Gutkowski</span><span class="scde63d9e">"</span></span>
-<span class="line"><span class="s252224fb">      album</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">sortitus</span><span class="scde63d9e">"</span></span>
-<span class="line"><span class="s252224fb">      duration</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">5:40</span><span class="scde63d9e">"</span></span>
-<span class="line"><span class="scacc819b">    }</span></span>
-<span class="line"><span class="scacc819b">  ]</span></span>
-<span class="line"></span>
-<span class="line"><span class="s252224fb">  total_duration</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">24min</span><span class="scde63d9e">"</span></span>
-<span class="line"><span class="scacc819b">}</span></span></code></pre>
-  <h2>See also</h2>
-  <ul class="card-list">
-    <li><a href="./11029"><span class="card-num">11029</span><span class="card-title">K8s Deployment</span></a></li>
-    <li><a href="./16469"><span class="card-num">16469</span><span class="card-title">Dashboard Layout</span></a></li>
-    <li><a href="./5136"><span class="card-num">5136</span><span class="card-title">Backup Strategy</span></a></li>
-  </ul>
+<p class="eyebrow">Example 170</p>
+<h1>Playlist</h1>
+<p class="lead">A music playlist with tracks and metadata.</p>
+<pre class="shiki"><code><span class="scacc819b">{</span><br><span class="s252224fb">  name</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">Tejano Vibes</span><span class="scde63d9e">"</span><br><span class="s252224fb">  curator</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">David Klocko</span><span class="scde63d9e">"</span><br><span class="s252224fb">  public</span><span class="scacc819b">:</span><span class="sfc8ef81c"> true</span><br><span class="s252224fb">  tracks</span><span class="scacc819b">:</span><span class="scacc819b"> [</span><br><span class="scacc819b">    {</span><br><span class="s252224fb">      title</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">Arthur's Theme (Best That You Can Do)</span><span class="scde63d9e">"</span><br><span class="s252224fb">      artist</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">Shannon Rempel</span><span class="scde63d9e">"</span><br><span class="s252224fb">      album</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">sum quibusdam</span><span class="scde63d9e">"</span><br><span class="s252224fb">      duration</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">4:55</span><span class="scde63d9e">"</span><br><span class="scacc819b">    }</span><br><br><span class="scacc819b">    {</span><br><span class="s252224fb">      title</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">Physical</span><span class="scde63d9e">"</span><br><span class="s252224fb">      artist</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">Casey Ankunding</span><span class="scde63d9e">"</span><br><span class="s252224fb">      album</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">aestivus censura decens</span><span class="scde63d9e">"</span><br><span class="s252224fb">      duration</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">5:26</span><span class="scde63d9e">"</span><br><span class="scacc819b">    }</span><br><br><span class="scacc819b">    {</span><br><span class="s252224fb">      title</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">Strawberry Fields Forever</span><span class="scde63d9e">"</span><br><span class="s252224fb">      artist</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">Adrian Spencer</span><span class="scde63d9e">"</span><br><span class="s252224fb">      album</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">adversus</span><span class="scde63d9e">"</span><br><span class="s252224fb">      duration</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">3:41</span><span class="scde63d9e">"</span><br><span class="scacc819b">    }</span><br><br><span class="scacc819b">    {</span><br><span class="s252224fb">      title</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">Glory of Love</span><span class="scde63d9e">"</span><br><span class="s252224fb">      artist</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">Kristine Gutkowski</span><span class="scde63d9e">"</span><br><span class="s252224fb">      album</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">sortitus</span><span class="scde63d9e">"</span><br><span class="s252224fb">      duration</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">5:40</span><span class="scde63d9e">"</span><br><span class="scacc819b">    }</span><br><span class="scacc819b">  ]</span><br><br><span class="s252224fb">  total_duration</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">24min</span><span class="scde63d9e">"</span><br><span class="scacc819b">}</span></code></pre>
+<h2>See also</h2>
+<ul class="card-list">
+<li><a href="./11029"><span class="card-num">11029</span><span class="card-title">K8s Deployment</span></a></li>
+<li><a href="./16469"><span class="card-num">16469</span><span class="card-title">Dashboard Layout</span></a></li>
+<li><a href="./5136"><span class="card-num">5136</span><span class="card-title">Backup Strategy</span></a></li>
+</ul>
 </article>
 </main>
-<footer class="site-footer">
-  Generated examples for the <a href="https://maml.dev">MAML</a> data format.
-</footer>
+<footer class="site-footer">Generated examples for the <a href="https://maml.dev">MAML</a> data format.</footer>
 </body>
 </html>

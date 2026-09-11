@@ -6,88 +6,26 @@
 <title>16180 — Playlist · MAML Examples</title>
 <meta name="description" content="A music playlist with tracks and metadata.">
 <link rel="stylesheet" href="../assets/style.css">
-<link rel="stylesheet" href="../assets/tokens.css">
 </head>
 <body>
 <header class="site-header">
-  <a class="brand" href="../">MAML Examples</a>
-  <nav>
-    <a href="https://maml.dev">maml.dev</a>
-    <a href="https://github.com/maml-dev/examples">GitHub</a>
-  </nav>
+<a class="brand" href="../">MAML Examples</a>
+<nav><a href="https://maml.dev">maml.dev</a> <a href="https://github.com/maml-dev/examples">GitHub</a></nav>
 </header>
 <main>
 <article class="example">
-  <p class="eyebrow">Example 16180</p>
-  <h1>Playlist</h1>
-  <p class="lead">A music playlist with tracks and metadata.</p>
-  <pre class="shiki shiki-themes catppuccin-latte plastic" style="--shiki-light:#4c4f69;--shiki-dark:#A9B2C3;--shiki-light-bg:#eff1f5;--shiki-dark-bg:#21252B" tabindex="0"><code><span class="line"><span class="scacc819b">{</span></span>
-<span class="line"><span class="s252224fb">  name</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">R&#x26;B Essentials</span><span class="scde63d9e">"</span></span>
-<span class="line"><span class="s252224fb">  curator</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">Dixie Kessler</span><span class="scde63d9e">"</span></span>
-<span class="line"><span class="s252224fb">  public</span><span class="scacc819b">:</span><span class="sfc8ef81c"> true</span></span>
-<span class="line"><span class="s252224fb">  tracks</span><span class="scacc819b">:</span><span class="scacc819b"> [</span></span>
-<span class="line"><span class="scacc819b">    {</span></span>
-<span class="line"><span class="s252224fb">      title</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">I'm Sorry</span><span class="scde63d9e">"</span></span>
-<span class="line"><span class="s252224fb">      artist</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">Teagan Rutherford</span><span class="scde63d9e">"</span></span>
-<span class="line"><span class="s252224fb">      album</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">vacuus</span><span class="scde63d9e">"</span></span>
-<span class="line"><span class="s252224fb">      duration</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">5:55</span><span class="scde63d9e">"</span></span>
-<span class="line"><span class="scacc819b">    }</span></span>
-<span class="line"></span>
-<span class="line"><span class="scacc819b">    {</span></span>
-<span class="line"><span class="s252224fb">      title</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">Sledgehammer</span><span class="scde63d9e">"</span></span>
-<span class="line"><span class="s252224fb">      artist</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">Mrs. Henriette King</span><span class="scde63d9e">"</span></span>
-<span class="line"><span class="s252224fb">      album</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">color</span><span class="scde63d9e">"</span></span>
-<span class="line"><span class="s252224fb">      duration</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">5:51</span><span class="scde63d9e">"</span></span>
-<span class="line"><span class="scacc819b">    }</span></span>
-<span class="line"></span>
-<span class="line"><span class="scacc819b">    {</span></span>
-<span class="line"><span class="s252224fb">      title</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">Horse With No Name</span><span class="scde63d9e">"</span></span>
-<span class="line"><span class="s252224fb">      artist</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">Nora Klein-Hayes</span><span class="scde63d9e">"</span></span>
-<span class="line"><span class="s252224fb">      album</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">cunctatio vulariter</span><span class="scde63d9e">"</span></span>
-<span class="line"><span class="s252224fb">      duration</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">3:38</span><span class="scde63d9e">"</span></span>
-<span class="line"><span class="scacc819b">    }</span></span>
-<span class="line"></span>
-<span class="line"><span class="scacc819b">    {</span></span>
-<span class="line"><span class="s252224fb">      title</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">You're Still the One</span><span class="scde63d9e">"</span></span>
-<span class="line"><span class="s252224fb">      artist</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">Mr. Pablo O'Hara</span><span class="scde63d9e">"</span></span>
-<span class="line"><span class="s252224fb">      album</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">conspergo aeger</span><span class="scde63d9e">"</span></span>
-<span class="line"><span class="s252224fb">      duration</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">5:08</span><span class="scde63d9e">"</span></span>
-<span class="line"><span class="scacc819b">    }</span></span>
-<span class="line"></span>
-<span class="line"><span class="scacc819b">    {</span></span>
-<span class="line"><span class="s252224fb">      title</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">Reach Out (I'll Be There)</span><span class="scde63d9e">"</span></span>
-<span class="line"><span class="s252224fb">      artist</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">Soledad Hammes</span><span class="scde63d9e">"</span></span>
-<span class="line"><span class="s252224fb">      album</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">cui</span><span class="scde63d9e">"</span></span>
-<span class="line"><span class="s252224fb">      duration</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">5:16</span><span class="scde63d9e">"</span></span>
-<span class="line"><span class="scacc819b">    }</span></span>
-<span class="line"></span>
-<span class="line"><span class="scacc819b">    {</span></span>
-<span class="line"><span class="s252224fb">      title</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">Say Say Say</span><span class="scde63d9e">"</span></span>
-<span class="line"><span class="s252224fb">      artist</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">Norma Schoen II</span><span class="scde63d9e">"</span></span>
-<span class="line"><span class="s252224fb">      album</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">consequatur conitor</span><span class="scde63d9e">"</span></span>
-<span class="line"><span class="s252224fb">      duration</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">4:52</span><span class="scde63d9e">"</span></span>
-<span class="line"><span class="scacc819b">    }</span></span>
-<span class="line"></span>
-<span class="line"><span class="scacc819b">    {</span></span>
-<span class="line"><span class="s252224fb">      title</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">Let's Get it On</span><span class="scde63d9e">"</span></span>
-<span class="line"><span class="s252224fb">      artist</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">Horace Mosciski-Ferry</span><span class="scde63d9e">"</span></span>
-<span class="line"><span class="s252224fb">      album</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">inventore congregatio</span><span class="scde63d9e">"</span></span>
-<span class="line"><span class="s252224fb">      duration</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">4:37</span><span class="scde63d9e">"</span></span>
-<span class="line"><span class="scacc819b">    }</span></span>
-<span class="line"><span class="scacc819b">  ]</span></span>
-<span class="line"></span>
-<span class="line"><span class="s252224fb">  total_duration</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">66min</span><span class="scde63d9e">"</span></span>
-<span class="line"><span class="scacc819b">}</span></span></code></pre>
-  <h2>See also</h2>
-  <ul class="card-list">
-    <li><a href="./10764"><span class="card-num">10764</span><span class="card-title">i18n Config</span></a></li>
-    <li><a href="./10150"><span class="card-num">10150</span><span class="card-title">Dependencies</span></a></li>
-    <li><a href="./15463"><span class="card-num">15463</span><span class="card-title">Travel Itinerary</span></a></li>
-  </ul>
+<p class="eyebrow">Example 16180</p>
+<h1>Playlist</h1>
+<p class="lead">A music playlist with tracks and metadata.</p>
+<pre class="shiki"><code><span class="scacc819b">{</span><br><span class="s252224fb">  name</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">R&#x26;B Essentials</span><span class="scde63d9e">"</span><br><span class="s252224fb">  curator</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">Dixie Kessler</span><span class="scde63d9e">"</span><br><span class="s252224fb">  public</span><span class="scacc819b">:</span><span class="sfc8ef81c"> true</span><br><span class="s252224fb">  tracks</span><span class="scacc819b">:</span><span class="scacc819b"> [</span><br><span class="scacc819b">    {</span><br><span class="s252224fb">      title</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">I'm Sorry</span><span class="scde63d9e">"</span><br><span class="s252224fb">      artist</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">Teagan Rutherford</span><span class="scde63d9e">"</span><br><span class="s252224fb">      album</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">vacuus</span><span class="scde63d9e">"</span><br><span class="s252224fb">      duration</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">5:55</span><span class="scde63d9e">"</span><br><span class="scacc819b">    }</span><br><br><span class="scacc819b">    {</span><br><span class="s252224fb">      title</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">Sledgehammer</span><span class="scde63d9e">"</span><br><span class="s252224fb">      artist</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">Mrs. Henriette King</span><span class="scde63d9e">"</span><br><span class="s252224fb">      album</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">color</span><span class="scde63d9e">"</span><br><span class="s252224fb">      duration</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">5:51</span><span class="scde63d9e">"</span><br><span class="scacc819b">    }</span><br><br><span class="scacc819b">    {</span><br><span class="s252224fb">      title</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">Horse With No Name</span><span class="scde63d9e">"</span><br><span class="s252224fb">      artist</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">Nora Klein-Hayes</span><span class="scde63d9e">"</span><br><span class="s252224fb">      album</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">cunctatio vulariter</span><span class="scde63d9e">"</span><br><span class="s252224fb">      duration</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">3:38</span><span class="scde63d9e">"</span><br><span class="scacc819b">    }</span><br><br><span class="scacc819b">    {</span><br><span class="s252224fb">      title</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">You're Still the One</span><span class="scde63d9e">"</span><br><span class="s252224fb">      artist</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">Mr. Pablo O'Hara</span><span class="scde63d9e">"</span><br><span class="s252224fb">      album</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">conspergo aeger</span><span class="scde63d9e">"</span><br><span class="s252224fb">      duration</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">5:08</span><span class="scde63d9e">"</span><br><span class="scacc819b">    }</span><br><br><span class="scacc819b">    {</span><br><span class="s252224fb">      title</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">Reach Out (I'll Be There)</span><span class="scde63d9e">"</span><br><span class="s252224fb">      artist</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">Soledad Hammes</span><span class="scde63d9e">"</span><br><span class="s252224fb">      album</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">cui</span><span class="scde63d9e">"</span><br><span class="s252224fb">      duration</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">5:16</span><span class="scde63d9e">"</span><br><span class="scacc819b">    }</span><br><br><span class="scacc819b">    {</span><br><span class="s252224fb">      title</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">Say Say Say</span><span class="scde63d9e">"</span><br><span class="s252224fb">      artist</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">Norma Schoen II</span><span class="scde63d9e">"</span><br><span class="s252224fb">      album</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">consequatur conitor</span><span class="scde63d9e">"</span><br><span class="s252224fb">      duration</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">4:52</span><span class="scde63d9e">"</span><br><span class="scacc819b">    }</span><br><br><span class="scacc819b">    {</span><br><span class="s252224fb">      title</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">Let's Get it On</span><span class="scde63d9e">"</span><br><span class="s252224fb">      artist</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">Horace Mosciski-Ferry</span><span class="scde63d9e">"</span><br><span class="s252224fb">      album</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">inventore congregatio</span><span class="scde63d9e">"</span><br><span class="s252224fb">      duration</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">4:37</span><span class="scde63d9e">"</span><br><span class="scacc819b">    }</span><br><span class="scacc819b">  ]</span><br><br><span class="s252224fb">  total_duration</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">66min</span><span class="scde63d9e">"</span><br><span class="scacc819b">}</span></code></pre>
+<h2>See also</h2>
+<ul class="card-list">
+<li><a href="./10764"><span class="card-num">10764</span><span class="card-title">i18n Config</span></a></li>
+<li><a href="./10150"><span class="card-num">10150</span><span class="card-title">Dependencies</span></a></li>
+<li><a href="./15463"><span class="card-num">15463</span><span class="card-title">Travel Itinerary</span></a></li>
+</ul>
 </article>
 </main>
-<footer class="site-footer">
-  Generated examples for the <a href="https://maml.dev">MAML</a> data format.
-</footer>
+<footer class="site-footer">Generated examples for the <a href="https://maml.dev">MAML</a> data format.</footer>
 </body>
 </html>

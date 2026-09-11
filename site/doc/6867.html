@@ -6,72 +6,26 @@
 <title>6867 — Docker Compose · MAML Examples</title>
 <meta name="description" content="Multi-container application definition.">
 <link rel="stylesheet" href="../assets/style.css">
-<link rel="stylesheet" href="../assets/tokens.css">
 </head>
 <body>
 <header class="site-header">
-  <a class="brand" href="../">MAML Examples</a>
-  <nav>
-    <a href="https://maml.dev">maml.dev</a>
-    <a href="https://github.com/maml-dev/examples">GitHub</a>
-  </nav>
+<a class="brand" href="../">MAML Examples</a>
+<nav><a href="https://maml.dev">maml.dev</a> <a href="https://github.com/maml-dev/examples">GitHub</a></nav>
 </header>
 <main>
 <article class="example">
-  <p class="eyebrow">Example 6867</p>
-  <h1>Docker Compose</h1>
-  <p class="lead">Multi-container application definition.</p>
-  <pre class="shiki shiki-themes catppuccin-latte plastic" style="--shiki-light:#4c4f69;--shiki-dark:#A9B2C3;--shiki-light-bg:#eff1f5;--shiki-dark-bg:#21252B" tabindex="0"><code><span class="line"><span class="scacc819b">{</span></span>
-<span class="line"><span class="s252224fb">  version</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">3.8</span><span class="scde63d9e">"</span></span>
-<span class="line"><span class="s252224fb">  services</span><span class="scacc819b">:</span><span class="scacc819b"> {</span></span>
-<span class="line"><span class="s252224fb">    app</span><span class="scacc819b">:</span><span class="scacc819b"> {</span></span>
-<span class="line"><span class="s252224fb">      image</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">node:20-slim</span><span class="scde63d9e">"</span></span>
-<span class="line"><span class="s252224fb">      ports</span><span class="scacc819b">:</span><span class="scacc819b"> [</span></span>
-<span class="line"><span class="scde63d9e">        "</span><span class="s7911c4c2">3040:3293</span><span class="scde63d9e">"</span></span>
-<span class="line"><span class="scacc819b">      ]</span></span>
-<span class="line"><span class="s252224fb">      environment</span><span class="scacc819b">:</span><span class="scacc819b"> {</span></span>
-<span class="line"><span class="s252224fb">        NODE_ENV</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">production</span><span class="scde63d9e">"</span></span>
-<span class="line"><span class="s252224fb">        DATABASE_URL</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">postgres://db:5432/mechanic</span><span class="scde63d9e">"</span></span>
-<span class="line"><span class="scacc819b">      }</span></span>
-<span class="line"><span class="s252224fb">      depends_on</span><span class="scacc819b">:</span><span class="scacc819b"> [</span></span>
-<span class="line"><span class="scde63d9e">        "</span><span class="s7911c4c2">db</span><span class="scde63d9e">"</span></span>
-<span class="line"><span class="scde63d9e">        "</span><span class="s7911c4c2">redis</span><span class="scde63d9e">"</span></span>
-<span class="line"><span class="scacc819b">      ]</span></span>
-<span class="line"><span class="scacc819b">    }</span></span>
-<span class="line"></span>
-<span class="line"><span class="s252224fb">    db</span><span class="scacc819b">:</span><span class="scacc819b"> {</span></span>
-<span class="line"><span class="s252224fb">      image</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">postgres:16</span><span class="scde63d9e">"</span></span>
-<span class="line"><span class="s252224fb">      volumes</span><span class="scacc819b">:</span><span class="scacc819b"> [</span></span>
-<span class="line"><span class="scde63d9e">        "</span><span class="s7911c4c2">db_data:/var/lib/postgresql/data</span><span class="scde63d9e">"</span></span>
-<span class="line"><span class="scacc819b">      ]</span></span>
-<span class="line"><span class="s252224fb">      environment</span><span class="scacc819b">:</span><span class="scacc819b"> {</span></span>
-<span class="line"><span class="s252224fb">        POSTGRES_DB</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">pilot</span><span class="scde63d9e">"</span></span>
-<span class="line"><span class="s252224fb">        POSTGRES_PASSWORD</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">1hVZgJl5s_vsYiR</span><span class="scde63d9e">"</span></span>
-<span class="line"><span class="scacc819b">      }</span></span>
-<span class="line"><span class="scacc819b">    }</span></span>
-<span class="line"></span>
-<span class="line"><span class="s252224fb">    redis</span><span class="scacc819b">:</span><span class="scacc819b"> {</span></span>
-<span class="line"><span class="s252224fb">      image</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">redis:7-alpine</span><span class="scde63d9e">"</span></span>
-<span class="line"><span class="s252224fb">      ports</span><span class="scacc819b">:</span><span class="scacc819b"> [</span></span>
-<span class="line"><span class="scde63d9e">        "</span><span class="s7911c4c2">6379:6379</span><span class="scde63d9e">"</span></span>
-<span class="line"><span class="scacc819b">      ]</span></span>
-<span class="line"><span class="scacc819b">    }</span></span>
-<span class="line"><span class="scacc819b">  }</span></span>
-<span class="line"></span>
-<span class="line"><span class="s252224fb">  volumes</span><span class="scacc819b">:</span><span class="scacc819b"> {</span></span>
-<span class="line"><span class="s252224fb">    db_data</span><span class="scacc819b">:</span><span class="scacc819b"> {}</span></span>
-<span class="line"><span class="scacc819b">  }</span></span>
-<span class="line"><span class="scacc819b">}</span></span></code></pre>
-  <h2>See also</h2>
-  <ul class="card-list">
-    <li><a href="./6457"><span class="card-num">6457</span><span class="card-title">API Routes</span></a></li>
-    <li><a href="./13388"><span class="card-num">13388</span><span class="card-title">Shell Scripts</span></a></li>
-    <li><a href="./3389"><span class="card-num">3389</span><span class="card-title">License Header</span></a></li>
-  </ul>
+<p class="eyebrow">Example 6867</p>
+<h1>Docker Compose</h1>
+<p class="lead">Multi-container application definition.</p>
+<pre class="shiki"><code><span class="scacc819b">{</span><br><span class="s252224fb">  version</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">3.8</span><span class="scde63d9e">"</span><br><span class="s252224fb">  services</span><span class="scacc819b">:</span><span class="scacc819b"> {</span><br><span class="s252224fb">    app</span><span class="scacc819b">:</span><span class="scacc819b"> {</span><br><span class="s252224fb">      image</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">node:20-slim</span><span class="scde63d9e">"</span><br><span class="s252224fb">      ports</span><span class="scacc819b">:</span><span class="scacc819b"> [</span><br><span class="scde63d9e">        "</span><span class="s7911c4c2">3040:3293</span><span class="scde63d9e">"</span><br><span class="scacc819b">      ]</span><br><span class="s252224fb">      environment</span><span class="scacc819b">:</span><span class="scacc819b"> {</span><br><span class="s252224fb">        NODE_ENV</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">production</span><span class="scde63d9e">"</span><br><span class="s252224fb">        DATABASE_URL</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">postgres://db:5432/mechanic</span><span class="scde63d9e">"</span><br><span class="scacc819b">      }</span><br><span class="s252224fb">      depends_on</span><span class="scacc819b">:</span><span class="scacc819b"> [</span><br><span class="scde63d9e">        "</span><span class="s7911c4c2">db</span><span class="scde63d9e">"</span><br><span class="scde63d9e">        "</span><span class="s7911c4c2">redis</span><span class="scde63d9e">"</span><br><span class="scacc819b">      ]</span><br><span class="scacc819b">    }</span><br><br><span class="s252224fb">    db</span><span class="scacc819b">:</span><span class="scacc819b"> {</span><br><span class="s252224fb">      image</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">postgres:16</span><span class="scde63d9e">"</span><br><span class="s252224fb">      volumes</span><span class="scacc819b">:</span><span class="scacc819b"> [</span><br><span class="scde63d9e">        "</span><span class="s7911c4c2">db_data:/var/lib/postgresql/data</span><span class="scde63d9e">"</span><br><span class="scacc819b">      ]</span><br><span class="s252224fb">      environment</span><span class="scacc819b">:</span><span class="scacc819b"> {</span><br><span class="s252224fb">        POSTGRES_DB</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">pilot</span><span class="scde63d9e">"</span><br><span class="s252224fb">        POSTGRES_PASSWORD</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">1hVZgJl5s_vsYiR</span><span class="scde63d9e">"</span><br><span class="scacc819b">      }</span><br><span class="scacc819b">    }</span><br><br><span class="s252224fb">    redis</span><span class="scacc819b">:</span><span class="scacc819b"> {</span><br><span class="s252224fb">      image</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">redis:7-alpine</span><span class="scde63d9e">"</span><br><span class="s252224fb">      ports</span><span class="scacc819b">:</span><span class="scacc819b"> [</span><br><span class="scde63d9e">        "</span><span class="s7911c4c2">6379:6379</span><span class="scde63d9e">"</span><br><span class="scacc819b">      ]</span><br><span class="scacc819b">    }</span><br><span class="scacc819b">  }</span><br><br><span class="s252224fb">  volumes</span><span class="scacc819b">:</span><span class="scacc819b"> {</span><br><span class="s252224fb">    db_data</span><span class="scacc819b">:</span><span class="scacc819b"> {}</span><br><span class="scacc819b">  }</span><br><span class="scacc819b">}</span></code></pre>
+<h2>See also</h2>
+<ul class="card-list">
+<li><a href="./6457"><span class="card-num">6457</span><span class="card-title">API Routes</span></a></li>
+<li><a href="./13388"><span class="card-num">13388</span><span class="card-title">Shell Scripts</span></a></li>
+<li><a href="./3389"><span class="card-num">3389</span><span class="card-title">License Header</span></a></li>
+</ul>
 </article>
 </main>
-<footer class="site-footer">
-  Generated examples for the <a href="https://maml.dev">MAML</a> data format.
-</footer>
+<footer class="site-footer">Generated examples for the <a href="https://maml.dev">MAML</a> data format.</footer>
 </body>
 </html>

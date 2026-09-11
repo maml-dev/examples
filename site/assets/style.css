@@ -135,8 +135,8 @@ h2 {
   color: var(--text-soft);
 }
 
-/* Shiki emits per-token CSS variables for both themes; pick one here so a
-   theme switch never needs the pages re-rendered. */
+/* Shiki emits per-token CSS variables for both themes; the theme colours and
+   token classes are appended to this file at render time. */
 .shiki {
   margin: 0;
   padding: 1rem 1.1rem;
@@ -144,8 +144,6 @@ h2 {
   border: 1px solid var(--border);
   border-radius: var(--radius);
   font: 0.875rem/1.6 var(--mono);
-  color: var(--shiki-light);
-  background: var(--shiki-light-bg);
 }
 
 .shiki span {
@@ -156,10 +154,6 @@ h2 {
 }
 
 @media (prefers-color-scheme: dark) {
-  .shiki {
-    color: var(--shiki-dark);
-    background: var(--shiki-dark-bg);
-  }
   .shiki span {
     color: var(--shiki-dark);
     font-style: var(--shiki-dark-font-style, normal);
@@ -167,3 +161,20 @@ h2 {
     text-decoration: var(--shiki-dark-text-decoration, none);
   }
 }
+
+/* --- Generated from the themes and data/token-styles.json. Do not edit. --- */
+
+.shiki { color: #4c4f69; background: #eff1f5; }
+
+@media (prefers-color-scheme: dark) {
+  .shiki { color: #A9B2C3; background: #21252B; }
+}
+
+.s252224fb { --shiki-light:#4C4F69; --shiki-dark:#C6CCD7 }
+.s56b09ea4 { --shiki-light:#FE640B; --shiki-dark:#56B6C2 }
+.s5dd799dd { --shiki-light:#7C7F93; --shiki-light-font-style:italic; --shiki-dark:#5F6672; --shiki-dark-font-style:inherit }
+.s7911c4c2 { --shiki-light:#40A02B; --shiki-dark:#98C379 }
+.scacc819b { --shiki-light:#7C7F93; --shiki-dark:#A9B2C3 }
+.scde63d9e { --shiki-light:#40A02B; --shiki-dark:#A9B2C3 }
+.sddadaba7 { --shiki-light:#EA76CB; --shiki-dark:#56B6C2 }
+.sfc8ef81c { --shiki-light:#D20F39; --shiki-dark:#56B6C2 }

@@ -6,56 +6,26 @@
 <title>2832 — Monitoring Config · MAML Examples</title>
 <meta name="description" content="Application monitoring and alerting setup.">
 <link rel="stylesheet" href="../assets/style.css">
-<link rel="stylesheet" href="../assets/tokens.css">
 </head>
 <body>
 <header class="site-header">
-  <a class="brand" href="../">MAML Examples</a>
-  <nav>
-    <a href="https://maml.dev">maml.dev</a>
-    <a href="https://github.com/maml-dev/examples">GitHub</a>
-  </nav>
+<a class="brand" href="../">MAML Examples</a>
+<nav><a href="https://maml.dev">maml.dev</a> <a href="https://github.com/maml-dev/examples">GitHub</a></nav>
 </header>
 <main>
 <article class="example">
-  <p class="eyebrow">Example 2832</p>
-  <h1>Monitoring Config</h1>
-  <p class="lead">Application monitoring and alerting setup.</p>
-  <pre class="shiki shiki-themes catppuccin-latte plastic" style="--shiki-light:#4c4f69;--shiki-dark:#A9B2C3;--shiki-light-bg:#eff1f5;--shiki-dark-bg:#21252B" tabindex="0"><code><span class="line"><span class="scacc819b">{</span></span>
-<span class="line"><span class="s252224fb">  service</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">relationships</span><span class="scde63d9e">"</span></span>
-<span class="line"><span class="s5dd799dd">  # Prometheus metrics</span></span>
-<span class="line"><span class="s252224fb">  metrics</span><span class="scacc819b">:</span><span class="scacc819b"> {</span></span>
-<span class="line"><span class="s252224fb">    endpoint</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">/metrics</span><span class="scde63d9e">"</span></span>
-<span class="line"><span class="s252224fb">    interval</span><span class="scacc819b">:</span><span class="s56b09ea4"> 15</span><span class="s5dd799dd"> # seconds</span></span>
-<span class="line"><span class="s252224fb">    labels</span><span class="scacc819b">:</span><span class="scacc819b"> {</span></span>
-<span class="line"><span class="s252224fb">      env</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">prod</span><span class="scde63d9e">"</span></span>
-<span class="line"><span class="s252224fb">      region</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">ap-south</span><span class="scde63d9e">"</span></span>
-<span class="line"><span class="s252224fb">      team</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">jewelry</span><span class="scde63d9e">"</span></span>
-<span class="line"><span class="scacc819b">    }</span></span>
-<span class="line"><span class="scacc819b">  }</span></span>
-<span class="line"></span>
-<span class="line"><span class="s5dd799dd">  # Alert thresholds</span></span>
-<span class="line"><span class="s252224fb">  alerts</span><span class="scacc819b">:</span><span class="scacc819b"> {</span></span>
-<span class="line"><span class="s252224fb">    cpu_threshold</span><span class="scacc819b">:</span><span class="s56b09ea4"> 74</span></span>
-<span class="line"><span class="s252224fb">    memory_threshold</span><span class="scacc819b">:</span><span class="s56b09ea4"> 79</span></span>
-<span class="line"><span class="s252224fb">    latency_p99_ms</span><span class="scacc819b">:</span><span class="s56b09ea4"> 1746</span></span>
-<span class="line"><span class="s252224fb">    error_rate</span><span class="scacc819b">:</span><span class="s56b09ea4"> 0.05</span></span>
-<span class="line"><span class="s252224fb">    notification</span><span class="scacc819b">:</span><span class="scacc819b"> {</span></span>
-<span class="line"><span class="s252224fb">      channel</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">#oncall</span><span class="scde63d9e">"</span></span>
-<span class="line"><span class="s252224fb">      severity</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">info</span><span class="scde63d9e">"</span></span>
-<span class="line"><span class="scacc819b">    }</span></span>
-<span class="line"><span class="scacc819b">  }</span></span>
-<span class="line"><span class="scacc819b">}</span></span></code></pre>
-  <h2>See also</h2>
-  <ul class="card-list">
-    <li><a href="./12198"><span class="card-num">12198</span><span class="card-title">Config with Comments</span></a></li>
-    <li><a href="./15937"><span class="card-num">15937</span><span class="card-title">Search Config</span></a></li>
-    <li><a href="./14217"><span class="card-num">14217</span><span class="card-title">App Settings</span></a></li>
-  </ul>
+<p class="eyebrow">Example 2832</p>
+<h1>Monitoring Config</h1>
+<p class="lead">Application monitoring and alerting setup.</p>
+<pre class="shiki"><code><span class="scacc819b">{</span><br><span class="s252224fb">  service</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">relationships</span><span class="scde63d9e">"</span><br><span class="s5dd799dd">  # Prometheus metrics</span><br><span class="s252224fb">  metrics</span><span class="scacc819b">:</span><span class="scacc819b"> {</span><br><span class="s252224fb">    endpoint</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">/metrics</span><span class="scde63d9e">"</span><br><span class="s252224fb">    interval</span><span class="scacc819b">:</span><span class="s56b09ea4"> 15</span><span class="s5dd799dd"> # seconds</span><br><span class="s252224fb">    labels</span><span class="scacc819b">:</span><span class="scacc819b"> {</span><br><span class="s252224fb">      env</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">prod</span><span class="scde63d9e">"</span><br><span class="s252224fb">      region</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">ap-south</span><span class="scde63d9e">"</span><br><span class="s252224fb">      team</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">jewelry</span><span class="scde63d9e">"</span><br><span class="scacc819b">    }</span><br><span class="scacc819b">  }</span><br><br><span class="s5dd799dd">  # Alert thresholds</span><br><span class="s252224fb">  alerts</span><span class="scacc819b">:</span><span class="scacc819b"> {</span><br><span class="s252224fb">    cpu_threshold</span><span class="scacc819b">:</span><span class="s56b09ea4"> 74</span><br><span class="s252224fb">    memory_threshold</span><span class="scacc819b">:</span><span class="s56b09ea4"> 79</span><br><span class="s252224fb">    latency_p99_ms</span><span class="scacc819b">:</span><span class="s56b09ea4"> 1746</span><br><span class="s252224fb">    error_rate</span><span class="scacc819b">:</span><span class="s56b09ea4"> 0.05</span><br><span class="s252224fb">    notification</span><span class="scacc819b">:</span><span class="scacc819b"> {</span><br><span class="s252224fb">      channel</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">#oncall</span><span class="scde63d9e">"</span><br><span class="s252224fb">      severity</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">info</span><span class="scde63d9e">"</span><br><span class="scacc819b">    }</span><br><span class="scacc819b">  }</span><br><span class="scacc819b">}</span></code></pre>
+<h2>See also</h2>
+<ul class="card-list">
+<li><a href="./12198"><span class="card-num">12198</span><span class="card-title">Config with Comments</span></a></li>
+<li><a href="./15937"><span class="card-num">15937</span><span class="card-title">Search Config</span></a></li>
+<li><a href="./14217"><span class="card-num">14217</span><span class="card-title">App Settings</span></a></li>
+</ul>
 </article>
 </main>
-<footer class="site-footer">
-  Generated examples for the <a href="https://maml.dev">MAML</a> data format.
-</footer>
+<footer class="site-footer">Generated examples for the <a href="https://maml.dev">MAML</a> data format.</footer>
 </body>
 </html>

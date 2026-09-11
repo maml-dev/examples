@@ -6,88 +6,26 @@
 <title>7875 — Playlist · MAML Examples</title>
 <meta name="description" content="A music playlist with tracks and metadata.">
 <link rel="stylesheet" href="../assets/style.css">
-<link rel="stylesheet" href="../assets/tokens.css">
 </head>
 <body>
 <header class="site-header">
-  <a class="brand" href="../">MAML Examples</a>
-  <nav>
-    <a href="https://maml.dev">maml.dev</a>
-    <a href="https://github.com/maml-dev/examples">GitHub</a>
-  </nav>
+<a class="brand" href="../">MAML Examples</a>
+<nav><a href="https://maml.dev">maml.dev</a> <a href="https://github.com/maml-dev/examples">GitHub</a></nav>
 </header>
 <main>
 <article class="example">
-  <p class="eyebrow">Example 7875</p>
-  <h1>Playlist</h1>
-  <p class="lead">A music playlist with tracks and metadata.</p>
-  <pre class="shiki shiki-themes catppuccin-latte plastic" style="--shiki-light:#4c4f69;--shiki-dark:#A9B2C3;--shiki-light-bg:#eff1f5;--shiki-dark-bg:#21252B" tabindex="0"><code><span class="line"><span class="scacc819b">{</span></span>
-<span class="line"><span class="s252224fb">  name</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">Holiday Mix</span><span class="scde63d9e">"</span></span>
-<span class="line"><span class="s252224fb">  curator</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">Freddie Bayer</span><span class="scde63d9e">"</span></span>
-<span class="line"><span class="s252224fb">  public</span><span class="scacc819b">:</span><span class="sfc8ef81c"> false</span></span>
-<span class="line"><span class="s252224fb">  tracks</span><span class="scacc819b">:</span><span class="scacc819b"> [</span></span>
-<span class="line"><span class="scacc819b">    {</span></span>
-<span class="line"><span class="s252224fb">      title</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">We Got The Beat</span><span class="scde63d9e">"</span></span>
-<span class="line"><span class="s252224fb">      artist</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">June Stiedemann</span><span class="scde63d9e">"</span></span>
-<span class="line"><span class="s252224fb">      album</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">universe pecco auctor</span><span class="scde63d9e">"</span></span>
-<span class="line"><span class="s252224fb">      duration</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">2:59</span><span class="scde63d9e">"</span></span>
-<span class="line"><span class="scacc819b">    }</span></span>
-<span class="line"></span>
-<span class="line"><span class="scacc819b">    {</span></span>
-<span class="line"><span class="s252224fb">      title</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">Blue Tango</span><span class="scde63d9e">"</span></span>
-<span class="line"><span class="s252224fb">      artist</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">Esta Johnson</span><span class="scde63d9e">"</span></span>
-<span class="line"><span class="s252224fb">      album</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">molestiae</span><span class="scde63d9e">"</span></span>
-<span class="line"><span class="s252224fb">      duration</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">4:59</span><span class="scde63d9e">"</span></span>
-<span class="line"><span class="scacc819b">    }</span></span>
-<span class="line"></span>
-<span class="line"><span class="scacc819b">    {</span></span>
-<span class="line"><span class="s252224fb">      title</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">To Sir, with Love</span><span class="scde63d9e">"</span></span>
-<span class="line"><span class="s252224fb">      artist</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">Anais Kreiger</span><span class="scde63d9e">"</span></span>
-<span class="line"><span class="s252224fb">      album</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">tenetur denego undique</span><span class="scde63d9e">"</span></span>
-<span class="line"><span class="s252224fb">      duration</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">5:31</span><span class="scde63d9e">"</span></span>
-<span class="line"><span class="scacc819b">    }</span></span>
-<span class="line"></span>
-<span class="line"><span class="scacc819b">    {</span></span>
-<span class="line"><span class="s252224fb">      title</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">You Make Me Feel Brand New</span><span class="scde63d9e">"</span></span>
-<span class="line"><span class="s252224fb">      artist</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">Corbin Quitzon</span><span class="scde63d9e">"</span></span>
-<span class="line"><span class="s252224fb">      album</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">turbo</span><span class="scde63d9e">"</span></span>
-<span class="line"><span class="s252224fb">      duration</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">2:26</span><span class="scde63d9e">"</span></span>
-<span class="line"><span class="scacc819b">    }</span></span>
-<span class="line"></span>
-<span class="line"><span class="scacc819b">    {</span></span>
-<span class="line"><span class="s252224fb">      title</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">Disturbia</span><span class="scde63d9e">"</span></span>
-<span class="line"><span class="s252224fb">      artist</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">Nyah Fisher</span><span class="scde63d9e">"</span></span>
-<span class="line"><span class="s252224fb">      album</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">tardus</span><span class="scde63d9e">"</span></span>
-<span class="line"><span class="s252224fb">      duration</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">5:58</span><span class="scde63d9e">"</span></span>
-<span class="line"><span class="scacc819b">    }</span></span>
-<span class="line"></span>
-<span class="line"><span class="scacc819b">    {</span></span>
-<span class="line"><span class="s252224fb">      title</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">Fallin'</span><span class="scde63d9e">"</span></span>
-<span class="line"><span class="s252224fb">      artist</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">Mr. Noble Tremblay</span><span class="scde63d9e">"</span></span>
-<span class="line"><span class="s252224fb">      album</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">caute tutis crinis</span><span class="scde63d9e">"</span></span>
-<span class="line"><span class="s252224fb">      duration</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">3:43</span><span class="scde63d9e">"</span></span>
-<span class="line"><span class="scacc819b">    }</span></span>
-<span class="line"></span>
-<span class="line"><span class="scacc819b">    {</span></span>
-<span class="line"><span class="s252224fb">      title</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">How to Save a Life</span><span class="scde63d9e">"</span></span>
-<span class="line"><span class="s252224fb">      artist</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">Belinda VonRueden III</span><span class="scde63d9e">"</span></span>
-<span class="line"><span class="s252224fb">      album</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">utrum</span><span class="scde63d9e">"</span></span>
-<span class="line"><span class="s252224fb">      duration</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">5:09</span><span class="scde63d9e">"</span></span>
-<span class="line"><span class="scacc819b">    }</span></span>
-<span class="line"><span class="scacc819b">  ]</span></span>
-<span class="line"></span>
-<span class="line"><span class="s252224fb">  total_duration</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">34min</span><span class="scde63d9e">"</span></span>
-<span class="line"><span class="scacc819b">}</span></span></code></pre>
-  <h2>See also</h2>
-  <ul class="card-list">
-    <li><a href="./11885"><span class="card-num">11885</span><span class="card-title">Nginx Snippet</span></a></li>
-    <li><a href="./6735"><span class="card-num">6735</span><span class="card-title">Theme Config</span></a></li>
-    <li><a href="./6770"><span class="card-num">6770</span><span class="card-title">i18n Config</span></a></li>
-  </ul>
+<p class="eyebrow">Example 7875</p>
+<h1>Playlist</h1>
+<p class="lead">A music playlist with tracks and metadata.</p>
+<pre class="shiki"><code><span class="scacc819b">{</span><br><span class="s252224fb">  name</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">Holiday Mix</span><span class="scde63d9e">"</span><br><span class="s252224fb">  curator</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">Freddie Bayer</span><span class="scde63d9e">"</span><br><span class="s252224fb">  public</span><span class="scacc819b">:</span><span class="sfc8ef81c"> false</span><br><span class="s252224fb">  tracks</span><span class="scacc819b">:</span><span class="scacc819b"> [</span><br><span class="scacc819b">    {</span><br><span class="s252224fb">      title</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">We Got The Beat</span><span class="scde63d9e">"</span><br><span class="s252224fb">      artist</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">June Stiedemann</span><span class="scde63d9e">"</span><br><span class="s252224fb">      album</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">universe pecco auctor</span><span class="scde63d9e">"</span><br><span class="s252224fb">      duration</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">2:59</span><span class="scde63d9e">"</span><br><span class="scacc819b">    }</span><br><br><span class="scacc819b">    {</span><br><span class="s252224fb">      title</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">Blue Tango</span><span class="scde63d9e">"</span><br><span class="s252224fb">      artist</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">Esta Johnson</span><span class="scde63d9e">"</span><br><span class="s252224fb">      album</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">molestiae</span><span class="scde63d9e">"</span><br><span class="s252224fb">      duration</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">4:59</span><span class="scde63d9e">"</span><br><span class="scacc819b">    }</span><br><br><span class="scacc819b">    {</span><br><span class="s252224fb">      title</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">To Sir, with Love</span><span class="scde63d9e">"</span><br><span class="s252224fb">      artist</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">Anais Kreiger</span><span class="scde63d9e">"</span><br><span class="s252224fb">      album</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">tenetur denego undique</span><span class="scde63d9e">"</span><br><span class="s252224fb">      duration</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">5:31</span><span class="scde63d9e">"</span><br><span class="scacc819b">    }</span><br><br><span class="scacc819b">    {</span><br><span class="s252224fb">      title</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">You Make Me Feel Brand New</span><span class="scde63d9e">"</span><br><span class="s252224fb">      artist</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">Corbin Quitzon</span><span class="scde63d9e">"</span><br><span class="s252224fb">      album</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">turbo</span><span class="scde63d9e">"</span><br><span class="s252224fb">      duration</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">2:26</span><span class="scde63d9e">"</span><br><span class="scacc819b">    }</span><br><br><span class="scacc819b">    {</span><br><span class="s252224fb">      title</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">Disturbia</span><span class="scde63d9e">"</span><br><span class="s252224fb">      artist</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">Nyah Fisher</span><span class="scde63d9e">"</span><br><span class="s252224fb">      album</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">tardus</span><span class="scde63d9e">"</span><br><span class="s252224fb">      duration</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">5:58</span><span class="scde63d9e">"</span><br><span class="scacc819b">    }</span><br><br><span class="scacc819b">    {</span><br><span class="s252224fb">      title</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">Fallin'</span><span class="scde63d9e">"</span><br><span class="s252224fb">      artist</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">Mr. Noble Tremblay</span><span class="scde63d9e">"</span><br><span class="s252224fb">      album</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">caute tutis crinis</span><span class="scde63d9e">"</span><br><span class="s252224fb">      duration</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">3:43</span><span class="scde63d9e">"</span><br><span class="scacc819b">    }</span><br><br><span class="scacc819b">    {</span><br><span class="s252224fb">      title</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">How to Save a Life</span><span class="scde63d9e">"</span><br><span class="s252224fb">      artist</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">Belinda VonRueden III</span><span class="scde63d9e">"</span><br><span class="s252224fb">      album</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">utrum</span><span class="scde63d9e">"</span><br><span class="s252224fb">      duration</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">5:09</span><span class="scde63d9e">"</span><br><span class="scacc819b">    }</span><br><span class="scacc819b">  ]</span><br><br><span class="s252224fb">  total_duration</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">34min</span><span class="scde63d9e">"</span><br><span class="scacc819b">}</span></code></pre>
+<h2>See also</h2>
+<ul class="card-list">
+<li><a href="./11885"><span class="card-num">11885</span><span class="card-title">Nginx Snippet</span></a></li>
+<li><a href="./6735"><span class="card-num">6735</span><span class="card-title">Theme Config</span></a></li>
+<li><a href="./6770"><span class="card-num">6770</span><span class="card-title">i18n Config</span></a></li>
+</ul>
 </article>
 </main>
-<footer class="site-footer">
-  Generated examples for the <a href="https://maml.dev">MAML</a> data format.
-</footer>
+<footer class="site-footer">Generated examples for the <a href="https://maml.dev">MAML</a> data format.</footer>
 </body>
 </html>

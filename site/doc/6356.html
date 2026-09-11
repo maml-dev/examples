@@ -6,70 +6,26 @@
 <title>6356 — Product Catalog · MAML Examples</title>
 <meta name="description" content="E-commerce product listings.">
 <link rel="stylesheet" href="../assets/style.css">
-<link rel="stylesheet" href="../assets/tokens.css">
 </head>
 <body>
 <header class="site-header">
-  <a class="brand" href="../">MAML Examples</a>
-  <nav>
-    <a href="https://maml.dev">maml.dev</a>
-    <a href="https://github.com/maml-dev/examples">GitHub</a>
-  </nav>
+<a class="brand" href="../">MAML Examples</a>
+<nav><a href="https://maml.dev">maml.dev</a> <a href="https://github.com/maml-dev/examples">GitHub</a></nav>
 </header>
 <main>
 <article class="example">
-  <p class="eyebrow">Example 6356</p>
-  <h1>Product Catalog</h1>
-  <p class="lead">E-commerce product listings.</p>
-  <pre class="shiki shiki-themes catppuccin-latte plastic" style="--shiki-light:#4c4f69;--shiki-dark:#A9B2C3;--shiki-light-bg:#eff1f5;--shiki-dark-bg:#21252B" tabindex="0"><code><span class="line"><span class="scacc819b">{</span></span>
-<span class="line"><span class="s252224fb">  products</span><span class="scacc819b">:</span><span class="scacc819b"> [</span></span>
-<span class="line"><span class="scacc819b">    {</span></span>
-<span class="line"><span class="s252224fb">      sku</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">6WC9OCFW</span><span class="scde63d9e">"</span></span>
-<span class="line"><span class="s252224fb">      name</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">Practical Steel Fish</span><span class="scde63d9e">"</span></span>
-<span class="line"><span class="s252224fb">      price</span><span class="scacc819b">:</span><span class="s56b09ea4"> 172.65</span></span>
-<span class="line"><span class="s252224fb">      category</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">Games</span><span class="scde63d9e">"</span></span>
-<span class="line"><span class="s252224fb">      in_stock</span><span class="scacc819b">:</span><span class="sfc8ef81c"> false</span></span>
-<span class="line"><span class="s252224fb">      rating</span><span class="scacc819b">:</span><span class="s56b09ea4"> 2.7</span></span>
-<span class="line"><span class="scacc819b">    }</span></span>
-<span class="line"></span>
-<span class="line"><span class="scacc819b">    {</span></span>
-<span class="line"><span class="s252224fb">      sku</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">MNYX8A3K</span><span class="scde63d9e">"</span></span>
-<span class="line"><span class="s252224fb">      name</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">Handmade Steel Chicken</span><span class="scde63d9e">"</span></span>
-<span class="line"><span class="s252224fb">      price</span><span class="scacc819b">:</span><span class="s56b09ea4"> 645.5</span></span>
-<span class="line"><span class="s252224fb">      category</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">Kids</span><span class="scde63d9e">"</span></span>
-<span class="line"><span class="s252224fb">      in_stock</span><span class="scacc819b">:</span><span class="sfc8ef81c"> false</span></span>
-<span class="line"><span class="s252224fb">      rating</span><span class="scacc819b">:</span><span class="s56b09ea4"> 3.8</span></span>
-<span class="line"><span class="scacc819b">    }</span></span>
-<span class="line"></span>
-<span class="line"><span class="scacc819b">    {</span></span>
-<span class="line"><span class="s252224fb">      sku</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">WNJLHVFW</span><span class="scde63d9e">"</span></span>
-<span class="line"><span class="s252224fb">      name</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">Refined Bronze Shoes</span><span class="scde63d9e">"</span></span>
-<span class="line"><span class="s252224fb">      price</span><span class="scacc819b">:</span><span class="s56b09ea4"> 858.29</span></span>
-<span class="line"><span class="s252224fb">      category</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">Beauty</span><span class="scde63d9e">"</span></span>
-<span class="line"><span class="s252224fb">      in_stock</span><span class="scacc819b">:</span><span class="sfc8ef81c"> true</span></span>
-<span class="line"><span class="s252224fb">      rating</span><span class="scacc819b">:</span><span class="s56b09ea4"> 2</span></span>
-<span class="line"><span class="scacc819b">    }</span></span>
-<span class="line"></span>
-<span class="line"><span class="scacc819b">    {</span></span>
-<span class="line"><span class="s252224fb">      sku</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">JGJD2O6X</span><span class="scde63d9e">"</span></span>
-<span class="line"><span class="s252224fb">      name</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">Fantastic Marble Bike</span><span class="scde63d9e">"</span></span>
-<span class="line"><span class="s252224fb">      price</span><span class="scacc819b">:</span><span class="s56b09ea4"> 697.95</span></span>
-<span class="line"><span class="s252224fb">      category</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">Beauty</span><span class="scde63d9e">"</span></span>
-<span class="line"><span class="s252224fb">      in_stock</span><span class="scacc819b">:</span><span class="sfc8ef81c"> false</span></span>
-<span class="line"><span class="s252224fb">      rating</span><span class="scacc819b">:</span><span class="s56b09ea4"> 3.3</span></span>
-<span class="line"><span class="scacc819b">    }</span></span>
-<span class="line"><span class="scacc819b">  ]</span></span>
-<span class="line"><span class="scacc819b">}</span></span></code></pre>
-  <h2>See also</h2>
-  <ul class="card-list">
-    <li><a href="./8536"><span class="card-num">8536</span><span class="card-title">Email Routing</span></a></li>
-    <li><a href="./12476"><span class="card-num">12476</span><span class="card-title">Webhook Config</span></a></li>
-    <li><a href="./16801"><span class="card-num">16801</span><span class="card-title">Git Config</span></a></li>
-  </ul>
+<p class="eyebrow">Example 6356</p>
+<h1>Product Catalog</h1>
+<p class="lead">E-commerce product listings.</p>
+<pre class="shiki"><code><span class="scacc819b">{</span><br><span class="s252224fb">  products</span><span class="scacc819b">:</span><span class="scacc819b"> [</span><br><span class="scacc819b">    {</span><br><span class="s252224fb">      sku</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">6WC9OCFW</span><span class="scde63d9e">"</span><br><span class="s252224fb">      name</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">Practical Steel Fish</span><span class="scde63d9e">"</span><br><span class="s252224fb">      price</span><span class="scacc819b">:</span><span class="s56b09ea4"> 172.65</span><br><span class="s252224fb">      category</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">Games</span><span class="scde63d9e">"</span><br><span class="s252224fb">      in_stock</span><span class="scacc819b">:</span><span class="sfc8ef81c"> false</span><br><span class="s252224fb">      rating</span><span class="scacc819b">:</span><span class="s56b09ea4"> 2.7</span><br><span class="scacc819b">    }</span><br><br><span class="scacc819b">    {</span><br><span class="s252224fb">      sku</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">MNYX8A3K</span><span class="scde63d9e">"</span><br><span class="s252224fb">      name</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">Handmade Steel Chicken</span><span class="scde63d9e">"</span><br><span class="s252224fb">      price</span><span class="scacc819b">:</span><span class="s56b09ea4"> 645.5</span><br><span class="s252224fb">      category</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">Kids</span><span class="scde63d9e">"</span><br><span class="s252224fb">      in_stock</span><span class="scacc819b">:</span><span class="sfc8ef81c"> false</span><br><span class="s252224fb">      rating</span><span class="scacc819b">:</span><span class="s56b09ea4"> 3.8</span><br><span class="scacc819b">    }</span><br><br><span class="scacc819b">    {</span><br><span class="s252224fb">      sku</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">WNJLHVFW</span><span class="scde63d9e">"</span><br><span class="s252224fb">      name</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">Refined Bronze Shoes</span><span class="scde63d9e">"</span><br><span class="s252224fb">      price</span><span class="scacc819b">:</span><span class="s56b09ea4"> 858.29</span><br><span class="s252224fb">      category</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">Beauty</span><span class="scde63d9e">"</span><br><span class="s252224fb">      in_stock</span><span class="scacc819b">:</span><span class="sfc8ef81c"> true</span><br><span class="s252224fb">      rating</span><span class="scacc819b">:</span><span class="s56b09ea4"> 2</span><br><span class="scacc819b">    }</span><br><br><span class="scacc819b">    {</span><br><span class="s252224fb">      sku</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">JGJD2O6X</span><span class="scde63d9e">"</span><br><span class="s252224fb">      name</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">Fantastic Marble Bike</span><span class="scde63d9e">"</span><br><span class="s252224fb">      price</span><span class="scacc819b">:</span><span class="s56b09ea4"> 697.95</span><br><span class="s252224fb">      category</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">Beauty</span><span class="scde63d9e">"</span><br><span class="s252224fb">      in_stock</span><span class="scacc819b">:</span><span class="sfc8ef81c"> false</span><br><span class="s252224fb">      rating</span><span class="scacc819b">:</span><span class="s56b09ea4"> 3.3</span><br><span class="scacc819b">    }</span><br><span class="scacc819b">  ]</span><br><span class="scacc819b">}</span></code></pre>
+<h2>See also</h2>
+<ul class="card-list">
+<li><a href="./8536"><span class="card-num">8536</span><span class="card-title">Email Routing</span></a></li>
+<li><a href="./12476"><span class="card-num">12476</span><span class="card-title">Webhook Config</span></a></li>
+<li><a href="./16801"><span class="card-num">16801</span><span class="card-title">Git Config</span></a></li>
+</ul>
 </article>
 </main>
-<footer class="site-footer">
-  Generated examples for the <a href="https://maml.dev">MAML</a> data format.
-</footer>
+<footer class="site-footer">Generated examples for the <a href="https://maml.dev">MAML</a> data format.</footer>
 </body>
 </html>

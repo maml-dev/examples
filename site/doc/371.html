@@ -6,72 +6,26 @@
 <title>371 — Docker Compose · MAML Examples</title>
 <meta name="description" content="Multi-container application definition.">
 <link rel="stylesheet" href="../assets/style.css">
-<link rel="stylesheet" href="../assets/tokens.css">
 </head>
 <body>
 <header class="site-header">
-  <a class="brand" href="../">MAML Examples</a>
-  <nav>
-    <a href="https://maml.dev">maml.dev</a>
-    <a href="https://github.com/maml-dev/examples">GitHub</a>
-  </nav>
+<a class="brand" href="../">MAML Examples</a>
+<nav><a href="https://maml.dev">maml.dev</a> <a href="https://github.com/maml-dev/examples">GitHub</a></nav>
 </header>
 <main>
 <article class="example">
-  <p class="eyebrow">Example 371</p>
-  <h1>Docker Compose</h1>
-  <p class="lead">Multi-container application definition.</p>
-  <pre class="shiki shiki-themes catppuccin-latte plastic" style="--shiki-light:#4c4f69;--shiki-dark:#A9B2C3;--shiki-light-bg:#eff1f5;--shiki-dark-bg:#21252B" tabindex="0"><code><span class="line"><span class="scacc819b">{</span></span>
-<span class="line"><span class="s252224fb">  version</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">3.8</span><span class="scde63d9e">"</span></span>
-<span class="line"><span class="s252224fb">  services</span><span class="scacc819b">:</span><span class="scacc819b"> {</span></span>
-<span class="line"><span class="s252224fb">    app</span><span class="scacc819b">:</span><span class="scacc819b"> {</span></span>
-<span class="line"><span class="s252224fb">      image</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">node:22</span><span class="scde63d9e">"</span></span>
-<span class="line"><span class="s252224fb">      ports</span><span class="scacc819b">:</span><span class="scacc819b"> [</span></span>
-<span class="line"><span class="scde63d9e">        "</span><span class="s7911c4c2">3816:3261</span><span class="scde63d9e">"</span></span>
-<span class="line"><span class="scacc819b">      ]</span></span>
-<span class="line"><span class="s252224fb">      environment</span><span class="scacc819b">:</span><span class="scacc819b"> {</span></span>
-<span class="line"><span class="s252224fb">        NODE_ENV</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">production</span><span class="scde63d9e">"</span></span>
-<span class="line"><span class="s252224fb">        DATABASE_URL</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">postgres://db:5432/synergy</span><span class="scde63d9e">"</span></span>
-<span class="line"><span class="scacc819b">      }</span></span>
-<span class="line"><span class="s252224fb">      depends_on</span><span class="scacc819b">:</span><span class="scacc819b"> [</span></span>
-<span class="line"><span class="scde63d9e">        "</span><span class="s7911c4c2">db</span><span class="scde63d9e">"</span></span>
-<span class="line"><span class="scde63d9e">        "</span><span class="s7911c4c2">redis</span><span class="scde63d9e">"</span></span>
-<span class="line"><span class="scacc819b">      ]</span></span>
-<span class="line"><span class="scacc819b">    }</span></span>
-<span class="line"></span>
-<span class="line"><span class="s252224fb">    db</span><span class="scacc819b">:</span><span class="scacc819b"> {</span></span>
-<span class="line"><span class="s252224fb">      image</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">mariadb:11</span><span class="scde63d9e">"</span></span>
-<span class="line"><span class="s252224fb">      volumes</span><span class="scacc819b">:</span><span class="scacc819b"> [</span></span>
-<span class="line"><span class="scde63d9e">        "</span><span class="s7911c4c2">db_data:/var/lib/postgresql/data</span><span class="scde63d9e">"</span></span>
-<span class="line"><span class="scacc819b">      ]</span></span>
-<span class="line"><span class="s252224fb">      environment</span><span class="scacc819b">:</span><span class="scacc819b"> {</span></span>
-<span class="line"><span class="s252224fb">        POSTGRES_DB</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">pinstripe</span><span class="scde63d9e">"</span></span>
-<span class="line"><span class="s252224fb">        POSTGRES_PASSWORD</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">JwNQctEOG1FBgSZ</span><span class="scde63d9e">"</span></span>
-<span class="line"><span class="scacc819b">      }</span></span>
-<span class="line"><span class="scacc819b">    }</span></span>
-<span class="line"></span>
-<span class="line"><span class="s252224fb">    redis</span><span class="scacc819b">:</span><span class="scacc819b"> {</span></span>
-<span class="line"><span class="s252224fb">      image</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">redis:7-alpine</span><span class="scde63d9e">"</span></span>
-<span class="line"><span class="s252224fb">      ports</span><span class="scacc819b">:</span><span class="scacc819b"> [</span></span>
-<span class="line"><span class="scde63d9e">        "</span><span class="s7911c4c2">6379:6379</span><span class="scde63d9e">"</span></span>
-<span class="line"><span class="scacc819b">      ]</span></span>
-<span class="line"><span class="scacc819b">    }</span></span>
-<span class="line"><span class="scacc819b">  }</span></span>
-<span class="line"></span>
-<span class="line"><span class="s252224fb">  volumes</span><span class="scacc819b">:</span><span class="scacc819b"> {</span></span>
-<span class="line"><span class="s252224fb">    db_data</span><span class="scacc819b">:</span><span class="scacc819b"> {}</span></span>
-<span class="line"><span class="scacc819b">  }</span></span>
-<span class="line"><span class="scacc819b">}</span></span></code></pre>
-  <h2>See also</h2>
-  <ul class="card-list">
-    <li><a href="./16640"><span class="card-num">16640</span><span class="card-title">Search Config</span></a></li>
-    <li><a href="./10297"><span class="card-num">10297</span><span class="card-title">Config with Comments</span></a></li>
-    <li><a href="./16156"><span class="card-num">16156</span><span class="card-title">Keyboard Shortcuts</span></a></li>
-  </ul>
+<p class="eyebrow">Example 371</p>
+<h1>Docker Compose</h1>
+<p class="lead">Multi-container application definition.</p>
+<pre class="shiki"><code><span class="scacc819b">{</span><br><span class="s252224fb">  version</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">3.8</span><span class="scde63d9e">"</span><br><span class="s252224fb">  services</span><span class="scacc819b">:</span><span class="scacc819b"> {</span><br><span class="s252224fb">    app</span><span class="scacc819b">:</span><span class="scacc819b"> {</span><br><span class="s252224fb">      image</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">node:22</span><span class="scde63d9e">"</span><br><span class="s252224fb">      ports</span><span class="scacc819b">:</span><span class="scacc819b"> [</span><br><span class="scde63d9e">        "</span><span class="s7911c4c2">3816:3261</span><span class="scde63d9e">"</span><br><span class="scacc819b">      ]</span><br><span class="s252224fb">      environment</span><span class="scacc819b">:</span><span class="scacc819b"> {</span><br><span class="s252224fb">        NODE_ENV</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">production</span><span class="scde63d9e">"</span><br><span class="s252224fb">        DATABASE_URL</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">postgres://db:5432/synergy</span><span class="scde63d9e">"</span><br><span class="scacc819b">      }</span><br><span class="s252224fb">      depends_on</span><span class="scacc819b">:</span><span class="scacc819b"> [</span><br><span class="scde63d9e">        "</span><span class="s7911c4c2">db</span><span class="scde63d9e">"</span><br><span class="scde63d9e">        "</span><span class="s7911c4c2">redis</span><span class="scde63d9e">"</span><br><span class="scacc819b">      ]</span><br><span class="scacc819b">    }</span><br><br><span class="s252224fb">    db</span><span class="scacc819b">:</span><span class="scacc819b"> {</span><br><span class="s252224fb">      image</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">mariadb:11</span><span class="scde63d9e">"</span><br><span class="s252224fb">      volumes</span><span class="scacc819b">:</span><span class="scacc819b"> [</span><br><span class="scde63d9e">        "</span><span class="s7911c4c2">db_data:/var/lib/postgresql/data</span><span class="scde63d9e">"</span><br><span class="scacc819b">      ]</span><br><span class="s252224fb">      environment</span><span class="scacc819b">:</span><span class="scacc819b"> {</span><br><span class="s252224fb">        POSTGRES_DB</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">pinstripe</span><span class="scde63d9e">"</span><br><span class="s252224fb">        POSTGRES_PASSWORD</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">JwNQctEOG1FBgSZ</span><span class="scde63d9e">"</span><br><span class="scacc819b">      }</span><br><span class="scacc819b">    }</span><br><br><span class="s252224fb">    redis</span><span class="scacc819b">:</span><span class="scacc819b"> {</span><br><span class="s252224fb">      image</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">redis:7-alpine</span><span class="scde63d9e">"</span><br><span class="s252224fb">      ports</span><span class="scacc819b">:</span><span class="scacc819b"> [</span><br><span class="scde63d9e">        "</span><span class="s7911c4c2">6379:6379</span><span class="scde63d9e">"</span><br><span class="scacc819b">      ]</span><br><span class="scacc819b">    }</span><br><span class="scacc819b">  }</span><br><br><span class="s252224fb">  volumes</span><span class="scacc819b">:</span><span class="scacc819b"> {</span><br><span class="s252224fb">    db_data</span><span class="scacc819b">:</span><span class="scacc819b"> {}</span><br><span class="scacc819b">  }</span><br><span class="scacc819b">}</span></code></pre>
+<h2>See also</h2>
+<ul class="card-list">
+<li><a href="./16640"><span class="card-num">16640</span><span class="card-title">Search Config</span></a></li>
+<li><a href="./10297"><span class="card-num">10297</span><span class="card-title">Config with Comments</span></a></li>
+<li><a href="./16156"><span class="card-num">16156</span><span class="card-title">Keyboard Shortcuts</span></a></li>
+</ul>
 </article>
 </main>
-<footer class="site-footer">
-  Generated examples for the <a href="https://maml.dev">MAML</a> data format.
-</footer>
+<footer class="site-footer">Generated examples for the <a href="https://maml.dev">MAML</a> data format.</footer>
 </body>
 </html>

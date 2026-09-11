@@ -6,77 +6,26 @@
 <title>16894 — Makefile Targets · MAML Examples</title>
 <meta name="description" content="Build targets with embedded shell commands.">
 <link rel="stylesheet" href="../assets/style.css">
-<link rel="stylesheet" href="../assets/tokens.css">
 </head>
 <body>
 <header class="site-header">
-  <a class="brand" href="../">MAML Examples</a>
-  <nav>
-    <a href="https://maml.dev">maml.dev</a>
-    <a href="https://github.com/maml-dev/examples">GitHub</a>
-  </nav>
+<a class="brand" href="../">MAML Examples</a>
+<nav><a href="https://maml.dev">maml.dev</a> <a href="https://github.com/maml-dev/examples">GitHub</a></nav>
 </header>
 <main>
 <article class="example">
-  <p class="eyebrow">Example 16894</p>
-  <h1>Makefile Targets</h1>
-  <p class="lead">Build targets with embedded shell commands.</p>
-  <pre class="shiki shiki-themes catppuccin-latte plastic" style="--shiki-light:#4c4f69;--shiki-dark:#A9B2C3;--shiki-light-bg:#eff1f5;--shiki-dark-bg:#21252B" tabindex="0"><code><span class="line"><span class="s5dd799dd"># Build targets</span></span>
-<span class="line"><span class="scacc819b">{</span></span>
-<span class="line"><span class="s252224fb">  project</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">translation</span><span class="scde63d9e">"</span></span>
-<span class="line"><span class="s252224fb">  default</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">build</span><span class="scde63d9e">"</span></span>
-<span class="line"><span class="s252224fb">  targets</span><span class="scacc819b">:</span><span class="scacc819b"> {</span></span>
-<span class="line"><span class="s5dd799dd">    # Build the application</span></span>
-<span class="line"><span class="s252224fb">    build</span><span class="scacc819b">:</span><span class="scacc819b"> {</span></span>
-<span class="line"><span class="s252224fb">      deps</span><span class="scacc819b">:</span><span class="scacc819b"> [</span></span>
-<span class="line"><span class="scde63d9e">        "</span><span class="s7911c4c2">clean</span><span class="scde63d9e">"</span></span>
-<span class="line"><span class="scde63d9e">        "</span><span class="s7911c4c2">lint</span><span class="scde63d9e">"</span></span>
-<span class="line"><span class="scacc819b">      ]</span></span>
-<span class="line"><span class="s252224fb">      script</span><span class="scacc819b">:</span><span class="scde63d9e"> """</span></span>
-<span class="line"><span class="s7911c4c2">echo "Building..."</span></span>
-<span class="line"><span class="s7911c4c2">go build -o bin/app ./cmd/app</span></span>
-<span class="line"><span class="s7911c4c2">echo "Build complete"</span></span>
-<span class="line"><span class="scde63d9e">"""</span></span>
-<span class="line"><span class="scacc819b">    }</span></span>
-<span class="line"></span>
-<span class="line"><span class="s5dd799dd">    # Run tests with coverage</span></span>
-<span class="line"><span class="s252224fb">    test</span><span class="scacc819b">:</span><span class="scacc819b"> {</span></span>
-<span class="line"><span class="s252224fb">      script</span><span class="scacc819b">:</span><span class="scde63d9e"> """</span></span>
-<span class="line"><span class="s7911c4c2">echo "Running tests..."</span></span>
-<span class="line"><span class="s7911c4c2">go test -v -race -coverprofile=coverage.out ./...</span></span>
-<span class="line"><span class="s7911c4c2">go tool cover -html=coverage.out -o coverage.html</span></span>
-<span class="line"><span class="scde63d9e">"""</span></span>
-<span class="line"><span class="scacc819b">    }</span></span>
-<span class="line"></span>
-<span class="line"><span class="s252224fb">    clean</span><span class="scacc819b">:</span><span class="scacc819b"> {</span></span>
-<span class="line"><span class="s252224fb">      script</span><span class="scacc819b">:</span><span class="scde63d9e"> """</span></span>
-<span class="line"><span class="s7911c4c2">rm -rf bin/ dist/ coverage.out coverage.html</span></span>
-<span class="line"><span class="s7911c4c2">echo "Cleaned"</span></span>
-<span class="line"><span class="scde63d9e">"""</span></span>
-<span class="line"><span class="scacc819b">    }</span></span>
-<span class="line"></span>
-<span class="line"><span class="s5dd799dd">    # Docker build and push</span></span>
-<span class="line"><span class="s252224fb">    docker</span><span class="scacc819b">:</span><span class="scacc819b"> {</span></span>
-<span class="line"><span class="s252224fb">      deps</span><span class="scacc819b">:</span><span class="scacc819b"> [</span></span>
-<span class="line"><span class="scde63d9e">        "</span><span class="s7911c4c2">build</span><span class="scde63d9e">"</span></span>
-<span class="line"><span class="scacc819b">      ]</span></span>
-<span class="line"><span class="s252224fb">      script</span><span class="scacc819b">:</span><span class="scde63d9e"> """</span></span>
-<span class="line"><span class="s7911c4c2">docker build -t skyline:latest .</span></span>
-<span class="line"><span class="s7911c4c2">docker push airport:latest</span></span>
-<span class="line"><span class="scde63d9e">"""</span></span>
-<span class="line"><span class="scacc819b">    }</span></span>
-<span class="line"><span class="scacc819b">  }</span></span>
-<span class="line"><span class="scacc819b">}</span></span></code></pre>
-  <h2>See also</h2>
-  <ul class="card-list">
-    <li><a href="./3632"><span class="card-num">3632</span><span class="card-title">Terraform Resource</span></a></li>
-    <li><a href="./17108"><span class="card-num">17108</span><span class="card-title">App Settings</span></a></li>
-    <li><a href="./6631"><span class="card-num">6631</span><span class="card-title">GraphQL Schema</span></a></li>
-  </ul>
+<p class="eyebrow">Example 16894</p>
+<h1>Makefile Targets</h1>
+<p class="lead">Build targets with embedded shell commands.</p>
+<pre class="shiki"><code><span class="s5dd799dd"># Build targets</span><br><span class="scacc819b">{</span><br><span class="s252224fb">  project</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">translation</span><span class="scde63d9e">"</span><br><span class="s252224fb">  default</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">build</span><span class="scde63d9e">"</span><br><span class="s252224fb">  targets</span><span class="scacc819b">:</span><span class="scacc819b"> {</span><br><span class="s5dd799dd">    # Build the application</span><br><span class="s252224fb">    build</span><span class="scacc819b">:</span><span class="scacc819b"> {</span><br><span class="s252224fb">      deps</span><span class="scacc819b">:</span><span class="scacc819b"> [</span><br><span class="scde63d9e">        "</span><span class="s7911c4c2">clean</span><span class="scde63d9e">"</span><br><span class="scde63d9e">        "</span><span class="s7911c4c2">lint</span><span class="scde63d9e">"</span><br><span class="scacc819b">      ]</span><br><span class="s252224fb">      script</span><span class="scacc819b">:</span><span class="scde63d9e"> """</span><br><span class="s7911c4c2">echo "Building..."</span><br><span class="s7911c4c2">go build -o bin/app ./cmd/app</span><br><span class="s7911c4c2">echo "Build complete"</span><br><span class="scde63d9e">"""</span><br><span class="scacc819b">    }</span><br><br><span class="s5dd799dd">    # Run tests with coverage</span><br><span class="s252224fb">    test</span><span class="scacc819b">:</span><span class="scacc819b"> {</span><br><span class="s252224fb">      script</span><span class="scacc819b">:</span><span class="scde63d9e"> """</span><br><span class="s7911c4c2">echo "Running tests..."</span><br><span class="s7911c4c2">go test -v -race -coverprofile=coverage.out ./...</span><br><span class="s7911c4c2">go tool cover -html=coverage.out -o coverage.html</span><br><span class="scde63d9e">"""</span><br><span class="scacc819b">    }</span><br><br><span class="s252224fb">    clean</span><span class="scacc819b">:</span><span class="scacc819b"> {</span><br><span class="s252224fb">      script</span><span class="scacc819b">:</span><span class="scde63d9e"> """</span><br><span class="s7911c4c2">rm -rf bin/ dist/ coverage.out coverage.html</span><br><span class="s7911c4c2">echo "Cleaned"</span><br><span class="scde63d9e">"""</span><br><span class="scacc819b">    }</span><br><br><span class="s5dd799dd">    # Docker build and push</span><br><span class="s252224fb">    docker</span><span class="scacc819b">:</span><span class="scacc819b"> {</span><br><span class="s252224fb">      deps</span><span class="scacc819b">:</span><span class="scacc819b"> [</span><br><span class="scde63d9e">        "</span><span class="s7911c4c2">build</span><span class="scde63d9e">"</span><br><span class="scacc819b">      ]</span><br><span class="s252224fb">      script</span><span class="scacc819b">:</span><span class="scde63d9e"> """</span><br><span class="s7911c4c2">docker build -t skyline:latest .</span><br><span class="s7911c4c2">docker push airport:latest</span><br><span class="scde63d9e">"""</span><br><span class="scacc819b">    }</span><br><span class="scacc819b">  }</span><br><span class="scacc819b">}</span></code></pre>
+<h2>See also</h2>
+<ul class="card-list">
+<li><a href="./3632"><span class="card-num">3632</span><span class="card-title">Terraform Resource</span></a></li>
+<li><a href="./17108"><span class="card-num">17108</span><span class="card-title">App Settings</span></a></li>
+<li><a href="./6631"><span class="card-num">6631</span><span class="card-title">GraphQL Schema</span></a></li>
+</ul>
 </article>
 </main>
-<footer class="site-footer">
-  Generated examples for the <a href="https://maml.dev">MAML</a> data format.
-</footer>
+<footer class="site-footer">Generated examples for the <a href="https://maml.dev">MAML</a> data format.</footer>
 </body>
 </html>

@@ -135,8 +135,8 @@ h2 {
   color: var(--text-soft);
 }
 
-/* Shiki emits per-token CSS variables for both themes; pick one here so a
-   theme switch never needs the pages re-rendered. */
+/* Shiki emits per-token CSS variables for both themes; the theme colours and
+   token classes are appended to this file at render time. */
 .shiki {
   margin: 0;
   padding: 1rem 1.1rem;
@@ -144,8 +144,6 @@ h2 {
   border: 1px solid var(--border);
   border-radius: var(--radius);
   font: 0.875rem/1.6 var(--mono);
-  color: var(--shiki-light);
-  background: var(--shiki-light-bg);
 }
 
 .shiki span {
@@ -156,10 +154,6 @@ h2 {
 }
 
 @media (prefers-color-scheme: dark) {
-  .shiki {
-    color: var(--shiki-dark);
-    background: var(--shiki-dark-bg);
-  }
   .shiki span {
     color: var(--shiki-dark);
     font-style: var(--shiki-dark-font-style, normal);

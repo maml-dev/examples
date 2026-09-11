@@ -6,66 +6,26 @@
 <title>133 — Terraform Resource · MAML Examples</title>
 <meta name="description" content="Infrastructure as code resource definition.">
 <link rel="stylesheet" href="../assets/style.css">
-<link rel="stylesheet" href="../assets/tokens.css">
 </head>
 <body>
 <header class="site-header">
-  <a class="brand" href="../">MAML Examples</a>
-  <nav>
-    <a href="https://maml.dev">maml.dev</a>
-    <a href="https://github.com/maml-dev/examples">GitHub</a>
-  </nav>
+<a class="brand" href="../">MAML Examples</a>
+<nav><a href="https://maml.dev">maml.dev</a> <a href="https://github.com/maml-dev/examples">GitHub</a></nav>
 </header>
 <main>
 <article class="example">
-  <p class="eyebrow">Example 133</p>
-  <h1>Terraform Resource</h1>
-  <p class="lead">Infrastructure as code resource definition.</p>
-  <pre class="shiki shiki-themes catppuccin-latte plastic" style="--shiki-light:#4c4f69;--shiki-dark:#A9B2C3;--shiki-light-bg:#eff1f5;--shiki-dark-bg:#21252B" tabindex="0"><code><span class="line"><span class="scacc819b">{</span></span>
-<span class="line"><span class="s252224fb">  provider</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">google</span><span class="scde63d9e">"</span></span>
-<span class="line"><span class="s252224fb">  region</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">us-east-1</span><span class="scde63d9e">"</span></span>
-<span class="line"><span class="s252224fb">  resources</span><span class="scacc819b">:</span><span class="scacc819b"> {</span></span>
-<span class="line"><span class="s5dd799dd">    # Network</span></span>
-<span class="line"><span class="s252224fb">    vpc</span><span class="scacc819b">:</span><span class="scacc819b"> {</span></span>
-<span class="line"><span class="s252224fb">      cidr_block</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">10.233.0.0/16</span><span class="scde63d9e">"</span></span>
-<span class="line"><span class="s252224fb">      enable_dns</span><span class="scacc819b">:</span><span class="sfc8ef81c"> true</span></span>
-<span class="line"><span class="s252224fb">      tags</span><span class="scacc819b">:</span><span class="scacc819b"> {</span></span>
-<span class="line"><span class="s252224fb">        Name</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">dream-vpc</span><span class="scde63d9e">"</span></span>
-<span class="line"><span class="s252224fb">        Environment</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">production</span><span class="scde63d9e">"</span></span>
-<span class="line"><span class="scacc819b">      }</span></span>
-<span class="line"><span class="scacc819b">    }</span></span>
-<span class="line"></span>
-<span class="line"><span class="s5dd799dd">    # Compute</span></span>
-<span class="line"><span class="s252224fb">    instance</span><span class="scacc819b">:</span><span class="scacc819b"> {</span></span>
-<span class="line"><span class="s252224fb">      ami</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">ami-dd96bdbb</span><span class="scde63d9e">"</span></span>
-<span class="line"><span class="s252224fb">      type</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">t3.micro</span><span class="scde63d9e">"</span></span>
-<span class="line"><span class="s252224fb">      key_name</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">spirit-key</span><span class="scde63d9e">"</span></span>
-<span class="line"><span class="s252224fb">      monitoring</span><span class="scacc819b">:</span><span class="sfc8ef81c"> true</span></span>
-<span class="line"><span class="s252224fb">      root_volume</span><span class="scacc819b">:</span><span class="scacc819b"> {</span></span>
-<span class="line"><span class="s252224fb">        size</span><span class="scacc819b">:</span><span class="s56b09ea4"> 50</span></span>
-<span class="line"><span class="s252224fb">        type</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">gp2</span><span class="scde63d9e">"</span></span>
-<span class="line"><span class="s252224fb">        encrypted</span><span class="scacc819b">:</span><span class="sfc8ef81c"> true</span></span>
-<span class="line"><span class="scacc819b">      }</span></span>
-<span class="line"><span class="scacc819b">    }</span></span>
-<span class="line"></span>
-<span class="line"><span class="s5dd799dd">    # Security</span></span>
-<span class="line"><span class="s252224fb">    security_group</span><span class="scacc819b">:</span><span class="scacc819b"> {</span></span>
-<span class="line"><span class="s252224fb">      name</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">allow-ssh</span><span class="scde63d9e">"</span></span>
-<span class="line"><span class="s252224fb">      ingress_port</span><span class="scacc819b">:</span><span class="s56b09ea4"> 443</span></span>
-<span class="line"><span class="s252224fb">      ingress_cidr</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">0.0.0.0/0</span><span class="scde63d9e">"</span></span>
-<span class="line"><span class="scacc819b">    }</span></span>
-<span class="line"><span class="scacc819b">  }</span></span>
-<span class="line"><span class="scacc819b">}</span></span></code></pre>
-  <h2>See also</h2>
-  <ul class="card-list">
-    <li><a href="./6125"><span class="card-num">6125</span><span class="card-title">CI Pipeline</span></a></li>
-    <li><a href="./4243"><span class="card-num">4243</span><span class="card-title">DNS Records</span></a></li>
-    <li><a href="./16573"><span class="card-num">16573</span><span class="card-title">Playlist</span></a></li>
-  </ul>
+<p class="eyebrow">Example 133</p>
+<h1>Terraform Resource</h1>
+<p class="lead">Infrastructure as code resource definition.</p>
+<pre class="shiki"><code><span class="scacc819b">{</span><br><span class="s252224fb">  provider</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">google</span><span class="scde63d9e">"</span><br><span class="s252224fb">  region</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">us-east-1</span><span class="scde63d9e">"</span><br><span class="s252224fb">  resources</span><span class="scacc819b">:</span><span class="scacc819b"> {</span><br><span class="s5dd799dd">    # Network</span><br><span class="s252224fb">    vpc</span><span class="scacc819b">:</span><span class="scacc819b"> {</span><br><span class="s252224fb">      cidr_block</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">10.233.0.0/16</span><span class="scde63d9e">"</span><br><span class="s252224fb">      enable_dns</span><span class="scacc819b">:</span><span class="sfc8ef81c"> true</span><br><span class="s252224fb">      tags</span><span class="scacc819b">:</span><span class="scacc819b"> {</span><br><span class="s252224fb">        Name</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">dream-vpc</span><span class="scde63d9e">"</span><br><span class="s252224fb">        Environment</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">production</span><span class="scde63d9e">"</span><br><span class="scacc819b">      }</span><br><span class="scacc819b">    }</span><br><br><span class="s5dd799dd">    # Compute</span><br><span class="s252224fb">    instance</span><span class="scacc819b">:</span><span class="scacc819b"> {</span><br><span class="s252224fb">      ami</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">ami-dd96bdbb</span><span class="scde63d9e">"</span><br><span class="s252224fb">      type</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">t3.micro</span><span class="scde63d9e">"</span><br><span class="s252224fb">      key_name</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">spirit-key</span><span class="scde63d9e">"</span><br><span class="s252224fb">      monitoring</span><span class="scacc819b">:</span><span class="sfc8ef81c"> true</span><br><span class="s252224fb">      root_volume</span><span class="scacc819b">:</span><span class="scacc819b"> {</span><br><span class="s252224fb">        size</span><span class="scacc819b">:</span><span class="s56b09ea4"> 50</span><br><span class="s252224fb">        type</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">gp2</span><span class="scde63d9e">"</span><br><span class="s252224fb">        encrypted</span><span class="scacc819b">:</span><span class="sfc8ef81c"> true</span><br><span class="scacc819b">      }</span><br><span class="scacc819b">    }</span><br><br><span class="s5dd799dd">    # Security</span><br><span class="s252224fb">    security_group</span><span class="scacc819b">:</span><span class="scacc819b"> {</span><br><span class="s252224fb">      name</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">allow-ssh</span><span class="scde63d9e">"</span><br><span class="s252224fb">      ingress_port</span><span class="scacc819b">:</span><span class="s56b09ea4"> 443</span><br><span class="s252224fb">      ingress_cidr</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">0.0.0.0/0</span><span class="scde63d9e">"</span><br><span class="scacc819b">    }</span><br><span class="scacc819b">  }</span><br><span class="scacc819b">}</span></code></pre>
+<h2>See also</h2>
+<ul class="card-list">
+<li><a href="./6125"><span class="card-num">6125</span><span class="card-title">CI Pipeline</span></a></li>
+<li><a href="./4243"><span class="card-num">4243</span><span class="card-title">DNS Records</span></a></li>
+<li><a href="./16573"><span class="card-num">16573</span><span class="card-title">Playlist</span></a></li>
+</ul>
 </article>
 </main>
-<footer class="site-footer">
-  Generated examples for the <a href="https://maml.dev">MAML</a> data format.
-</footer>
+<footer class="site-footer">Generated examples for the <a href="https://maml.dev">MAML</a> data format.</footer>
 </body>
 </html>

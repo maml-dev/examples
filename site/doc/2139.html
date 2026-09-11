@@ -6,65 +6,26 @@
 <title>2139 — CI Pipeline · MAML Examples</title>
 <meta name="description" content="Continuous integration pipeline definition.">
 <link rel="stylesheet" href="../assets/style.css">
-<link rel="stylesheet" href="../assets/tokens.css">
 </head>
 <body>
 <header class="site-header">
-  <a class="brand" href="../">MAML Examples</a>
-  <nav>
-    <a href="https://maml.dev">maml.dev</a>
-    <a href="https://github.com/maml-dev/examples">GitHub</a>
-  </nav>
+<a class="brand" href="../">MAML Examples</a>
+<nav><a href="https://maml.dev">maml.dev</a> <a href="https://github.com/maml-dev/examples">GitHub</a></nav>
 </header>
 <main>
 <article class="example">
-  <p class="eyebrow">Example 2139</p>
-  <h1>CI Pipeline</h1>
-  <p class="lead">Continuous integration pipeline definition.</p>
-  <pre class="shiki shiki-themes catppuccin-latte plastic" style="--shiki-light:#4c4f69;--shiki-dark:#A9B2C3;--shiki-light-bg:#eff1f5;--shiki-dark-bg:#21252B" tabindex="0"><code><span class="line"><span class="scacc819b">{</span></span>
-<span class="line"><span class="s252224fb">  name</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">Build &#x26; Test</span><span class="scde63d9e">"</span></span>
-<span class="line"><span class="s252224fb">  trigger</span><span class="scacc819b">:</span><span class="scacc819b"> {</span></span>
-<span class="line"><span class="s252224fb">    branches</span><span class="scacc819b">:</span><span class="scacc819b"> [</span></span>
-<span class="line"><span class="scde63d9e">      "</span><span class="s7911c4c2">main</span><span class="scde63d9e">"</span></span>
-<span class="line"><span class="scde63d9e">      "</span><span class="s7911c4c2">develop</span><span class="scde63d9e">"</span></span>
-<span class="line"><span class="scacc819b">    ]</span></span>
-<span class="line"><span class="s252224fb">    paths</span><span class="scacc819b">:</span><span class="scacc819b"> [</span></span>
-<span class="line"><span class="scde63d9e">      "</span><span class="s7911c4c2">src/**</span><span class="scde63d9e">"</span></span>
-<span class="line"><span class="scde63d9e">      "</span><span class="s7911c4c2">tests/**</span><span class="scde63d9e">"</span></span>
-<span class="line"><span class="scacc819b">    ]</span></span>
-<span class="line"><span class="scacc819b">  }</span></span>
-<span class="line"></span>
-<span class="line"><span class="s252224fb">  stages</span><span class="scacc819b">:</span><span class="scacc819b"> {</span></span>
-<span class="line"><span class="s5dd799dd">    # Code quality</span></span>
-<span class="line"><span class="s252224fb">    lint</span><span class="scacc819b">:</span><span class="scacc819b"> {</span></span>
-<span class="line"><span class="s252224fb">      image</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">node:18</span><span class="scde63d9e">"</span></span>
-<span class="line"><span class="s252224fb">      command</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">npx eslint .</span><span class="scde63d9e">"</span></span>
-<span class="line"><span class="scacc819b">    }</span></span>
-<span class="line"><span class="s252224fb">    test</span><span class="scacc819b">:</span><span class="scacc819b"> {</span></span>
-<span class="line"><span class="s252224fb">      image</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">node:22</span><span class="scde63d9e">"</span></span>
-<span class="line"><span class="s252224fb">      command</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">npx jest</span><span class="scde63d9e">"</span></span>
-<span class="line"><span class="s252224fb">      coverage</span><span class="scacc819b">:</span><span class="sfc8ef81c"> true</span></span>
-<span class="line"><span class="scacc819b">    }</span></span>
-<span class="line"><span class="s252224fb">    build</span><span class="scacc819b">:</span><span class="scacc819b"> {</span></span>
-<span class="line"><span class="s252224fb">      image</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">node:18</span><span class="scde63d9e">"</span></span>
-<span class="line"><span class="s252224fb">      command</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">npm run build</span><span class="scde63d9e">"</span></span>
-<span class="line"><span class="s252224fb">      artifacts</span><span class="scacc819b">:</span><span class="scacc819b"> [</span></span>
-<span class="line"><span class="scde63d9e">        "</span><span class="s7911c4c2">dist/**</span><span class="scde63d9e">"</span></span>
-<span class="line"><span class="scde63d9e">        "</span><span class="s7911c4c2">build/**</span><span class="scde63d9e">"</span></span>
-<span class="line"><span class="scacc819b">      ]</span></span>
-<span class="line"><span class="scacc819b">    }</span></span>
-<span class="line"><span class="scacc819b">  }</span></span>
-<span class="line"><span class="scacc819b">}</span></span></code></pre>
-  <h2>See also</h2>
-  <ul class="card-list">
-    <li><a href="./11684"><span class="card-num">11684</span><span class="card-title">Error Messages</span></a></li>
-    <li><a href="./1267"><span class="card-num">1267</span><span class="card-title">Dashboard Layout</span></a></li>
-    <li><a href="./2304"><span class="card-num">2304</span><span class="card-title">App Settings</span></a></li>
-  </ul>
+<p class="eyebrow">Example 2139</p>
+<h1>CI Pipeline</h1>
+<p class="lead">Continuous integration pipeline definition.</p>
+<pre class="shiki"><code><span class="scacc819b">{</span><br><span class="s252224fb">  name</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">Build &#x26; Test</span><span class="scde63d9e">"</span><br><span class="s252224fb">  trigger</span><span class="scacc819b">:</span><span class="scacc819b"> {</span><br><span class="s252224fb">    branches</span><span class="scacc819b">:</span><span class="scacc819b"> [</span><br><span class="scde63d9e">      "</span><span class="s7911c4c2">main</span><span class="scde63d9e">"</span><br><span class="scde63d9e">      "</span><span class="s7911c4c2">develop</span><span class="scde63d9e">"</span><br><span class="scacc819b">    ]</span><br><span class="s252224fb">    paths</span><span class="scacc819b">:</span><span class="scacc819b"> [</span><br><span class="scde63d9e">      "</span><span class="s7911c4c2">src/**</span><span class="scde63d9e">"</span><br><span class="scde63d9e">      "</span><span class="s7911c4c2">tests/**</span><span class="scde63d9e">"</span><br><span class="scacc819b">    ]</span><br><span class="scacc819b">  }</span><br><br><span class="s252224fb">  stages</span><span class="scacc819b">:</span><span class="scacc819b"> {</span><br><span class="s5dd799dd">    # Code quality</span><br><span class="s252224fb">    lint</span><span class="scacc819b">:</span><span class="scacc819b"> {</span><br><span class="s252224fb">      image</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">node:18</span><span class="scde63d9e">"</span><br><span class="s252224fb">      command</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">npx eslint .</span><span class="scde63d9e">"</span><br><span class="scacc819b">    }</span><br><span class="s252224fb">    test</span><span class="scacc819b">:</span><span class="scacc819b"> {</span><br><span class="s252224fb">      image</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">node:22</span><span class="scde63d9e">"</span><br><span class="s252224fb">      command</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">npx jest</span><span class="scde63d9e">"</span><br><span class="s252224fb">      coverage</span><span class="scacc819b">:</span><span class="sfc8ef81c"> true</span><br><span class="scacc819b">    }</span><br><span class="s252224fb">    build</span><span class="scacc819b">:</span><span class="scacc819b"> {</span><br><span class="s252224fb">      image</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">node:18</span><span class="scde63d9e">"</span><br><span class="s252224fb">      command</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">npm run build</span><span class="scde63d9e">"</span><br><span class="s252224fb">      artifacts</span><span class="scacc819b">:</span><span class="scacc819b"> [</span><br><span class="scde63d9e">        "</span><span class="s7911c4c2">dist/**</span><span class="scde63d9e">"</span><br><span class="scde63d9e">        "</span><span class="s7911c4c2">build/**</span><span class="scde63d9e">"</span><br><span class="scacc819b">      ]</span><br><span class="scacc819b">    }</span><br><span class="scacc819b">  }</span><br><span class="scacc819b">}</span></code></pre>
+<h2>See also</h2>
+<ul class="card-list">
+<li><a href="./11684"><span class="card-num">11684</span><span class="card-title">Error Messages</span></a></li>
+<li><a href="./1267"><span class="card-num">1267</span><span class="card-title">Dashboard Layout</span></a></li>
+<li><a href="./2304"><span class="card-num">2304</span><span class="card-title">App Settings</span></a></li>
+</ul>
 </article>
 </main>
-<footer class="site-footer">
-  Generated examples for the <a href="https://maml.dev">MAML</a> data format.
-</footer>
+<footer class="site-footer">Generated examples for the <a href="https://maml.dev">MAML</a> data format.</footer>
 </body>
 </html>

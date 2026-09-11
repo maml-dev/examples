@@ -6,65 +6,26 @@
 <title>14993 — Crontab · MAML Examples</title>
 <meta name="description" content="System crontab with commented schedule explanations.">
 <link rel="stylesheet" href="../assets/style.css">
-<link rel="stylesheet" href="../assets/tokens.css">
 </head>
 <body>
 <header class="site-header">
-  <a class="brand" href="../">MAML Examples</a>
-  <nav>
-    <a href="https://maml.dev">maml.dev</a>
-    <a href="https://github.com/maml-dev/examples">GitHub</a>
-  </nav>
+<a class="brand" href="../">MAML Examples</a>
+<nav><a href="https://maml.dev">maml.dev</a> <a href="https://github.com/maml-dev/examples">GitHub</a></nav>
 </header>
 <main>
 <article class="example">
-  <p class="eyebrow">Example 14993</p>
-  <h1>Crontab</h1>
-  <p class="lead">System crontab with commented schedule explanations.</p>
-  <pre class="shiki shiki-themes catppuccin-latte plastic" style="--shiki-light:#4c4f69;--shiki-dark:#A9B2C3;--shiki-light-bg:#eff1f5;--shiki-dark-bg:#21252B" tabindex="0"><code><span class="line"><span class="s5dd799dd"># System crontab</span></span>
-<span class="line"><span class="scacc819b">{</span></span>
-<span class="line"><span class="s252224fb">  SHELL</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">/bin/bash</span><span class="scde63d9e">"</span></span>
-<span class="line"><span class="s252224fb">  PATH</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">/usr/local/bin:/usr/bin:/bin</span><span class="scde63d9e">"</span></span>
-<span class="line"></span>
-<span class="line"><span class="s252224fb">  MAILTO</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">Edgar_Kirlin11@hotmail.com</span><span class="scde63d9e">"</span></span>
-<span class="line"></span>
-<span class="line"><span class="s252224fb">  jobs</span><span class="scacc819b">:</span><span class="scacc819b"> {</span></span>
-<span class="line"><span class="s5dd799dd">    # Full database backup at 2:00 AM daily</span></span>
-<span class="line"><span class="s252224fb">    backup</span><span class="scacc819b">:</span><span class="scacc819b"> {</span></span>
-<span class="line"><span class="s252224fb">      schedule</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">0 2 * * *</span><span class="scde63d9e">"</span></span>
-<span class="line"><span class="s252224fb">      command</span><span class="scacc819b">:</span><span class="scde63d9e"> """</span></span>
-<span class="line"><span class="s7911c4c2">/usr/local/bin/backup.sh --target /mnt/backup</span></span>
-<span class="line"><span class="s7911c4c2">  --compress gzip</span></span>
-<span class="line"><span class="s7911c4c2">  --notify Lucia.Metz71@yahoo.com</span></span>
-<span class="line"><span class="scde63d9e">"""</span></span>
-<span class="line"><span class="scacc819b">    }</span></span>
-<span class="line"></span>
-<span class="line"><span class="s5dd799dd">    # Renew SSL certificates on the 1st of each month</span></span>
-<span class="line"><span class="s252224fb">    certbot</span><span class="scacc819b">:</span><span class="scacc819b"> {</span></span>
-<span class="line"><span class="s252224fb">      schedule</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">0 0 1 * *</span><span class="scde63d9e">"</span></span>
-<span class="line"><span class="s252224fb">      command</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">certbot renew --quiet</span><span class="scde63d9e">"</span></span>
-<span class="line"><span class="scacc819b">    }</span></span>
-<span class="line"></span>
-<span class="line"><span class="s5dd799dd">    # Weekly log rotation and cleanup</span></span>
-<span class="line"><span class="s252224fb">    logrotate</span><span class="scacc819b">:</span><span class="scacc819b"> {</span></span>
-<span class="line"><span class="s252224fb">      schedule</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">0 0 * * 0</span><span class="scde63d9e">"</span></span>
-<span class="line"><span class="s252224fb">      command</span><span class="scacc819b">:</span><span class="scde63d9e"> """</span></span>
-<span class="line"><span class="s7911c4c2">/usr/sbin/logrotate /etc/logrotate.conf</span></span>
-<span class="line"><span class="s7911c4c2">find /var/log -name "*.gz" -mtime +30 -delete</span></span>
-<span class="line"><span class="scde63d9e">"""</span></span>
-<span class="line"><span class="scacc819b">    }</span></span>
-<span class="line"><span class="scacc819b">  }</span></span>
-<span class="line"><span class="scacc819b">}</span></span></code></pre>
-  <h2>See also</h2>
-  <ul class="card-list">
-    <li><a href="./4309"><span class="card-num">4309</span><span class="card-title">Build Config</span></a></li>
-    <li><a href="./5382"><span class="card-num">5382</span><span class="card-title">SQL Queries</span></a></li>
-    <li><a href="./10524"><span class="card-num">10524</span><span class="card-title">API Gateway</span></a></li>
-  </ul>
+<p class="eyebrow">Example 14993</p>
+<h1>Crontab</h1>
+<p class="lead">System crontab with commented schedule explanations.</p>
+<pre class="shiki"><code><span class="s5dd799dd"># System crontab</span><br><span class="scacc819b">{</span><br><span class="s252224fb">  SHELL</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">/bin/bash</span><span class="scde63d9e">"</span><br><span class="s252224fb">  PATH</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">/usr/local/bin:/usr/bin:/bin</span><span class="scde63d9e">"</span><br><br><span class="s252224fb">  MAILTO</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">Edgar_Kirlin11@hotmail.com</span><span class="scde63d9e">"</span><br><br><span class="s252224fb">  jobs</span><span class="scacc819b">:</span><span class="scacc819b"> {</span><br><span class="s5dd799dd">    # Full database backup at 2:00 AM daily</span><br><span class="s252224fb">    backup</span><span class="scacc819b">:</span><span class="scacc819b"> {</span><br><span class="s252224fb">      schedule</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">0 2 * * *</span><span class="scde63d9e">"</span><br><span class="s252224fb">      command</span><span class="scacc819b">:</span><span class="scde63d9e"> """</span><br><span class="s7911c4c2">/usr/local/bin/backup.sh --target /mnt/backup</span><br><span class="s7911c4c2">  --compress gzip</span><br><span class="s7911c4c2">  --notify Lucia.Metz71@yahoo.com</span><br><span class="scde63d9e">"""</span><br><span class="scacc819b">    }</span><br><br><span class="s5dd799dd">    # Renew SSL certificates on the 1st of each month</span><br><span class="s252224fb">    certbot</span><span class="scacc819b">:</span><span class="scacc819b"> {</span><br><span class="s252224fb">      schedule</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">0 0 1 * *</span><span class="scde63d9e">"</span><br><span class="s252224fb">      command</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">certbot renew --quiet</span><span class="scde63d9e">"</span><br><span class="scacc819b">    }</span><br><br><span class="s5dd799dd">    # Weekly log rotation and cleanup</span><br><span class="s252224fb">    logrotate</span><span class="scacc819b">:</span><span class="scacc819b"> {</span><br><span class="s252224fb">      schedule</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">0 0 * * 0</span><span class="scde63d9e">"</span><br><span class="s252224fb">      command</span><span class="scacc819b">:</span><span class="scde63d9e"> """</span><br><span class="s7911c4c2">/usr/sbin/logrotate /etc/logrotate.conf</span><br><span class="s7911c4c2">find /var/log -name "*.gz" -mtime +30 -delete</span><br><span class="scde63d9e">"""</span><br><span class="scacc819b">    }</span><br><span class="scacc819b">  }</span><br><span class="scacc819b">}</span></code></pre>
+<h2>See also</h2>
+<ul class="card-list">
+<li><a href="./4309"><span class="card-num">4309</span><span class="card-title">Build Config</span></a></li>
+<li><a href="./5382"><span class="card-num">5382</span><span class="card-title">SQL Queries</span></a></li>
+<li><a href="./10524"><span class="card-num">10524</span><span class="card-title">API Gateway</span></a></li>
+</ul>
 </article>
 </main>
-<footer class="site-footer">
-  Generated examples for the <a href="https://maml.dev">MAML</a> data format.
-</footer>
+<footer class="site-footer">Generated examples for the <a href="https://maml.dev">MAML</a> data format.</footer>
 </body>
 </html>

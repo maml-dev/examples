@@ -6,69 +6,26 @@
 <title>5064 — i18n Config · MAML Examples</title>
 <meta name="description" content="Internationalization and locale settings.">
 <link rel="stylesheet" href="../assets/style.css">
-<link rel="stylesheet" href="../assets/tokens.css">
 </head>
 <body>
 <header class="site-header">
-  <a class="brand" href="../">MAML Examples</a>
-  <nav>
-    <a href="https://maml.dev">maml.dev</a>
-    <a href="https://github.com/maml-dev/examples">GitHub</a>
-  </nav>
+<a class="brand" href="../">MAML Examples</a>
+<nav><a href="https://maml.dev">maml.dev</a> <a href="https://github.com/maml-dev/examples">GitHub</a></nav>
 </header>
 <main>
 <article class="example">
-  <p class="eyebrow">Example 5064</p>
-  <h1>i18n Config</h1>
-  <p class="lead">Internationalization and locale settings.</p>
-  <pre class="shiki shiki-themes catppuccin-latte plastic" style="--shiki-light:#4c4f69;--shiki-dark:#A9B2C3;--shiki-light-bg:#eff1f5;--shiki-dark-bg:#21252B" tabindex="0"><code><span class="line"><span class="scacc819b">{</span></span>
-<span class="line"><span class="s252224fb">  default_locale</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">en</span><span class="scde63d9e">"</span></span>
-<span class="line"><span class="s252224fb">  fallback</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">en</span><span class="scde63d9e">"</span></span>
-<span class="line"><span class="s252224fb">  locales</span><span class="scacc819b">:</span><span class="scacc819b"> [</span></span>
-<span class="line"><span class="scacc819b">    {</span></span>
-<span class="line"><span class="s252224fb">      code</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">en</span><span class="scde63d9e">"</span></span>
-<span class="line"><span class="s252224fb">      name</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">English</span><span class="scde63d9e">"</span></span>
-<span class="line"><span class="s252224fb">      dir</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">ltr</span><span class="scde63d9e">"</span></span>
-<span class="line"><span class="scacc819b">    }</span></span>
-<span class="line"></span>
-<span class="line"><span class="scacc819b">    {</span></span>
-<span class="line"><span class="s252224fb">      code</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">fr</span><span class="scde63d9e">"</span></span>
-<span class="line"><span class="s252224fb">      name</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">Français</span><span class="scde63d9e">"</span></span>
-<span class="line"><span class="s252224fb">      dir</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">ltr</span><span class="scde63d9e">"</span></span>
-<span class="line"><span class="scacc819b">    }</span></span>
-<span class="line"></span>
-<span class="line"><span class="scacc819b">    {</span></span>
-<span class="line"><span class="s252224fb">      code</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">ar</span><span class="scde63d9e">"</span></span>
-<span class="line"><span class="s252224fb">      name</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">العربية</span><span class="scde63d9e">"</span></span>
-<span class="line"><span class="s252224fb">      dir</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">rtl</span><span class="scde63d9e">"</span></span>
-<span class="line"><span class="scacc819b">    }</span></span>
-<span class="line"></span>
-<span class="line"><span class="scacc819b">    {</span></span>
-<span class="line"><span class="s252224fb">      code</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">ja</span><span class="scde63d9e">"</span></span>
-<span class="line"><span class="s252224fb">      name</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">日本語</span><span class="scde63d9e">"</span></span>
-<span class="line"><span class="s252224fb">      dir</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">ltr</span><span class="scde63d9e">"</span></span>
-<span class="line"><span class="scacc819b">    }</span></span>
-<span class="line"><span class="scacc819b">  ]</span></span>
-<span class="line"></span>
-<span class="line"><span class="s252224fb">  detection</span><span class="scacc819b">:</span><span class="scacc819b"> {</span></span>
-<span class="line"><span class="s252224fb">    order</span><span class="scacc819b">:</span><span class="scacc819b"> [</span></span>
-<span class="line"><span class="scde63d9e">      "</span><span class="s7911c4c2">cookie</span><span class="scde63d9e">"</span></span>
-<span class="line"><span class="scde63d9e">      "</span><span class="s7911c4c2">header</span><span class="scde63d9e">"</span></span>
-<span class="line"><span class="scde63d9e">      "</span><span class="s7911c4c2">query</span><span class="scde63d9e">"</span></span>
-<span class="line"><span class="scacc819b">    ]</span></span>
-<span class="line"><span class="s252224fb">    cookie_name</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">lang</span><span class="scde63d9e">"</span></span>
-<span class="line"><span class="scacc819b">  }</span></span>
-<span class="line"><span class="scacc819b">}</span></span></code></pre>
-  <h2>See also</h2>
-  <ul class="card-list">
-    <li><a href="./10381"><span class="card-num">10381</span><span class="card-title">Git Hooks</span></a></li>
-    <li><a href="./11379"><span class="card-num">11379</span><span class="card-title">Dashboard Layout</span></a></li>
-    <li><a href="./12560"><span class="card-num">12560</span><span class="card-title">API Routes</span></a></li>
-  </ul>
+<p class="eyebrow">Example 5064</p>
+<h1>i18n Config</h1>
+<p class="lead">Internationalization and locale settings.</p>
+<pre class="shiki"><code><span class="scacc819b">{</span><br><span class="s252224fb">  default_locale</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">en</span><span class="scde63d9e">"</span><br><span class="s252224fb">  fallback</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">en</span><span class="scde63d9e">"</span><br><span class="s252224fb">  locales</span><span class="scacc819b">:</span><span class="scacc819b"> [</span><br><span class="scacc819b">    {</span><br><span class="s252224fb">      code</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">en</span><span class="scde63d9e">"</span><br><span class="s252224fb">      name</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">English</span><span class="scde63d9e">"</span><br><span class="s252224fb">      dir</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">ltr</span><span class="scde63d9e">"</span><br><span class="scacc819b">    }</span><br><br><span class="scacc819b">    {</span><br><span class="s252224fb">      code</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">fr</span><span class="scde63d9e">"</span><br><span class="s252224fb">      name</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">Français</span><span class="scde63d9e">"</span><br><span class="s252224fb">      dir</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">ltr</span><span class="scde63d9e">"</span><br><span class="scacc819b">    }</span><br><br><span class="scacc819b">    {</span><br><span class="s252224fb">      code</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">ar</span><span class="scde63d9e">"</span><br><span class="s252224fb">      name</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">العربية</span><span class="scde63d9e">"</span><br><span class="s252224fb">      dir</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">rtl</span><span class="scde63d9e">"</span><br><span class="scacc819b">    }</span><br><br><span class="scacc819b">    {</span><br><span class="s252224fb">      code</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">ja</span><span class="scde63d9e">"</span><br><span class="s252224fb">      name</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">日本語</span><span class="scde63d9e">"</span><br><span class="s252224fb">      dir</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">ltr</span><span class="scde63d9e">"</span><br><span class="scacc819b">    }</span><br><span class="scacc819b">  ]</span><br><br><span class="s252224fb">  detection</span><span class="scacc819b">:</span><span class="scacc819b"> {</span><br><span class="s252224fb">    order</span><span class="scacc819b">:</span><span class="scacc819b"> [</span><br><span class="scde63d9e">      "</span><span class="s7911c4c2">cookie</span><span class="scde63d9e">"</span><br><span class="scde63d9e">      "</span><span class="s7911c4c2">header</span><span class="scde63d9e">"</span><br><span class="scde63d9e">      "</span><span class="s7911c4c2">query</span><span class="scde63d9e">"</span><br><span class="scacc819b">    ]</span><br><span class="s252224fb">    cookie_name</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">lang</span><span class="scde63d9e">"</span><br><span class="scacc819b">  }</span><br><span class="scacc819b">}</span></code></pre>
+<h2>See also</h2>
+<ul class="card-list">
+<li><a href="./10381"><span class="card-num">10381</span><span class="card-title">Git Hooks</span></a></li>
+<li><a href="./11379"><span class="card-num">11379</span><span class="card-title">Dashboard Layout</span></a></li>
+<li><a href="./12560"><span class="card-num">12560</span><span class="card-title">API Routes</span></a></li>
+</ul>
 </article>
 </main>
-<footer class="site-footer">
-  Generated examples for the <a href="https://maml.dev">MAML</a> data format.
-</footer>
+<footer class="site-footer">Generated examples for the <a href="https://maml.dev">MAML</a> data format.</footer>
 </body>
 </html>

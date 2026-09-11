@@ -1976,6 +1976,13 @@ const sortedLatest = [...latestByTitle.values()].sort((a, b) => {
 })
 
 fs.writeFileSync(path.join(SITE_DIR, 'index.html'), renderer.renderIndex(sortedLatest, allExamples.length))
+fs.writeFileSync(path.join(SITE_DIR, '404.html'), renderer.render404())
+
+// Sitemap shards and robots.txt, so crawlers can reach every example
+for (const [name, contents] of Object.entries(renderer.renderSitemaps(allExamples))) {
+  fs.writeFileSync(path.join(SITE_DIR, name), contents)
+}
+
 renderer.finish(siteAssets)
 
 // Persist data last, so a render failure leaves nothing half-recorded

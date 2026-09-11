@@ -6,61 +6,26 @@
 <title>13040 — Backup Strategy · MAML Examples</title>
 <meta name="description" content="Backup schedule and retention policy.">
 <link rel="stylesheet" href="../assets/style.css">
-<link rel="stylesheet" href="../assets/tokens.css">
 </head>
 <body>
 <header class="site-header">
-  <a class="brand" href="../">MAML Examples</a>
-  <nav>
-    <a href="https://maml.dev">maml.dev</a>
-    <a href="https://github.com/maml-dev/examples">GitHub</a>
-  </nav>
+<a class="brand" href="../">MAML Examples</a>
+<nav><a href="https://maml.dev">maml.dev</a> <a href="https://github.com/maml-dev/examples">GitHub</a></nav>
 </header>
 <main>
 <article class="example">
-  <p class="eyebrow">Example 13040</p>
-  <h1>Backup Strategy</h1>
-  <p class="lead">Backup schedule and retention policy.</p>
-  <pre class="shiki shiki-themes catppuccin-latte plastic" style="--shiki-light:#4c4f69;--shiki-dark:#A9B2C3;--shiki-light-bg:#eff1f5;--shiki-dark-bg:#21252B" tabindex="0"><code><span class="line"><span class="scacc819b">{</span></span>
-<span class="line"><span class="s252224fb">  source</span><span class="scacc819b">:</span><span class="scacc819b"> {</span></span>
-<span class="line"><span class="s252224fb">    type</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">mongodb</span><span class="scde63d9e">"</span></span>
-<span class="line"><span class="s252224fb">    host</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">localhost</span><span class="scde63d9e">"</span></span>
-<span class="line"><span class="s252224fb">    databases</span><span class="scacc819b">:</span><span class="scacc819b"> [</span></span>
-<span class="line"><span class="scde63d9e">      "</span><span class="s7911c4c2">wafer</span><span class="scde63d9e">"</span></span>
-<span class="line"><span class="scde63d9e">      "</span><span class="s7911c4c2">cauliflower</span><span class="scde63d9e">"</span></span>
-<span class="line"><span class="scacc819b">    ]</span></span>
-<span class="line"><span class="scacc819b">  }</span></span>
-<span class="line"></span>
-<span class="line"><span class="s5dd799dd">  # Backup schedule</span></span>
-<span class="line"><span class="s252224fb">  schedule</span><span class="scacc819b">:</span><span class="scacc819b"> {</span></span>
-<span class="line"><span class="s252224fb">    full</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">0 2 * * 0</span><span class="scde63d9e">"</span><span class="s5dd799dd"> # weekly Sunday 2am</span></span>
-<span class="line"><span class="s252224fb">    incremental</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">0 2 * * 1-6</span><span class="scde63d9e">"</span><span class="s5dd799dd"> # daily except Sunday</span></span>
-<span class="line"><span class="s252224fb">    snapshot</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">0 */4 * * *</span><span class="scde63d9e">"</span><span class="s5dd799dd"> # every 4 hours</span></span>
-<span class="line"><span class="scacc819b">  }</span></span>
-<span class="line"></span>
-<span class="line"><span class="s252224fb">  retention</span><span class="scacc819b">:</span><span class="scacc819b"> {</span></span>
-<span class="line"><span class="s252224fb">    daily</span><span class="scacc819b">:</span><span class="s56b09ea4"> 13</span></span>
-<span class="line"><span class="s252224fb">    weekly</span><span class="scacc819b">:</span><span class="s56b09ea4"> 12</span></span>
-<span class="line"><span class="s252224fb">    monthly</span><span class="scacc819b">:</span><span class="s56b09ea4"> 21</span></span>
-<span class="line"><span class="scacc819b">  }</span></span>
-<span class="line"></span>
-<span class="line"><span class="s252224fb">  destination</span><span class="scacc819b">:</span><span class="scacc819b"> {</span></span>
-<span class="line"><span class="s252224fb">    type</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">s3</span><span class="scde63d9e">"</span></span>
-<span class="line"><span class="s252224fb">    path</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">s3://backups-cellar</span><span class="scde63d9e">"</span></span>
-<span class="line"><span class="s252224fb">    encryption</span><span class="scacc819b">:</span><span class="sfc8ef81c"> true</span></span>
-<span class="line"><span class="s252224fb">    compression</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">gzip</span><span class="scde63d9e">"</span></span>
-<span class="line"><span class="scacc819b">  }</span></span>
-<span class="line"><span class="scacc819b">}</span></span></code></pre>
-  <h2>See also</h2>
-  <ul class="card-list">
-    <li><a href="./13285"><span class="card-num">13285</span><span class="card-title">Quoted Keys</span></a></li>
-    <li><a href="./6869"><span class="card-num">6869</span><span class="card-title">i18n Config</span></a></li>
-    <li><a href="./2880"><span class="card-num">2880</span><span class="card-title">Travel Itinerary</span></a></li>
-  </ul>
+<p class="eyebrow">Example 13040</p>
+<h1>Backup Strategy</h1>
+<p class="lead">Backup schedule and retention policy.</p>
+<pre class="shiki"><code><span class="scacc819b">{</span><br><span class="s252224fb">  source</span><span class="scacc819b">:</span><span class="scacc819b"> {</span><br><span class="s252224fb">    type</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">mongodb</span><span class="scde63d9e">"</span><br><span class="s252224fb">    host</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">localhost</span><span class="scde63d9e">"</span><br><span class="s252224fb">    databases</span><span class="scacc819b">:</span><span class="scacc819b"> [</span><br><span class="scde63d9e">      "</span><span class="s7911c4c2">wafer</span><span class="scde63d9e">"</span><br><span class="scde63d9e">      "</span><span class="s7911c4c2">cauliflower</span><span class="scde63d9e">"</span><br><span class="scacc819b">    ]</span><br><span class="scacc819b">  }</span><br><br><span class="s5dd799dd">  # Backup schedule</span><br><span class="s252224fb">  schedule</span><span class="scacc819b">:</span><span class="scacc819b"> {</span><br><span class="s252224fb">    full</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">0 2 * * 0</span><span class="scde63d9e">"</span><span class="s5dd799dd"> # weekly Sunday 2am</span><br><span class="s252224fb">    incremental</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">0 2 * * 1-6</span><span class="scde63d9e">"</span><span class="s5dd799dd"> # daily except Sunday</span><br><span class="s252224fb">    snapshot</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">0 */4 * * *</span><span class="scde63d9e">"</span><span class="s5dd799dd"> # every 4 hours</span><br><span class="scacc819b">  }</span><br><br><span class="s252224fb">  retention</span><span class="scacc819b">:</span><span class="scacc819b"> {</span><br><span class="s252224fb">    daily</span><span class="scacc819b">:</span><span class="s56b09ea4"> 13</span><br><span class="s252224fb">    weekly</span><span class="scacc819b">:</span><span class="s56b09ea4"> 12</span><br><span class="s252224fb">    monthly</span><span class="scacc819b">:</span><span class="s56b09ea4"> 21</span><br><span class="scacc819b">  }</span><br><br><span class="s252224fb">  destination</span><span class="scacc819b">:</span><span class="scacc819b"> {</span><br><span class="s252224fb">    type</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">s3</span><span class="scde63d9e">"</span><br><span class="s252224fb">    path</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">s3://backups-cellar</span><span class="scde63d9e">"</span><br><span class="s252224fb">    encryption</span><span class="scacc819b">:</span><span class="sfc8ef81c"> true</span><br><span class="s252224fb">    compression</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">gzip</span><span class="scde63d9e">"</span><br><span class="scacc819b">  }</span><br><span class="scacc819b">}</span></code></pre>
+<h2>See also</h2>
+<ul class="card-list">
+<li><a href="./13285"><span class="card-num">13285</span><span class="card-title">Quoted Keys</span></a></li>
+<li><a href="./6869"><span class="card-num">6869</span><span class="card-title">i18n Config</span></a></li>
+<li><a href="./2880"><span class="card-num">2880</span><span class="card-title">Travel Itinerary</span></a></li>
+</ul>
 </article>
 </main>
-<footer class="site-footer">
-  Generated examples for the <a href="https://maml.dev">MAML</a> data format.
-</footer>
+<footer class="site-footer">Generated examples for the <a href="https://maml.dev">MAML</a> data format.</footer>
 </body>
 </html>

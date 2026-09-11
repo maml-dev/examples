@@ -6,70 +6,26 @@
 <title>3348 — Cron Jobs · MAML Examples</title>
 <meta name="description" content="Scheduled task definitions.">
 <link rel="stylesheet" href="../assets/style.css">
-<link rel="stylesheet" href="../assets/tokens.css">
 </head>
 <body>
 <header class="site-header">
-  <a class="brand" href="../">MAML Examples</a>
-  <nav>
-    <a href="https://maml.dev">maml.dev</a>
-    <a href="https://github.com/maml-dev/examples">GitHub</a>
-  </nav>
+<a class="brand" href="../">MAML Examples</a>
+<nav><a href="https://maml.dev">maml.dev</a> <a href="https://github.com/maml-dev/examples">GitHub</a></nav>
 </header>
 <main>
 <article class="example">
-  <p class="eyebrow">Example 3348</p>
-  <h1>Cron Jobs</h1>
-  <p class="lead">Scheduled task definitions.</p>
-  <pre class="shiki shiki-themes catppuccin-latte plastic" style="--shiki-light:#4c4f69;--shiki-dark:#A9B2C3;--shiki-light-bg:#eff1f5;--shiki-dark-bg:#21252B" tabindex="0"><code><span class="line"><span class="scacc819b">{</span></span>
-<span class="line"><span class="s252224fb">  timezone</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">Europe/London</span><span class="scde63d9e">"</span></span>
-<span class="line"><span class="s252224fb">  jobs</span><span class="scacc819b">:</span><span class="scacc819b"> [</span></span>
-<span class="line"><span class="scacc819b">    {</span></span>
-<span class="line"><span class="s252224fb">      name</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">sync-data</span><span class="scde63d9e">"</span></span>
-<span class="line"><span class="s252224fb">      schedule</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">0 2 * * 0</span><span class="scde63d9e">"</span></span>
-<span class="line"><span class="s252224fb">      command</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">node scripts/cleanup.js</span><span class="scde63d9e">"</span></span>
-<span class="line"><span class="s252224fb">      enabled</span><span class="scacc819b">:</span><span class="sfc8ef81c"> true</span></span>
-<span class="line"><span class="scacc819b">    }</span></span>
-<span class="line"></span>
-<span class="line"><span class="scacc819b">    {</span></span>
-<span class="line"><span class="s252224fb">      name</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">refresh-cache</span><span class="scde63d9e">"</span></span>
-<span class="line"><span class="s252224fb">      schedule</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">0 2 * * 0</span><span class="scde63d9e">"</span></span>
-<span class="line"><span class="s252224fb">      command</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">node scripts/cleanup.js</span><span class="scde63d9e">"</span></span>
-<span class="line"><span class="s252224fb">      enabled</span><span class="scacc819b">:</span><span class="sfc8ef81c"> true</span></span>
-<span class="line"><span class="scacc819b">    }</span></span>
-<span class="line"></span>
-<span class="line"><span class="scacc819b">    {</span></span>
-<span class="line"><span class="s252224fb">      name</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">refresh-cache</span><span class="scde63d9e">"</span></span>
-<span class="line"><span class="s252224fb">      schedule</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">30 6 * * 1-5</span><span class="scde63d9e">"</span></span>
-<span class="line"><span class="s252224fb">      command</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">node scripts/cleanup.js</span><span class="scde63d9e">"</span></span>
-<span class="line"><span class="s252224fb">      enabled</span><span class="scacc819b">:</span><span class="sfc8ef81c"> true</span></span>
-<span class="line"><span class="scacc819b">    }</span></span>
-<span class="line"></span>
-<span class="line"><span class="scacc819b">    {</span></span>
-<span class="line"><span class="s252224fb">      name</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">sync-data</span><span class="scde63d9e">"</span></span>
-<span class="line"><span class="s252224fb">      schedule</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">*/15 * * * *</span><span class="scde63d9e">"</span></span>
-<span class="line"><span class="s252224fb">      command</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">./bin/sync --all</span><span class="scde63d9e">"</span></span>
-<span class="line"><span class="s252224fb">      enabled</span><span class="scacc819b">:</span><span class="sfc8ef81c"> false</span></span>
-<span class="line"><span class="scacc819b">    }</span></span>
-<span class="line"></span>
-<span class="line"><span class="scacc819b">    {</span></span>
-<span class="line"><span class="s252224fb">      name</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">backup-db</span><span class="scde63d9e">"</span></span>
-<span class="line"><span class="s252224fb">      schedule</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">0 0 * * *</span><span class="scde63d9e">"</span></span>
-<span class="line"><span class="s252224fb">      command</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">pg_dump $DATABASE_URL</span><span class="scde63d9e">"</span></span>
-<span class="line"><span class="s252224fb">      enabled</span><span class="scacc819b">:</span><span class="sfc8ef81c"> true</span></span>
-<span class="line"><span class="scacc819b">    }</span></span>
-<span class="line"><span class="scacc819b">  ]</span></span>
-<span class="line"><span class="scacc819b">}</span></span></code></pre>
-  <h2>See also</h2>
-  <ul class="card-list">
-    <li><a href="./15800"><span class="card-num">15800</span><span class="card-title">Changelog</span></a></li>
-    <li><a href="./8388"><span class="card-num">8388</span><span class="card-title">Config with Comments</span></a></li>
-    <li><a href="./15540"><span class="card-num">15540</span><span class="card-title">Cloud Deploy Config</span></a></li>
-  </ul>
+<p class="eyebrow">Example 3348</p>
+<h1>Cron Jobs</h1>
+<p class="lead">Scheduled task definitions.</p>
+<pre class="shiki"><code><span class="scacc819b">{</span><br><span class="s252224fb">  timezone</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">Europe/London</span><span class="scde63d9e">"</span><br><span class="s252224fb">  jobs</span><span class="scacc819b">:</span><span class="scacc819b"> [</span><br><span class="scacc819b">    {</span><br><span class="s252224fb">      name</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">sync-data</span><span class="scde63d9e">"</span><br><span class="s252224fb">      schedule</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">0 2 * * 0</span><span class="scde63d9e">"</span><br><span class="s252224fb">      command</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">node scripts/cleanup.js</span><span class="scde63d9e">"</span><br><span class="s252224fb">      enabled</span><span class="scacc819b">:</span><span class="sfc8ef81c"> true</span><br><span class="scacc819b">    }</span><br><br><span class="scacc819b">    {</span><br><span class="s252224fb">      name</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">refresh-cache</span><span class="scde63d9e">"</span><br><span class="s252224fb">      schedule</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">0 2 * * 0</span><span class="scde63d9e">"</span><br><span class="s252224fb">      command</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">node scripts/cleanup.js</span><span class="scde63d9e">"</span><br><span class="s252224fb">      enabled</span><span class="scacc819b">:</span><span class="sfc8ef81c"> true</span><br><span class="scacc819b">    }</span><br><br><span class="scacc819b">    {</span><br><span class="s252224fb">      name</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">refresh-cache</span><span class="scde63d9e">"</span><br><span class="s252224fb">      schedule</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">30 6 * * 1-5</span><span class="scde63d9e">"</span><br><span class="s252224fb">      command</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">node scripts/cleanup.js</span><span class="scde63d9e">"</span><br><span class="s252224fb">      enabled</span><span class="scacc819b">:</span><span class="sfc8ef81c"> true</span><br><span class="scacc819b">    }</span><br><br><span class="scacc819b">    {</span><br><span class="s252224fb">      name</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">sync-data</span><span class="scde63d9e">"</span><br><span class="s252224fb">      schedule</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">*/15 * * * *</span><span class="scde63d9e">"</span><br><span class="s252224fb">      command</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">./bin/sync --all</span><span class="scde63d9e">"</span><br><span class="s252224fb">      enabled</span><span class="scacc819b">:</span><span class="sfc8ef81c"> false</span><br><span class="scacc819b">    }</span><br><br><span class="scacc819b">    {</span><br><span class="s252224fb">      name</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">backup-db</span><span class="scde63d9e">"</span><br><span class="s252224fb">      schedule</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">0 0 * * *</span><span class="scde63d9e">"</span><br><span class="s252224fb">      command</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">pg_dump $DATABASE_URL</span><span class="scde63d9e">"</span><br><span class="s252224fb">      enabled</span><span class="scacc819b">:</span><span class="sfc8ef81c"> true</span><br><span class="scacc819b">    }</span><br><span class="scacc819b">  ]</span><br><span class="scacc819b">}</span></code></pre>
+<h2>See also</h2>
+<ul class="card-list">
+<li><a href="./15800"><span class="card-num">15800</span><span class="card-title">Changelog</span></a></li>
+<li><a href="./8388"><span class="card-num">8388</span><span class="card-title">Config with Comments</span></a></li>
+<li><a href="./15540"><span class="card-num">15540</span><span class="card-title">Cloud Deploy Config</span></a></li>
+</ul>
 </article>
 </main>
-<footer class="site-footer">
-  Generated examples for the <a href="https://maml.dev">MAML</a> data format.
-</footer>
+<footer class="site-footer">Generated examples for the <a href="https://maml.dev">MAML</a> data format.</footer>
 </body>
 </html>

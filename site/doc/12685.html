@@ -6,64 +6,26 @@
 <title>12685 — Shell Scripts · MAML Examples</title>
 <meta name="description" content="Embedded shell scripts as raw strings.">
 <link rel="stylesheet" href="../assets/style.css">
-<link rel="stylesheet" href="../assets/tokens.css">
 </head>
 <body>
 <header class="site-header">
-  <a class="brand" href="../">MAML Examples</a>
-  <nav>
-    <a href="https://maml.dev">maml.dev</a>
-    <a href="https://github.com/maml-dev/examples">GitHub</a>
-  </nav>
+<a class="brand" href="../">MAML Examples</a>
+<nav><a href="https://maml.dev">maml.dev</a> <a href="https://github.com/maml-dev/examples">GitHub</a></nav>
 </header>
 <main>
 <article class="example">
-  <p class="eyebrow">Example 12685</p>
-  <h1>Shell Scripts</h1>
-  <p class="lead">Embedded shell scripts as raw strings.</p>
-  <pre class="shiki shiki-themes catppuccin-latte plastic" style="--shiki-light:#4c4f69;--shiki-dark:#A9B2C3;--shiki-light-bg:#eff1f5;--shiki-dark-bg:#21252B" tabindex="0"><code><span class="line"><span class="s5dd799dd"># Automation scripts</span></span>
-<span class="line"><span class="scacc819b">{</span></span>
-<span class="line"><span class="s252224fb">  name</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">backup</span><span class="scde63d9e">"</span></span>
-<span class="line"><span class="s252224fb">  shell</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">/usr/bin/env bash</span><span class="scde63d9e">"</span></span>
-<span class="line"><span class="s5dd799dd">  # Initial setup script</span></span>
-<span class="line"><span class="s252224fb">  setup</span><span class="scacc819b">:</span><span class="scde63d9e"> """</span></span>
-<span class="line"><span class="s7911c4c2">#!/bin/bash</span></span>
-<span class="line"><span class="s7911c4c2">set -euo pipefail</span></span>
-<span class="line"></span>
-<span class="line"><span class="s7911c4c2">echo "Setting up environment..."</span></span>
-<span class="line"><span class="s7911c4c2">npm install</span></span>
-<span class="line"><span class="s7911c4c2">npm run build</span></span>
-<span class="line"><span class="s7911c4c2">echo "Done!"</span></span>
-<span class="line"><span class="scde63d9e">"""</span></span>
-<span class="line"></span>
-<span class="line"><span class="s5dd799dd">  # Deployment script</span></span>
-<span class="line"><span class="s252224fb">  deploy</span><span class="scacc819b">:</span><span class="scde63d9e"> """</span></span>
-<span class="line"><span class="s7911c4c2">#!/bin/bash</span></span>
-<span class="line"><span class="s7911c4c2">set -euo pipefail</span></span>
-<span class="line"></span>
-<span class="line"><span class="s7911c4c2">VERSION=$(git describe --tags)</span></span>
-<span class="line"><span class="s7911c4c2">echo "Deploying $VERSION"</span></span>
-<span class="line"></span>
-<span class="line"><span class="s7911c4c2">docker build -t app:$VERSION .</span></span>
-<span class="line"><span class="s7911c4c2">docker push app:$VERSION</span></span>
-<span class="line"><span class="s7911c4c2">kubectl set image deployment/app app=app:$VERSION</span></span>
-<span class="line"></span>
-<span class="line"><span class="s7911c4c2">echo "Deployed $VERSION successfully"</span></span>
-<span class="line"><span class="scde63d9e">"""</span></span>
-<span class="line"></span>
-<span class="line"><span class="s252224fb">  timeout</span><span class="scacc819b">:</span><span class="s56b09ea4"> 190</span><span class="s5dd799dd"> # seconds</span></span>
-<span class="line"><span class="s252224fb">  retry</span><span class="scacc819b">:</span><span class="s56b09ea4"> 4</span></span>
-<span class="line"><span class="scacc819b">}</span></span></code></pre>
-  <h2>See also</h2>
-  <ul class="card-list">
-    <li><a href="./9892"><span class="card-num">9892</span><span class="card-title">SQL Queries</span></a></li>
-    <li><a href="./10701"><span class="card-num">10701</span><span class="card-title">Proxy Config</span></a></li>
-    <li><a href="./10816"><span class="card-num">10816</span><span class="card-title">Build Config</span></a></li>
-  </ul>
+<p class="eyebrow">Example 12685</p>
+<h1>Shell Scripts</h1>
+<p class="lead">Embedded shell scripts as raw strings.</p>
+<pre class="shiki"><code><span class="s5dd799dd"># Automation scripts</span><br><span class="scacc819b">{</span><br><span class="s252224fb">  name</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">backup</span><span class="scde63d9e">"</span><br><span class="s252224fb">  shell</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">/usr/bin/env bash</span><span class="scde63d9e">"</span><br><span class="s5dd799dd">  # Initial setup script</span><br><span class="s252224fb">  setup</span><span class="scacc819b">:</span><span class="scde63d9e"> """</span><br><span class="s7911c4c2">#!/bin/bash</span><br><span class="s7911c4c2">set -euo pipefail</span><br><br><span class="s7911c4c2">echo "Setting up environment..."</span><br><span class="s7911c4c2">npm install</span><br><span class="s7911c4c2">npm run build</span><br><span class="s7911c4c2">echo "Done!"</span><br><span class="scde63d9e">"""</span><br><br><span class="s5dd799dd">  # Deployment script</span><br><span class="s252224fb">  deploy</span><span class="scacc819b">:</span><span class="scde63d9e"> """</span><br><span class="s7911c4c2">#!/bin/bash</span><br><span class="s7911c4c2">set -euo pipefail</span><br><br><span class="s7911c4c2">VERSION=$(git describe --tags)</span><br><span class="s7911c4c2">echo "Deploying $VERSION"</span><br><br><span class="s7911c4c2">docker build -t app:$VERSION .</span><br><span class="s7911c4c2">docker push app:$VERSION</span><br><span class="s7911c4c2">kubectl set image deployment/app app=app:$VERSION</span><br><br><span class="s7911c4c2">echo "Deployed $VERSION successfully"</span><br><span class="scde63d9e">"""</span><br><br><span class="s252224fb">  timeout</span><span class="scacc819b">:</span><span class="s56b09ea4"> 190</span><span class="s5dd799dd"> # seconds</span><br><span class="s252224fb">  retry</span><span class="scacc819b">:</span><span class="s56b09ea4"> 4</span><br><span class="scacc819b">}</span></code></pre>
+<h2>See also</h2>
+<ul class="card-list">
+<li><a href="./9892"><span class="card-num">9892</span><span class="card-title">SQL Queries</span></a></li>
+<li><a href="./10701"><span class="card-num">10701</span><span class="card-title">Proxy Config</span></a></li>
+<li><a href="./10816"><span class="card-num">10816</span><span class="card-title">Build Config</span></a></li>
+</ul>
 </article>
 </main>
-<footer class="site-footer">
-  Generated examples for the <a href="https://maml.dev">MAML</a> data format.
-</footer>
+<footer class="site-footer">Generated examples for the <a href="https://maml.dev">MAML</a> data format.</footer>
 </body>
 </html>

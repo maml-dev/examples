@@ -6,84 +6,26 @@
 <title>1555 — DNS Records · MAML Examples</title>
 <meta name="description" content="DNS zone record entries.">
 <link rel="stylesheet" href="../assets/style.css">
-<link rel="stylesheet" href="../assets/tokens.css">
 </head>
 <body>
 <header class="site-header">
-  <a class="brand" href="../">MAML Examples</a>
-  <nav>
-    <a href="https://maml.dev">maml.dev</a>
-    <a href="https://github.com/maml-dev/examples">GitHub</a>
-  </nav>
+<a class="brand" href="../">MAML Examples</a>
+<nav><a href="https://maml.dev">maml.dev</a> <a href="https://github.com/maml-dev/examples">GitHub</a></nav>
 </header>
 <main>
 <article class="example">
-  <p class="eyebrow">Example 1555</p>
-  <h1>DNS Records</h1>
-  <p class="lead">DNS zone record entries.</p>
-  <pre class="shiki shiki-themes catppuccin-latte plastic" style="--shiki-light:#4c4f69;--shiki-dark:#A9B2C3;--shiki-light-bg:#eff1f5;--shiki-dark-bg:#21252B" tabindex="0"><code><span class="line"><span class="scacc819b">{</span></span>
-<span class="line"><span class="s252224fb">  zone</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">lazy-electronics.name</span><span class="scde63d9e">"</span></span>
-<span class="line"><span class="s252224fb">  records</span><span class="scacc819b">:</span><span class="scacc819b"> [</span></span>
-<span class="line"><span class="scacc819b">    {</span></span>
-<span class="line"><span class="s252224fb">      type</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">MX</span><span class="scde63d9e">"</span></span>
-<span class="line"><span class="s252224fb">      name</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">staging</span><span class="scde63d9e">"</span></span>
-<span class="line"><span class="s252224fb">      value</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">4.62.12.210</span><span class="scde63d9e">"</span></span>
-<span class="line"><span class="s252224fb">      ttl</span><span class="scacc819b">:</span><span class="s56b09ea4"> 3600</span></span>
-<span class="line"><span class="scacc819b">    }</span></span>
-<span class="line"></span>
-<span class="line"><span class="scacc819b">    {</span></span>
-<span class="line"><span class="s252224fb">      type</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">NS</span><span class="scde63d9e">"</span></span>
-<span class="line"><span class="s252224fb">      name</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">www</span><span class="scde63d9e">"</span></span>
-<span class="line"><span class="s252224fb">      value</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">198.11.22.27</span><span class="scde63d9e">"</span></span>
-<span class="line"><span class="s252224fb">      ttl</span><span class="scacc819b">:</span><span class="s56b09ea4"> 300</span></span>
-<span class="line"><span class="scacc819b">    }</span></span>
-<span class="line"></span>
-<span class="line"><span class="scacc819b">    {</span></span>
-<span class="line"><span class="s252224fb">      type</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">TXT</span><span class="scde63d9e">"</span></span>
-<span class="line"><span class="s252224fb">      name</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">api</span><span class="scde63d9e">"</span></span>
-<span class="line"><span class="s252224fb">      value</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">171.156.43.187</span><span class="scde63d9e">"</span></span>
-<span class="line"><span class="s252224fb">      ttl</span><span class="scacc819b">:</span><span class="s56b09ea4"> 86400</span></span>
-<span class="line"><span class="scacc819b">    }</span></span>
-<span class="line"></span>
-<span class="line"><span class="scacc819b">    {</span></span>
-<span class="line"><span class="s252224fb">      type</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">AAAA</span><span class="scde63d9e">"</span></span>
-<span class="line"><span class="s252224fb">      name</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">www</span><span class="scde63d9e">"</span></span>
-<span class="line"><span class="s252224fb">      value</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">flawless-director.net</span><span class="scde63d9e">"</span></span>
-<span class="line"><span class="s252224fb">      ttl</span><span class="scacc819b">:</span><span class="s56b09ea4"> 86400</span></span>
-<span class="line"><span class="scacc819b">    }</span></span>
-<span class="line"></span>
-<span class="line"><span class="scacc819b">    {</span></span>
-<span class="line"><span class="s252224fb">      type</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">TXT</span><span class="scde63d9e">"</span></span>
-<span class="line"><span class="s252224fb">      name</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">mail</span><span class="scde63d9e">"</span></span>
-<span class="line"><span class="s252224fb">      value</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">v=spf1 include:_spf.kooky-expansion.biz ~all</span><span class="scde63d9e">"</span></span>
-<span class="line"><span class="s252224fb">      ttl</span><span class="scacc819b">:</span><span class="s56b09ea4"> 300</span></span>
-<span class="line"><span class="scacc819b">    }</span></span>
-<span class="line"></span>
-<span class="line"><span class="scacc819b">    {</span></span>
-<span class="line"><span class="s252224fb">      type</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">TXT</span><span class="scde63d9e">"</span></span>
-<span class="line"><span class="s252224fb">      name</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">staging</span><span class="scde63d9e">"</span></span>
-<span class="line"><span class="s252224fb">      value</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">v=spf1 include:_spf.well-worn-instance.org ~all</span><span class="scde63d9e">"</span></span>
-<span class="line"><span class="s252224fb">      ttl</span><span class="scacc819b">:</span><span class="s56b09ea4"> 3600</span></span>
-<span class="line"><span class="scacc819b">    }</span></span>
-<span class="line"></span>
-<span class="line"><span class="scacc819b">    {</span></span>
-<span class="line"><span class="s252224fb">      type</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">AAAA</span><span class="scde63d9e">"</span></span>
-<span class="line"><span class="s252224fb">      name</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">mail</span><span class="scde63d9e">"</span></span>
-<span class="line"><span class="s252224fb">      value</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">authorized-jellyfish.info</span><span class="scde63d9e">"</span></span>
-<span class="line"><span class="s252224fb">      ttl</span><span class="scacc819b">:</span><span class="s56b09ea4"> 3600</span></span>
-<span class="line"><span class="scacc819b">    }</span></span>
-<span class="line"><span class="scacc819b">  ]</span></span>
-<span class="line"><span class="scacc819b">}</span></span></code></pre>
-  <h2>See also</h2>
-  <ul class="card-list">
-    <li><a href="./5695"><span class="card-num">5695</span><span class="card-title">Error Messages</span></a></li>
-    <li><a href="./4515"><span class="card-num">4515</span><span class="card-title">Logger Config</span></a></li>
-    <li><a href="./7646"><span class="card-num">7646</span><span class="card-title">Cron Jobs</span></a></li>
-  </ul>
+<p class="eyebrow">Example 1555</p>
+<h1>DNS Records</h1>
+<p class="lead">DNS zone record entries.</p>
+<pre class="shiki"><code><span class="scacc819b">{</span><br><span class="s252224fb">  zone</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">lazy-electronics.name</span><span class="scde63d9e">"</span><br><span class="s252224fb">  records</span><span class="scacc819b">:</span><span class="scacc819b"> [</span><br><span class="scacc819b">    {</span><br><span class="s252224fb">      type</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">MX</span><span class="scde63d9e">"</span><br><span class="s252224fb">      name</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">staging</span><span class="scde63d9e">"</span><br><span class="s252224fb">      value</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">4.62.12.210</span><span class="scde63d9e">"</span><br><span class="s252224fb">      ttl</span><span class="scacc819b">:</span><span class="s56b09ea4"> 3600</span><br><span class="scacc819b">    }</span><br><br><span class="scacc819b">    {</span><br><span class="s252224fb">      type</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">NS</span><span class="scde63d9e">"</span><br><span class="s252224fb">      name</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">www</span><span class="scde63d9e">"</span><br><span class="s252224fb">      value</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">198.11.22.27</span><span class="scde63d9e">"</span><br><span class="s252224fb">      ttl</span><span class="scacc819b">:</span><span class="s56b09ea4"> 300</span><br><span class="scacc819b">    }</span><br><br><span class="scacc819b">    {</span><br><span class="s252224fb">      type</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">TXT</span><span class="scde63d9e">"</span><br><span class="s252224fb">      name</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">api</span><span class="scde63d9e">"</span><br><span class="s252224fb">      value</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">171.156.43.187</span><span class="scde63d9e">"</span><br><span class="s252224fb">      ttl</span><span class="scacc819b">:</span><span class="s56b09ea4"> 86400</span><br><span class="scacc819b">    }</span><br><br><span class="scacc819b">    {</span><br><span class="s252224fb">      type</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">AAAA</span><span class="scde63d9e">"</span><br><span class="s252224fb">      name</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">www</span><span class="scde63d9e">"</span><br><span class="s252224fb">      value</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">flawless-director.net</span><span class="scde63d9e">"</span><br><span class="s252224fb">      ttl</span><span class="scacc819b">:</span><span class="s56b09ea4"> 86400</span><br><span class="scacc819b">    }</span><br><br><span class="scacc819b">    {</span><br><span class="s252224fb">      type</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">TXT</span><span class="scde63d9e">"</span><br><span class="s252224fb">      name</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">mail</span><span class="scde63d9e">"</span><br><span class="s252224fb">      value</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">v=spf1 include:_spf.kooky-expansion.biz ~all</span><span class="scde63d9e">"</span><br><span class="s252224fb">      ttl</span><span class="scacc819b">:</span><span class="s56b09ea4"> 300</span><br><span class="scacc819b">    }</span><br><br><span class="scacc819b">    {</span><br><span class="s252224fb">      type</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">TXT</span><span class="scde63d9e">"</span><br><span class="s252224fb">      name</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">staging</span><span class="scde63d9e">"</span><br><span class="s252224fb">      value</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">v=spf1 include:_spf.well-worn-instance.org ~all</span><span class="scde63d9e">"</span><br><span class="s252224fb">      ttl</span><span class="scacc819b">:</span><span class="s56b09ea4"> 3600</span><br><span class="scacc819b">    }</span><br><br><span class="scacc819b">    {</span><br><span class="s252224fb">      type</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">AAAA</span><span class="scde63d9e">"</span><br><span class="s252224fb">      name</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">mail</span><span class="scde63d9e">"</span><br><span class="s252224fb">      value</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">authorized-jellyfish.info</span><span class="scde63d9e">"</span><br><span class="s252224fb">      ttl</span><span class="scacc819b">:</span><span class="s56b09ea4"> 3600</span><br><span class="scacc819b">    }</span><br><span class="scacc819b">  ]</span><br><span class="scacc819b">}</span></code></pre>
+<h2>See also</h2>
+<ul class="card-list">
+<li><a href="./5695"><span class="card-num">5695</span><span class="card-title">Error Messages</span></a></li>
+<li><a href="./4515"><span class="card-num">4515</span><span class="card-title">Logger Config</span></a></li>
+<li><a href="./7646"><span class="card-num">7646</span><span class="card-title">Cron Jobs</span></a></li>
+</ul>
 </article>
 </main>
-<footer class="site-footer">
-  Generated examples for the <a href="https://maml.dev">MAML</a> data format.
-</footer>
+<footer class="site-footer">Generated examples for the <a href="https://maml.dev">MAML</a> data format.</footer>
 </body>
 </html>

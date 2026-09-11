@@ -6,69 +6,26 @@
 <title>15036 — GraphQL Schema · MAML Examples</title>
 <meta name="description" content="GraphQL type and resolver configuration.">
 <link rel="stylesheet" href="../assets/style.css">
-<link rel="stylesheet" href="../assets/tokens.css">
 </head>
 <body>
 <header class="site-header">
-  <a class="brand" href="../">MAML Examples</a>
-  <nav>
-    <a href="https://maml.dev">maml.dev</a>
-    <a href="https://github.com/maml-dev/examples">GitHub</a>
-  </nav>
+<a class="brand" href="../">MAML Examples</a>
+<nav><a href="https://maml.dev">maml.dev</a> <a href="https://github.com/maml-dev/examples">GitHub</a></nav>
 </header>
 <main>
 <article class="example">
-  <p class="eyebrow">Example 15036</p>
-  <h1>GraphQL Schema</h1>
-  <p class="lead">GraphQL type and resolver configuration.</p>
-  <pre class="shiki shiki-themes catppuccin-latte plastic" style="--shiki-light:#4c4f69;--shiki-dark:#A9B2C3;--shiki-light-bg:#eff1f5;--shiki-dark-bg:#21252B" tabindex="0"><code><span class="line"><span class="scacc819b">{</span></span>
-<span class="line"><span class="s252224fb">  schema</span><span class="scacc819b">:</span><span class="scacc819b"> {</span></span>
-<span class="line"><span class="s252224fb">    query</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">Query</span><span class="scde63d9e">"</span></span>
-<span class="line"><span class="s252224fb">    mutation</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">Mutation</span><span class="scde63d9e">"</span></span>
-<span class="line"><span class="scacc819b">  }</span></span>
-<span class="line"></span>
-<span class="line"><span class="s252224fb">  types</span><span class="scacc819b">:</span><span class="scacc819b"> {</span></span>
-<span class="line"><span class="s5dd799dd">    # User type</span></span>
-<span class="line"><span class="s252224fb">    User</span><span class="scacc819b">:</span><span class="scacc819b"> {</span></span>
-<span class="line"><span class="s252224fb">      fields</span><span class="scacc819b">:</span><span class="scacc819b"> {</span></span>
-<span class="line"><span class="s252224fb">        id</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">ID!</span><span class="scde63d9e">"</span></span>
-<span class="line"><span class="s252224fb">        name</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">String!</span><span class="scde63d9e">"</span></span>
-<span class="line"><span class="s252224fb">        email</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">String!</span><span class="scde63d9e">"</span></span>
-<span class="line"><span class="s252224fb">        avatar</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">String</span><span class="scde63d9e">"</span></span>
-<span class="line"><span class="s252224fb">        posts</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">[Post!]!</span><span class="scde63d9e">"</span></span>
-<span class="line"><span class="s252224fb">        role</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">Role!</span><span class="scde63d9e">"</span></span>
-<span class="line"><span class="scacc819b">      }</span></span>
-<span class="line"><span class="scacc819b">    }</span></span>
-<span class="line"></span>
-<span class="line"><span class="s5dd799dd">    # Post type</span></span>
-<span class="line"><span class="s252224fb">    Post</span><span class="scacc819b">:</span><span class="scacc819b"> {</span></span>
-<span class="line"><span class="s252224fb">      fields</span><span class="scacc819b">:</span><span class="scacc819b"> {</span></span>
-<span class="line"><span class="s252224fb">        id</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">ID!</span><span class="scde63d9e">"</span></span>
-<span class="line"><span class="s252224fb">        title</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">String!</span><span class="scde63d9e">"</span></span>
-<span class="line"><span class="s252224fb">        body</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">String!</span><span class="scde63d9e">"</span></span>
-<span class="line"><span class="s252224fb">        author</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">User!</span><span class="scde63d9e">"</span></span>
-<span class="line"><span class="s252224fb">        published</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">Boolean!</span><span class="scde63d9e">"</span></span>
-<span class="line"><span class="s252224fb">        created_at</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">DateTime!</span><span class="scde63d9e">"</span></span>
-<span class="line"><span class="scacc819b">      }</span></span>
-<span class="line"><span class="scacc819b">    }</span></span>
-<span class="line"><span class="scacc819b">  }</span></span>
-<span class="line"></span>
-<span class="line"><span class="s252224fb">  resolvers</span><span class="scacc819b">:</span><span class="scacc819b"> {</span></span>
-<span class="line"><span class="s252224fb">    cache</span><span class="scacc819b">:</span><span class="sfc8ef81c"> true</span></span>
-<span class="line"><span class="s252224fb">    max_depth</span><span class="scacc819b">:</span><span class="s56b09ea4"> 12</span></span>
-<span class="line"><span class="s252224fb">    max_complexity</span><span class="scacc819b">:</span><span class="s56b09ea4"> 230</span></span>
-<span class="line"><span class="scacc819b">  }</span></span>
-<span class="line"><span class="scacc819b">}</span></span></code></pre>
-  <h2>See also</h2>
-  <ul class="card-list">
-    <li><a href="./15087"><span class="card-num">15087</span><span class="card-title">Config with Comments</span></a></li>
-    <li><a href="./14322"><span class="card-num">14322</span><span class="card-title">K8s Deployment</span></a></li>
-    <li><a href="./5905"><span class="card-num">5905</span><span class="card-title">Git Config</span></a></li>
-  </ul>
+<p class="eyebrow">Example 15036</p>
+<h1>GraphQL Schema</h1>
+<p class="lead">GraphQL type and resolver configuration.</p>
+<pre class="shiki"><code><span class="scacc819b">{</span><br><span class="s252224fb">  schema</span><span class="scacc819b">:</span><span class="scacc819b"> {</span><br><span class="s252224fb">    query</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">Query</span><span class="scde63d9e">"</span><br><span class="s252224fb">    mutation</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">Mutation</span><span class="scde63d9e">"</span><br><span class="scacc819b">  }</span><br><br><span class="s252224fb">  types</span><span class="scacc819b">:</span><span class="scacc819b"> {</span><br><span class="s5dd799dd">    # User type</span><br><span class="s252224fb">    User</span><span class="scacc819b">:</span><span class="scacc819b"> {</span><br><span class="s252224fb">      fields</span><span class="scacc819b">:</span><span class="scacc819b"> {</span><br><span class="s252224fb">        id</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">ID!</span><span class="scde63d9e">"</span><br><span class="s252224fb">        name</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">String!</span><span class="scde63d9e">"</span><br><span class="s252224fb">        email</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">String!</span><span class="scde63d9e">"</span><br><span class="s252224fb">        avatar</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">String</span><span class="scde63d9e">"</span><br><span class="s252224fb">        posts</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">[Post!]!</span><span class="scde63d9e">"</span><br><span class="s252224fb">        role</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">Role!</span><span class="scde63d9e">"</span><br><span class="scacc819b">      }</span><br><span class="scacc819b">    }</span><br><br><span class="s5dd799dd">    # Post type</span><br><span class="s252224fb">    Post</span><span class="scacc819b">:</span><span class="scacc819b"> {</span><br><span class="s252224fb">      fields</span><span class="scacc819b">:</span><span class="scacc819b"> {</span><br><span class="s252224fb">        id</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">ID!</span><span class="scde63d9e">"</span><br><span class="s252224fb">        title</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">String!</span><span class="scde63d9e">"</span><br><span class="s252224fb">        body</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">String!</span><span class="scde63d9e">"</span><br><span class="s252224fb">        author</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">User!</span><span class="scde63d9e">"</span><br><span class="s252224fb">        published</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">Boolean!</span><span class="scde63d9e">"</span><br><span class="s252224fb">        created_at</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">DateTime!</span><span class="scde63d9e">"</span><br><span class="scacc819b">      }</span><br><span class="scacc819b">    }</span><br><span class="scacc819b">  }</span><br><br><span class="s252224fb">  resolvers</span><span class="scacc819b">:</span><span class="scacc819b"> {</span><br><span class="s252224fb">    cache</span><span class="scacc819b">:</span><span class="sfc8ef81c"> true</span><br><span class="s252224fb">    max_depth</span><span class="scacc819b">:</span><span class="s56b09ea4"> 12</span><br><span class="s252224fb">    max_complexity</span><span class="scacc819b">:</span><span class="s56b09ea4"> 230</span><br><span class="scacc819b">  }</span><br><span class="scacc819b">}</span></code></pre>
+<h2>See also</h2>
+<ul class="card-list">
+<li><a href="./15087"><span class="card-num">15087</span><span class="card-title">Config with Comments</span></a></li>
+<li><a href="./14322"><span class="card-num">14322</span><span class="card-title">K8s Deployment</span></a></li>
+<li><a href="./5905"><span class="card-num">5905</span><span class="card-title">Git Config</span></a></li>
+</ul>
 </article>
 </main>
-<footer class="site-footer">
-  Generated examples for the <a href="https://maml.dev">MAML</a> data format.
-</footer>
+<footer class="site-footer">Generated examples for the <a href="https://maml.dev">MAML</a> data format.</footer>
 </body>
 </html>

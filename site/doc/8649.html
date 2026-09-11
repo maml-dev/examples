@@ -6,91 +6,26 @@
 <title>8649 — DNS Records · MAML Examples</title>
 <meta name="description" content="DNS zone record entries.">
 <link rel="stylesheet" href="../assets/style.css">
-<link rel="stylesheet" href="../assets/tokens.css">
 </head>
 <body>
 <header class="site-header">
-  <a class="brand" href="../">MAML Examples</a>
-  <nav>
-    <a href="https://maml.dev">maml.dev</a>
-    <a href="https://github.com/maml-dev/examples">GitHub</a>
-  </nav>
+<a class="brand" href="../">MAML Examples</a>
+<nav><a href="https://maml.dev">maml.dev</a> <a href="https://github.com/maml-dev/examples">GitHub</a></nav>
 </header>
 <main>
 <article class="example">
-  <p class="eyebrow">Example 8649</p>
-  <h1>DNS Records</h1>
-  <p class="lead">DNS zone record entries.</p>
-  <pre class="shiki shiki-themes catppuccin-latte plastic" style="--shiki-light:#4c4f69;--shiki-dark:#A9B2C3;--shiki-light-bg:#eff1f5;--shiki-dark-bg:#21252B" tabindex="0"><code><span class="line"><span class="scacc819b">{</span></span>
-<span class="line"><span class="s252224fb">  zone</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">understated-wombat.info</span><span class="scde63d9e">"</span></span>
-<span class="line"><span class="s252224fb">  records</span><span class="scacc819b">:</span><span class="scacc819b"> [</span></span>
-<span class="line"><span class="scacc819b">    {</span></span>
-<span class="line"><span class="s252224fb">      type</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">TXT</span><span class="scde63d9e">"</span></span>
-<span class="line"><span class="s252224fb">      name</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">mail</span><span class="scde63d9e">"</span></span>
-<span class="line"><span class="s252224fb">      value</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">230.3.200.114</span><span class="scde63d9e">"</span></span>
-<span class="line"><span class="s252224fb">      ttl</span><span class="scacc819b">:</span><span class="s56b09ea4"> 3600</span></span>
-<span class="line"><span class="scacc819b">    }</span></span>
-<span class="line"></span>
-<span class="line"><span class="scacc819b">    {</span></span>
-<span class="line"><span class="s252224fb">      type</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">AAAA</span><span class="scde63d9e">"</span></span>
-<span class="line"><span class="s252224fb">      name</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">www</span><span class="scde63d9e">"</span></span>
-<span class="line"><span class="s252224fb">      value</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">41.221.47.242</span><span class="scde63d9e">"</span></span>
-<span class="line"><span class="s252224fb">      ttl</span><span class="scacc819b">:</span><span class="s56b09ea4"> 86400</span></span>
-<span class="line"><span class="scacc819b">    }</span></span>
-<span class="line"></span>
-<span class="line"><span class="scacc819b">    {</span></span>
-<span class="line"><span class="s252224fb">      type</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">NS</span><span class="scde63d9e">"</span></span>
-<span class="line"><span class="s252224fb">      name</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">*</span><span class="scde63d9e">"</span></span>
-<span class="line"><span class="s252224fb">      value</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">scratchy-ecliptic.biz</span><span class="scde63d9e">"</span></span>
-<span class="line"><span class="s252224fb">      ttl</span><span class="scacc819b">:</span><span class="s56b09ea4"> 300</span></span>
-<span class="line"><span class="scacc819b">    }</span></span>
-<span class="line"></span>
-<span class="line"><span class="scacc819b">    {</span></span>
-<span class="line"><span class="s252224fb">      type</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">CNAME</span><span class="scde63d9e">"</span></span>
-<span class="line"><span class="s252224fb">      name</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">cdn</span><span class="scde63d9e">"</span></span>
-<span class="line"><span class="s252224fb">      value</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">149.214.10.116</span><span class="scde63d9e">"</span></span>
-<span class="line"><span class="s252224fb">      ttl</span><span class="scacc819b">:</span><span class="s56b09ea4"> 86400</span></span>
-<span class="line"><span class="scacc819b">    }</span></span>
-<span class="line"></span>
-<span class="line"><span class="scacc819b">    {</span></span>
-<span class="line"><span class="s252224fb">      type</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">NS</span><span class="scde63d9e">"</span></span>
-<span class="line"><span class="s252224fb">      name</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">mail</span><span class="scde63d9e">"</span></span>
-<span class="line"><span class="s252224fb">      value</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">good-natured-fork.net</span><span class="scde63d9e">"</span></span>
-<span class="line"><span class="s252224fb">      ttl</span><span class="scacc819b">:</span><span class="s56b09ea4"> 3600</span></span>
-<span class="line"><span class="scacc819b">    }</span></span>
-<span class="line"></span>
-<span class="line"><span class="scacc819b">    {</span></span>
-<span class="line"><span class="s252224fb">      type</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">NS</span><span class="scde63d9e">"</span></span>
-<span class="line"><span class="s252224fb">      name</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">*</span><span class="scde63d9e">"</span></span>
-<span class="line"><span class="s252224fb">      value</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">gigantic-innovation.info</span><span class="scde63d9e">"</span></span>
-<span class="line"><span class="s252224fb">      ttl</span><span class="scacc819b">:</span><span class="s56b09ea4"> 300</span></span>
-<span class="line"><span class="scacc819b">    }</span></span>
-<span class="line"></span>
-<span class="line"><span class="scacc819b">    {</span></span>
-<span class="line"><span class="s252224fb">      type</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">TXT</span><span class="scde63d9e">"</span></span>
-<span class="line"><span class="s252224fb">      name</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">@</span><span class="scde63d9e">"</span></span>
-<span class="line"><span class="s252224fb">      value</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">161.41.159.97</span><span class="scde63d9e">"</span></span>
-<span class="line"><span class="s252224fb">      ttl</span><span class="scacc819b">:</span><span class="s56b09ea4"> 86400</span></span>
-<span class="line"><span class="scacc819b">    }</span></span>
-<span class="line"></span>
-<span class="line"><span class="scacc819b">    {</span></span>
-<span class="line"><span class="s252224fb">      type</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">CNAME</span><span class="scde63d9e">"</span></span>
-<span class="line"><span class="s252224fb">      name</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">api</span><span class="scde63d9e">"</span></span>
-<span class="line"><span class="s252224fb">      value</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">240.15.23.135</span><span class="scde63d9e">"</span></span>
-<span class="line"><span class="s252224fb">      ttl</span><span class="scacc819b">:</span><span class="s56b09ea4"> 86400</span></span>
-<span class="line"><span class="scacc819b">    }</span></span>
-<span class="line"><span class="scacc819b">  ]</span></span>
-<span class="line"><span class="scacc819b">}</span></span></code></pre>
-  <h2>See also</h2>
-  <ul class="card-list">
-    <li><a href="./10980"><span class="card-num">10980</span><span class="card-title">Blog Post</span></a></li>
-    <li><a href="./2063"><span class="card-num">2063</span><span class="card-title">Migration Plan</span></a></li>
-    <li><a href="./15399"><span class="card-num">15399</span><span class="card-title">Shell Scripts</span></a></li>
-  </ul>
+<p class="eyebrow">Example 8649</p>
+<h1>DNS Records</h1>
+<p class="lead">DNS zone record entries.</p>
+<pre class="shiki"><code><span class="scacc819b">{</span><br><span class="s252224fb">  zone</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">understated-wombat.info</span><span class="scde63d9e">"</span><br><span class="s252224fb">  records</span><span class="scacc819b">:</span><span class="scacc819b"> [</span><br><span class="scacc819b">    {</span><br><span class="s252224fb">      type</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">TXT</span><span class="scde63d9e">"</span><br><span class="s252224fb">      name</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">mail</span><span class="scde63d9e">"</span><br><span class="s252224fb">      value</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">230.3.200.114</span><span class="scde63d9e">"</span><br><span class="s252224fb">      ttl</span><span class="scacc819b">:</span><span class="s56b09ea4"> 3600</span><br><span class="scacc819b">    }</span><br><br><span class="scacc819b">    {</span><br><span class="s252224fb">      type</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">AAAA</span><span class="scde63d9e">"</span><br><span class="s252224fb">      name</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">www</span><span class="scde63d9e">"</span><br><span class="s252224fb">      value</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">41.221.47.242</span><span class="scde63d9e">"</span><br><span class="s252224fb">      ttl</span><span class="scacc819b">:</span><span class="s56b09ea4"> 86400</span><br><span class="scacc819b">    }</span><br><br><span class="scacc819b">    {</span><br><span class="s252224fb">      type</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">NS</span><span class="scde63d9e">"</span><br><span class="s252224fb">      name</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">*</span><span class="scde63d9e">"</span><br><span class="s252224fb">      value</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">scratchy-ecliptic.biz</span><span class="scde63d9e">"</span><br><span class="s252224fb">      ttl</span><span class="scacc819b">:</span><span class="s56b09ea4"> 300</span><br><span class="scacc819b">    }</span><br><br><span class="scacc819b">    {</span><br><span class="s252224fb">      type</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">CNAME</span><span class="scde63d9e">"</span><br><span class="s252224fb">      name</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">cdn</span><span class="scde63d9e">"</span><br><span class="s252224fb">      value</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">149.214.10.116</span><span class="scde63d9e">"</span><br><span class="s252224fb">      ttl</span><span class="scacc819b">:</span><span class="s56b09ea4"> 86400</span><br><span class="scacc819b">    }</span><br><br><span class="scacc819b">    {</span><br><span class="s252224fb">      type</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">NS</span><span class="scde63d9e">"</span><br><span class="s252224fb">      name</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">mail</span><span class="scde63d9e">"</span><br><span class="s252224fb">      value</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">good-natured-fork.net</span><span class="scde63d9e">"</span><br><span class="s252224fb">      ttl</span><span class="scacc819b">:</span><span class="s56b09ea4"> 3600</span><br><span class="scacc819b">    }</span><br><br><span class="scacc819b">    {</span><br><span class="s252224fb">      type</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">NS</span><span class="scde63d9e">"</span><br><span class="s252224fb">      name</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">*</span><span class="scde63d9e">"</span><br><span class="s252224fb">      value</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">gigantic-innovation.info</span><span class="scde63d9e">"</span><br><span class="s252224fb">      ttl</span><span class="scacc819b">:</span><span class="s56b09ea4"> 300</span><br><span class="scacc819b">    }</span><br><br><span class="scacc819b">    {</span><br><span class="s252224fb">      type</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">TXT</span><span class="scde63d9e">"</span><br><span class="s252224fb">      name</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">@</span><span class="scde63d9e">"</span><br><span class="s252224fb">      value</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">161.41.159.97</span><span class="scde63d9e">"</span><br><span class="s252224fb">      ttl</span><span class="scacc819b">:</span><span class="s56b09ea4"> 86400</span><br><span class="scacc819b">    }</span><br><br><span class="scacc819b">    {</span><br><span class="s252224fb">      type</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">CNAME</span><span class="scde63d9e">"</span><br><span class="s252224fb">      name</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">api</span><span class="scde63d9e">"</span><br><span class="s252224fb">      value</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">240.15.23.135</span><span class="scde63d9e">"</span><br><span class="s252224fb">      ttl</span><span class="scacc819b">:</span><span class="s56b09ea4"> 86400</span><br><span class="scacc819b">    }</span><br><span class="scacc819b">  ]</span><br><span class="scacc819b">}</span></code></pre>
+<h2>See also</h2>
+<ul class="card-list">
+<li><a href="./10980"><span class="card-num">10980</span><span class="card-title">Blog Post</span></a></li>
+<li><a href="./2063"><span class="card-num">2063</span><span class="card-title">Migration Plan</span></a></li>
+<li><a href="./15399"><span class="card-num">15399</span><span class="card-title">Shell Scripts</span></a></li>
+</ul>
 </article>
 </main>
-<footer class="site-footer">
-  Generated examples for the <a href="https://maml.dev">MAML</a> data format.
-</footer>
+<footer class="site-footer">Generated examples for the <a href="https://maml.dev">MAML</a> data format.</footer>
 </body>
 </html>
