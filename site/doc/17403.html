@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>17403 — Proxy Config · MAML Examples</title>
+<meta name="description" content="Reverse proxy settings.">
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+<header class="site-header">
+<a class="brand" href="../">MAML Examples</a>
+<nav><a href="https://maml.dev">maml.dev</a> <a href="https://github.com/maml-dev/examples">GitHub</a></nav>
+</header>
+<main>
+<article class="example">
+<p class="eyebrow">Example 17403</p>
+<h1>Proxy Config</h1>
+<p class="lead">Reverse proxy settings.</p>
+<pre class="shiki"><code><span class="scacc819b">{</span><br><span class="s252224fb">  listen</span><span class="scacc819b">:</span><span class="s56b09ea4"> 80</span><br><span class="s252224fb">  server_name</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">mad-dividend.biz</span><span class="scde63d9e">"</span><br><span class="s252224fb">  upstream</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">http://127.0.0.1:4009</span><span class="scde63d9e">"</span><br><br><span class="s5dd799dd">  # TLS settings</span><br><span class="s252224fb">  ssl</span><span class="scacc819b">:</span><span class="sfc8ef81c"> true</span><br><span class="s252224fb">  http2</span><span class="scacc819b">:</span><span class="sfc8ef81c"> true</span><br><br><span class="s252224fb">  gzip</span><span class="scacc819b">:</span><span class="sfc8ef81c"> true</span><br><span class="s252224fb">  gzip_min_length</span><span class="scacc819b">:</span><span class="s56b09ea4"> 512</span><br><span class="s252224fb">  client_max_body</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">15mb</span><span class="scde63d9e">"</span><br><span class="scacc819b">}</span></code></pre>
+<h2>See also</h2>
+<ul class="card-list">
+<li><a href="./1880"><span class="card-num">1880</span><span class="card-title">Dashboard Layout</span></a></li>
+<li><a href="./6361"><span class="card-num">6361</span><span class="card-title">Webhook Config</span></a></li>
+<li><a href="./14551"><span class="card-num">14551</span><span class="card-title">User Directory</span></a></li>
+</ul>
+</article>
+</main>
+<footer class="site-footer">Generated examples for the <a href="https://maml.dev">MAML</a> data format.</footer>
+</body>
+</html>
