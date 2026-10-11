@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>17891 — API Mock · MAML Examples</title>
+<meta name="description" content="Mock API response payloads for testing.">
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+<header class="site-header">
+<a class="brand" href="../">MAML Examples</a>
+<nav><a href="https://maml.dev">maml.dev</a> <a href="https://github.com/maml-dev/examples">GitHub</a></nav>
+</header>
+<main>
+<article class="example">
+<p class="eyebrow">Example 17891</p>
+<h1>API Mock</h1>
+<p class="lead">Mock API response payloads for testing.</p>
+<pre class="shiki"><code><span class="s5dd799dd"># Mock API definition</span><br><span class="scacc819b">{</span><br><span class="s252224fb">  endpoint</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">/api/v1/users</span><span class="scde63d9e">"</span><br><span class="s252224fb">  method</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">GET</span><span class="scde63d9e">"</span><br><span class="s252224fb">  status</span><span class="scacc819b">:</span><span class="s56b09ea4"> 200</span><br><span class="s5dd799dd">  # JSON response body</span><br><span class="s252224fb">  response</span><span class="scacc819b">:</span><span class="scde63d9e"> """</span><br><span class="s7911c4c2">[</span><br><span class="s7911c4c2">  {</span><br><span class="s7911c4c2">    "id": 1,</span><br><span class="s7911c4c2">    "name": "Kevon Sawayn",</span><br><span class="s7911c4c2">    "email": "Mack.Schuster80@gmail.com",</span><br><span class="s7911c4c2">    "role": "admin"</span><br><span class="s7911c4c2">  },</span><br><span class="s7911c4c2">  {</span><br><span class="s7911c4c2">    "id": 2,</span><br><span class="s7911c4c2">    "name": "Chelsea McDermott",</span><br><span class="s7911c4c2">    "email": "Cleo.Brakus@yahoo.com",</span><br><span class="s7911c4c2">    "role": "user"</span><br><span class="s7911c4c2">  }</span><br><span class="s7911c4c2">]</span><br><span class="scde63d9e">"""</span><br><br><span class="s5dd799dd">  # Response headers</span><br><span class="s252224fb">  headers</span><span class="scacc819b">:</span><span class="scacc819b"> {</span><br><span class="s252224fb">    Content-Type</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">application/json</span><span class="scde63d9e">"</span><br><span class="s252224fb">    X-Total-Count</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">2</span><span class="scde63d9e">"</span><br><span class="s252224fb">    X-Request-Id</span><span class="scacc819b">:</span><span class="scde63d9e"> "</span><span class="s7911c4c2">48e8861b-bbfb-4ca7-95b8-61c61470081b</span><span class="scde63d9e">"</span><br><span class="scacc819b">  }</span><br><span class="s252224fb">  delay_ms</span><span class="scacc819b">:</span><span class="s56b09ea4"> 140</span><span class="s5dd799dd"> # simulated latency</span><br><span class="scacc819b">}</span></code></pre>
+<h2>See also</h2>
+<ul class="card-list">
+<li><a href="./8564"><span class="card-num">8564</span><span class="card-title">Notification Config</span></a></li>
+<li><a href="./3621"><span class="card-num">3621</span><span class="card-title">API Gateway</span></a></li>
+<li><a href="./2633"><span class="card-num">2633</span><span class="card-title">Cloud Deploy Config</span></a></li>
+</ul>
+</article>
+</main>
+<footer class="site-footer">Generated examples for the <a href="https://maml.dev">MAML</a> data format.</footer>
+</body>
+</html>
